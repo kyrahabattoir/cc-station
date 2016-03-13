@@ -38,12 +38,13 @@
 
 // overrides
 /datum/air_group/disposing()
+	pool(air)
 	air = null
 	..()
 
 /datum/air_group/New()
 	..()
-	air = new /datum/gas_mixture
+	air = unpool(/datum/gas_mixture)
 
 // Group procs
 /datum/air_group/proc/suspend_group_processing()
