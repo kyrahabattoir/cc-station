@@ -492,9 +492,9 @@ Code:
 			src.temp = null
 
 			if(signal.data["severe_list"])
-				src.severe_alerts = dd_text2list(signal.data["severe_list"], ";")
+				src.severe_alerts = splittext(signal.data["severe_list"], ";")
 			if(signal.data["minor_list"])
-				src.minor_alerts = dd_text2list(signal.data["minor_list"], ";")
+				src.minor_alerts = splittext(signal.data["minor_list"], ";")
 
 			src.master.updateSelfDialog()
 

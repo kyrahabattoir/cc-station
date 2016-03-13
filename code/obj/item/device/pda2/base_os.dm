@@ -285,7 +285,7 @@
 							src.message_tone = t
 
 					if("note")
-						var/inputtext = html_decode(dd_replacetext(src.note, "<br>", "\n"))
+						var/inputtext = html_decode(replacetext(src.note, "<br>", "\n"))
 
 						var/t = input(usr, "Please enter note", src.name, inputtext) as message
 						if (!t)
@@ -296,9 +296,9 @@
 
 						if(!(src.holder in src.master))
 							return
-						t = dd_replacetext(t, "\n", "|||")
+						t = replacetext(t, "\n", "|||")
 						t = copytext(adminscrub(t), 1, MAX_MESSAGE_LEN)
-						t = dd_replacetext(t, "|||", "<br>")
+						t = replacetext(t, "|||", "<br>")
 						src.note = t
 
 

@@ -2,7 +2,7 @@
 datum/controller/process/air_system
 	setup()
 		name = "Atmos"
-		schedule_interval = 25 // 2.5 seconds
+		schedule_interval = 10 // 2.5 seconds
 		
 		if(!air_master)
 			air_master = new /datum/controller/air_system()

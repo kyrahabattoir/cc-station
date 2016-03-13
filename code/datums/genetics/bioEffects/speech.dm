@@ -229,16 +229,16 @@
 		if (!istext(message))
 			return ""
 
-		message = dd_replaceText(message, "a", vowel_lower)
-		message = dd_replaceText(message, "e", vowel_lower)
-		message = dd_replaceText(message, "i", vowel_lower)
-		message = dd_replaceText(message, "o", vowel_lower)
-		message = dd_replaceText(message, "u", vowel_lower)
-		message = dd_replaceText(message, "A", vowel_upper)
-		message = dd_replaceText(message, "E", vowel_upper)
-		message = dd_replaceText(message, "I", vowel_upper)
-		message = dd_replaceText(message, "O", vowel_upper)
-		message = dd_replaceText(message, "U", vowel_upper)
+		message = replacetext(message, "a", vowel_lower)
+		message = replacetext(message, "e", vowel_lower)
+		message = replacetext(message, "i", vowel_lower)
+		message = replacetext(message, "o", vowel_lower)
+		message = replacetext(message, "u", vowel_lower)
+		message = replacetext(message, "A", vowel_upper)
+		message = replacetext(message, "E", vowel_upper)
+		message = replacetext(message, "I", vowel_upper)
+		message = replacetext(message, "O", vowel_upper)
+		message = replacetext(message, "U", vowel_upper)
 
 		return message
 
@@ -260,9 +260,9 @@
 		if (!istext(message))
 			return ""
 
-		message = dd_replaceText(message, "!", "!!!")
-		message = dd_replaceText(message, ".", "!!!")
-		message = dd_replaceText(message, "?", "???")
+		message = replacetext(message, "!", "!!!")
+		message = replacetext(message, ".", "!!!")
+		message = replacetext(message, "?", "???")
 		message = uppertext(message)
 		message += "!!!"
 
@@ -308,8 +308,8 @@
 		if (!istext(message))
 			return ""
 
-		message = dd_replaceText(message, "!", "...")
-		message = dd_replaceText(message, "?", "..?")
+		message = replacetext(message, "!", "...")
+		message = replacetext(message, "?", "..?")
 		message = lowertext(message)
 		message += "..."
 

@@ -62,7 +62,7 @@
 		//When both IDs are inserted
 		if (src.authenticated && src.modify)
 			body = "Registered: <a href='?src=\ref[src];reg=1'>[target_owner]</a><br>"
-			body += "Assignment: <a href='?src=\ref[src];assign=Custom Assignment'>[dd_replacetext(target_rank, " ", "&nbsp")]</a>"
+			body += "Assignment: <a href='?src=\ref[src];assign=Custom Assignment'>[replacetext(target_rank, " ", "&nbsp")]</a>"
 
 			//Jobs organised into sections
 			var/list/civilianjobs = list("Staff Assistant", "Barman", "Chef", "Botanist", "Chaplain", "Janitor", "Clown")
@@ -74,23 +74,23 @@
 			body += "<br><br><u>Jobs</u>"
 			body += "<br>Civilian:"
 			for(var/job in civilianjobs)
-				body += " <a href='?src=\ref[src];assign=[job]'>[dd_replacetext(job, " ", "&nbsp")]</a>" //make sure there isn't a line break in the middle of a job
+				body += " <a href='?src=\ref[src];assign=[job]'>[replacetext(job, " ", "&nbsp")]</a>" //make sure there isn't a line break in the middle of a job
 
 			body += "<br>Supply and Maintainence:"
 			for(var/job in maintainencejobs)
-				body += " <a href='?src=\ref[src];assign=[job]'>[dd_replacetext(job, " ", "&nbsp")]</a>"
+				body += " <a href='?src=\ref[src];assign=[job]'>[replacetext(job, " ", "&nbsp")]</a>"
 
 			body += "<br>Research and Medical:"
 			for(var/job in researchjobs)
-				body += " <a href='?src=\ref[src];assign=[job]'>[dd_replacetext(job, " ", "&nbsp")]</a>"
+				body += " <a href='?src=\ref[src];assign=[job]'>[replacetext(job, " ", "&nbsp")]</a>"
 
 			body += "<br>Security:"
 			for(var/job in securityjobs)
-				body += " <a href='?src=\ref[src];assign=[job]'>[dd_replacetext(job, " ", "&nbsp")]</a>"
+				body += " <a href='?src=\ref[src];assign=[job]'>[replacetext(job, " ", "&nbsp")]</a>"
 
 			body += "<br>Command:"
 			for(var/job in commandjobs)
-				body += " <a href='?src=\ref[src];assign=[job]'>[dd_replacetext(job, " ", "&nbsp")]</a>"
+				body += " <a href='?src=\ref[src];assign=[job]'>[replacetext(job, " ", "&nbsp")]</a>"
 
 			//Change access to individual areas
 			body += "<br><br><u>Access</u>"
@@ -118,30 +118,30 @@
 				if(access_name_lookup[A] in src.modify.access)
 					//Click these to remove access
 					if (access_name_lookup[A] in civilian_access_list)
-						civilian_access += " <a href='?src=\ref[src];access=[access_name_lookup[A]];allowed=0'><font color=\"red\">[dd_replacetext(A, " ", "&nbsp")]</font></a>"
+						civilian_access += " <a href='?src=\ref[src];access=[access_name_lookup[A]];allowed=0'><font color=\"red\">[replacetext(A, " ", "&nbsp")]</font></a>"
 					if (access_name_lookup[A] in engineering_access_list)
-						engineering_access += " <a href='?src=\ref[src];access=[access_name_lookup[A]];allowed=0'><font color=\"red\">[dd_replacetext(A, " ", "&nbsp")]</font></a>"
+						engineering_access += " <a href='?src=\ref[src];access=[access_name_lookup[A]];allowed=0'><font color=\"red\">[replacetext(A, " ", "&nbsp")]</font></a>"
 					if (access_name_lookup[A] in supply_access_list)
-						supply_access += " <a href='?src=\ref[src];access=[access_name_lookup[A]];allowed=0'><font color=\"red\">[dd_replacetext(A, " ", "&nbsp")]</font></a>"
+						supply_access += " <a href='?src=\ref[src];access=[access_name_lookup[A]];allowed=0'><font color=\"red\">[replacetext(A, " ", "&nbsp")]</font></a>"
 					if (access_name_lookup[A] in research_access_list)
-						research_access += " <a href='?src=\ref[src];access=[access_name_lookup[A]];allowed=0'><font color=\"red\">[dd_replacetext(A, " ", "&nbsp")]</font></a>"
+						research_access += " <a href='?src=\ref[src];access=[access_name_lookup[A]];allowed=0'><font color=\"red\">[replacetext(A, " ", "&nbsp")]</font></a>"
 					if (access_name_lookup[A] in security_access_list)
-						security_access += " <a href='?src=\ref[src];access=[access_name_lookup[A]];allowed=0'><font color=\"red\">[dd_replacetext(A, " ", "&nbsp")]</font></a>"
+						security_access += " <a href='?src=\ref[src];access=[access_name_lookup[A]];allowed=0'><font color=\"red\">[replacetext(A, " ", "&nbsp")]</font></a>"
 					if (access_name_lookup[A] in command_access_list)
-						command_access += " <a href='?src=\ref[src];access=[access_name_lookup[A]];allowed=0'><font color=\"red\">[dd_replacetext(A, " ", "&nbsp")]</font></a>"
+						command_access += " <a href='?src=\ref[src];access=[access_name_lookup[A]];allowed=0'><font color=\"red\">[replacetext(A, " ", "&nbsp")]</font></a>"
 				else//Click these to add access
 					if (access_name_lookup[A] in civilian_access_list)
-						civilian_access += " <a href='?src=\ref[src];access=[access_name_lookup[A]];allowed=1'>[dd_replacetext(A, " ", "&nbsp")]</a>"
+						civilian_access += " <a href='?src=\ref[src];access=[access_name_lookup[A]];allowed=1'>[replacetext(A, " ", "&nbsp")]</a>"
 					if (access_name_lookup[A] in engineering_access_list)
-						engineering_access += " <a href='?src=\ref[src];access=[access_name_lookup[A]];allowed=1'>[dd_replacetext(A, " ", "&nbsp")]</a>"
+						engineering_access += " <a href='?src=\ref[src];access=[access_name_lookup[A]];allowed=1'>[replacetext(A, " ", "&nbsp")]</a>"
 					if (access_name_lookup[A] in supply_access_list)
-						supply_access += " <a href='?src=\ref[src];access=[access_name_lookup[A]];allowed=1'>[dd_replacetext(A, " ", "&nbsp")]</a>"
+						supply_access += " <a href='?src=\ref[src];access=[access_name_lookup[A]];allowed=1'>[replacetext(A, " ", "&nbsp")]</a>"
 					if (access_name_lookup[A] in research_access_list)
-						research_access += " <a href='?src=\ref[src];access=[access_name_lookup[A]];allowed=1'>[dd_replacetext(A, " ", "&nbsp")]</a>"
+						research_access += " <a href='?src=\ref[src];access=[access_name_lookup[A]];allowed=1'>[replacetext(A, " ", "&nbsp")]</a>"
 					if (access_name_lookup[A] in security_access_list)
-						security_access += " <a href='?src=\ref[src];access=[access_name_lookup[A]];allowed=1'>[dd_replacetext(A, " ", "&nbsp")]</a>"
+						security_access += " <a href='?src=\ref[src];access=[access_name_lookup[A]];allowed=1'>[replacetext(A, " ", "&nbsp")]</a>"
 					if (access_name_lookup[A] in command_access_list)
-						command_access += " <a href='?src=\ref[src];access=[access_name_lookup[A]];allowed=1'>[dd_replacetext(A, " ", "&nbsp")]</a>"
+						command_access += " <a href='?src=\ref[src];access=[access_name_lookup[A]];allowed=1'>[replacetext(A, " ", "&nbsp")]</a>"
 
 			body+= "[civilian_access]<br>[engineering_access]<br>[supply_access]<br>[research_access]<br>[security_access]<br>[command_access]"
 

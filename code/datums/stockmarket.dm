@@ -12,11 +12,11 @@ proc/ucfirst(var/S)
 	return "[uppertext(ascii2text(text2ascii(S, 1)))][copytext(S, 2)]"
 
 proc/ucfirsts(var/S)
-	var/list/L = dd_text2list(S, " ")
+	var/list/L = splittext(S, " ")
 	var/list/M = list()
 	for (var/P in L)
 		M += ucfirst(P)
-	return dd_list2text(M, " ")
+	return jointext(M, " ")
 
 var/global/list/FrozenAccounts = list()
 
@@ -125,7 +125,7 @@ proc/list_frozen()
 		for (var/I in product_tokens)
 			T_list[I] = list(product_tokens[I])
 		for (var/I in T_list)
-			token_string = dd_replacetext(token_string, "%[I]%", pick(T_list[I]))
+			token_string = replacetext(token_string, "%[I]%", pick(T_list[I]))
 		return ucfirst(token_string)
 
 /datum/stockEvent
@@ -394,7 +394,7 @@ proc/list_frozen()
 	proc/generateDesignation(var/name)
 		if (length(name) <= 4)
 			return uppertext(name)
-		var/list/w = dd_text2list(name, " ")
+		var/list/w = splittext(name, " ")
 		if (w.len >= 2)
 			var/d = ""
 			for (var/i = 1; i <= min(5, w.len), i++)
@@ -523,7 +523,7 @@ var/global/datum/stockMarket/stockExchange = new
 
 	proc/detokenize(var/str)
 		for (var/T in tokens)
-			str = dd_replacetext(str, "%[T]%", pick(tokens[T]))
+			str = replacetext(str, "%[T]%", pick(tokens[T]))
 		return str
 
 	agriculture

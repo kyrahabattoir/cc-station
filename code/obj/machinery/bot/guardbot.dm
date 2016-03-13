@@ -2556,7 +2556,7 @@
 
 					if (ckey(current_tour_text))
 						if (findtext(current_tour_text, "|p")) //There are pauses present! So, um, pause.
-							var/list/tour_text_with_pauses = dd_text2list(current_tour_text, "|p")
+							var/list/tour_text_with_pauses = splittext(current_tour_text, "|p")
 							spawn (0)
 								sleep(10)
 								for (var/tour_line in tour_text_with_pauses)

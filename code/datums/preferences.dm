@@ -73,14 +73,14 @@ datum/preferences
 	proc/sanitize_name()
 		var/list/bad_characters = list("_", "'", "\"", "<", ">", ";", "\[", "\]", "{", "}", "|", "\\", "/")
 		for (var/c in bad_characters)
-			real_name = dd_replacetext(real_name, c, "")
-		var/list/namecheck = dd_text2list(trim(real_name), " ")
+			real_name = replacetext(real_name, c, "")
+		var/list/namecheck = splittext(trim(real_name), " ")
 		if (namecheck.len < 2 || length(real_name) < 5)
 			randomize_name()
 			return
 		for (var/i = 1, i <= namecheck.len, i++)
 			namecheck[i] = capitalize(namecheck[i])
-		real_name = dd_list2text(namecheck, " ")
+		real_name = jointext(namecheck, " ")
 
 	proc/update_preview_icon()
 		//qdel(src.preview_icon)
@@ -640,7 +640,7 @@ datum/preferences
 
 			var/list/bad_characters = list("_", "'", "\"", "<", ">", ";", "[", "]", "{", "}", "|", "\\", "/")
 			for (var/c in bad_characters)
-				new_profile_name = dd_replacetext(new_profile_name, c, "")
+				new_profile_name = replacetext(new_profile_name, c, "")
 
 			new_profile_name = trim(new_profile_name)
 
@@ -657,14 +657,14 @@ datum/preferences
 					new_name = input(user, "Please select a name:", "Character Generation")  as null|text
 					var/list/bad_characters = list("_", "'", "\"", "<", ">", ";", "[", "]", "{", "}", "|", "\\", "/")
 					for (var/c in bad_characters)
-						new_name = dd_replacetext(new_name, c, "")
+						new_name = replacetext(new_name, c, "")
 
 					new_name = trim(new_name)
 					if (!new_name || (lowertext(new_name) in list("unknown", "floor", "wall", "r wall")))
 						alert("That name is reserved for use by the game. Please select another.")
 						return
 					if (!usr.client.holder)
-						var/list/namecheck = dd_text2list(trim(new_name), " ")
+						var/list/namecheck = splittext(trim(new_name), " ")
 						if (namecheck.len < 2)
 							alert("Your name must have at least a First and Last name, e.g. John Smith")
 							return
@@ -673,7 +673,7 @@ datum/preferences
 							return
 						for (var/i = 1, i <= namecheck.len, i++)
 							namecheck[i] = capitalize(namecheck[i])
-						new_name = dd_list2text(namecheck, " ")
+						new_name = jointext(namecheck, " ")
 
 				if ("random")
 					if (src.gender == MALE)
@@ -892,7 +892,7 @@ datum/preferences
 			var/new_will = input(user, "Write a Will that shall appear in the event of your death. (250 max)", "Character Generation")  as text
 			var/list/bad_characters = list("_", "'", "\"", "<", ">", ";", "[", "]", "{", "}", "|", "\\", "/")
 			for (var/c in bad_characters)
-				new_will = dd_replacetext(new_will, c, "")
+				new_will = replacetext(new_will, c, "")
 
 			if (new_will)
 				if (length(new_will) > 250)

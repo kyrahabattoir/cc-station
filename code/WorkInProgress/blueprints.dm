@@ -226,20 +226,6 @@
 
 		return
 
-proc/splittext(txt as text, sep as text)
-    var
-        list/accum
-        start;end
-
-    accum = new/list()
-    start = 1
-    do
-        end = findtext(txt,sep,start)
-        accum += copytext(txt,start,end)
-        start = end + lentext(sep)
-    while(end)
-    return accum
-
 /datum/objectinfo
 	var/objecttype = null
 	var/direction = 0

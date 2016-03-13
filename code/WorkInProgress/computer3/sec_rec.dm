@@ -539,7 +539,7 @@
 					if(!data || !data["command"])
 						return
 
-					var/list/commandList = dd_text2list(data["command"], "|n")
+					var/list/commandList = splittext(data["command"], "|n")
 					if (!commandList || !commandList.len)
 						return
 

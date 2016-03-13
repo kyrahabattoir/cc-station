@@ -607,7 +607,7 @@
 			if(!string)
 				return 1
 
-			if(ckey(string) != dd_replacetext(lowertext(string), " ", null))
+			if(ckey(string) != replacetext(lowertext(string), " ", null))
 				return 1
 
 			if(findtext(string, "/"))
@@ -1594,7 +1594,7 @@
 					src.post_status(target, "command","term_connect","data","noreply","device",src.device_tag)
 				src.updateUsrDialog()
 				spawn(5) //Sign up with the driver (if a mainframe contacted us)
-					src.post_status(target,"command","term_message","data","command=register[(frequencies && frequencies.len) ? "&freqs=[dd_list2text(frequencies,",")]" : ""]")
+					src.post_status(target,"command","term_message","data","command=register[(frequencies && frequencies.len) ? "&freqs=[jointext(frequencies,",")]" : ""]")
 				return
 
 			if("term_message","term_file")
@@ -1947,7 +1947,7 @@
 						if(istype(signal.data_file, /datum/computer/file/record))
 							var/datum/computer/file/record/rec = signal.data_file
 							if (rec.fields)
-								buffer_add = dd_list2text(rec.fields, "<br>")
+								buffer_add = jointext(rec.fields, "<br>")
 						else
 							buffer_add = signal.data_file:data
 

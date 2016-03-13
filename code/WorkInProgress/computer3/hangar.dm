@@ -52,7 +52,7 @@
 			if("closeall")
 				close_all()
 			if("toggle")
-				var/door_name = ckey(dd_list2text(command_list, " "))
+				var/door_name = ckey(jointext(command_list, " "))
 				if(!door_name)
 					var/dat = "<b>Available Hangar Doors:</b><br>"
 					for(var/turf/T in get_area_turfs(HANGAR_AREATYPE))
@@ -77,7 +77,7 @@
 								return
 					src.print_text("Invalid Hangar Door!<BR>")
 			if("resetpass")
-				var/door_name = ckey(dd_list2text(command_list, " "))
+				var/door_name = ckey(jointext(command_list, " "))
 				if(!door_name)
 					var/dat = "<b>Available Hangar Doors:</b><br>"
 					for(var/turf/T in get_area_turfs(HANGAR_AREATYPE))

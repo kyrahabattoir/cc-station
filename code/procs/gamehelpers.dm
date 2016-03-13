@@ -39,28 +39,6 @@ var/list/stinkThingies = list("ass","taint","armpit","excretions","leftovers")
 		else
 			return "[pick(stinkExclamations)], it smells like \a [pick(stinkThings)]'s [pick(stinkThingies)] in here!"
 
-/proc/replacetext(haystack, needle, replace)
-    var
-        pos = findtext(haystack, needle)
-        needleLen = length(needle)
-        replaceLen = length(replace)
-    while(pos)
-        haystack = copytext(haystack, 1, pos) + replace + \
-            copytext(haystack, pos+needleLen)
-        pos = findtext(haystack, needle, pos+replaceLen)
-    return haystack
-
-/proc/replaceText(haystack, needle, replace)
-    var
-        pos = findtextEx(haystack, needle)
-        needleLen = length(needle)
-        replaceLen = length(replace)
-    while(pos)
-        haystack = copytext(haystack, 1, pos) + replace + \
-            copytext(haystack, pos+needleLen)
-        pos = findtextEx(haystack, needle, pos+replaceLen)
-    return haystack
-
 //For fuck's sake.
 /*
 /proc/bubblesort(list/L)
@@ -314,9 +292,9 @@ var/obj/item/dummy/click_dummy = new
 	if (istype(berserker,/datum/ailment_data/disease/) && berserker.stage > 1)
 		if (prob(10))
 			message = say_furious(message)
-		message = dd_replaceText(message, ".", "!")
-		message = dd_replaceText(message, ",", "!")
-		message = dd_replaceText(message, "?", "!")
+		message = replacetext(message, ".", "!")
+		message = replacetext(message, ",", "!")
+		message = replacetext(message, "?", "!")
 		message = uppertext(message)
 		var/addexc = rand(2,6)
 		while (addexc > 0)
@@ -331,7 +309,7 @@ var/obj/item/dummy/click_dummy = new
 		message = H.mutantrace.say_filter(message)
 
 #ifdef CANADADAY
-	if (prob(30)) message = dd_replaceText(message, "?", " Eh?")
+	if (prob(30)) message = replacetext(message, "?", " Eh?")
 #endif
 
 	return message

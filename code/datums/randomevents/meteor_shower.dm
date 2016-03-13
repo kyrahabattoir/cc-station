@@ -294,7 +294,8 @@ var/global/meteor_shower_active = 0
 	proc/shatter()
 		playsound(src.loc, sound_explode, 50, 1)
 		if (explodes)
-			explosion(src, get_turf(src), exp_dev, exp_hvy, exp_lit, exp_fsh)
+			spawn(1)
+				explosion(src, get_turf(src), exp_dev, exp_hvy, exp_lit, exp_fsh)
 		var/atom/source = src
 		src = null
 		qdel(source)
@@ -337,7 +338,8 @@ var/global/meteor_shower_active = 0
 	shatter()
 		playsound(src.loc, sound_explode, 50, 1)
 		if (explodes)
-			explosion(src, get_turf(src), exp_dev, exp_hvy, exp_lit, exp_fsh)
+			spawn(1)
+				explosion(src, get_turf(src), exp_dev, exp_hvy, exp_lit, exp_fsh)
 		for(var/A in alldirs)
 			if(prob(15))
 				continue

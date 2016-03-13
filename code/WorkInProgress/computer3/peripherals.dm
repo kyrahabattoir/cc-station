@@ -1025,7 +1025,7 @@
 				var/datum/signal/newsignal = get_free_signal()
 				newsignal.data["registered"] = src.authid.registered
 				newsignal.data["assignment"] = src.authid.assignment
-				newsignal.data["access"] = dd_list2text(src.authid.access, ";")
+				newsignal.data["access"] = jointext(src.authid.access, ";")
 				newsignal.data["balance"] = src.authid.money
 
 				spawn(4)

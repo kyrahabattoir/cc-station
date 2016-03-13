@@ -63,7 +63,7 @@
 
 				if (newname)
 					if (length(newname) >= 26) newname = copytext(newname, 1, 26)
-					newname = dd_replacetext(newname, ">", "'") + " the Blob"
+					newname = replacetext(newname, ">", "'") + " the Blob"
 					blob.current.real_name = newname
 					blob.current.name = newname
 

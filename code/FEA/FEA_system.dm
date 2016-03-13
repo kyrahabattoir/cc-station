@@ -161,15 +161,15 @@ datum
 				set_controller(controller)
 
 				boutput(world, "<span style=\"color:red\">Processing Geometry...</span>")
-				sleep(1)
 
 				var/start_time = world.timeofday
 
 				for(var/turf/simulated/S in world)
 					if(!S.blocks_air && !S.parent)
-						assemble_group_turf(S)
+						assemble_group_turf(S)						
 				//for(var/turf/simulated/S in world) //Update all pathing and border information as well
 					S.update_air_properties()
+					LAGCHECK(50)
 /*
 				for(var/obj/movable/floor/S in world)
 					if(!S.parent)
@@ -209,6 +209,7 @@ datum
 						if(test.length_space_border > 0)
 							possible_space_length += test.length_space_border
 						possible_members -= test
+						LAGCHECK(50)
 
 				if(members.len > 1)
 					var/datum/air_group/group = new
@@ -222,6 +223,7 @@ datum
 						test.parent = group
 						test.processing = 0
 						active_singletons -= test
+						LAGCHECK(50)
 
 					group.members = members
 					air_groups += group
@@ -280,7 +282,6 @@ datum
 				return null
 */
 			process()
-				set background = 1
 				current_cycle++
 				if(groups_to_rebuild.len > 0)
 					process_rebuild_select_groups()
@@ -298,23 +299,16 @@ datum
 
 				if(current_cycle%10==5) //Check for groups of tiles to resume group processing every 10 cycles
 
-					var/c
 					for(var/datum/air_group/AG in air_groups)
 						AG.check_regroup()
-						// There's about 700 airgroups, so this should be enough...
-						if (!(c++ % 50))
-							parent_controller.scheck()
+						LAGCHECK(90)
 
 				return 1
 
 			process_update_tiles()
-				set background = 1
-				var/c
 				for(var/turf/simulated/T in tiles_to_update)
 					T.update_air_properties()
-					// This list can be quite large, so lets not scheck like a madperson.
-					if(!(c++ % 50))
-						parent_controller.scheck()
+					LAGCHECK(90)
 
 /*
 				for(var/obj/movable/floor/O in tiles_to_update)
@@ -323,7 +317,6 @@ datum
 				tiles_to_update.len = 0
 
 			process_rebuild_select_groups()
-				set background = 1
 				var/turf/list/turfs = list()
 
 				for(var/datum/air_group/turf_AG in groups_to_rebuild) //Deconstruct groups, gathering their old members
@@ -332,20 +325,15 @@ datum
 						turfs += T
 					air_master.air_groups -= turf_AG
 					turf_AG.members.len = 0
+					LAGCHECK(90)
 
-					// This can be some expensive shit, so lets scheck every time.
-					parent_controller.scheck()
-
-				var/c
 				for(var/turf/simulated/S in turfs) //Have old members try to form new groups
 					if(!S.parent)
 						assemble_group_turf(S)
+						LAGCHECK(90)
 
 				//for(var/turf/simulated/S in turfs)
 					S.update_air_properties()
-					
-					if (!(c++ % 10))
-						parent_controller.scheck()
 
 //				var/obj/movable/list/movable_objects = list()
 /*
@@ -365,35 +353,23 @@ datum
 				groups_to_rebuild.len = 0
 
 			process_groups()
-				set background = 1
-				var/c
 				for(var/datum/air_group/AG in air_groups)
 					AG.process_group(parent_controller)
-					if (!(c++ % 50) && parent_controller)
-						parent_controller.scheck()
+					LAGCHECK(90)
 
 			process_singletons()
-				set background = 1
-				var/c
 				for(var/item in active_singletons)
 					item:process_cell()
-					
-					if (!(c++ % 20) && parent_controller)
-						parent_controller.scheck()
+					LAGCHECK(90)
 
 			process_super_conductivity()
-				set background = 1
-
 				for(var/turf/simulated/hot_potato in active_super_conductivity)
 					hot_potato.super_conduct()
-					if (parent_controller)
-						parent_controller.scheck()
+					LAGCHECK(90)
 
 			process_high_pressure_delta()
-				set background = 1
 				for(var/turf/pressurized in high_pressure_delta)
 					pressurized.high_pressure_movements()
-					if (parent_controller)
-						parent_controller.scheck()
+					LAGCHECK(90)
 
 				high_pressure_delta.len = 0

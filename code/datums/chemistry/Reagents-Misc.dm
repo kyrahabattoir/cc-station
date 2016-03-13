@@ -35,7 +35,7 @@ datum
 			proc/explode(var/turf/T, expl_reason, del_holder=1)
 				message_admins("Nitroglycerin explosion (volume = [volume]) due to [expl_reason] at [showCoords(T.x, T.y, T.z)].")
 				var/list/fh = holder.my_atom.fingerprintshidden
-				var/context = "Fingerprints: [dd_list2text(fh)]"
+				var/context = "Fingerprints: [jointext(fh, "")]"
 				logTheThing("combat", usr, null, "is associated with a nitroglycerin explosion (volume = [volume]) due to [expl_reason] at [showCoords(T.x, T.y, T.z)]. Context: [context].")
 				explosion_new(usr, T, sqrt(10 * volume), log(10 * volume, 10))
 				holder.del_reagent("nitroglycerin")

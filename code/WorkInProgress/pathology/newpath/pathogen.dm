@@ -122,7 +122,7 @@ datum/controller/pathogen
 
 	proc/patient_zero(var/datum/pathogen_cdc/CDC, var/topic_holder)
 		if (CDC.patient_zero)
-			return dd_replacetext(CDC.patient_zero_kname, "%holder%", "\ref[topic_holder]")
+			return replacetext(CDC.patient_zero_kname, "%holder%", "\ref[topic_holder]")
 
 	Topic(href, href_list)
 		var/key = usr.ckey

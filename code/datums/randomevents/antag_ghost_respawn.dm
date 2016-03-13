@@ -187,7 +187,7 @@
 						var/newname = input(B, "You are a Blob. Please choose a name for yourself, it will show in the form: <name> the Blob", "Name change") as text
 						if (B && newname)
 							if (length(newname) >= 26) newname = copytext(newname, 1, 26)
-							newname = dd_replacetext(newname, ">", "'") + " the Blob"
+							newname = replacetext(newname, ">", "'") + " the Blob"
 							B.real_name = newname
 							B.name = newname
 

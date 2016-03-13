@@ -73,3 +73,5 @@ proc/__btime__timeofhour()
 #endif
 
 #define CLAMP(V, MN, MX) max(MN, min(MX, V))
+
+#define LAGCHECK(x) if (world.tick_usage > x) sleep(world.tick_lag)

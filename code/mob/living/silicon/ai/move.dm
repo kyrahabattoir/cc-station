@@ -32,7 +32,7 @@
 	if (!A)
 		return
 
-	var/list/old_types = dd_text2list("[A.type]", "/")
+	var/list/old_types = splittext("[A.type]", "/")
 
 	for(var/obj/machinery/camera/current in machines)
 		if(current.qdeled || current.disposed || old.z != current.z)
@@ -57,7 +57,7 @@
 		if (!cur_area)
 			continue
 
-		var/list/new_types = dd_text2list("[cur_area.type]", "/")
+		var/list/new_types = splittext("[cur_area.type]", "/")
 		for(var/i = 1; i <= old_types.len && i <= new_types.len; i++)
 			if(old_types[i] == new_types[i])
 				shared_types++
@@ -130,7 +130,7 @@
 		if (!A)
 			return
 
-		var/list/old_types = dd_text2list("[A.type]", "/")
+		var/list/old_types = splittext("[A.type]", "/")
 
 		for(var/obj/machinery/camera/current in machines)
 			if(user.network != current.network)
@@ -158,7 +158,7 @@
 			if (!cur_area)
 				continue
 
-			var/list/new_types = dd_text2list("[cur_area.type]", "/")
+			var/list/new_types = splittext("[cur_area.type]", "/")
 			for(var/i = 1; i <= old_types.len && i <= new_types.len; i++)
 				if(old_types[i] == new_types[i])
 					shared_types++

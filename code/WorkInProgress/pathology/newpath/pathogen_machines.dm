@@ -481,7 +481,7 @@
 		gui.sendToSubscribers({"{"splice":{"source":[sOut],"target":[tOut],"pred":[predictive_data],"selSource":[src.manip.sel_source],"selTarget":[src.manip.sel_target],"selected":[src.manip.splicesource]}}"}, "setUIState")
 
 	proc/sendAnalysisData()
-		var/out = {"{"analysis":{"curr":"[src.manip.analysis]","predeffect":[db.certainty],"buttons":"[dd_list2text(src.manip.analysis_list,"")]""}
+		var/out = {"{"analysis":{"curr":"[src.manip.analysis]","predeffect":[db.certainty],"buttons":"[jointext(src.manip.analysis_list,"")]""}
 		if(src.manip.last_analysis)
 			out += {","prev":[src.manip.last_analysis]"}
 		out += "}}"

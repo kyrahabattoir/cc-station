@@ -1441,7 +1441,7 @@ var/list/ai_emotions = list("Happy" = "ai_happy",\
 	return
 
 /mob/living/silicon/ai/proc/announce_arrival(var/name, var/rank)
-	var/message = dd_replacetext(dd_replacetext(dd_replacetext(src.arrivalalert, "$STATION", "[station_name()]"), "$JOB", rank), "$NAME", name)
+	var/message = replacetext(replacetext(replacetext(src.arrivalalert, "$STATION", "[station_name()]"), "$JOB", rank), "$NAME", name)
 	src.say( message )
 	logTheThing("say", src, null, "SAY: [message]")
 

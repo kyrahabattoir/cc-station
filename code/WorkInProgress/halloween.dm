@@ -692,7 +692,7 @@
 		var/scramblemode = rand(1,10)
 		switch(scramblemode)
 			if (5)
-				var/list/stutterList = dd_text2list(message, " ")
+				var/list/stutterList = splittext(message, " ")
 				if (stutterList.len > 1)
 					var/stutterPoint = rand( round(stutterList.len/2), stutterList.len )
 					stutterList.len = stutterPoint
@@ -706,13 +706,13 @@
 							message += "-[uppertext(stutterList[stutterList.len])]"
 
 			if (6)
-				var/list/bzztList = dd_text2list(message, " ")
+				var/list/bzztList = splittext(message, " ")
 				if (bzztList.len > 1)
 					for (var/i = 1, i <= bzztList.len, i++)
 						if (prob( min(5*i, 20) ))
 							bzztList[i] = pick("*BZZT*","*ERRT*","*WONK*", "*ZORT*", "*BWOP*", "BWEET")
 
-					message = dd_list2text(bzztList, " ")
+					message = jointext(bzztList, " ")
 
 			if (7)
 				for(var/mob/O in hearers(src, null))

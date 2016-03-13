@@ -44,11 +44,10 @@
 	// process running again.
 	var/tmp/schedule_interval = PROCESS_DEFAULT_SCHEDULE_INTERVAL // run every 50 ticks
 
-	// Process sleep interval
-	// This controls how often the process will yield (call sleep(0)) while it is running.
-	// Every concurrent process should sleep periodically while running in order to allow other
-	// processes to execute concurrently.
-	var/tmp/sleep_interval
+	// Process tick allowance
+	// This controls what percentage a single tick (0 to 100) the process should be
+	// allowed to run before sleeping.
+	var/tmp/tick_allowance = PROCESS_DEFAULT_TICK_ALLOWANCE
 
 	// hang_warning_time - this is the time (in 1/10 seconds) after which the server will begin to show "maybe hung" in the context window
 	var/tmp/hang_warning_time = PROCESS_DEFAULT_HANG_WARNING_TIME
@@ -58,9 +57,6 @@
 
 	// hang_restart_time - After this much time(in 1/10 seconds), the server will automatically kill and restart the process.
 	var/tmp/hang_restart_time = PROCESS_DEFAULT_HANG_RESTART_TIME
-
-	// cpu_threshold - if world.cpu >= cpu_threshold, scheck() will call sleep(1) to defer further work until the next tick. This keeps a process from driving a tick into overtime (causing perceptible lag)
-	var/tmp/cpu_threshold = PROCESS_DEFAULT_CPU_THRESHOLD
 
 	// How many times in the current run has the process deferred work till the next tick?
 	var/tmp/cpu_defer_count = 0
@@ -74,6 +70,18 @@
 
 	// Records the time (1/10s timeofday) at which the process last began running
 	var/tmp/run_start = 0
+
+	// Records the world.tick_usage (0 to 100) at which the process last began running
+	/var/tmp/tick_start = 0
+	
+	// Records the total usage of the current run, each 100 = 1 byond tick
+	/var/tmp/current_usage = 0
+	
+	// Records the total usage of the last run, each 100 = 1 byond tick
+	/var/tmp/last_usage = 0	
+	
+	// Records the total usage over the life of the process, each 100 = 1 byond tick
+	/var/tmp/total_usage = 0
 
 	// Records the number of times this process has been killed and restarted
 	var/tmp/times_killed
@@ -92,19 +100,28 @@ datum/controller/process/New(var/datum/controller/processScheduler/scheduler)
 	idle()
 	name = "process"
 	schedule_interval = 50
-	sleep_interval = world.tick_lag / PROCESS_DEFAULT_SLEEP_INTERVAL
 	last_slept = 0
 	run_start = 0
+	tick_start = 0
+	current_usage = 0
+	last_usage = 0
+	total_usage = 0
 	ticks = 0
 	last_task = 0
 	last_object = null
 
 datum/controller/process/proc/started()
-	// Initialize last_slept so we can know when to sleep
+	// Initialize last_slept so we can record timing information
 	last_slept = TimeOfHour
 
 	// Initialize run_start so we can detect hung processes.
 	run_start = TimeOfHour
+
+	// Initialize tick_start so we can know when to sleep
+	tick_start = world.tick_usage
+	
+	// Initialize the cpu usage counter
+	current_usage = 0
 
 	// Initialize defer count
 	cpu_defer_count = 0
@@ -116,8 +133,11 @@ datum/controller/process/proc/started()
 
 datum/controller/process/proc/finished()
 	ticks++
+	current_usage += main.world.tick_usage - tick_start
+	last_usage = current_usage
+	current_usage = 0
 	idle()
-	main.processFinished(src)
+	main.processFinished(src)	
 
 	onFinish()
 
@@ -197,20 +217,16 @@ datum/controller/process/proc/scheck(var/tickId = 0)
 
 	// For each tick the process defers, it increments the cpu_defer_count so we don't
 	// defer indefinitely
-	if (main.getCurrentTickElapsedTime() > main.timeAllowance)
-		sleep(world.tick_lag*1)
+	if (world.tick_usage > 100 || main.world.tick_usage > tick_start + tick_allowance)
+		current_usage += main.world.tick_usage - tick_start
+		sleep(world.tick_lag*(main.running.len + main.queued.len))
 		cpu_defer_count++
 		last_slept = TimeOfHour
-	else
-		var/t = TimeOfHour
-		// If world.timeofday has rolled over, then we need to adjust.
-		if (t < last_slept)
-			last_slept -= 36000
+		tick_start = world.tick_usage
 
-		if (t > last_slept + sleep_interval)
-			// If we haven't slept in sleep_interval deciseconds, sleep to allow other work to proceed.
-			sleep(0)
-			last_slept = TimeOfHour
+		return 1
+
+	return 0
 
 datum/controller/process/proc/update()
 	// Clear delta
@@ -229,11 +245,13 @@ datum/controller/process/proc/update()
 	else if (elapsedTime > hang_warning_time)
 		setStatus(PROCESS_STATUS_MAYBE_HUNG)
 
-
 datum/controller/process/proc/getElapsedTime()
 	if (TimeOfHour < run_start)
 		return TimeOfHour - (run_start - 36000)
 	return TimeOfHour - run_start
+
+datum/controller/process/proc/getAverageUsage()
+	
 
 datum/controller/process/proc/tickDetail()
 	return
@@ -293,9 +311,11 @@ datum/controller/process/proc/_copyStateFrom(var/datum/controller/process/target
 	main = target.main
 	name = target.name
 	schedule_interval = target.schedule_interval
-	sleep_interval = target.sleep_interval
 	last_slept = 0
 	run_start = 0
+	tick_start = 0	
+	last_usage = 0
+	total_usage = 0
 	times_killed = target.times_killed
 	ticks = target.ticks
 	last_task = target.last_task

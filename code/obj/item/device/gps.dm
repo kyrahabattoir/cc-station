@@ -173,7 +173,7 @@
 
 	attack_ai(mob/user as mob)
 		var/t = input(user, "Enter new beacon identification name", src.sname) as text
-		t = strip_html(dd_replacetext(t, "'",""))
+		t = strip_html(replacetext(t, "'",""))
 		t = copytext(t, 1, 45)
 		if (!t)
 			return

@@ -5,12 +5,11 @@
 		alert("UM, EXCUSE ME??  YOU AREN'T AN ADMIN, GET DOWN FROM THERE!")
 		usr << sound('sound/misc/poo2.ogg')
 		return
-	var/dat = text("")
-	dat += text("")
-	var/query = text("")
+	var/dat = ""
+	dat += ""
+	var/query = ""
 	query += config.player_notes_baseurl
-	query += "playernotes.php?action=getnotes&ckey="
-	query += text("[player]")
+	query += "playernotes.php?action=getnotes&ckey=[player]"
 	var/http[] = world.Export(url_encode(query,1))
 
 	if(!http)
@@ -29,16 +28,13 @@
 		usr << browse(dat, "window=notesp;size=875x400")
 		return
 
-	var/content = text("")
+	var/content = ""
 	content += file2text(http["CONTENT"])
-	var/deletelinkpre = text("<A href='?src=\ref[src];action=notes2;target=[player];type=del;id=")
-	var/deletelinkpost = text("'>(DEL)")
-	var/regex/R = new("/!!ID(\\d+)/[deletelinkpre]$1[deletelinkpost]/")
+	var/deletelinkpre = "<A href='?src=\ref[src];action=notes2;target=[player];type=del;id="
+	var/deletelinkpost = "'>(DEL)"
 
-	var/newcontent = R.Replace(content)
-	while(newcontent)
-		content = newcontent
-		newcontent = R.ReplaceNext(content)
+	var/regex/R = new("!!ID(\\d+)", "g")
+	content = R.Replace(content, "[deletelinkpre]$1[deletelinkpost]")
 
 	dat += content
 	dat = "<h1>Player Notes for <b>[player]</b></h1><HR></FONT><br><A href='?src=\ref[src];action=notes2;target=[player];type=add'>Add Note</A><br><HR>[dat]"
@@ -57,8 +53,8 @@
 	else
 		server = "server"
 
-	notetext = dd_replacetext(notetext, "'", " ")
-	notetext = dd_replacetext(notetext, "\"", " ")
+	notetext = replacetext(notetext, "'", " ")
+	notetext = replacetext(notetext, "\"", " ")
 
 	var/note = notetext
 	var/query = text("")

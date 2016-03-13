@@ -116,7 +116,7 @@
 			else
 				count_part = "[remissive] of them appear"
 			pathogen_data += "<br>&emsp;<span style='color:red'>[count_part] to be in a remissive state.</span>"
-			pathogen_data += "<br><span style='font-weight:bold'>Suggested pathogen suppression therapies: [dd_list2text(therapy, ", ")]."
+			pathogen_data += "<br><span style='font-weight:bold'>Suggested pathogen suppression therapies: [jointext(therapy, ", ")]."
 
 		if (H.organHolder)
 			if (H.organHolder.brain)

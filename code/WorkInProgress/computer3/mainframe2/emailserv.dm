@@ -18,7 +18,7 @@
 		//boutput(world, "[initparams]")
 
 		var/command = null
-		var/list/initlist = dd_text2list(initparams, " ")
+		var/list/initlist = splittext(initparams, " ")
 		if (!initparams || !initlist.len)
 			command = "index"
 		else
@@ -36,7 +36,7 @@
 				var/list/mail_subjects = list_mail_subjects(user_name, group)
 				var/message = "mail_index"
 				if (mail_subjects.len)
-					message += "|n" + dd_list2text(mail_subjects, "|n")
+					message += "|n" + jointext(mail_subjects, "|n")
 				message_user(message, "record")
 
 			if ("get")

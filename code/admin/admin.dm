@@ -17,25 +17,25 @@ var/global/noir = 0
 				continue
 			if (M.client.player_mode)
 				if (asay && M.client.player_mode_asay)
-					boutput(M, dd_replaceText(rendered, "%admin_ref%", "\ref[M.client.holder]"))
+					boutput(M, replacetext(rendered, "%admin_ref%", "\ref[M.client.holder]"))
 				else
 					continue
 			else
-				boutput(M, dd_replaceText(rendered, "%admin_ref%", "\ref[M.client.holder]")) //this doesnt fail if the placeholder doesnt exist ok dont worry
+				boutput(M, replacetext(rendered, "%admin_ref%", "\ref[M.client.holder]")) //this doesnt fail if the placeholder doesnt exist ok dont worry
 		sleep(-1)
 
 /proc/message_coders(var/text) //Shamelessly adapted from message_admins
 	var/rendered = "<span class=\"admin\"><span class=\"prefix\">CODER LOG:</span> <span class=\"message\">[text]</span></span>"
 	for (var/mob/M in mobs)
 		if (M && M.client && M.client.holder && rank_to_level(M.client.holder.rank) >= LEVEL_CODER) //This is for edge cases where a coder needs a goddamn notification when it happens
-			boutput(M, dd_replaceText(rendered, "%admin_ref%", "\ref[M.client.holder]"))
+			boutput(M, replacetext(rendered, "%admin_ref%", "\ref[M.client.holder]"))
 		sleep(-1)
 
 /proc/message_attack(var/text) //Sends a message to folks when an attack goes down
 	var/rendered = "<span class=\"admin\"><span class=\"prefix\">ATTACK LOG:</span> <span class=\"message\">[text]</span></span>"
 	for (var/mob/M in mobs)
 		if (M && M.client && M.client.holder && rank_to_level(M.client.holder.rank) >= LEVEL_MOD && M.client.holder.attacktoggle && !M.client.player_mode)
-			boutput(M, dd_replaceText(rendered, "%admin_ref%", "\ref[M.client.holder]"))
+			boutput(M, replacetext(rendered, "%admin_ref%", "\ref[M.client.holder]"))
 		sleep(-1)
 
 /proc/rank_to_level(var/rank)
@@ -350,9 +350,9 @@ var/global/noir = 0
 				if(job in list("Tourist","Mining Supervisor","Atmospheric Technician","Vice Officer"))
 					continue
 				if(jobban_isbanned(M, job))
-					jobs += "<a href='?src=\ref[src];action=jobban;type=[job];target=\ref[M]'><font color=red>[dd_replacetext(job, " ", "&nbsp")]</font></a> "
+					jobs += "<a href='?src=\ref[src];action=jobban;type=[job];target=\ref[M]'><font color=red>[replacetext(job, " ", "&nbsp")]</font></a> "
 				else
-					jobs += "<a href='?src=\ref[src];action=jobban;type=[job];target=\ref[M]'>[dd_replacetext(job, " ", "&nbsp")]</a> " //why doesn't this work the stupid cunt
+					jobs += "<a href='?src=\ref[src];action=jobban;type=[job];target=\ref[M]'>[replacetext(job, " ", "&nbsp")]</a> " //why doesn't this work the stupid cunt
 
 			if(jobban_isbanned(M, "Captain"))
 				jobs += "<a href='?src=\ref[src];action=jobban;type=Captain;target=\ref[M]'><font color=red>Captain</font></a> "
@@ -365,39 +365,39 @@ var/global/noir = 0
 				jobs += "<a href='?src=\ref[src];action=jobban;type=Head of Security;target=\ref[M]'>Head of Security</a> "
 
 			if(jobban_isbanned(M, "Syndicate"))
-				jobs += "<BR><a href='?src=\ref[src];action=jobban;type=Syndicate;target=\ref[M]'><font color=red>[dd_replacetext("Syndicate", " ", "&nbsp")]</font></a> "
+				jobs += "<BR><a href='?src=\ref[src];action=jobban;type=Syndicate;target=\ref[M]'><font color=red>[replacetext("Syndicate", " ", "&nbsp")]</font></a> "
 			else
-				jobs += "<BR><a href='?src=\ref[src];action=jobban;type=Syndicate;target=\ref[M]'>[dd_replacetext("Syndicate", " ", "&nbsp")]</a> " //why doesn't this work the stupid cunt
+				jobs += "<BR><a href='?src=\ref[src];action=jobban;type=Syndicate;target=\ref[M]'>[replacetext("Syndicate", " ", "&nbsp")]</a> " //why doesn't this work the stupid cunt
 
 			if(jobban_isbanned(M, "Special Respawn"))
-				jobs += " <a href='?src=\ref[src];action=jobban;type=Special Respawn;target=\ref[M]'><font color=red>[dd_replacetext("Special Respawn", " ", "&nbsp")]</font></a> "
+				jobs += " <a href='?src=\ref[src];action=jobban;type=Special Respawn;target=\ref[M]'><font color=red>[replacetext("Special Respawn", " ", "&nbsp")]</font></a> "
 			else
-				jobs += " <a href='?src=\ref[src];action=jobban;type=Special Respawn;target=\ref[M]'>[dd_replacetext("Special Respawn", " ", "&nbsp")]</a> "
+				jobs += " <a href='?src=\ref[src];action=jobban;type=Special Respawn;target=\ref[M]'>[replacetext("Special Respawn", " ", "&nbsp")]</a> "
 
 			if(jobban_isbanned(M, "Engineering Department"))
-				jobs += "<BR><a href='?src=\ref[src];action=jobban;type=Engineering Department;target=\ref[M]'><font color=red>[dd_replacetext("Engineering Department", " ", "&nbsp")]</font></a> "
+				jobs += "<BR><a href='?src=\ref[src];action=jobban;type=Engineering Department;target=\ref[M]'><font color=red>[replacetext("Engineering Department", " ", "&nbsp")]</font></a> "
 			else
-				jobs += "<BR><a href='?src=\ref[src];action=jobban;type=Engineering Department;target=\ref[M]'>[dd_replacetext("Engineering Department", " ", "&nbsp")]</a> "
+				jobs += "<BR><a href='?src=\ref[src];action=jobban;type=Engineering Department;target=\ref[M]'>[replacetext("Engineering Department", " ", "&nbsp")]</a> "
 
 			if(jobban_isbanned(M, "Security Department"))
-				jobs += "<BR><a href='?src=\ref[src];action=jobban;type=Security Department;target=\ref[M]'><font color=red>[dd_replacetext("Security Department", " ", "&nbsp")]</font></a> "
+				jobs += "<BR><a href='?src=\ref[src];action=jobban;type=Security Department;target=\ref[M]'><font color=red>[replacetext("Security Department", " ", "&nbsp")]</font></a> "
 			else
-				jobs += "<BR><a href='?src=\ref[src];action=jobban;type=Security Department;target=\ref[M]'>[dd_replacetext("Security Department", " ", "&nbsp")]</a> "
+				jobs += "<BR><a href='?src=\ref[src];action=jobban;type=Security Department;target=\ref[M]'>[replacetext("Security Department", " ", "&nbsp")]</a> "
 
 			if(jobban_isbanned(M, "Heads of Staff"))
-				jobs += "<BR><a href='?src=\ref[src];action=jobban;type=Heads of Staff;target=\ref[M]'><font color=red>[dd_replacetext("Heads of Staff", " ", "&nbsp")]</font></a> "
+				jobs += "<BR><a href='?src=\ref[src];action=jobban;type=Heads of Staff;target=\ref[M]'><font color=red>[replacetext("Heads of Staff", " ", "&nbsp")]</font></a> "
 			else
-				jobs += "<BR><a href='?src=\ref[src];action=jobban;type=Heads of Staff;target=\ref[M]'>[dd_replacetext("Heads of Staff", " ", "&nbsp")]</a> "
+				jobs += "<BR><a href='?src=\ref[src];action=jobban;type=Heads of Staff;target=\ref[M]'>[replacetext("Heads of Staff", " ", "&nbsp")]</a> "
 
 			if(jobban_isbanned(M, "Everything Except Assistant"))
-				jobs += "<BR><a href='?src=\ref[src];action=jobban;type=Everything Except Assistant;target=\ref[M]'><font color=red>[dd_replacetext("Everything Except Assistant", " ", "&nbsp")]</font></a> "
+				jobs += "<BR><a href='?src=\ref[src];action=jobban;type=Everything Except Assistant;target=\ref[M]'><font color=red>[replacetext("Everything Except Assistant", " ", "&nbsp")]</font></a> "
 			else
-				jobs += "<BR><a href='?src=\ref[src];action=jobban;type=Everything Except Assistant;target=\ref[M]'>[dd_replacetext("Everything Except Assistant", " ", "&nbsp")]</a> "
+				jobs += "<BR><a href='?src=\ref[src];action=jobban;type=Everything Except Assistant;target=\ref[M]'>[replacetext("Everything Except Assistant", " ", "&nbsp")]</a> "
 
 			if(jobban_isbanned(M, "Custom Names"))
-				jobs += "<BR><a href='?src=\ref[src];action=jobban;type=Custom Names;target=\ref[M]'><font color=red>[dd_replacetext("Having a Custom Name", " ", "&nbsp")]</font></a> "
+				jobs += "<BR><a href='?src=\ref[src];action=jobban;type=Custom Names;target=\ref[M]'><font color=red>[replacetext("Having a Custom Name", " ", "&nbsp")]</font></a> "
 			else
-				jobs += "<BR><a href='?src=\ref[src];action=jobban;type=Custom Names;target=\ref[M]'>[dd_replacetext("Having a Custom Name", " ", "&nbsp")]</a> "
+				jobs += "<BR><a href='?src=\ref[src];action=jobban;type=Custom Names;target=\ref[M]'>[replacetext("Having a Custom Name", " ", "&nbsp")]</a> "
 
 
 			body = "<br>[jobs]<br><br>"
@@ -1100,7 +1100,7 @@ var/global/noir = 0
 
 		if ("jumptocoords")
 			if(src.level >= LEVEL_SA)
-				var/list/coords = dd_text2list(href_list["target"], ",")
+				var/list/coords = splittext(href_list["target"], ",")
 				if (coords.len < 3) return
 				usr.client.jumptocoord(text2num(coords[1]), text2num(coords[2]), text2num(coords[3]))
 			else
@@ -1524,7 +1524,7 @@ var/global/noir = 0
 
 							if (newname)
 								if (length(newname) >= 26) newname = copytext(newname, 1, 26)
-								newname = dd_replacetext(newname, ">", "'") + " the Blob"
+								newname = replacetext(newname, ">", "'") + " the Blob"
 								B.real_name = newname
 								B.name = newname
 
@@ -1812,10 +1812,10 @@ var/global/noir = 0
 						alert("Select five or less object types only, you colossal ass!")
 						return
 					else if (length(removed_paths))
-						alert("Spawning of these objects is blocked:\n" + dd_list2text(removed_paths, "\n"))
+						alert("Spawning of these objects is blocked:\n" + jointext(removed_paths, "\n"))
 						return
 
-					var/list/offset = dd_text2list(href_list["offset"],",")
+					var/list/offset = splittext(href_list["offset"],",")
 					var/number = dd_range(1, 100, text2num(href_list["object_count"]))
 					var/X = offset.len > 0 ? text2num(offset[1]) : 0
 					var/Y = offset.len > 1 ? text2num(offset[2]) : 0
@@ -2829,15 +2829,15 @@ var/global/noir = 0
 				else if (preSearch)
 					gettxt = preSearch
 
-				logType = dd_replaceText(logType, "_string", "")
-				logType = dd_replaceText(logType, "_log", "")
-				var/prettyLogName = dd_replaceText(logType, "_", " ")
+				logType = replacetext(logType, "_string", "")
+				logType = replacetext(logType, "_log", "")
+				var/prettyLogName = replacetext(logType, "_", " ")
 				if (prettyLogName == "alls") prettyLogName = "all"
 				var/foundCount = 0
 				if (logType == "alls")
 					for (var/log in logs)
 						var/list/logList = logs[log]
-						prettyLogName = dd_replaceText(log, "_", " ")
+						prettyLogName = replacetext(log, "_", " ")
 						var/searchData
 						var/found
 						for (var/l in logList)
@@ -2865,9 +2865,9 @@ var/global/noir = 0
 					dat += "</table>"
 
 				dat = "<tr><td colspan='3' class='header text-normal [logType]'><b>Logs</b>[gettxt ? " (Searched for '[gettxt]')" : ""]. Found <b>[foundCount]</b> results.</td></tr>" + dat
-				dat = dd_replaceText(dat, "%admin_ref%", "\ref[src]")
+				dat = replacetext(dat, "%admin_ref%", "\ref[src]")
 				var/adminLogHtml = grabResource("html/admin/admin_log.html")
-				adminLogHtml = dd_replacetext(adminLogHtml, "<!-- TABLE GOES HERE -->", "[dat]")
+				adminLogHtml = replacetext(adminLogHtml, "<!-- TABLE GOES HERE -->", "[dat]")
 				usr << browse(adminLogHtml, "window=[logType]_log;size=750x500")
 			else
 				alert("You cannot perform this action. You must be of a higher administrative rank!", null, null, null, null, null)
@@ -2895,9 +2895,9 @@ var/global/noir = 0
 				dat += "</table>"
 
 				dat = "<tr><td colspan='3' class='header text-normal [logType]'><b>Logs</b>[gettxt ? " (Searched for '[gettxt]')" : ""]. Found <b>[foundCount]</b> results.</td></tr>" + dat
-				dat = dd_replaceText(dat, "%admin_ref%", "\ref[src]")
+				dat = replacetext(dat, "%admin_ref%", "\ref[src]")
 				var/adminLogHtml = grabResource("html/admin/admin_log.html")
-				adminLogHtml = dd_replacetext(adminLogHtml, "<!-- TABLE GOES HERE -->", "[dat]")
+				adminLogHtml = replacetext(adminLogHtml, "<!-- TABLE GOES HERE -->", "[dat]")
 				usr << browse(adminLogHtml, "window=[logType]_log;size=750x500")
 
 		if ("s_rez")
@@ -3087,8 +3087,8 @@ var/global/noir = 0
 		return
 
 	if (alert("Fix a corrupted local panel or force a complete rebuild of the server's panel?","Select Rebuild Type","Local Fix","Server Rebuild") == "Local Fix")
-		var/jobban_dialog_text = dd_replacetext(grabResource("html/admin/jobbans_list.html"), "null /* raw_bans */", "\"[global_jobban_cache]\"");
-		usr << browse(dd_replacetext(jobban_dialog_text, "null /* ref_src */", "\"\ref[src]\""),"file=jobbans.html;display=0")
+		var/jobban_dialog_text = replacetext(grabResource("html/admin/jobbans_list.html"), "null /* raw_bans */", "\"[global_jobban_cache]\"");
+		usr << browse(replacetext(jobban_dialog_text, "null /* ref_src */", "\"\ref[src]\""),"file=jobbans.html;display=0")
 		current_jobbans_rev = global_jobban_cache_rev
 		jobbans_last_cached = world.timeofday
 		boutput(usr, "Refresh complete, your panel now matches the server's. If you need to edit a ban that was created after the build time shown please do a server rebuild.")
@@ -3117,8 +3117,8 @@ var/global/noir = 0
 	set background = 1
 	if (src.level >= LEVEL_CODER)
 		if (current_jobbans_rev == 0 || current_jobbans_rev < global_jobban_cache_rev) // the cache is newer than our panel
-			var/jobban_dialog_text = dd_replacetext(grabResource("html/admin/jobbans_list.html"), "null /* raw_bans */", "\"[global_jobban_cache]\"");
-			usr << browse(dd_replacetext(jobban_dialog_text, "null /* ref_src */", "\"\ref[src]\""),"file=jobbans.html;display=0")
+			var/jobban_dialog_text = replacetext(grabResource("html/admin/jobbans_list.html"), "null /* raw_bans */", "\"[global_jobban_cache]\"");
+			usr << browse(replacetext(jobban_dialog_text, "null /* ref_src */", "\"\ref[src]\""),"file=jobbans.html;display=0")
 			current_jobbans_rev = global_jobban_cache_rev
 			jobbans_last_cached = world.timeofday
 

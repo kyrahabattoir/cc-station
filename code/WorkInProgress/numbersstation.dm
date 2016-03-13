@@ -278,7 +278,7 @@ var/global/datum/numbers_station/lincolnshire = new
 		var/TP = ldata["numbers"]
 		if (TP == null)
 			return 1
-		var/list/nums = dd_text2list(TP, " ")
+		var/list/nums = splittext(TP, " ")
 		if (nums.len < 21)
 			logTheThing("debug", null, null, "<b>Numbers station</b> got too few numbers.")
 			return 2

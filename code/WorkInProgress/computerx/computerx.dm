@@ -367,7 +367,7 @@ var/compx_gridx_max = 5
 	set name = ".compcommand"
 
 	//boutput(world, "compx command: \"[commandstring]\"")
-	var/list/commands = dd_text2list(commandstring,"%")
+	var/list/commands = splittext(commandstring,"%")
 	if(commands.len < 2)
 		return
 	var/command = commands[2]

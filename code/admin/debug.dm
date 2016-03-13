@@ -252,6 +252,7 @@
 			if (listargs == null) return
 
 		for (var/atom/theinstance in world)
+			LAGCHECK(80)
 			if (!istype(theinstance, thetype))
 				continue
 			counter++
@@ -422,19 +423,46 @@
 	for(var/V in blocked)
 		if(V == hsbitem)
 			boutput(usr, "Can't delete that you jerk!")
-			return
+			return	
 	if(hsbitem)
+		src.delete_state = DELETE_RUNNING
+		src.verbs += /client/proc/cmd_debug_del_all_cancel
+		src.verbs += /client/proc/cmd_debug_del_all_check
+		boutput(usr, "Deleting [hsbitem]...")
 		var/numdeleted = 0
 		for(var/atom/O in world)
 			if(istype(O, hsbitem))
-				qdel(O)
+				del(O)
 				numdeleted ++
+			LAGCHECK(80)
+			if (src.delete_state == DELETE_STOP)
+				break
+			else if (src.delete_state == DELETE_CHECK)
+				boutput(usr, "Deleted [numdeleted] instances of [hsbitem] so far.")
+				src.delete_state = DELETE_RUNNING
+		
 		if(numdeleted == 0) boutput(usr, "No instances of [hsbitem] found!")
 		else boutput(usr, "Deleted [numdeleted] instances of [hsbitem]!")
-		logTheThing("admin", src, null, "has deleted all instances of [hsbitem].")
-		logTheThing("diary", src, null, "has deleted all instances of [hsbitem].", "admin")
-		message_admins("[key_name(src)] has deleted all instances of [hsbitem].")
+		logTheThing("admin", src, null, "has deleted [numdeleted] instances of [hsbitem].")
+		logTheThing("diary", src, null, "has deleted [numdeleted] instances of [hsbitem].", "admin")
+		message_admins("[key_name(src)] has deleted [numdeleted] instances of [hsbitem].")
+		src.verbs -= /client/proc/cmd_debug_del_all_cancel
+		src.verbs -= /client/proc/cmd_debug_del_all_check
+		src.delete_state = DELETE_STOP
 
+// cancels your del_all in process, if one is running
+/client/proc/cmd_debug_del_all_cancel()
+	set category = "Debug"
+	set name = "Del-All Cancel"
+	
+	src.delete_state = DELETE_STOP
+
+// makes del_all print how much is currently deleted
+/client/proc/cmd_debug_del_all_check()
+	set category = "Debug"
+	set name = "Del-All Progress"
+	
+	src.delete_state = DELETE_CHECK
 
 // fuck this
 // fuck
@@ -651,7 +679,7 @@ body
 		usr.show_text("\The [O] does not have a reagent holder or is empty.", "red")
 
 /client/proc/showMyCoords(var/x, var/y, var/z)
-	return dd_replaceText(showCoords(x,y,z), "%admin_ref%", "\ref[src.holder]")
+	return replacetext(showCoords(x,y,z), "%admin_ref%", "\ref[src.holder]")
 
 /client/proc/print_instance(var/atom/theinstance)
 	if (isarea(theinstance))

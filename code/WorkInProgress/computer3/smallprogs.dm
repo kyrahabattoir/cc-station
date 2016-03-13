@@ -128,7 +128,7 @@
 						src.print_text("\[[x]] [part]")
 
 			if("save")
-				var/new_name = strip_html(dd_list2text(command_list, " "))
+				var/new_name = strip_html(jointext(command_list, " "))
 				new_name = copytext(new_name, 1, 16)
 
 				if(!new_name)
@@ -590,7 +590,7 @@ file_save - Save file to local disk."}
 			if ("file_load")
 				var/toLoadName = "temp"
 				if (command_list.len)
-					toLoadName = dd_list2text(command_list, "")
+					toLoadName = jointext(command_list, "")
 
 				var/datum/computer/file/loadedFile = parse_file_directory(toLoadName,src.holding_folder)
 
@@ -609,7 +609,7 @@ file_save - Save file to local disk."}
 
 				var/toSaveName = "temp"
 				if (command_list.len)
-					toSaveName = dd_list2text(command_list, "")
+					toSaveName = jointext(command_list, "")
 
 				var/datum/computer/file/record/saved = get_file_name(toSaveName, src.holding_folder)
 				if(saved || get_folder_name(toSaveName, src.holding_folder))
@@ -644,7 +644,7 @@ file_save - Save file to local disk."}
 
 				var/sendText = "login"
 				if (command_list.len)
-					sendText = dd_list2text(command_list, " ")
+					sendText = jointext(command_list, " ")
 
 				src.send_term_message(sendText, 1)
 				src.print_text("File sent.")
@@ -771,11 +771,11 @@ file_save - Save file to local disk."}
 							src.master.temp = null
 
 						if("multiline") //Oh, they want multiple lines of stuff.
-							new_message = dd_replacetext(new_message, "|n", "<br>]")
+							new_message = replacetext(new_message, "|n", "<br>]")
 
 						if ("multiline|clear","clear|multiline") //Both of the above!
 							src.master.temp = null
-							new_message = dd_replacetext(new_message, "|n", "<br>]")
+							new_message = replacetext(new_message, "|n", "<br>]")
 
 					src.print_text("][new_message]")
 					return
@@ -905,7 +905,7 @@ file_save - Save file to local disk."}
 					command_list -= command_list[1]
 					key = copytext(lowertext(strip_html(key)), 1, 128)
 
-					data = dd_list2text(command_list, " ")
+					data = jointext(command_list, " ")
 					data = copytext(strip_html(data), 1, 256)
 
 				if(!ckey(key) || ckey(!data))
@@ -970,7 +970,7 @@ file_save - Save file to local disk."}
 				return
 
 			if ("save")
-				var/new_name = strip_html(dd_list2text(command_list, " "))
+				var/new_name = strip_html(jointext(command_list, " "))
 				new_name = copytext(new_name, 1, 16)
 
 				if(!new_name)
@@ -1001,7 +1001,7 @@ file_save - Save file to local disk."}
 				src.print_text("Record \"[new_name]\" saved.")
 
 			if ("load")
-				var/file_name = ckey(dd_list2text(command_list, " "))
+				var/file_name = ckey(jointext(command_list, " "))
 
 				if(!file_name)
 					src.print_text("Syntax: \"LOAD \[file name]\"")
@@ -1023,7 +1023,7 @@ file_save - Save file to local disk."}
 				src.print_text("Signal cleared.")
 
 			if ("file")
-				var/file_name = ckey(dd_list2text(command_list, " "))
+				var/file_name = ckey(jointext(command_list, " "))
 
 				if(!file_name)
 					src.attached_file = null
@@ -1093,7 +1093,7 @@ file_save - Save file to local disk."}
 					command_list -= command_list[1]
 					title = copytext(lowertext(strip_html(title)), 1, 16)
 
-					data = dd_list2text(command_list, " ")
+					data = jointext(command_list, " ")
 					data = copytext(strip_html(data), 1, 255)
 
 				if(!ckey(title) || ckey(!data))
@@ -1128,7 +1128,7 @@ file_save - Save file to local disk."}
 				src.print_half_text("Line \[[selected_line]] cleared.")
 
 			if("load")
-				var/file_name = ckey(dd_list2text(command_list, " "))
+				var/file_name = ckey(jointext(command_list, " "))
 
 				if(!file_name)
 					src.print_half_text("Syntax: \"load \[file name]\"")
@@ -1148,7 +1148,7 @@ file_save - Save file to local disk."}
 				src.print_half_text("Load complete.")
 
 			if("save")
-				var/new_name = strip_html(dd_list2text(command_list, " "))
+				var/new_name = strip_html(jointext(command_list, " "))
 				new_name = copytext(new_name, 1, 16)
 
 				if(!new_name)
@@ -1186,7 +1186,7 @@ file_save - Save file to local disk."}
 				src.print_half_text("Signal \"[new_name]\" saved.")
 
 			if("recsave")
-				var/new_name = strip_html(dd_list2text(command_list, " "))
+				var/new_name = strip_html(jointext(command_list, " "))
 				new_name = copytext(new_name, 1, 16)
 
 				if(!new_name)
@@ -1217,7 +1217,7 @@ file_save - Save file to local disk."}
 				src.print_half_text("Record \"[new_name]\" saved.")
 
 			if("file")
-				var/inc_path = dd_list2text(command_list, " ")
+				var/inc_path = jointext(command_list, " ")
 				if(!ckey(inc_path))
 					src.print_half_text("Syntax: \"file \[filepath]\"")
 					src.print_half_text("Path of file to include in signal.")

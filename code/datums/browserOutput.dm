@@ -121,7 +121,7 @@ var/global
 
 		//Called in update_admins()
 		loadAdmin()
-			var/data = list2json(list("loadAdminCode" = dd_replacetext(dd_replacetext(grabResource("html/adminOutput.html"), "\n", ""), "\t", "")))
+			var/data = json_encode(list("loadAdminCode" = replacetext(replacetext(grabResource("html/adminOutput.html"), "\n", ""), "\t", "")))
 			ehjax.send(src.owner, "browseroutput", url_encode(data))
 
 		//Sends client connection details to the chat to handle and save
@@ -131,14 +131,14 @@ var/global
 			deets["clientData"]["ckey"] = src.owner.ckey
 			deets["clientData"]["ip"] = src.owner.address
 			deets["clientData"]["compid"] = src.owner.computer_id
-			var/data = list2json(deets)
+			var/data = json_encode(deets)
 			ehjax.send(src.owner, "browseroutput", data)
 
 		//Called by client, sent data to investigate (cookie history so far)
 		analyzeClientData(cookie = "")
 			if (!cookie) return
 			if (cookie != "none")
-				var/list/connData = json2list(cookie)
+				var/list/connData = json_decode(cookie)
 				if (connData && islist(connData) && connData.len > 0 && connData["connData"])
 					src.connectionHistory = connData["connData"] //lol fuck
 					var/list/found = new()
@@ -213,7 +213,7 @@ var/global
 		//todo
 		changeChatMode(mode)
 			if (!mode) return
-			var/data = list2json(list("modeChange" = mode))
+			var/data = json_encode(list("modeChange" = mode))
 			data = url_encode(data)
 
 			for (var/client/C in clients)
@@ -239,7 +239,7 @@ var/global
 
 	iconCache[iconKey] << icon
 	var/iconData = iconCache.ExportText(iconKey)
-	var/list/partial = dd_text2list(iconData, "{")
+	var/list/partial = splittext(iconData, "{")
 	return copytext(partial[2], 3, -5)
 
 
@@ -262,7 +262,7 @@ var/global
 		iconData = iconCache.ExportText(iconKey)
 		if (iconData)
 			//It does! Ok, parse out the base64
-			var/list/partial = dd_text2list(iconData, "{")
+			var/list/partial = splittext(iconData, "{")
 			baseData = copytext(partial[2], 3, -5)
 		else
 			//It doesn't exist! Create the icon
@@ -294,9 +294,9 @@ var/global
 
 		//Some macros remain in the string even after parsing and fuck up the eventual output
 		if (findtext(message, "\improper"))
-			message = dd_replacetext(message, "\improper", "")
+			message = replacetext(message, "\improper", "")
 		if (findtext(message, "\proper"))
-			message = dd_replacetext(message, "\proper", "")
+			message = replacetext(message, "\proper", "")
 
 		//Grab us a client if possible
 		var/client/C

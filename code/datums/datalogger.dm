@@ -47,14 +47,14 @@ var/global/datum/datalogger/game_stats
 			stats[p] = val
 			return 1
 		ScanText(var/msg)
-			var/list/text_tokens = dd_text2list(msg, " ")
+			var/list/text_tokens = splittext(msg, " ")
 			var/fornoreason = 0
 //			var/gayirl = 0
 			var/verily = 0
 			for(var/token in text_tokens)
 				token = lowertext(token)
-				token = dd_replacetext(token, "!", "")
-				token = dd_replacetext(token, "?", "")
+				token = replacetext(token, "!", "")
+				token = replacetext(token, "?", "")
 				// this should cover all misspellings of "grief"
 				if(dd_hasprefix(token, "gr"))
 					if(dd_hassuffix(token, "ed"))

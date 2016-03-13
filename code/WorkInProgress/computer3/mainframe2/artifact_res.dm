@@ -34,7 +34,7 @@
 
 		silent = 0
 
-		var/list/initlist = dd_text2list(initparams, " ")
+		var/list/initlist = splittext(initparams, " ")
 
 		if (initlist.len && dd_hasprefix(initlist[1], "-"))
 			var/flagString = lowertext(copytext(initlist[1], 2))
@@ -378,10 +378,10 @@
 			switch (lowertext(data["format"]))
 				if ("values") //Multiple read, formatted as comma separated list.
 					var/formatted = "|-----------|Sensor Values:|-----------||n"
-					var/list/valueList = dd_text2list(data["data"], ",")
+					var/list/valueList = splittext(data["data"], ",")
 					if (valueList.len)
 						for (var/x = 1, x <= valueList.len, x++)
-							. = dd_replacetext(valueList[x], "-", " ")
+							. = replacetext(valueList[x], "-", " ")
 							formatted += "| \[[add_zero("[x]",4)]] | [.]|n"
 
 					else
@@ -404,7 +404,7 @@
 
 				if ("info")
 					var/formatted = "+---------------|Status|---------------+|n"
-					var/list/rawDataList = dd_text2list(data["data"], ",")
+					var/list/rawDataList = splittext(data["data"], ",")
 					if (rawDataList && rawDataList.len > 3)
 						formatted += "| Active: [(rawDataList[1] == "1") ? "YES" : "NO"]|n| ID: [rawDataList[2]]|n| Enactor: [(rawDataList[3] == "1") ? "YES" : "NO"]|n| Sensor: [(rawDataList[4] == "1") ? "YES" : "NO"]|n+--------|Configuration Values|--------+|n"
 
@@ -710,10 +710,10 @@
 			switch (lowertext(data["format"]))
 				if ("values") //Multiple read, formatted as comma separated list.
 					var/formatted = ""//"|-----------|Sensor Values:|-----------||n"
-					var/list/valueList = dd_text2list(data["data"], ",")
+					var/list/valueList = splittext(data["data"], ",")
 					if (valueList.len)
 						for (var/x = 1, x <= valueList.len, x++)
-							. = dd_replacetext(valueList[x], "-", " ")
+							. = replacetext(valueList[x], "-", " ")
 							formatted += "| \[[add_zero("[x]",4)]] | [.]|n"
 
 					else
@@ -755,7 +755,7 @@
 
 				if ("info")
 					var/formatted = ""//"+---------------|Status|---------------+|n"
-					var/list/rawDataList = dd_text2list(data["data"], ",")
+					var/list/rawDataList = splittext(data["data"], ",")
 					if (mode == MODE_DEVICE_INFO)
 						if (rawDataList && rawDataList.len > 3)
 							formatted += "| Active: [(rawDataList[1] == "1") ? "YES" : "NO"]|n| ID: [rawDataList[2]]|n| Enactor: [(rawDataList[3] == "1") ? "YES" : "NO"]|n| Sensor: [(rawDataList[4] == "1") ? "YES" : "NO"]|n"
@@ -1058,7 +1058,7 @@
 							if (wipeRemainingLines)
 								src.highlightMap = 0
 
-							for (var/entryInfo in dd_text2list(message_list["data"], "|n"))
+							for (var/entryInfo in splittext(message_list["data"], "|n"))
 								if (++entryOffset > src.entries.len)
 									break
 

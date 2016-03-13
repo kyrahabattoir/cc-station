@@ -506,7 +506,7 @@
 			contents_mirror += printFile
 			to_print.Insert(1, printFile)
 
-			printFile.fields = dd_text2list(oldPrintFile.asText(), "|n")
+			printFile.fields = splittext(oldPrintFile.asText(), "|n")
 			oldPrintFile.dispose()
 
 			message_device("command=print", printFile)
@@ -768,7 +768,7 @@
 			mainframe_prog_exit
 			return
 
-		var/list/initlist = dd_text2list(initparams, " ")
+		var/list/initlist = splittext(initparams, " ")
 		if (!initparams || !initlist.len)
 			message_user("Invalid commmand argument.|nValid Commands:|n (Coords) to set target coordinates. Specify x y z.|n (Send) to send to target.|n (Receive) to receive from target.|n (Portal) to open bidirectional portal to target.|n (Scan) to scan target atmosphere.","multiline")
 			mainframe_prog_exit
@@ -1026,7 +1026,7 @@
 				if (!istype(usdat) || !usdat.fields["registered"] || !usdat.fields["assignment"])
 					return ESIG_GENERIC
 
-				var/list/accessList = dd_text2list(usdat.fields["access"], ";")
+				var/list/accessList = splittext(usdat.fields["access"], ";")
 				if (!("[setup_auth_access]" in accessList))
 					return ESIG_NOUSR
 
@@ -1050,7 +1050,7 @@
 				if (!istype(usdat))
 					return ESIG_NOUSR
 
-				var/list/accessList = dd_text2list(usdat.fields["access"], ";")
+				var/list/accessList = splittext(usdat.fields["access"], ";")
 				if (!("[setup_auth_access]" in accessList))
 					return ESIG_NOUSR
 
@@ -1175,7 +1175,7 @@
 			mainframe_prog_exit
 			return
 
-		var/list/initlist = dd_text2list(initparams, " ")
+		var/list/initlist = splittext(initparams, " ")
 		if (!initparams || !initlist.len)
 			message_user("Invalid commmand argument.|nValid Commands:|n (Status) for detonator status.|n (Auth) to authorize detonation.|n (Deauth) to revoke authorizations.|n (Time) to set charge timer.|n (Activate) to activate detonation sequence|n (Abort) to halt activation sequence.","multiline")
 			mainframe_prog_exit
@@ -1579,7 +1579,7 @@
 			mainframe_prog_exit
 			return
 
-		var/list/initlist = dd_text2list(initparams, " ")
+		var/list/initlist = splittext(initparams, " ")
 		if (!initparams || !initlist.len)
 			message_user("Invalid commmand argument.|nValid Arguments:|n \"list\" to list known docking stations.|n \"stat (PR-6 Net ID)\" to view unit status. |n \"upload (PR-6 Net ID) (task filepath) \[configuration filepath]\" to upload task.|n \"wake (PR-6 Net ID)\" to wake unit.|n \"wipe (PR-6 Net ID)\" to clear unit memory.|n \"recall (PR-6 Net ID | \'all\')\" to recall unit.","multiline")
 			mainframe_prog_exit
@@ -1689,7 +1689,7 @@
 								. += initlist[i]
 
 							if (.)
-								commandRec.fields += dd_text2list(., ";")
+								commandRec.fields += splittext(., ";")
 
 
 					//Now give the driver the actual command record.
@@ -1865,7 +1865,7 @@
 		if (cmptext(dataList["command"],"register") && !initial_reqistry_complete)
 			initial_reqistry_complete = 1
 
-			var/list/newFreqs = dd_text2list(dataList["freqs"], ",")
+			var/list/newFreqs = splittext(dataList["freqs"], ",")
 			for (var/newFreq in newFreqs)
 				var/datum/computer/folder/folder = new
 				folder.name = newFreq
@@ -1930,7 +1930,7 @@
 			if (istext(freq))
 				var/datum/computer/file/record/R = theFile
 				if (R.fields.len)
-					message_device("_freq=[freq]&[dd_list2text(R.fields, ";")]")
+					message_device("_freq=[freq]&[jointext(R.fields, ";")]")
 
 			//qdel(file)
 			theFile.dispose()
@@ -2233,7 +2233,7 @@
 			mainframe_prog_exit
 			return
 
-		var/list/initlist = dd_text2list(initparams, " ")
+		var/list/initlist = splittext(initparams, " ")
 		if (!initparams || !initlist.len)
 			message_user("Invalid commmand argument.|nValid Commands:|n (Status) for emitter status.|n (Activate) to activate emitter|n (Deactivate) to shut down emitter.","multiline")
 			mainframe_prog_exit
@@ -2608,7 +2608,7 @@
 					knownReadingFields.len = 0
 				else
 					knownReadingFields = list()
-				var/list/deviceFields = dd_text2list(datalist["readinglist"], ",")
+				var/list/deviceFields = splittext(datalist["readinglist"], ",")
 				var/unit_offset = 0
 				for (var/reading_entry in deviceFields)
 					if (!reading_entry)
@@ -2624,7 +2624,7 @@
 					knownReadingFields[reading_entry] = .
 
 				if (datalist["valuelist"])
-					knownValues = dd_text2list(datalist["valuelist"], ",")
+					knownValues = splittext(datalist["valuelist"], ",")
 
 
 				var/waitID = sessions["[sessionID]"]
@@ -2640,7 +2640,7 @@
 				return
 
 			if ("read")
-				var/list/readData = dd_text2list(datalist["data"], ",")
+				var/list/readData = splittext(datalist["data"], ",")
 				var/sessionID = datalist["session"]
 				if (!sessionID || !(sessionID in sessions))
 					return
@@ -2791,7 +2791,7 @@
 
 		if (data["command"]  == DWAINE_COMMAND_MSG_TERM)
 			if (findtext(data["render"],"record"))
-				var/list/dataList = dd_text2list(data["data"],"|n")
+				var/list/dataList = splittext(data["data"],"|n")
 				var/dataMessage = ""
 				var/datum/computer/file/record/messageRec = null
 				if (dataList.len)
@@ -2822,7 +2822,7 @@
 			return
 
 		var/command = null
-		var/list/initlist = dd_text2list(initparams, " ")
+		var/list/initlist = splittext(initparams, " ")
 		if (!initparams || !initlist.len)
 			command = "index"
 		else

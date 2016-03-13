@@ -1436,7 +1436,7 @@ datum/computer/file/embedded_program/maintpanel
 		..()
 
 	proc/do_setup(var/setupString)
-		var/list/setupList = dd_text2list(setupString, ";")
+		var/list/setupList = splittext(setupString, ";")
 		if (!setupList || !setupList.len)
 			return
 

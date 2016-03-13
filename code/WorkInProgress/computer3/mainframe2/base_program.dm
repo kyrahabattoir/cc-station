@@ -129,7 +129,7 @@
 					string = copytext(string,2)
 
 				var/list/sort1 = list()
-				sort1 = dd_text2list(string,"/")
+				sort1 = splittext(string,"/")
 				if (sort1.len && !sort1[sort1.len])
 					sort1.len--
 
@@ -201,7 +201,7 @@
 					string = copytext(string,2)
 
 				var/list/sort1 = list()
-				sort1 = dd_text2list(string,"/")
+				sort1 = splittext(string,"/")
 
 				var/file_name = sort1[sort1.len]
 				if(!file_name)
@@ -271,7 +271,7 @@
 					string = copytext(string,2)
 
 				var/list/sort1 = list()
-				sort1 = dd_text2list(string,"/")
+				sort1 = splittext(string,"/")
 
 				var/datum_name = sort1[sort1.len]
 				if(!datum_name)
@@ -456,7 +456,7 @@
 			if(!string)
 				return 1
 			//ckeyEx because it allows for - and _ and we love those!!
-			if(lowertext(ckeyEx(string)) != dd_replacetext(lowertext(string), " ", null))
+			if(lowertext(ckeyEx(string)) != replacetext(lowertext(string), " ", null))
 				return 1
 
 			if(findtext(string, "/"))
