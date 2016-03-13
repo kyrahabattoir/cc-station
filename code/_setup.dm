@@ -479,7 +479,7 @@ var/const
 #define PROCESS_DEFAULT_TICK_ALLOWANCE		66	// 66% of one tick
 
 /** Delete queue defines */
-#define MIN_DELETE_CHUNK_SIZE 20
+#define MIN_DELETE_CHUNK_SIZE 100
 
 // attack message flags
 #define SUPPRESS_BASE_MESSAGE 1

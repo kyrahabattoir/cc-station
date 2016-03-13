@@ -205,9 +205,9 @@ var/global/datum/wizard_zone_controller/wizard_zone_controller
 			return
 		src.opening = 1
 		flick("wizard_false_wall_opening", src)
+		src.icon_state = "wizard_floor"			
 		spawn(12)
 			src.density = 0
-			src.icon_state = "wizard_floor"
 			src.opening = 0
 			src.RL_SetOpacity(0)
 

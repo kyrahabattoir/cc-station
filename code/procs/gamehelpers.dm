@@ -464,10 +464,6 @@ var/obj/item/dummy/click_dummy = new
 
 	if(!A || !src) return 0
 
-	defer_main_loops = 1
-	spawn(10)
-		defer_main_loops = 0
-
 	var/list/turfs_src = get_area_turfs(src.type)
 	var/list/turfs_trg = get_area_turfs(A.type)
 

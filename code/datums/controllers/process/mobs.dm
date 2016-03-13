@@ -18,25 +18,23 @@ datum/controller/process/mobs
 		detailed_count = other.detailed_count
 
 	doWork()
-		var/currentTick = ticks
-
 		src.mobs = global.mobs
 		var/c
 		
 		for(var/mob/living/M in src.mobs)
 			M.Life(src)
 			if (!(c++ % 5))
-				scheck(currentTick)
+				scheck()
 
 		for(var/mob/wraith/W in src.mobs)
 			W.Life(src)
-			scheck(currentTick)
+			scheck()
 		
 		// For periodic antag overlay updates (Convair880).
 		for (var/mob/dead/G in src.mobs)
 			if (isadminghost(G))
 				G:Life(src)
-				scheck(currentTick)
+				scheck()
 				
 		/*
 		for(var/mob/living/M in src.mobs)
