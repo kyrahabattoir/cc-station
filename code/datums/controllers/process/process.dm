@@ -219,6 +219,7 @@ datum/controller/process/proc/scheck()
 	// defer indefinitely
 	if (world.tick_usage > 100 || main.world.tick_usage > tick_start + tick_allowance)
 		current_usage += main.world.tick_usage - tick_start
+		sleep(world.tick_lag)
 		LAGCHECK(100 - tick_allowance)
 		cpu_defer_count++
 		last_slept = TimeOfHour
