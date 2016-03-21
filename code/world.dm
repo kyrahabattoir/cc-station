@@ -7,7 +7,7 @@ world
 /world/proc/load_mode()
 	var/text = file2text("data/mode.txt")
 	if (text)
-		var/list/lines = dd_text2list(text, "\n")
+		var/list/lines = splittext(text, "\n")
 		if (lines[1])
 			master_mode = lines[1]
 			diary << "Saved mode is '[master_mode]'"
@@ -49,7 +49,7 @@ world
 	if (!text)
 		diary << "Failed to load config/admins.txt\n"
 	else
-		var/list/lines = dd_text2list(text, "\n")
+		var/list/lines = splittext(text, "\n")
 		for(var/line in lines)
 			if (!line)
 				continue
@@ -68,21 +68,21 @@ world
 /world/proc/precache_create_txt()
 	if (!create_mob_html)
 		var/mobjs = null
-		mobjs = dd_list2text(typesof(/mob), ";")
+		mobjs = jointext(typesof(/mob), ";")
 		create_mob_html = grabResource("html/admin/create_object.html")
-		create_mob_html = dd_replacetext(create_mob_html, "null /* object types */", "\"[mobjs]\"")
+		create_mob_html = replacetext(create_mob_html, "null /* object types */", "\"[mobjs]\"")
 
 	if (!create_object_html)
 		var/objectjs = null
-		objectjs = dd_list2text(typesof(/obj), ";")
+		objectjs = jointext(typesof(/obj), ";")
 		create_object_html = grabResource("html/admin/create_object.html")
-		create_object_html = dd_replacetext(create_object_html, "null /* object types */", "\"[objectjs]\"")
+		create_object_html = replacetext(create_object_html, "null /* object types */", "\"[objectjs]\"")
 
 	if (!create_turf_html)
 		var/turfjs = null
-		turfjs = dd_list2text(typesof(/turf), ";")
+		turfjs = jointext(typesof(/turf), ";")
 		create_turf_html = grabResource("html/admin/create_object.html")
-		create_turf_html = dd_replacetext(create_turf_html, "null /* object types */", "\"[turfjs]\"")
+		create_turf_html = replacetext(create_turf_html, "null /* object types */", "\"[turfjs]\"")
 
 // drsingh for faster ban panel loads
 //Wire note: this has been gutted to only do stuff for jobbans until I get round to converting that system
@@ -107,7 +107,7 @@ world
 	if (!text)
 		diary << "Failed to load config/testers.txt\n"
 	else
-		var/list/lines = dd_text2list(text, "\n")
+		var/list/lines = splittext(text, "\n")
 		for(var/line in lines)
 			if (!line)
 				continue
@@ -220,13 +220,7 @@ var/f_color_selector_handler/F_Color_Selector
 	artifact_controls = new /datum/artifact_controller()
 	mining_controls = new /datum/mining_controller()
 	actions = new/datum/action_controller()
-
-	spawn(0)
-		for (var/area/Ar in world)
-			Ar.build_sims_score()
-
-	spawn(0)
-		url_regex = new("/(https?|byond|www)(\\.|:\\/\\/)/i")
+	explosions = new/datum/explosion_controller()
 
 	if (config.env == "dev") //WIRE TODO: Only do this (fallback to local files) if the coder testing has no internet
 		recursiveFileLoader("browserassets/")
@@ -238,20 +232,19 @@ var/f_color_selector_handler/F_Color_Selector
 		if (config.server_name != null && config.server_suffix && world.port > 0)
 			config.server_name += " [(world.port % 1000) / 100]"
 
+		jobban_loadbanfile()
+		jobban_updatelegacybans()
+
+		oocban_loadbanfile()
+		oocban_updatelegacybans()
+
+		precache_unban_txt() //Wire: left in for now because jobbans still use the shitty system
+		precache_create_txt()
+
 	src.load_mode()
 	src.load_motd()
 	src.load_rules()
 	src.load_admins()
-
-	jobban_loadbanfile()
-	jobban_updatelegacybans()
-
-	oocban_loadbanfile()
-	oocban_updatelegacybans()
-
-	// drsingh for faster panel loads
-	precache_unban_txt() //Wire: left in for now because jobbans still use the shitty system
-	precache_create_txt()
 
 	//create_random_station() //--Disabled because it's making initial geometry stuff take forever. Feel free to re-enable it if it's just throwing off the time count and not actually adding workload.
 
@@ -326,44 +319,37 @@ var/f_color_selector_handler/F_Color_Selector
 	w3master.mouse_opacity = 0
 	*/
 
-	processScheduler = new /datum/controller/processScheduler
-	processScheduler.deferSetupFor(/datum/controller/process/ticker)
-	processSchedulerView = new /datum/processSchedulerView
+	spawn(world.tick_lag)
+		processScheduler = new /datum/controller/processScheduler
+		processScheduler.deferSetupFor(/datum/controller/process/ticker)
+		processSchedulerView = new /datum/processSchedulerView
 
-	spawn(0) processScheduler.setup()
+		for (var/area/Ar in world)
+			Ar.build_sims_score()
+			LAGCHECK(50)
 
-	spawn(0) src.update_status()
+		url_regex = new("(https?|byond|www)(\\.|:\\/\\/)", "i")
 
-	spawn(0)
+		processScheduler.setup()
+
+		src.update_status()
+
 		SetupOccupationsList()
 		ircbot.event("serverstart")
+		
 		round_start_data() //Tell the hub site a round is starting
 		if (time2text(world.realtime,"DDD") == "Fri")
 			NT |= mentors
 
-	spawn(30)
+	
+
+	spawn(world.tick_lag*30)
 		Optimize()
 		sleep_offline = 1
-		//lag_loop()
-
-		/*if (map_setting) // to make sure all the sprites get updated as they should and connect properly
-			if (map_setting == "COG2")
-				for (var/turf/simulated/wall/auto/supernorn/T in world)
-					if (T.z != 1)
-						break
-					T.update_icon()
-				for (var/obj/window/auto/W in world)
-					if (W.z != 1)
-						break
-					W.update_icon()
-			if (map_setting == "DESTINY")
-				for (var/turf/simulated/wall/auto/gannets/T in world)
-					if (T.z != 1)
-						break
-					T.update_icon()*/
 
 		for (var/turf/simulated/wall/supernorn/T in world) // workaround for some strange bug
 			T.update_icon()
+			LAGCHECK(50)
 		RL_Start()
 
 		load_intraround_jars()
@@ -392,20 +378,36 @@ var/f_color_selector_handler/F_Color_Selector
 			bust_lights()
 			master_mode = "disaster" // heh pt. 2
 
-	//SpyStructures and caches live here
-	build_chem_structure()
-	build_reagent_cache()
-	build_supply_pack_cache()
-	build_syndi_buylist_cache()
-	build_camera_network()
+		//SpyStructures and caches live here
+		build_chem_structure()
+		build_reagent_cache()
+		build_supply_pack_cache()
+		build_syndi_buylist_cache()
+		build_camera_network()
 
 	return
 
 
 //Crispy fullban
 /proc/Reboot_server()
+	processScheduler.stop()
+	save_intraround_jars()
+	if (ticker && ticker.current_state < GAME_STATE_FINISHED)
+		ticker.current_state = GAME_STATE_FINISHED
+
+	spawn(world.tick_lag)
+		for (var/mob/M in mobs)
+			if (M.client)
+				if (prob(40))
+					M << sound(pick('sound/misc/NewRound2.ogg', 'sound/misc/NewRound3.ogg', 'sound/misc/NewRound4.ogg'))
+				else
+					M << sound('sound/misc/NewRound.ogg')
+
+				//Tell client browserOutput that a restart is happening RIGHT NOW
+				ehjax.send(M.client, "browseroutput", "roundrestart")
+
 #ifdef DATALOGGER
-	spawn(0)
+	spawn(world.tick_lag*2)
 		var/playercount = 0
 		var/admincount = 0
 		for(var/client/C)
@@ -417,24 +419,11 @@ var/f_color_selector_handler/F_Color_Selector
 		game_stats.SetValue("admins", admincount)
 		//game_stats.WriteToFile("data/game_stats.txt")
 #endif
-	processScheduler.stop()
-	save_intraround_jars()
-	if (ticker && ticker.current_state < GAME_STATE_FINISHED)
-		ticker.current_state = GAME_STATE_FINISHED
-	spawn(0)
-		for (var/mob/M in mobs)
-			if (M.client)
-				if (prob(40))
-					M << sound(pick('sound/misc/NewRound2.ogg', 'sound/misc/NewRound3.ogg', 'sound/misc/NewRound4.ogg'))
-				else
-					M << sound('sound/misc/NewRound.ogg')
-
-				//Tell client browserOutput that a restart is happening RIGHT NOW
-				ehjax.send(M.client, "browseroutput", "roundrestart")
 
 	sleep(50) // wait for sound to play
 	if(config.update_check_enabled)
 		world.installUpdate()
+
 	world.Reboot()
 
 /world/proc/update_status()
@@ -501,7 +490,7 @@ var/f_color_selector_handler/F_Color_Selector
 		features += "hosted by <b>[config.hostedby]</b>"
 
 	if (features)
-		s += ": [dd_list2text(features, ", ")]"
+		s += ": [jointext(features, ", ")]"
 
 	/* does this help? I do not know */
 	if (src.status != s)

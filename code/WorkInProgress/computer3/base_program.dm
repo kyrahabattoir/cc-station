@@ -241,7 +241,7 @@
 				string = copytext(string,2)
 				//boutput(world, "string is now: [string]")
 
-			var/list/sort1 = dd_text2list(string,"/")
+			var/list/sort1 = splittext(string,"/")
 			if (sort1.len && copytext(sort1[1], 4, 5) == ":")
 				. = lowertext( copytext(sort1[1], 1, 4) )
 				if (length(sort1[1]) > 4)
@@ -317,7 +317,7 @@
 				string = copytext(string,2)
 				//boutput(world, "string is now: [string]")
 
-			var/list/sort1 = dd_text2list(string,"/")
+			var/list/sort1 = splittext(string,"/")
 			if (sort1.len && copytext(sort1[1], 4, 5) == ":")
 				. = lowertext( copytext(sort1[1], 1, 4) )
 				if (length(sort1[1]) > 4)
@@ -440,7 +440,7 @@
 			if(!string)
 				return 1
 
-			if(ckey(string) != dd_replacetext(lowertext(string), " ", null))
+			if(ckey(string) != replacetext(lowertext(string), " ", null))
 				return 1
 
 			if(findtext(string, "/"))

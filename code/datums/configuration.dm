@@ -103,7 +103,7 @@
 
 	diary << "Reading configuration file '[filename]'"
 
-	var/list/CL = dd_text2list(text, "\n")
+	var/list/CL = splittext(text, "\n")
 
 	for (var/t in CL)
 		if (!t)
@@ -262,7 +262,7 @@
 				config.server_specific_configs = 1
 
 			if ("servers")
-				for(var/sv in dd_text2list(trim(value), " "))
+				for(var/sv in splittext(trim(value), " "))
 					sv = trim(sv)
 					if(sv)
 						config.servers.Add(sv)

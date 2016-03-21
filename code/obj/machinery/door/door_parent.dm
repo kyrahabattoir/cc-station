@@ -320,8 +320,8 @@
 				s.set_up(2, 1, src)
 				s.start()
 
-/obj/machinery/door/proc/update_icon()
-	if(density)
+/obj/machinery/door/proc/update_icon(var/toggling = 0)
+	if(toggling? !density : density)
 		icon_state = "[icon_base]1"
 	else
 		icon_state = "[icon_base]0"
@@ -357,12 +357,12 @@
 
 	spawn()
 		play_animation("opening")
+		update_icon(1)
 		src.RL_SetOpacity(0)
 		sleep(src.operation_time / 2)
 		src.density = 0
 		update_nearby_tiles()
 		sleep(src.operation_time / 2)
-		update_icon()
 		if(mechanics) mechanics.fireOutgoing(mechanics.newSignal("doorOpened"))
 
 		if(operating == 1) //emag again
@@ -380,10 +380,10 @@
 
 	spawn()
 		play_animation("closing")
+		update_icon(1)
 		src.density = 1
 		update_nearby_tiles()
 		sleep(src.operation_time)
-		update_icon()
 		if (src.visible)
 			src.RL_SetOpacity(1)
 

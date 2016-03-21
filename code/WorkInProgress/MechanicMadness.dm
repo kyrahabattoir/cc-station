@@ -1068,8 +1068,8 @@ var/list/mechanics_telepads = new/list()
 		var/inp = input(usr,"Please enter Expression:","Expression setting", expression) as text
 		if(length(inp))
 			var/regex/R = new(inp)
-			if(R.error)
-				boutput(usr, "<span style=\"color:red\">[R.error]</span>")
+			if(!R)
+				boutput(usr, "<span style=\"color:red\">Bad regex</span>")
 			else
 				inp = sanitize(html_encode(inp))
 				expression = inp
@@ -1128,8 +1128,8 @@ var/list/mechanics_telepads = new/list()
 		var/inp = input(usr,"Please enter Expression:","Expression setting", expression) as text
 		if(length(inp))
 			var/regex/R = new(inp)
-			if(R.error)
-				boutput(usr, "<span style=\"color:red\">[R.error]</span>")
+			if(!R)
+				boutput(usr, "<span style=\"color:red\">Bad regex</span>")
 			else
 				expression = inp
 				inp = sanitize(html_encode(inp))

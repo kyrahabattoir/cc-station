@@ -94,7 +94,7 @@
 			else if (!refreshing)
 				dat += "<a href='?src=\ref[src];screen=1'>Connection</a> | <a href='?src=\ref[src];screen=2'>Data</a>"
 
-		
+
 			dat += "<hr><br>"
 
 
@@ -142,7 +142,7 @@
 		user << browse(dat,"window=net_logreader;size=545x302")
 		onclose(user,"net_logreader")
 		return
-	
+
 	Topic(href, href_list)
 		if(..())
 			return
@@ -534,7 +534,7 @@ proc/accesslog_digest(var/datum/computer/file/record/R, formatted = 0)
 				if (useracc)
 					logfile.metadata["owner"] = read_user_field("name")
 				logfile.metadata["permissions"] = COMP_ROWNER | COMP_RGROUP
-				logfile.fields = loglist(opts["t"], opts["m"], opts["s"], dd_list2text(params, " "))
+				logfile.fields = loglist(opts["t"], opts["m"], opts["s"], jointext(params, " "))
 				var/datum/computer/folder/logs_dir = signal_program(1, list("command"=DWAINE_COMMAND_FGET, "path"=log_to))
 				if (istype(logs_dir))
 					var/idx = 0
@@ -564,7 +564,7 @@ proc/accesslog_digest(var/datum/computer/file/record/R, formatted = 0)
 			var/time_end = null
 			if (opts["t"])
 				var/time_filter = opts["t"]
-				var/list/tf_list = dd_text2list(time_filter, ":")
+				var/list/tf_list = splittext(time_filter, ":")
 				if (tf_list.len != 2)
 					message_user("Invalid timestamp filter format [time_filter], usage: TIMESTAMP_BEGIN:TIMESTAMP_END.")
 					mainframe_prog_exit
@@ -598,7 +598,7 @@ proc/accesslog_digest(var/datum/computer/file/record/R, formatted = 0)
 			message_user("Listing the last [count] records:")
 			var/paramsearch = null
 			if (params.len)
-				paramsearch = dd_list2text(params, " ")
+				paramsearch = jointext(params, " ")
 			var/list/records = logs_folder.contents.Copy()
 			if (!records.len)
 				message_user("No recorded data.")
@@ -722,7 +722,7 @@ proc/accesslog_digest(var/datum/computer/file/record/R, formatted = 0)
 					signal_program(1, siglist)
 					// see what i did here? heh? HEH?
 					// doubly so, it almost sounds like tar gz
-					var/targs = dd_list2text(records, " ")
+					var/targs = jointext(records, " ")
 					archive_path = null
 					siglist = list("command"=DWAINE_COMMAND_TSPAWN, "passusr"=1, "path"="/bin/tar", "args"="-cqt -- [targs]")
 					signal_program(1, siglist)

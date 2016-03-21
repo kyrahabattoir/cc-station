@@ -59,7 +59,7 @@
 			return
 		var/m_id = (lang_id == "english" || lang_id == "") ? messages[1] : messages[2]
 		if (prob(25))
-			var/list/speech_list = dd_text2list(messages[m_id], " ")
+			var/list/speech_list = splittext(messages[m_id], " ")
 			if(!speech_list || !speech_list.len)
 				return
 
@@ -72,7 +72,7 @@
 				if (counter >= (speech_list.len / 2) )
 					num_claks = 0
 
-			src.speak( dd_list2text(speech_list, " ") )
+			src.speak( jointext(speech_list, " ") )
 		return
 
 	gib()

@@ -412,12 +412,12 @@
 		var/realName = src.real_name
 
 		if(src.traitHolder && src.traitHolder.hasTrait("clericalerror"))
-			realName = dd_replacetext(realName, "a", "o")
-			realName = dd_replacetext(realName, "e", "i")
-			realName = dd_replacetext(realName, "u", pick("a", "e"))
-			if(prob(50)) realName = dd_replacetext(realName, "n", "m")
-			if(prob(50)) realName = dd_replacetext(realName, "t", pick("d", "k"))
-			if(prob(50)) realName = dd_replacetext(realName, "p", pick("b", "t"))
+			realName = replacetext(realName, "a", "o")
+			realName = replacetext(realName, "e", "i")
+			realName = replacetext(realName, "u", pick("a", "e"))
+			if(prob(50)) realName = replacetext(realName, "n", "m")
+			if(prob(50)) realName = replacetext(realName, "t", pick("d", "k"))
+			if(prob(50)) realName = replacetext(realName, "p", pick("b", "t"))
 
 			var/datum/data/record/B = FindBankAccountByName(src.real_name)
 			if (B && B.fields["name"])

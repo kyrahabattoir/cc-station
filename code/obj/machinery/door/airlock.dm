@@ -743,8 +743,8 @@ About the new airlock wires panel:
 		M.show_message("<span style=\"color:red\">[user.name] was shocked by the [src.name]!</span>", 3, "<span style=\"color:red\">You hear a heavy electrical crack</span>", 2)
 	return 1
 
-/obj/machinery/door/airlock/update_icon()
-	if (density)
+/obj/machinery/door/airlock/update_icon(var/toggling = 0)
+	if(toggling ? !density : density)
 		if (locked)
 			icon_state = "[icon_base]_locked"
 		else
@@ -1266,12 +1266,12 @@ About the new airlock wires panel:
 	if ((src.density) && (!( src.welded ) && !( src.operating ) && ((!src.arePowerSystemsOn()) || (stat & NOPOWER)) && !( src.locked )))
 		spawn( 0 )
 			src.operating = 1
-			play_animation("opening")
+			play_animation("opening")			
+			update_icon(1)
 
 			sleep(src.operation_time)
 
 			src.density = 0
-			update_icon()
 
 			if (!istype(src, /obj/machinery/door/airlock/glass))
 				src.RL_SetOpacity(0)
@@ -1281,11 +1281,11 @@ About the new airlock wires panel:
 		if ((!src.density) && (!( src.welded ) && !( src.operating ) && !( src.locked )))
 			spawn( 0 )
 				src.operating = 1
-				play_animation("closing")
+				play_animation("closing")				
+				update_icon(1)
 
 				src.density = 1
 				sleep(15)
-				update_icon()
 
 				if (src.visible)
 					src.RL_SetOpacity(1)

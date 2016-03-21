@@ -5,15 +5,17 @@
 
 
 //Generates file paths for browser resources when used in html tags e.g. <img>
-/proc/resource(file)
+/proc/resource(file, group)
 	if (!file) return
 
 	var/path
 	if (CDN_ENABLED && cdn && config.env == "prod") //Or local tester with internet...
 		path = "[cdn]/[file]"
 	else
+		if (findtext(file, "{{resource")) //Got here via the dumb regex proc (local only)
+			file = group
 		if (findtext(file, "/"))
-			var/list/parts = dd_text2list(file, "/")
+			var/list/parts = splittext(file, "/")
 			file = parts[parts.len]
 		path = file
 
@@ -93,7 +95,7 @@
 //Replace placeholder tags with the raw filename (minus any subdirs), only for localservers
 /proc/doAssetParse(path)
 	if (findtext(path, "/"))
-		var/list/parts = dd_text2list(path, "/")
+		var/list/parts = splittext(path, "/")
 		path = parts[parts.len]
 	return path
 
@@ -104,7 +106,7 @@
 
 	//Get file extension
 	if (path)
-		var/list/parts = dd_text2list(path, ".")
+		var/list/parts = splittext(path, ".")
 		var/ext = parts[parts.len]
 		ext = lowertext(ext)
 		//Is this file a binary thing
@@ -116,11 +118,8 @@
 	if (isfile(file))
 		fileText = file2text(file)
 	if (fileText && findtext(fileText, "{{resource"))
-		var/regex/R = new("/\\{\\{resource\\(\"(.*?)\"\\)\\}\\}/\[resource($1)\]/ige")
-		var/newtxt = R.Replace(fileText)
-		while(newtxt)
-			fileText = newtxt
-			newtxt = R.ReplaceNext(fileText)
+		var/regex/R = new("\\{\\{resource\\(\"(.*?)\"\\)\\}\\}", "ig")
+		fileText = R.Replace(fileText, /proc/resource)
 
 	return fileText
 

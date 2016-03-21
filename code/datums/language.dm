@@ -13,7 +13,7 @@ var/global/datum/languages/languages = new()
 	proc/get_messages(var/O)
 		return list(html_encode(heard_understood(O)), html_encode(heard_not_understood(O)))
 
-	proc/heard_not_understood(var/orig_message)	
+	proc/heard_not_understood(var/orig_message)
 		return orig_message
 
 	proc/heard_understood(var/orig_message)
@@ -52,7 +52,7 @@ var/global/datum/languages/languages = new()
 		else if (dd_hasprefix(message, ";"))
 			prefix = ";"
 			message = copytext(message, 2)
-		var/list/words = dd_text2list(uppertext(message), " ")
+		var/list/words = splittext(uppertext(message), " ")
 		var/list/newwords = list()
 		for (var/w in words)
 			if (w == "")
@@ -76,10 +76,10 @@ var/global/datum/languages/languages = new()
 				var/list/trl = list()
 				for (var/i = 1, i <= trlen, i++)
 					trl += pick("K", "X", "B", "Q", "U", "I", "J", "F", "D", "V", "W", "P", "Z", "R", "M", "Y", "T")
-				var/tr = dd_list2text(trl)
+				var/tr = jointext(trl, "")
 				martian_dictionary[w] = tr
 				newwords += tr + suf
-		return prefix + dd_list2text(newwords, " ")
+		return prefix + jointext(newwords, " ")
 
 	heard_not_understood(var/orig_message)
 		return translate(orig_message)

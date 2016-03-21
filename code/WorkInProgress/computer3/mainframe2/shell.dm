@@ -189,7 +189,7 @@
 							anger_text = pipetemp
 
 						if(istype(command_list) && (command_list.len > 0))
-							anger_text += dd_list2text(command_list, " ")
+							anger_text += jointext(command_list, " ")
 
 						if (piping && piped_list.len && (ckey(piped_list[1]) != "break") )
 							pipetemp = anger_text
@@ -208,7 +208,7 @@
 							echo_text = pipetemp
 
 						if(istype(command_list) && (command_list.len > 0))
-							echo_text += dd_list2text(command_list, " ")
+							echo_text += jointext(command_list, " ")
 
 						if (piping && piped_list.len && (ckey(piped_list[1]) != "break") )
 							pipetemp = echo_text
@@ -286,7 +286,7 @@
 						if (pipetemp)
 
 							if(istype(command_list))
-								command_list += dd_text2list(pipetemp, " ")
+								command_list += splittext(pipetemp, " ")
 
 						if (command_list.len < 2)
 							message_user("Error: Insufficient arguments for Talk (Requires Target ID and Message).")
@@ -295,7 +295,7 @@
 						var/targetUser = lowertext(command_list[1])
 						command_list.Cut(1,2)
 
-						switch (signal_program(1, list("command"=DWAINE_COMMAND_UMSG, "term"=targetUser, data=dd_list2text(command_list, " "))))
+						switch (signal_program(1, list("command"=DWAINE_COMMAND_UMSG, "term"=targetUser, data=jointext(command_list, " "))))
 							if (ESIG_SUCCESS)
 								continue
 							if (ESIG_NOTARGET)
@@ -408,7 +408,7 @@
 							if (!prefixroot)
 								command = "[current]" + ((dd_hassuffix(current, "/") || current == "/") ? null : "/") + command
 
-							var/list/templist = dd_text2list(command, "/")
+							var/list/templist = splittext(command, "/")
 							if (!templist.len)
 								message_user("Syntax error.")
 								break
@@ -418,7 +418,7 @@
 							while (dd_hasprefix(recname, " "))
 								recname = copytext(recname, 2)
 							templist.len--
-							command = dd_list2text(templist, "/")
+							command = jointext(templist, "/")
 							if (!recname)
 								recname = "out"
 
@@ -427,7 +427,7 @@
 
 							//boutput(world, "here is the path: \"[command]\" and the name \"[recname]\"")
 							var/datum/computer/file/record/rec = new /datum/computer/file/record(  )
-							rec.fields = dd_text2list(pipetemp, "|n")
+							rec.fields = splittext(pipetemp, "|n")
 							rec.name = recname
 							rec.metadata["owner"] = read_user_field("name")
 							rec.metadata["permission"] = COMP_ALLACC
@@ -455,7 +455,7 @@
 			if (istype(exec, /datum/computer/file/mainframe_program))
 				var/list/siglist = list("command"=DWAINE_COMMAND_TSPAWN, "passusr"=1, "path"=fpath)//"[current][command]")
 				if (command_list.len)
-					siglist["args"] = strip_html(dd_list2text(command_list, " ")) + (pipetemp ? " [pipetemp]" : null)
+					siglist["args"] = strip_html(jointext(command_list, " ")) + (pipetemp ? " [pipetemp]" : null)
 				else if (pipetemp)
 					siglist["args"] = pipetemp
 
@@ -548,7 +548,7 @@
 					scriptlist.Cut(i, i+1)
 					i--
 					continue
-				scriptlist[i] = dd_replacetext(scriptlist[i], "|", "^")
+				scriptlist[i] = replacetext(scriptlist[i], "|", "^")
 
 			return scriptlist
 
@@ -639,7 +639,7 @@
 							stack[--stack.len] = script_clampvalue( result )
 
 						else if (istext(stack[stack.len]) && istext(stack[stack.len-1]))
-							var/list/explodedString = dd_text2list("[stack[stack.len-1]]", "[stack[stack.len]]")
+							var/list/explodedString = splittext("[stack[stack.len-1]]", "[stack[stack.len]]")
 							if (explodedString.len + stack.len > MAX_STACK_DEPTH)
 								return ERR_STACK_OVER
 
@@ -949,7 +949,7 @@
 			if (dd_hassuffix(msg, "|n"))
 				msg = copytext(msg, 1, -2)
 
-			previous_pipeout += dd_replacetext(msg, "|n", " ")
+			previous_pipeout += replacetext(msg, "|n", " ")
 
 			return ESIG_SUCCESS
 

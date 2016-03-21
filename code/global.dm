@@ -95,7 +95,6 @@ var/global
 
 	round_time_check = 0			// set to world.timeofday when round starts, then used to calculate round time
 	defer_powernet_rebuild = 0		// true if net rebuild will be called manually after an event
-	defer_main_loops = 0			// true if master controller should be paused (usually for some large event)
 	machines_may_use_wired_power = 0
 	DBConnection/dbcon				// persistent connection to a mysql server
 	DBQuery/query					// Database query handler

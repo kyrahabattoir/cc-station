@@ -362,7 +362,7 @@ var/list/hasvar_type_cache = list()
 	if (no_fucking_autoparse == 1)
 		var/list/bad_characters = list("_", "'", "\"", "<", ">", ";", "[", "]", "{", "}", "|", "\\", "/")
 		for(var/c in bad_characters)
-			t = dd_replacetext(t, c, "")
+			t = replacetext(t, c, "")
 	var/index = findtext(t, "<")
 	while(index)
 		t = copytext(t, 1, index) + copytext(t, index+1)
@@ -459,18 +459,20 @@ var/list/hasvar_type_cache = list()
 		. = file_path
 	else
 		. = file(file_path)
-	. = dd_text2list(file2text(.), separator)
+	. = splittext(file2text(.), separator)
 
 /proc/dd_range(var/low, var/high, var/num)
 	. = max(low,min(high,num))
 
+/*
 /proc/dd_replacetext(text, search_string, replacement_string)
-	. = dd_text2list(text, search_string)
+	. = splittext(text, search_string)
 	. = dd_list2text(., replacement_string)
 
 /proc/dd_replaceText(text, search_string, replacement_string)
-	. = dd_text2List(text, search_string)
+	. = splittext(text, search_string)
 	. = dd_list2text(., replacement_string)
+*/
 
 /proc/dd_hasprefix(text, prefix)
 	var/start = 1
@@ -492,6 +494,7 @@ var/list/hasvar_type_cache = list()
 	if(start)
 		. = findtext(text, suffix, start, null) //was findtextEx
 
+/*
 /proc/dd_text2list(text, separator, var/list/withinList)
 	var/textlength = length(text)
 	var/separatorlength = length(separator)
@@ -501,23 +504,6 @@ var/list/hasvar_type_cache = list()
 	var/findPosition = 1
 	while(1)
 		findPosition = findtext(text, separator, searchPosition, 0)
-		var/buggyText = copytext(text, searchPosition, findPosition)
-		if(!withinList || (buggyText in withinList)) textList += "[buggyText]"
-		if(!findPosition) return textList
-		searchPosition = findPosition + separatorlength
-		if(searchPosition > textlength)
-			textList += ""
-			return textList
-
-/proc/dd_text2List(text, separator, var/list/withinList)
-	var/textlength = length(text)
-	var/separatorlength = length(separator)
-	if(withinList && !withinList.len) withinList = null
-	var/list/textList = new()
-	var/searchPosition = 1
-	var/findPosition = 1
-	while(1)
-		findPosition = findtextEx(text, separator, searchPosition, 0)
 		var/buggyText = copytext(text, searchPosition, findPosition)
 		if(!withinList || (buggyText in withinList)) textList += "[buggyText]"
 		if(!findPosition) return textList
@@ -537,6 +523,7 @@ var/list/hasvar_type_cache = list()
 			. += separator
 		. += "[the_list[count]]"
 		count++
+*/
 
 /proc/english_list(var/list/input, nothing_text = "nothing", and_text = " and ", comma_text = ", ", final_comma_text = "," )
 	var/total = input.len
@@ -1233,7 +1220,7 @@ var/list/hasvar_type_cache = list()
 	if (!playerName)
 		return "Unknown"
 
-	var/list/name_temp = dd_text2list(playerName, " ")
+	var/list/name_temp = splittext(playerName, " ")
 	if (!name_temp.len)
 		playerName = "Unknown"
 	else if (name_temp.len == 1)
@@ -1241,7 +1228,7 @@ var/list/hasvar_type_cache = list()
 	else //Ex: John Smith becomes JSmith
 		playerName = copytext( ( copytext(name_temp[1],1, 2) + name_temp[name_temp.len] ), 1, 16)
 
-	return lowertext(dd_replacetext(playerName, "/", null))
+	return lowertext(replacetext(playerName, "/", null))
 
 /proc/engineering_notation(var/value=0 as num)
 	if (!value)
@@ -1752,7 +1739,7 @@ proc/RarityClassRoll(var/scalemax = 100, var/mod = 0, var/list/category_boundari
 /proc/strip_bad_characters(var/text)
 	var/list/bad_characters = list("_", "'", "\"", "<", ">", ";", "[", "]", "{", "}", "|", "\\", "/")
 	for(var/c in bad_characters)
-		text = dd_replacetext(text, c, " ")
+		text = replacetext(text, c, " ")
 	return text
 
 var/list/english_num = list("0" = "zero", "1" = "one", "2" = "two", "3" = "three", "4" = "four", "5" = "five", "6" = "six", "7" = "seven", "8" = "eight", "9" = "nine",\

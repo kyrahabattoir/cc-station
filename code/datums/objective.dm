@@ -103,11 +103,11 @@ proc/create_fluff(var/datum/mind/target)
 	if(flufftext)
 		//Add pronouns
 		var/mob/M = target.current
-		flufftext = dd_replacetext(flufftext, "$HE", he_or_she(M))
-		flufftext = dd_replacetext(flufftext, "$HIMSELF", himself_or_herself(M))
-		flufftext = dd_replacetext(flufftext, "$HIM", him_or_her(M))
-		flufftext = dd_replacetext(flufftext, "$HIS", his_or_her(M))
-		flufftext = dd_replacetext(flufftext, "$JOB", job)
+		flufftext = replacetext(flufftext, "$HE", he_or_she(M))
+		flufftext = replacetext(flufftext, "$HIMSELF", himself_or_herself(M))
+		flufftext = replacetext(flufftext, "$HIM", him_or_her(M))
+		flufftext = replacetext(flufftext, "$HIS", his_or_her(M))
+		flufftext = replacetext(flufftext, "$JOB", job)
 
 	return flufftext
 

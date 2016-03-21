@@ -107,8 +107,8 @@ var/global/list/triggerVars = list("triggersFail", "triggersTemp", "triggersChem
 /atom/proc/setMaterial(var/datum/material/mat1)
 	if(!mat1 ||!istype(mat1, /datum/material)) return
 	var/traitDesc	  = get_material_trait_desc(mat1)
-	var/strPrefix = dd_list2text(mat1.prefixes, " ")
-	var/strSuffix = dd_list2text(mat1.suffixes, " ")
+	var/strPrefix = jointext(mat1.prefixes, " ")
+	var/strSuffix = jointext(mat1.suffixes, " ")
 	// Setting mat_changename/desc == 0 is almost as conspicuous as having "good gold chameleon bombs".
 	// Real_desc/name is a substandard implementation, but it will prevent some midas touch exploits (Convair880).
 	if (src.mat_changename) // now that I've cleaned up the name prefix/suffix stuff, let's try this, in the hopes that eveything that SHOULD override UpdateName() actually DOES - Haine

@@ -86,8 +86,8 @@
 	proc/tokenized_message(var/message, var/target)
 		if (!message || !length(message))
 			return
-		var/msg = dd_replacetext(message, "%src%", "<b>[src]</b>")
-		msg = dd_replacetext(msg, "%target%", "[target]")
+		var/msg = replacetext(message, "%src%", "<b>[src]</b>")
+		msg = replacetext(msg, "%target%", "[target]")
 		src.visible_message("<span style=\"color:red\">[msg]</span>")
 
 	proc/report_spawn()
@@ -796,7 +796,7 @@
 			logTheThing("debug", user, null, "names a critter egg \"[t]\"")
 			if (!t)
 				return
-			t = strip_html(dd_replacetext(t, "'",""))
+			t = strip_html(replacetext(t, "'",""))
 			t = copytext(t, 1, 65)
 			if (!t)
 				return

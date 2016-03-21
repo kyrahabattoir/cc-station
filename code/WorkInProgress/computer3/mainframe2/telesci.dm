@@ -928,7 +928,7 @@ var/telesci_modifiers_set = 0
 			if("term_message","term_file")
 				var/message = signal.data["data"]
 				if (message)
-					message = dd_replacetext(message, "|n", "<br>")
+					message = replacetext(message, "|n", "<br>")
 
 					src.readout = copytext(message,9,256)
 

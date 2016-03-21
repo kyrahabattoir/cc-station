@@ -159,7 +159,7 @@
 					src.working_line = 0
 
 				if ("!load","!l")
-					var/file_name = ckey(dd_list2text(command_list, " "))
+					var/file_name = ckey(jointext(command_list, " "))
 
 					if (!file_name)
 						src.print_text("Syntax: \"!load \[file name]\"")
@@ -172,14 +172,14 @@
 
 					if (istype(to_load, /datum/computer/file/text))
 						var/datum/computer/file/text/loadText = to_load
-						src.notelist = dd_text2list(loadText.data, "<br>")
+						src.notelist = splittext(loadText.data, "<br>")
 					else
 						src.notelist = to_load.fields.Copy()
 
 					src.print_text("Load successful.")
 
 				if ("!save", "!s")
-					var/new_name = strip_html(dd_list2text(command_list, " "))
+					var/new_name = strip_html(jointext(command_list, " "))
 					new_name = copytext(new_name, 1, 16)
 
 					if(!new_name)
@@ -213,7 +213,7 @@
 					src.print_text(get_help_text())
 
 				if ("!print", "!p")
-					var/print_name = strip_html(dd_list2text(command_list, " "))
+					var/print_name = strip_html(jointext(command_list, " "))
 					print_name = copytext(print_name, 1, 16)
 
 					var/networked = (src.connected && src.selected_printer)
@@ -334,7 +334,7 @@
 					if(!data || !data["command"])
 						return
 
-					var/list/commandList = dd_text2list(data["command"], "|n")
+					var/list/commandList = splittext(data["command"], "|n")
 					if (!commandList || !commandList.len)
 						return
 
@@ -468,7 +468,7 @@
 				return 1
 
 			var/datum/signal/signal = get_free_signal()
-			signal.data["data"] = dd_list2text(src.notelist, "<br>")
+			signal.data["data"] = jointext(src.notelist, "<br>")
 			signal.data["title"] = print_title
 			src.peripheral_command("print",signal, "\ref[printcard]")
 			return 0

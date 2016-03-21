@@ -30,9 +30,9 @@
 		var/descriptive = 0
 
 		if (initparams)
-			var/list/initlist = dd_text2list(initparams, " ")
+			var/list/initlist = splittext(initparams, " ")
 			if (initlist.len && initlist[1] == "-l")
-				initparams = dd_list2text(initlist - initlist[1])
+				initparams = jointext(initlist - initlist[1], "")
 				descriptive = 1
 
 		var/current = read_user_field("curpath")
@@ -138,7 +138,7 @@
 		return
 
 	proc/trim_path(var/filepath)
-		var/list/filelist = dd_text2list(filepath, "/")
+		var/list/filelist = splittext(filepath, "/")
 		var/list/newfilelist = list()
 		for (var/x = 1, x <= filelist.len, x++)
 			switch(filelist[x])
@@ -153,7 +153,7 @@
 		if (!newfilelist.len)
 			newfilelist += "/"
 
-		return dd_list2text(newfilelist, "/")
+		return jointext(newfilelist, "/")
 
 //Delete files/directories
 /datum/computer/file/mainframe_program/utility/rm
@@ -174,12 +174,12 @@
 
 		if (initparams)
 
-			var/list/initlist = dd_text2list(initparams, " ")
+			var/list/initlist = splittext(initparams, " ")
 			if (initlist.len)
 				var/argstring = initlist[1]
 				if (dd_hasprefix(argstring, "-"))
 					initlist -= initlist[1]
-					initparams = dd_list2text(initlist, " ")
+					initparams = jointext(initlist, " ")
 
 					var/x = 2
 					while (x <= length(argstring))
@@ -267,7 +267,7 @@
 			mainframe_prog_exit
 			return
 
-		var/list/initlist = dd_text2list(initparams, " ")
+		var/list/initlist = splittext(initparams, " ")
 		if (!initparams || initlist.len < 2)
 			message_user("Error: Filepaths of target and destination must be specified.")
 			mainframe_prog_exit
@@ -297,7 +297,7 @@
 				return
 
 		var/prefixroot = dd_hasprefix(initlist[2], "/")
-		var/list/copypath = dd_text2list(initlist[2], "/")
+		var/list/copypath = splittext(initlist[2], "/")
 		var/copyname = null
 		if (adjust_name)
 			copypath += adjust_name
@@ -306,7 +306,7 @@
 			copypath.len--
 
 		if (copypath.len)
-			initlist[2] = dd_list2text(copypath, "/")
+			initlist[2] = jointext(copypath, "/")
 			if (prefixroot && !dd_hasprefix(initlist[2], "/"))
 				initlist[2] = "/" + initlist[2]
 		else
@@ -334,7 +334,7 @@
 			mainframe_prog_exit
 			return
 
-		var/list/initlist = dd_text2list(initparams, " ")
+		var/list/initlist = splittext(initparams, " ")
 		if (!initparams || initlist.len < 2)
 			message_user("Error: Filepaths of target and new location must be specified.")
 			mainframe_prog_exit
@@ -364,7 +364,7 @@
 				return
 
 		var/prefixroot = dd_hasprefix(initlist[2], "/")
-		var/list/copypath = dd_text2list(initlist[2], "/")
+		var/list/copypath = splittext(initlist[2], "/")
 		var/copyname = null
 		if (adjust_name)
 			copypath += adjust_name
@@ -373,7 +373,7 @@
 			copypath.len--
 
 		if (copypath.len)
-			initlist[2] = dd_list2text(copypath, "/")
+			initlist[2] = jointext(copypath, "/")
 			if (prefixroot && !dd_hasprefix(initlist[2], "/"))
 				initlist[2] = "/" + initlist[2]
 		else
@@ -403,7 +403,7 @@
 			mainframe_prog_exit
 			return
 
-		var/list/initlist = dd_text2list(initparams, " ")
+		var/list/initlist = splittext(initparams, " ")
 		if (!initlist.len || !initparams)
 			message_user("Error: No filepath(s) specified.")
 			mainframe_prog_exit
@@ -460,7 +460,7 @@
 			mainframe_prog_exit
 			return
 
-		var/list/initlist = dd_text2list(initparams, " ")
+		var/list/initlist = splittext(initparams, " ")
 		if (!initparams || initlist.len < 2)
 			message_user("Error: Must specify target and link paths.")
 			mainframe_prog_exit
@@ -486,14 +486,14 @@
 			return
 
 		var/prefixroot = dd_hasprefix(initlist[2], "/")
-		var/list/linkpath = dd_text2list(initlist[2], "/")
+		var/list/linkpath = splittext(initlist[2], "/")
 		var/linkname = null
 		if (linkpath.len)
 			linkname = copytext(linkpath[linkpath.len], 1, 16)
 			linkpath.len--
 
 		if (linkpath.len)
-			initlist[2] = dd_list2text(linkpath, "/")
+			initlist[2] = jointext(linkpath, "/")
 			if (prefixroot && !dd_hasprefix(initlist[2], "/"))
 				initlist[2] = "/" + initlist[2]
 		else
@@ -521,7 +521,7 @@
 			mainframe_prog_exit
 			return
 
-		var/list/initlist = dd_text2list(initparams, " ")
+		var/list/initlist = splittext(initparams, " ")
 		if (!initlist.len || !initparams)
 			message_user("Error: No filepath(s) specified.")
 			mainframe_prog_exit
@@ -542,14 +542,14 @@
 			if (!prefixroot)
 				initlist[1] = "[current]" + (current == "/" ? null : "/") + initlist[1]
 
-			var/list/dirpath = dd_text2list(initlist[1], "/")
+			var/list/dirpath = splittext(initlist[1], "/")
 			var/dirname = null
 			if (dirpath.len)
 				dirname = copytext(dirpath[dirpath.len], 1, 16)
 				dirpath.len--
 
 			if (dirpath.len)
-				initlist[1] = dd_list2text(dirpath, "/")
+				initlist[1] = jointext(dirpath, "/")
 				if (prefixroot && !dd_hasprefix(initlist[1], "/"))
 					initlist[1] = "/" + initlist[1]
 
@@ -580,7 +580,7 @@
 			mainframe_prog_exit
 			return
 
-		var/list/initlist = dd_text2list(initparams, " ")
+		var/list/initlist = splittext(initparams, " ")
 		if (!initparams || initlist.len < 2)
 			message_user("Error: Must specify permission value and target path.")
 			mainframe_prog_exit
@@ -663,7 +663,7 @@
 			mainframe_prog_exit
 			return
 
-		var/list/initlist = dd_text2list(initparams, " ")
+		var/list/initlist = splittext(initparams, " ")
 		if (!initparams || initlist.len < 2)
 			message_user("Error: Must specify owner/group value(s) and target path.")
 			mainframe_prog_exit
@@ -672,7 +672,7 @@
 		var/newowner = null
 		var/newgroup = null
 
-		var/list/newlist = dd_text2list(initlist[1], ":") //New owner/group values should given in form owner:group
+		var/list/newlist = splittext(initlist[1], ":") //New owner/group values should given in form owner:group
 		if (!newlist.len || newlist.len > 2)
 			message_user("Error: Input values should be of form \[owner]:\[group]")
 			mainframe_prog_exit
@@ -726,7 +726,7 @@
 		if (!usdat.fields["registered"] || !usdat.fields["assignment"])
 			return ESIG_GENERIC
 
-		var/list/accessList = dd_text2list(usdat.fields["access"] + ";", ";")
+		var/list/accessList = splittext(usdat.fields["access"] + ";", ";")
 		if ("[access_dwaine_superuser]" in accessList)
 			if(signal_program(1, list("command"=DWAINE_COMMAND_UGROUP, "group"=0)) == ESIG_SUCCESS)
 				message_user("You are now authorized.")
@@ -758,7 +758,7 @@
 			mainframe_prog_exit
 			return
 
-		var/list/initlist = dd_text2list(initparams, " ")
+		var/list/initlist = splittext(initparams, " ")
 		if (!initparams || initlist.len < 2)
 			message_user("Error: Must specify device file and mount point names.")
 			mainframe_prog_exit
@@ -792,7 +792,7 @@
 			mainframe_prog_exit
 			return
 
-		var/list/initlist = dd_text2list(initparams, " ")
+		var/list/initlist = splittext(initparams, " ")
 		if (initlist.len > 1)
 			var/case_sensitive = 1
 			var/print_only_match = 0
@@ -880,7 +880,7 @@
 			return
 
 		if(initparams)
-			var/list/initlist = dd_text2list(initparams," ")
+			var/list/initlist = splittext(initparams," ")
 			if (initlist.len)
 				for (var/x in initlist)
 					x = ckey(x)
@@ -1144,13 +1144,13 @@
 		else
 			var/format = opts["t"]
 			var/t = ticker.round_elapsed_ticks % 10
-			format = dd_replacetext(format, "%t", "[t]")
+			format = replacetext(format, "%t", "[t]")
 			var/s = round(ticker.round_elapsed_ticks / 10) % 60
-			format = dd_replacetext(format, "%s", "[s]")
+			format = replacetext(format, "%s", "[s]")
 			var/m = round(ticker.round_elapsed_ticks / 600) % 60
-			format = dd_replacetext(format, "%m", "[m]")
+			format = replacetext(format, "%m", "[m]")
 			var/h = round(ticker.round_elapsed_ticks / 36000)
-			format = dd_replacetext(format, "%h", "[h]")
+			format = replacetext(format, "%h", "[h]")
 			message_reply_and_user(format)
 			mainframe_prog_exit
 			return
@@ -1377,12 +1377,12 @@
 						mainframe_prog_exit
 						return
 					archive.add_file(C2)
-				var/list/arcparts = dd_text2list(arcfile, "/")
+				var/list/arcparts = splittext(arcfile, "/")
 				archive.name = arcparts[arcparts.len]
 				arcparts.Cut(arcparts.len, 0)
 				var/arcbase = "/"
 				if (arcparts.len)
-					arcbase = "[dd_list2text(arcparts, "/")]"
+					arcbase = "[jointext(arcparts, "/")]"
 				if (chs(arcbase, 1) != "/")
 					arcbase = "/[arcbase]"
 				var/outcome = signal_program(1, list("command"=DWAINE_COMMAND_FWRITE, "path"=arcbase, "mkdir"=1, "replace" = 1), archive)

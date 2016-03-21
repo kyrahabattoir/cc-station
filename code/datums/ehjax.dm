@@ -24,7 +24,7 @@ var/global/datum/ehjax/ehjax = new /datum/ehjax()
 			if (!C || !window || !data) return
 			if (!istype(C, /client)) return
 			if (istype(data, /list))
-				data = list2json(data)
+				data = json_encode(data)
 
 			C << output("[data]", "[window]:[callbackName]")
 

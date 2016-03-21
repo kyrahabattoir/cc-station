@@ -559,11 +559,11 @@
 	var/CMinutes = (world.realtime / 10) / 60
 	var/bansHtml = grabResource("html/admin/banPanel.html")
 	var/windowName = "banPanel"
-	bansHtml = dd_replacetext(bansHtml, "null /* window_name */", "\'[windowName]\'")
-	bansHtml = dd_replacetext(bansHtml, "null /* ref_src */", "\'\ref[src]\'")
-	bansHtml = dd_replacetext(bansHtml, "null /* cminutes */", "[CMinutes]")
+	bansHtml = replacetext(bansHtml, "null /* window_name */", "\'[windowName]\'")
+	bansHtml = replacetext(bansHtml, "null /* ref_src */", "\'\ref[src]\'")
+	bansHtml = replacetext(bansHtml, "null /* cminutes */", "[CMinutes]")
 	if (centralConn)
-		bansHtml = dd_replacetext(bansHtml, "null /* api_key */", "\'[md5(config.extserver_web_token)]\'")
+		bansHtml = replacetext(bansHtml, "null /* api_key */", "\'[md5(config.extserver_web_token)]\'")
 	usr << browse(bansHtml,"window=[windowName];size=1080x500")
 
 
@@ -607,11 +607,11 @@
 		var/list/log = dd_file2list(banLog)
 		var/lastIndex = (log.len > 1 ? log.len - 1 : 1)
 		var/lastRow = log[lastIndex]
-		var/list/rowDetails = dd_text2list(lastRow, ":")
+		var/list/rowDetails = splittext(lastRow, ":")
 		lastID = text2num(rowDetails[1])
 
 	var/newID = lastID + 1
-	var/append = list2json(data)
+	var/append = json_encode(data)
 	var/logFile = file(banLog)
 	boutput(logFile, "[newID]:[append]")
 
@@ -652,7 +652,7 @@
 		var/logID = row
 		if (!row) break
 		logTheThing("debug", null, null, "UPDATE LOCAL DEBUG: logID: [logID]")
-		var/list/details = json2list(row[logID])
+		var/list/details = json_decode(row[logID])
 		logTheThing("debug", null, null, "UPDATE LOCAL DEBUG: details: [list2params(details)]")
 		var/type = details["type"]
 		details.Remove(details["type"])
@@ -678,7 +678,7 @@
 	for (var/e = 1, e <= data.len, e++) //each ban
 		var/logID = data[e]
 		logTheThing("debug", null, null, "UPDATE LOCAL DEBUG: logID: [logID]")
-		var/list/details = json2list(data[logID])
+		var/list/details = json_decode(data[logID])
 		logTheThing("debug", null, null, "UPDATE LOCAL DEBUG: details: [list2params(details)]")
 		var/type = details["type"]
 		details.Remove(details["type"])
@@ -721,7 +721,7 @@
 	for (var/i = 1, i <= log.len, i++)
 		var/row = log[i]
 		logTheThing("debug", null, null, "UPDATE REMOTE DEBUG: row: [row]")
-		var/list/rowDetails = dd_text2list(row, ":")
+		var/list/rowDetails = splittext(row, ":")
 		logTheThing("debug", null, null, "UPDATE REMOTE DEBUG: rowDetails: [list2params(rowDetails)]")
 		var/logID = rowDetails[1]
 		logID = text2num(logID)
@@ -732,11 +732,11 @@
 			logTheThing("debug", null, null, "UPDATE REMOTE DEBUG: details: [details]")
 			parsedLog["[logID]"] = details
 
-	logTheThing("debug", null, null, "UPDATE REMOTE DEBUG: parsedLog: [list2json(parsedLog)]")
+	logTheThing("debug", null, null, "UPDATE REMOTE DEBUG: parsedLog: [json_encode(parsedLog)]")
 
 	//Send it to the remote so it can update
 	var/query[] = new()
-	query["bans"] = list2json(parsedLog)
+	query["bans"] = json_encode(parsedLog)
 	queryAPI("bans/updateRemote", query)
 
 	return 1
@@ -759,7 +759,7 @@
 		var/list/log = dd_file2list(banLog)
 		var/lastIndex = (log.len > 1 ? log.len - 1 : 1)
 		var/lastRow = log[lastIndex]
-		log = dd_text2list(lastRow, ":")
+		log = splittext(lastRow, ":")
 		latestLocalID = log[1]
 
 	//Get the latest logID from the API

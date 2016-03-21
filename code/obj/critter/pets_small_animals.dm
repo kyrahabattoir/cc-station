@@ -800,7 +800,7 @@ var/list/cat_names = list("Gary", "Mittens", "Mr. Jingles", "Rex", "Jasmine", "L
 
 		if (learn_phrase)
 			src.learned_phrases += message
-		var/list/heard_stuff = dd_text2list(message, " ")
+		var/list/heard_stuff = splittext(message, " ")
 		for (var/word in heard_stuff)
 			if (copytext(word, -1) in list(".", ","))
 				word = copytext(word, 1, -1)

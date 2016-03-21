@@ -159,7 +159,7 @@
 		if (!src.announcement_radio)
 			src.announcement_radio = new(src)
 
-		var/message = dd_replacetext(dd_replacetext(dd_replacetext(src.arrivalalert, "$STATION", "[station_name()]"), "$JOB", rank), "$NAME", name)
+		var/message = replacetext(replacetext(replacetext(src.arrivalalert, "$STATION", "[station_name()]"), "$JOB", rank), "$NAME", name)
 
 		var/list/messages = process_language(message)
 		src.announcement_radio.talk_into(src, messages, 0, src.name, src.say_language)

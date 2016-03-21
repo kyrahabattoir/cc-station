@@ -409,7 +409,7 @@ var/global/list/default_meat_head_dialog = list("hello hello", "... it's not vir
 			if (. == ckey(test_string))
 				return 1
 
-		var/list/exploded_sentence = dd_text2list(message, " ")
+		var/list/exploded_sentence = splittext(message, " ")
 		if (!exploded_sentence || !exploded_sentence.len)
 			return 1
 
@@ -423,7 +423,7 @@ var/global/list/default_meat_head_dialog = list("hello hello", "... it's not vir
 					if (prob(10))
 						exploded_sentence[i] = "..."
 
-		. = dd_list2text(exploded_sentence, " ")
+		. = jointext(exploded_sentence, " ")
 		dialog += .
 
 		if ((dialog.len - default_meat_head_dialog.len) > MEATHEAD_MAX_CUSTOM_UTTERANCES)

@@ -1170,5 +1170,5 @@ var/list/fun_images = list()
 	else
 		var/changelogHtml = grabResource("html/changelog.html")
 		var/data = admin_changelog:html
-		changelogHtml = dd_replacetext(changelogHtml, "<!-- HTML GOES HERE -->", "[data]")
+		changelogHtml = replacetext(changelogHtml, "<!-- HTML GOES HERE -->", "[data]")
 		src.Browse(changelogHtml, "window=adminchanges;size=500x650;title=Admin+Changelog;")

@@ -212,13 +212,13 @@
 		//t = copytext(sanitize(t),1,MAX_MESSAGE_LEN)
 		logTheThing("say", user, null, "writes on a piece of paper: [t]")
 		t = copytext(html_encode(t), 1, 2*MAX_MESSAGE_LEN)
-		t = dd_replacetext(t, "\n", "<BR>")
-		t = dd_replacetext(t, "\[b\]", "<B>")
-		t = dd_replacetext(t, "\[/b\]", "</B>")
-		t = dd_replacetext(t, "\[i\]", "<I>")
-		t = dd_replacetext(t, "\[/i\]", "</I>")
-		t = dd_replacetext(t, "\[u\]", "<U>")
-		t = dd_replacetext(t, "\[/u\]", "</U>")
+		t = replacetext(t, "\n", "<BR>")
+		t = replacetext(t, "\[b\]", "<B>")
+		t = replacetext(t, "\[/b\]", "</B>")
+		t = replacetext(t, "\[i\]", "<I>")
+		t = replacetext(t, "\[/i\]", "</I>")
+		t = replacetext(t, "\[u\]", "<U>")
+		t = replacetext(t, "\[/u\]", "</U>")
 
 		var/writing_style = "Dancing Script"
 		if (findtext(t, "\[sign\]") || findtext(t, "\[signature\]"))
@@ -226,8 +226,8 @@
 				writing_style = user.mind.handwriting
 			if (islist(src.fonts) && !src.fonts[writing_style])
 				src.fonts[writing_style] = 1
-		t = dd_replacetext(t, "\[sign\]", "<span style='font-family: [writing_style], cursive;'>[user.real_name]</span>")
-		t = dd_replacetext(t, "\[signature\]", "<span style='font-family: [writing_style], cursive;'>[user.real_name]</span>")
+		t = replacetext(t, "\[sign\]", "<span style='font-family: [writing_style], cursive;'>[user.real_name]</span>")
+		t = replacetext(t, "\[signature\]", "<span style='font-family: [writing_style], cursive;'>[user.real_name]</span>")
 
 		src.info += "<span style='font-family: [custom_font]; color: [custom_color]; font-size: [custom_size]px'> [t] </span>"
 

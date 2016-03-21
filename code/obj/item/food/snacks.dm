@@ -1264,8 +1264,8 @@
 				src.reagents.trans_to(newdog, 100)
 
 			if(src.herb)
-				newdog.name = dd_replacetext(newdog.name, "corn","herb")
-				newdog.desc = dd_replacetext(newdog.desc, "hotdog","sausage")
+				newdog.name = replacetext(newdog.name, "corn","herb")
+				newdog.desc = replacetext(newdog.desc, "hotdog","sausage")
 
 			qdel(src)
 

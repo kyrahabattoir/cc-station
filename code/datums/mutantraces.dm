@@ -213,7 +213,7 @@
 		mob.see_invisible = 1
 
 	say_filter(var/message)
-		return dd_replaceText(message, "s", stutter("ss"))
+		return replacetext(message, "s", stutter("ss"))
 
 /datum/mutantrace/zombie
 	name = "zombie"

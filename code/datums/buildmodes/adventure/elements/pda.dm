@@ -40,7 +40,7 @@ But if the document contains &lt;1&gt; &lt;2&gt; &lt;4&gt; then the number of ac
 						boutput(usr, "<span style=\"color:red\">Sorry, the HTML content file cannot contain additional links.</span>")
 						html_content = null
 						is_custom = "No"
-					var/regex/jsep = new("/on[a-zA-Z]+\\s*=/i")
+					var/regex/jsep = new("on[a-zA-Z]+\\s*=", "i")
 					else if (findtext(html_content, "script") || jsep.Find(html_content))
 						boutput(usr, "<span style=\"color:red\">Sorry, the HTML content file cannot contain javascript.</span>")
 						html_content = null

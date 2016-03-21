@@ -2228,7 +2228,7 @@ so you'll want your single-digit days to have 0s in front
 	else
 		html += "<ul class=\"log\"><li class=\"title\"><i class=\"icon-bookmark\"></i> [title] as of [svn_revision]</li>"
 
-		var/list/lines = dd_text2list(text, "\n")
+		var/list/lines = splittext(text, "\n")
 		for(var/line in lines)
 			if (!line)
 				continue

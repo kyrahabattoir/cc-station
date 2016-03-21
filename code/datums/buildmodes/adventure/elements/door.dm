@@ -88,11 +88,12 @@
 		if (opening == -1)
 			return
 		src.opening = -1
-		src.opacity = orig_opacity
+		if (src.opacity != orig_opacity)
+			src.RL_SetOpacity(orig_opacity)	
 		src.density = 1
 		flick("door_[door_type]_closing", src)
+		src.icon_state = "door_[door_type]_closed"			
 		spawn(10)
-			src.icon_state = "door_[door_type]_closed"
 			src.opening = 0
 
 	proc/open()
@@ -106,8 +107,9 @@
 		flick("door_[door_type]_opening", src)
 		spawn(10)
 			src.density = 0
-			orig_opacity = opacity
-			src.opacity = 0
+			if (opacity != 0)
+				orig_opacity = opacity
+				src.RL_SetOpacity(0)
 			src.icon_state = "door_[door_type]_open"
 			src.opening = 0
 

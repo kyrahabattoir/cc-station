@@ -89,7 +89,7 @@ proc/load_intraround_jars()
 	var/jarZ = 0
 	for (var/jar_entry in jars_encoded)
 		//boutput(world, "[jar_entry] = [jars_encoded[jar_entry]]")
-		var/list/decode_list = dd_text2list(jars_encoded[jar_entry], ",")
+		var/list/decode_list = splittext(jars_encoded[jar_entry], ",")
 		if (!decode_list || decode_list.len < 3)
 			continue
 

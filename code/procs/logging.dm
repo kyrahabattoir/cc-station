@@ -18,7 +18,7 @@ Example out of game log call:
 	if (target) //If we have a target we assume the text has a %target% placeholder to shove it in
 		if (type == "diary") target = constructName(target, type)
 		else target = "<span class='target'>[constructName(target, type)]</span>"
-		text =  dd_replacetext(text, "%target%", target)
+		text =  replacetext(text, "%target%", target)
 
 	var/ingameLog = "<td class='duration'>[round(((world.time / 10) / 60))]M</td><td class='source'>[source]</td><td class='text'>[text]</td>"
 	switch(type)

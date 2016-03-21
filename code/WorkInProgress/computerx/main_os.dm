@@ -193,7 +193,7 @@
 
 			var/datum/compx_window/grid/window = src.temp
 			//If everything works out here, coords[1] should be x and coords[2] should be y of the new grid location.
-			var/list/coords = dd_text2list(href_list["drag"], ",")
+			var/list/coords = splittext(href_list["drag"], ",")
 			if(coords.len != 2)
 				return
 

@@ -915,7 +915,7 @@
 			var/new_name = input(usr, "Please select a name:", "Polymorph Menu")  as null|text
 			var/list/bad_characters = list("_", "'", "\"", "<", ">", ";", "[", "]", "{", "}", "|", "\\")
 			for(var/c in bad_characters)
-				new_name = dd_replacetext(new_name, c, "")
+				new_name = replacetext(new_name, c, "")
 
 			if(new_name)
 				if(length(new_name) >= 26)

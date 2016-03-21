@@ -703,7 +703,7 @@
 				limbs_report += "Right leg"
 			if (!part_leg_l)
 				limbs_report += "Left leg"
-			var/limbs_missing = limbs_report.len ? dd_list2text(limbs_report, "; ") : 0
+			var/limbs_missing = limbs_report.len ? jointext(limbs_report, "; ") : 0
 			stat_cache = list(100 - min(get_brute_damage(), 100), 100 - min(get_burn_damage(), 100), limbs_missing)
 
 		stat("Structural integrity:", "[stat_cache[1]]%")

@@ -472,15 +472,14 @@ var/const
 #define PROCESS_STATUS_HUNG 6
 
 // Process time thresholds
-#define PROCESS_DEFAULT_HANG_WARNING_TIME 	300 // 30 seconds
-#define PROCESS_DEFAULT_HANG_ALERT_TIME 	600 // 60 seconds
-#define PROCESS_DEFAULT_HANG_RESTART_TIME 	900 // 90 seconds
+#define PROCESS_DEFAULT_HANG_WARNING_TIME 	3000 // 300 seconds
+#define PROCESS_DEFAULT_HANG_ALERT_TIME 	6000 // 600 seconds
+#define PROCESS_DEFAULT_HANG_RESTART_TIME 	9000 // 900 seconds
 #define PROCESS_DEFAULT_SCHEDULE_INTERVAL 	50  // 50 ticks
-#define PROCESS_DEFAULT_SLEEP_INTERVAL		2	// 2 ticks
-#define PROCESS_DEFAULT_CPU_THRESHOLD		90  // 90%
+#define PROCESS_DEFAULT_TICK_ALLOWANCE		66	// 66% of one tick
 
 /** Delete queue defines */
-#define MIN_DELETE_CHUNK_SIZE 20
+#define MIN_DELETE_CHUNK_SIZE 100
 
 // attack message flags
 #define SUPPRESS_BASE_MESSAGE 1
@@ -502,3 +501,7 @@ var/const
 #define CDN_ENABLED 1
 
 #define LOOC_RANGE 8
+
+#define DELETE_STOP 0
+#define DELETE_RUNNING 1
+#define DELETE_CHECK 2

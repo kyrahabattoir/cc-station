@@ -1244,7 +1244,7 @@
 			bee.beeMom = M
 			bee.beeMomCkey = M.ckey
 			bee.name = pick_string("bee_names.txt", "beename")
-			bee.name = dd_replacetext(bee.name, "larva", "bee")
+			bee.name = replacetext(bee.name, "larva", "bee")
 
 /datum/job/special/random/souschef
 	name = "Sous-Chef"

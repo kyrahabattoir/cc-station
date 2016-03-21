@@ -99,7 +99,7 @@
 				if("cd", "chdir") //Attempts to set current folder to directory arg1
 					var/dir_string = null
 					if(command_list.len)
-						dir_string = dd_list2text(command_list, " ")
+						dir_string = jointext(command_list, " ")
 					else
 						src.print_text("<b>Syntax:</b> \"cd \[directory string]\" String is relative to current directory.")
 						return
@@ -125,7 +125,7 @@
 				if("run") //Runs /datum/computer/file/terminal_program with name arg1
 					var/prog_name = null
 					if(command_list.len)
-						prog_name = dd_list2text(command_list, " ")
+						prog_name = jointext(command_list, " ")
 					else
 						src.print_text("<b>Syntax:</b> \"run \[program filepath].\" Path is relative to current directory.")
 						return
@@ -140,7 +140,7 @@
 						return
 
 				if("makedir","mkdir") //Creates folder in current directory with name arg1
-					var/new_folder_name = strip_html(dd_list2text(command_list, " "))
+					var/new_folder_name = strip_html(jointext(command_list, " "))
 					new_folder_name = copytext(new_folder_name, 1, 16)
 
 					if(!new_folder_name)
@@ -197,7 +197,7 @@
 				if("title") //Set the title var of the current drive.
 					var/new_name = null
 					if(command_list.len)
-						new_name = strip_html(dd_list2text(command_list, " "))
+						new_name = strip_html(jointext(command_list, " "))
 						new_name = copytext(new_name, 1, 16)
 					else
 						src.print_text("<b>Syntax:</b> \"title \[title name]\" Set name of active drive to given title.")
@@ -212,7 +212,7 @@
 				if("delete", "del","era","erase","rm") //Deletes file arg1
 					var/file_name = null
 					if(command_list.len)
-						file_name = ckey(dd_list2text(command_list, " "))
+						file_name = ckey(jointext(command_list, " "))
 					else
 						src.print_text("<b>Syntax:</b> \"del \[file name].\" File must be in current directory.")
 						return
@@ -234,7 +234,7 @@
 				if("copy","cp") //Sets file arg1 to be copied
 					var/file_name = null
 					if(command_list.len)
-						file_name = ckey(dd_list2text(command_list, " "))
+						file_name = ckey(jointext(command_list, " "))
 					else
 						src.print_text("<b>Syntax:</b> \"copy \[file name].\" File must be in current directory.")
 						return
@@ -248,7 +248,7 @@
 					src.print_text("File marked.")
 
 				if("paste","ps") //Pastes clipboard file with name arg1
-					var/pasted_name = strip_html(dd_list2text(command_list, " "))
+					var/pasted_name = strip_html(jointext(command_list, " "))
 					pasted_name = copytext(pasted_name, 1, 16)
 
 					if(!pasted_name)
@@ -470,7 +470,7 @@
 
 
 				if("print") //Print text arg1 to screen.
-					var/new_text = strip_html(dd_list2text(command_list, " "))
+					var/new_text = strip_html(jointext(command_list, " "))
 					if(new_text)
 						src.print_text(new_text)
 					else
@@ -484,7 +484,7 @@
 
 					var/anger_text = "A clown? On a space station? what"
 					if(istype(command_list) && (command_list.len > 0))
-						anger_text = strip_html(dd_list2text(command_list, " "))
+						anger_text = strip_html(jointext(command_list, " "))
 
 					src.print_text("<tt>[anger_text]<br>[goon]</tt>")
 
@@ -541,7 +541,7 @@
 				if("read","type") //Display contents of text file arg1
 					var/file_name = null
 					if(command_list.len)
-						file_name = ckey(dd_list2text(command_list, " "))
+						file_name = ckey(jointext(command_list, " "))
 					else
 						src.print_text("<b>Syntax:</b> \"read \[file name].\" Text file must be in current directory.")
 						return
@@ -575,7 +575,7 @@
 
 				else
 					//Load the program if they just entered a path I guess
-					var/prog_name = dd_list2text(command_list, " ")
+					var/prog_name = jointext(command_list, " ")
 					prog_name = command + prog_name
 
 					var/datum/computer/file/terminal_program/to_run = src.parse_file_directory(prog_name, current_folder)
@@ -747,7 +747,7 @@
 			src.current_folder = src.holder.root
 
 			if(access_string && !all_access)
-				var/list/decoding = dd_text2list(access_string, ";")
+				var/list/decoding = splittext(access_string, ";")
 				for(var/x in decoding)
 					src.active_account.access += text2num(x)
 

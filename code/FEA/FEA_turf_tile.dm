@@ -142,7 +142,7 @@ turf
 
 				//overlays.len = 0
 
-				var/list/graphics = params2list(model.graphic)//dd_text2list(model.graphic, ";")
+				var/list/graphics = params2list(model.graphic)//splittext(model.graphic, ";")
 
 				if(!graphics || !graphics.len)
 					if (gas_icon_overlay)

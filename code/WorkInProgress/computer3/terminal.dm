@@ -239,7 +239,7 @@ file_save - Save file to local disk."}
 
 				var/sendText = "login"
 				if (command_list.len)
-					sendText = dd_list2text(command_list, " ")
+					sendText = jointext(command_list, " ")
 
 				src.send_term_message(sendText, 1)
 				src.print_text("File sent.")
@@ -256,7 +256,7 @@ file_save - Save file to local disk."}
 			if("file_load")
 				var/toLoadName = "temp"
 				if (command_list.len)
-					toLoadName = dd_list2text(command_list, "")
+					toLoadName = jointext(command_list, "")
 
 				var/datum/computer/file/loadedFile = null
 				for (var/obj/item/disk/data/drive in src.master.contents)
@@ -289,7 +289,7 @@ file_save - Save file to local disk."}
 
 				var/toSaveName = "temp"
 				if (command_list.len)
-					toSaveName = dd_list2text(command_list, "")
+					toSaveName = jointext(command_list, "")
 
 				for (var/obj/item/disk/data/drive in src.master.contents)
 					if (drive == src.holder || !drive.root)
@@ -528,11 +528,11 @@ file_save - Save file to local disk."}
 							src.master.temp = null
 
 						if("multiline") //Oh, they want multiple lines of stuff.
-							new_message = dd_replacetext(new_message, "|n", "<br>]")
+							new_message = replacetext(new_message, "|n", "<br>]")
 
 						if ("multiline|clear","clear|multiline") //Both of the above!
 							src.master.temp = null
-							new_message = dd_replacetext(new_message, "|n", "<br>]")
+							new_message = replacetext(new_message, "|n", "<br>]")
 
 					src.print_text("][new_message]")
 					return

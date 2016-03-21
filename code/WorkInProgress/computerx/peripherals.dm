@@ -660,7 +660,7 @@
 				var/datum/computer/file/record/newrec = new
 				newrec.fields["registered"] = src.authid.registered
 				newrec.fields["assignment"] = src.authid.assignment
-				newrec.fields["access"] = dd_list2text(src.authid.access, ";")
+				newrec.fields["access"] = jointext(src.authid.access, ";")
 				newrec.fields["balance"] = src.authid.money
 
 				spawn(4)

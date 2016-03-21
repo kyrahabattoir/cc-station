@@ -149,7 +149,7 @@ proc/vox_play(var/input, var/user)
 	if(!input)
 		return
 
-	var/list/tokens = dd_text2list(input, " ")
+	var/list/tokens = splittext(input, " ")
 	var/list/missingwords = list()
 	for(var/t in tokens)
 		t = lowertext(t)

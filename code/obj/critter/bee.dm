@@ -1148,7 +1148,7 @@
 						grownbee = new /obj/critter/domestic_bee/queen/big(get_turf(src))
 					else
 						grownbee = new /obj/critter/domestic_bee/queen(get_turf(src))
-					grownbee.name = dd_replacetext(src.name, "larva", "bee")
+					grownbee.name = replacetext(src.name, "larva", "bee")
 					if (src.color)
 						grownbee.beeKid = src.color
 					if (src.custom_desc)
@@ -1171,7 +1171,7 @@
 						grownbee = new custom_bee_type(get_turf(src))
 					else
 						grownbee = new /obj/critter/domestic_bee(get_turf(src))
-					grownbee.name = dd_replacetext(src.name, "larva", "bee")
+					grownbee.name = replacetext(src.name, "larva", "bee")
 					if (src.color)
 						grownbee.beeKid = src.color
 					if (src.custom_desc)
@@ -1301,7 +1301,7 @@
 			logTheThing("debug", user, null, "names a bee egg \"[t]\"")
 			if (!t)
 				return
-			t = strip_html(dd_replacetext(t, "'",""))
+			t = strip_html(replacetext(t, "'",""))
 			t = copytext(t, 1, 65)
 			if (!t)
 				return

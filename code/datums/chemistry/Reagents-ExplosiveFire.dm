@@ -604,7 +604,8 @@ datum
 					playsound(source, "sound/weapons/flashbang.ogg", 25, 1)
 					for(var/atom/movable/M in view(2 + (volume > 30 ? 1:0), source))
 						if(M.anchored || M == source || M.throwing) continue
-						spawn(0) M.throw_at(get_edge_cheap(source, get_dir(source, M)), 20 + round(volume * 2), 1 + round(volume / 10))
+						M.throw_at(get_edge_cheap(source, get_dir(source, M)), 20 + round(volume * 2), 1 + round(volume / 10))
+						LAGCHECK(50)
 					if (holder)
 						holder.del_reagent(id)
 				return

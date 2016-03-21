@@ -233,6 +233,7 @@
 		if(ip > currentProg.len)
 			running = 0
 			break
+		LAGCHECK(50)
 		exec++
 		if(exec > 50000)
 			throwError(CC_ERROR_INSTRUCTION_LIMIT) // Instruction limit reached.

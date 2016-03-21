@@ -29,7 +29,7 @@ var/global/datum/ircbot/ircbot = new /datum/ircbot()
 
 				if (src.queue && src.queue.len > 0)
 					if (src.debugging)
-						src.logDebug("Load success, flushing queue: [list2json(src.queue)]")
+						src.logDebug("Load success, flushing queue: [json_encode(src.queue)]")
 					for (var/x = 1, x <= src.queue.len, x++) //Flush queue
 						src.export(src.queue[x]["iface"], src.queue[x]["args"])
 
@@ -70,7 +70,7 @@ var/global/datum/ircbot/ircbot = new /datum/ircbot()
 				if (config.env == "dev") return 0
 
 				args = (args == null ? list() : args)
-				args["server_name"] = (config.server_name ? dd_replacetext(config.server_name, "#", "") : null)
+				args["server_name"] = (config.server_name ? replacetext(config.server_name, "#", "") : null)
 				args["server"] = (world.port % 1000) / 100
 				args["api_key"] = (src.apikey ? src.apikey : null)
 
@@ -88,7 +88,7 @@ var/global/datum/ircbot/ircbot = new /datum/ircbot()
 					src.logDebug("Export, returned data: [content]")
 
 				//Handle the response
-				var/list/contentJson = json2list(content)
+				var/list/contentJson = json_decode(content)
 				if (!contentJson["status"])
 					logTheThing("debug", null, null, "<b>IRCBOT:</b> Object missing status parameter in export response: [list2params(contentJson)]")
 					return 0
@@ -111,8 +111,8 @@ var/global/datum/ircbot/ircbot = new /datum/ircbot()
 			args["api_key"] = (src.apikey ? src.apikey : null)
 
 			if (config && config.server_name)
-				args["server_name"] = dd_replacetext(config.server_name, "#", "")
-				args["server"] = dd_replacetext(config.server_name, "#", "") //TEMP FOR BACKWARD COMPAT WITH SHITFORMANT
+				args["server_name"] = replacetext(config.server_name, "#", "")
+				args["server"] = replacetext(config.server_name, "#", "") //TEMP FOR BACKWARD COMPAT WITH SHITFORMANT
 
 			if (src.debugging)
 				src.logDebug("Response, final args: [list2params(args)]")

@@ -96,7 +96,7 @@
 
 /proc/honk(var/string)
 	var/modded = ""
-	var/list/text_tokens = dd_text2list(string, " ")
+	var/list/text_tokens = splittext(string, " ")
 	for(var/token in text_tokens)
 		modded += "HONK "
 	modded += "HONK!"

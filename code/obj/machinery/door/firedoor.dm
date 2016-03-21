@@ -99,9 +99,9 @@
 				src.operating = 1
 
 				play_animation("opening")
+				update_icon(1)
 				sleep(15)
 				src.density = 0
-				update_icon()
 
 				src.RL_SetOpacity(0)
 				src.operating = 0
@@ -111,9 +111,9 @@
 				src.operating = 1
 
 				play_animation("closing")
+				update_icon(1)
 				src.density = 1
 				sleep(15)
-				update_icon()
 
 				src.RL_SetOpacity(1)
 				src.operating = 0
@@ -183,8 +183,8 @@
 
 		return 1
 
-/obj/machinery/door/firedoor/update_icon()
-	if (density)
+/obj/machinery/door/firedoor/update_icon(var/toggling = 0)
+	if(toggling? !density : density)
 		if (locked)
 			icon_state = "[icon_base]_locked"
 		else

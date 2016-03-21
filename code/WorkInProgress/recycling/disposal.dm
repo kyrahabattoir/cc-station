@@ -789,16 +789,17 @@
 								new_nuggets += current_nugget
 
 					qdel(newIngredient)
+					LAGCHECK(50)
 
 					for (var/obj/O in new_nuggets)
 						O.set_loc(H)
+						LAGCHECK(50)
 
 			else
 				var/obj/item/reagent_containers/food/snacks/prison_loaf/newLoaf = new /obj/item/reagent_containers/food/snacks/prison_loaf(src)
 				for (var/atom/movable/newIngredient in H)
 					if (newIngredient.reagents)
 						newIngredient.reagents.trans_to(newLoaf, 1000)
-
 
 					if (istype(newIngredient, /obj/item/reagent_containers/food/snacks/prison_loaf))
 						var/obj/item/reagent_containers/food/snacks/prison_loaf/otherLoaf = newIngredient
@@ -830,6 +831,7 @@
 					else
 						newLoaf.loaf_factor++
 					qdel(newIngredient)
+					LAGCHECK(50)
 
 				newLoaf.update()
 				newLoaf.set_loc(H)
