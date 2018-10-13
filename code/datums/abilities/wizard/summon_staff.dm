@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Simple buff for the staff. Maybe it's less of a wasted spell slot now (Convair880).
 /datum/targetable/spell/summon_staff
 	name = "Summon Staff of Cthulhu"

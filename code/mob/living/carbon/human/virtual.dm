@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /mob/living/carbon/human/virtual
 	real_name = "Virtual Human"
 	var/mob/body = null

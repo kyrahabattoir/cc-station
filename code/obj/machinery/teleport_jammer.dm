@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/telejam
 	name = "teleportation jammer"
 	desc = "Generates a force field interferes with teleportation devices."

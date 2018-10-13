@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define NODENET_SUBNET_MAX 30
 
 /datum/node_subnetwork

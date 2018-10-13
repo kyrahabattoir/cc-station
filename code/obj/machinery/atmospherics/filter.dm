@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 obj/machinery/atmospherics/filter
 	icon = 'icons/obj/atmospherics/filter.dmi'
 	icon_state = "intact_off"

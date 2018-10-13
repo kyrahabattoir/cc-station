@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/critter/floateye
 	name = "floating thing"
 	desc = "You have never seen something like this before."

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /*
 //reagent_container bit flags
 #define RC_SCALE 	1		// has a graduated scale, so total reagent volume can be read directly

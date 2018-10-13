@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Added support for old-style grenades (Convair880).
 /obj/item/mousetrap
 	name = "mousetrap"

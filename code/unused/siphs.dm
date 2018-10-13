@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/atmoalter/siphs/New()
 	..()
 	gas = unpool(/datum/gas_mixture)

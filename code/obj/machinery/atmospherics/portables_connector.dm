@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/atmospherics/portables_connector
 	icon = 'icons/obj/atmospherics/portables_connector.dmi'
 	icon_state = "intact"

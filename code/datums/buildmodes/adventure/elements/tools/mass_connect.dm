@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/puzzlewizard/massconnecttool
 	name = "AB TOOL: Mass Connections"
 	var/selection

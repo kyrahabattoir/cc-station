@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //var/datum/ai_laws/centralized_ai_laws
 
 /datum/ai_laws

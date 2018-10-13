@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // This file is arguably the "main" file where all of the central hydroponics shit goes down.
 // Most of the actual content itself is found in other files, but the plantpot does just about
 // all of the actual work, so if you're looking to see how Hydro works at the very base level

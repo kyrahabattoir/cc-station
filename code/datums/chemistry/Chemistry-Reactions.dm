@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /proc/ldmatter_reaction(var/datum/reagents/holder, var/created_volume, var/id)
 	var/cube = 0
 	var/atom/psource = holder.my_atom

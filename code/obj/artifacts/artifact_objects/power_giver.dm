@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/artifact/power_giver
 	name = "artifact power giver"
 	associated_datum = /datum/artifact/power_giver

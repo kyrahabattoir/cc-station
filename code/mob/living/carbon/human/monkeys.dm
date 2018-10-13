@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 
 /mob/living/carbon/human/monkey //Please ignore how silly this path is.
 	name = "monkey"

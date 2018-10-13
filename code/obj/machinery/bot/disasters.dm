@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // migrated from disaster game mode
 
 /obj/machinery/bot/secbot/emagged

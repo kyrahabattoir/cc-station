@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/ailment/parasite/spidereggs
 	name = "Spider Eggs"
 	max_stages = 5

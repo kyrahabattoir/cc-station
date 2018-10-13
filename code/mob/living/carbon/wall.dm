@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /mob/living/carbon/wall
 	name = "living wall"
 	real_name = "living wall"

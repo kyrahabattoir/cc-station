@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //Verbs we have deemed "server-breaking" or just anything a drunkmin probably shouldnt have
 var/list/dangerousVerbs = list(\
 

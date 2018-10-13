@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/npc/trader
 	name="Trader"
 	var/bullshit =0

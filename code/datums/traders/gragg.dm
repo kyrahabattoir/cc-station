@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/trader/gragg
 	// Rockworm guy.
 	// Always buys mineral items from the station. Very honest and straightforward.

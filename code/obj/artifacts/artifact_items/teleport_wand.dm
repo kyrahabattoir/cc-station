@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/artifact/teleport_wand
 	name = "artifact teleport wand"
 	artifact = 1

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // TODO: merge this with the new ability system.
 
 /datum/blob_ability

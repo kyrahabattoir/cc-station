@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /*
 <DrMelon>I see no reason not to add an admin-only Cluwne Virus
 */

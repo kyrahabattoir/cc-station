@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/kitchenspike
 	name = "a meat spike"
 	icon = 'icons/obj/kitchen.dmi'

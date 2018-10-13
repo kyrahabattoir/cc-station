@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/spell/blind
 	name = "Blind"
 	desc = "Makes the victim temporarily unable to see."

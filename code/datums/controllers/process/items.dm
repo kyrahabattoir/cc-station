@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // handles items
 datum/controller/process/items
 	var/tmp/list/detailed_count

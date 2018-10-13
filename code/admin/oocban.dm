@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var
 	oocban_runonce	// Updates legacy bans with new info
 	oocban_keylist[0]		//to store the keys & ranks

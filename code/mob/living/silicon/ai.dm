@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/global/list/available_ai_shells = list()
 var/list/ai_emotions = list("Happy" = "ai_happy",\
 	"Very Happy" = "ai_veryhappy",\

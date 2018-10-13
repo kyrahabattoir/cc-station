@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // handles machines
 datum/controller/process/machines
 	var/tmp/list/machines

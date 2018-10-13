@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/critter/alien/larva
 	name = "alien larva"
 	icon_state = "larva" // icon_state = "larva_l" - dead

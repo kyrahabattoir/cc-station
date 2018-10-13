@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // maps: COG2 causes nornwalls, DESTINY causes gannetwalls, anything else doesn't get saved
 
 var/global/map_setting = null

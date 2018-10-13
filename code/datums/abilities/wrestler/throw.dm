@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/wrestler/throw
 	name = "Throw (grab)"
 	desc = "Spin a grabbed opponent around and throw them."

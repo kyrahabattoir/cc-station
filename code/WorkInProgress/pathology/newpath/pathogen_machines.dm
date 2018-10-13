@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/centrifuge
 	name = "Centrifuge"
 	icon = 'icons/obj/pathology.dmi'

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/list/iomoon_puzzle_options = list("Ancient Robot Door" = /obj/iomoon_puzzle/ancient_robot_door, "Energy Field Door" = /obj/iomoon_puzzle/ancient_robot_door/energy,
 		"Meat Jaw Door" = /obj/iomoon_puzzle/ancient_robot_door/meat, "Ganglion Button" = /obj/iomoon_puzzle/meat_ganglion,
 		"Floor Pad Button" = /obj/iomoon_puzzle/floor_pad, "Ancient Robot Button" = /obj/iomoon_puzzle/button, "(Cancel)")

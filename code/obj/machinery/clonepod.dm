@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
  #define MEAT_NEEDED_TO_CLONE	16
 #define MAXIMUM_MEAT_LEVEL		100
 #define MEAT_USED_PER_TICK		0.6

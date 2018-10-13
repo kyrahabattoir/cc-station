@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/blob
 	name = "blob"
 	desc = "A mysterious alien blob-like organism."

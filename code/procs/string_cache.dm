@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/global/list/string_cache
 
 /proc/strings(filename as text, key as text, var/accept_absent = 0)

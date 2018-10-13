@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/effects/system/foam_spread
 	var/amount = 5				// the size of the foam spread.
 	var/turf/location

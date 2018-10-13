@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/device/timer
 	name = "timer"
 	icon_state = "timer0"

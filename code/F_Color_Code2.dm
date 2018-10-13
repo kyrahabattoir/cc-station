@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define FTCS_Background "#999999"
 #define FTCS_Button "#bbbbbb"
 #define FTCS_Cancel "#FFFFFF"

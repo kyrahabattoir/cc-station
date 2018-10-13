@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/ailment/disease/fake_gbs
 	name = "GBS"
 	max_stages = 5

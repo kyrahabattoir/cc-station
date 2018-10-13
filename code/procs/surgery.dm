@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // haine wuz heer
 // I got rid of all the various message bullshit in here
 // it's more organized and makes the code easier to read imo

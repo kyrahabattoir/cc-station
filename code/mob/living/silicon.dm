@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /mob/living/silicon
 	gender = NEUTER
 	var/syndicate = 0 // Do we get Syndicate laws?

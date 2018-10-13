@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/currency_name = null
 /proc/currency_name()
 	if (currency_name) return currency_name

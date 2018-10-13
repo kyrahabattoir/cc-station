@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // disease reagent manipulator thing
 
 /obj/submachine/virus_manipulator

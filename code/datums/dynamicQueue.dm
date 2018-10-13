@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Queue bins -- sizing
 #define QUEUE_BIN_SIZE 100
 

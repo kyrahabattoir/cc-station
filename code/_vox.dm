@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // parts of speech flags for madlibs tokens in vox
 #define FLAG 0
 #define FX 1

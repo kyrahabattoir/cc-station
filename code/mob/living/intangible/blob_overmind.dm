@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define eulers 2.7182818284
 
 /mob/living/intangible/blob_overmind

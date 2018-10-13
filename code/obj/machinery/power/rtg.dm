@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/power/rtg
 	name = "radioisotope thermoelectric generator"
 	desc = "Made by wrapping thermocouples around a chunk of nuclear stuff, or something like that."

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/hud/ghostdrone
 	var/obj/screen/hud
 		mod1

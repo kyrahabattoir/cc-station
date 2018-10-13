@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Overhauled the generator to incorporate APC.cell charging.
 // It used to in the past, but that feature was reverted for reasons unknown.
 // However, it's not a C&P job of the old code (Convair880).

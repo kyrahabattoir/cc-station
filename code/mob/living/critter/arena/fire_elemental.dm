@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /mob/living/critter/fire_elemental
 	name = "fire elemental"
 	real_name = "fire elemental"

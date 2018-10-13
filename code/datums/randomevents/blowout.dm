@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/random_event/major/blowout
 	name = "Radioactive Blowout"
 	required_elapsed_round_time = 24000 // 40m

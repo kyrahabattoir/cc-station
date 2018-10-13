@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /mob/living/silicon/hive_mainframe
 	name = "Robot Mainframe"
 	voice_name = "synthesized voice"

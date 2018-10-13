@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/portableowl //Owl version of the portable flasher
 	name = "Portable Owl"
 	desc = "A portable flashing... device? Hoot."

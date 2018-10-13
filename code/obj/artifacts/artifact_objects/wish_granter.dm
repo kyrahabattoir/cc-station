@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/artifact/wish_granter
 	name = "artifact wish granter"
 	associated_datum = /datum/artifact/wish_granter

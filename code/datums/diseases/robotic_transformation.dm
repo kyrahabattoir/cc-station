@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //Nanomachines!
 
 /datum/ailment/disease/robotic_transformation

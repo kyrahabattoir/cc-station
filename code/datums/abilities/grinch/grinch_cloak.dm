@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/grinch/grinch_cloak
 	name = "Activate cloak (temp.)"
 	desc = "Activates a cloaking ability for a limited amount of time."

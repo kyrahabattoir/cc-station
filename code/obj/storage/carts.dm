@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/storage/cart
 	name = "supply cart"
 	desc = "A big rolling supply cart."

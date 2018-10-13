@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Double clicking turfs to move to nearest camera
 
 /turf/proc/move_camera_by_click()

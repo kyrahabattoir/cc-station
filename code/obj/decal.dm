@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/decal
 	var/list/random_icon_states = list()
 	var/random_dir = 0

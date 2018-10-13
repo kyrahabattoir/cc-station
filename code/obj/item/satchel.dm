@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/satchel
 	name = "satchel"
 	desc = "A leather bag. It holds 0/20 items."

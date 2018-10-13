@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /*
 
 ### This file contains a list of all the areas in your station. Format is as follows:

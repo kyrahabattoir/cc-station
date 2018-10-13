@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define DRONE_LUM 2
 
 /mob/living/silicon/ghostdrone

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /////////////////////////////////////// General Announcement Computer
 
 /obj/machinery/computer/announcement

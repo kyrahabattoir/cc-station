@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 
 /datum/hud/zone_sel
 	var/obj/screen/hud/background

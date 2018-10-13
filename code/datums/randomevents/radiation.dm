@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /proc/create_radwave(var/turf/pulseloc, var/rads_amt, var/sound/pulse_sound)
 	particleMaster.SpawnSystem(new /datum/particleSystem/radevent_warning(pulseloc))
 	spawn(30)

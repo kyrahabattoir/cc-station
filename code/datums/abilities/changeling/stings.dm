@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/changeling/sting
 	name = "Sting"
 	desc = "Transfer some toxins into your target."

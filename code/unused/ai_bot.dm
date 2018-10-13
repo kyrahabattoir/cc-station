@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/ai_bot
 	name = "Robot"
 	icon = 'icons/mob/robots.dmi'

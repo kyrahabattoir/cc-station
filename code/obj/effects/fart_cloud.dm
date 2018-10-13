@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // fart cloud for toxic farts
 
 /obj/effects/fart_cloud

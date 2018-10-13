@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // handles telescope signals and whatnot
 datum/controller/process/telescope
 	var/datum/telescope_manager/manager

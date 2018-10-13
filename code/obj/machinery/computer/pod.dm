@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/computer/pod
 	name = "Pod Launch Control"
 	icon_state = "computer_generic"

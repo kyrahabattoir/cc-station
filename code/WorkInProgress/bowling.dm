@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /turf/simulated/bowling
 	name = "floor"
 	icon = 'bowling.dmi'

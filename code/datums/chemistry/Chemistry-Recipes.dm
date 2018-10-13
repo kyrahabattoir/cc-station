@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 ///////////////////////////////////////////////////////////////////////////////////
 #define get_fucked_clarks if (istype(my_atom, /obj/critter/domestic_bee)) return my_atom.visible_message("<span style=\"color:red\">[my_atom] burps.</span>"); if (istype(my_atom, /obj/item/reagent_containers/food/snacks/ingredient/honey)) return
 #define CRITTER_REACTION_LIMIT 50

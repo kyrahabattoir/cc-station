@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/simsMotive
 	var/name = "motive"
 	var/icon = 'icons/mob/hud_human_new.dmi'

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 datum/pathogeneffects/benevolent
 	name = "Benevolent"
 	rarity = RARITY_ABSTRACT

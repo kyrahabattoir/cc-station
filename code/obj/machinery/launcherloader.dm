@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/launcher_loader
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "launcher_loader_0"

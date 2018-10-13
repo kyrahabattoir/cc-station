@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/artifact/container
 	name = "artifact sealed container"
 	associated_datum = /datum/artifact/container

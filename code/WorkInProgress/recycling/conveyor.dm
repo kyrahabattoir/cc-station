@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // converyor belt
 
 // moves items/mobs/movables in set direction every ptick

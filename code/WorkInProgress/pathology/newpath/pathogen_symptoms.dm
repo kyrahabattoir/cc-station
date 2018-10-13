@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Spread flags. Determines what slots are taken into account during a permeability scan.
 #define SPREAD_FACE 1
 #define SPREAD_BODY 2

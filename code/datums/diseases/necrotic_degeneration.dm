@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/ailment/disease/necrotic_degeneration
 	name = "Necrotic Degeneration"
 	max_stages = 6

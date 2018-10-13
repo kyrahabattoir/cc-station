@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/critter/gunbot/drone
 	name = "Syndicate Drone"
 	desc = "An armed and automated Syndicate scout drone."

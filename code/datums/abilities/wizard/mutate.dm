@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/spell/mutate
 	name = "Empower"
 	desc = "Temporarily superpowers your body and mind."

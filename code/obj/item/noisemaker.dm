@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/noisemaker
 	name = "Sound Synthesiser"
 	desc = "Either the most awesome or most annoying thing in the universe, depending on which side of it you're on."

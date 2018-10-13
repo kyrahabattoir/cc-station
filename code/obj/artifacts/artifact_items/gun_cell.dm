@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/ammo/power_cell/self_charging/artifact
 	name = "artifact energy gun power cell"
 	icon = 'icons/obj/artifacts/artifactsitemS.dmi'

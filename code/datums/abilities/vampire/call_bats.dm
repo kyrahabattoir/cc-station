@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/vampire/call_bats
 	name = "Call bats"
 	desc = "Calls a swarm of bats to attack your foes."

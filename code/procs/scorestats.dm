@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /mob/proc/scorestats()
 	var/dat = {"<B>Round Statistics and Score</B><BR><HR>"}
 	if (ticker && ticker.mode && istype(ticker.mode, /datum/game_mode/nuclear))

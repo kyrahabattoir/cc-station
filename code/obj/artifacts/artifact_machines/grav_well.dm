@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/artifact/gravity_well_generator
 	name = "artifact gravity well generator"
 	associated_datum = /datum/artifact/gravity_well_generator

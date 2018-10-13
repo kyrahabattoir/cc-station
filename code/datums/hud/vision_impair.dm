@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // this is such a mess it gets its own HUD object
 /datum/hud/vision_impair
 	New()

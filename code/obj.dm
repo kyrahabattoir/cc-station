@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj
 	//var/datum/module/mod		//not used
 	var/real_name = null

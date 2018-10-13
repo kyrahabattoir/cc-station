@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define TOUCH 1
 #define INGEST 2
 #define INJECT 3

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 client/verb/RPRules()
 	set name = "RP Rules"
 	set category = "chui"

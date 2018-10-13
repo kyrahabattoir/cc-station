@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/abilityHolder
 	var/help_mode = 0
 	var/list/abilities = list()

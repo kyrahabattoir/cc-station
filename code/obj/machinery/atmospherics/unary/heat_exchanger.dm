@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/atmospherics/unary/heat_exchanger
 
 	icon = 'icons/obj/atmospherics/heat_exchanger.dmi'

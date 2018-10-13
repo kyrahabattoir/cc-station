@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/shipcomponent/secondary_system
 	name = "Secondary System"
 	desc = "Add functionality to the ship"

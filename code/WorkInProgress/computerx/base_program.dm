@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //CONTENTS:
 //Base computerx program datum
 //Compx_icon object (Used for GUI system)

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/bioEffect/glowy
 	name = "Glowy"
 	desc = "Endows the subject with bioluminescent skin. Color and intensity may vary by subject."

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/ailment/disease/flatline
 	name = "Cardiac Arrest"
 	scantype = "Medical Emergency"

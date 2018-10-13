@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/buildmode/reagents
 	name = "Reagents (expose or add)"
 	desc = {"***********************************************************<br>

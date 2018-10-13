@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/buildmode/varedit
 	name = "Variable Edit (single)"
 	desc = {"***********************************************************<br>

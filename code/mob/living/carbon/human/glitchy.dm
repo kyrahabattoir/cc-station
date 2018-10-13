@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /mob/living/carbon/human/glitchy
 	var/list/glitchy_noises = list('sound/machines/romhack1.ogg', 'sound/machines/romhack3.ogg', 'sound/machines/fortune_greeting_broken.ogg',
 	'sound/effects/glitchy1.ogg', 'sound/effects/glitchy2.ogg', 'sound/effects/glitchy3.ogg', 'sound/items/hellhorn_12.ogg')

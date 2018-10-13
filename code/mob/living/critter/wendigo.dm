@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /mob/living/critter/wendigo
 	name = "wendigo"
 	real_name = "wendigo"

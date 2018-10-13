@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/ailment/disability/blind
 	name = "Blindness"
 	max_stages = 1

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/spell/animatedead
 	name = "Animate Dead"
 	desc = "Turns a human corpse into a skeletal minion."

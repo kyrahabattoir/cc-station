@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /var/create_mob_html = null
 /datum/admins/proc/create_mob(var/mob/user)
 	set background = 1

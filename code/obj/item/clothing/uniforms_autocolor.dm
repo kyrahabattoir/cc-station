@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //ISaidNo and his Amazing AutoColor Jumpsuit
 /*
 /obj/item/clothing/under/autocolor

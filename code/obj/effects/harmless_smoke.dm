@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/effects/harmless_smoke
 	name = "smoke"
 	icon_state = "smoke"

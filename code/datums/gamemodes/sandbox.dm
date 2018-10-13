@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/game_mode/sandbox
 	name = "sandbox"
 	config_tag = "sandbox"

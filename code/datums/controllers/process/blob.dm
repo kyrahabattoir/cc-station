@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //Handles blobs without being pissy about it
 datum/controller/process/blob
 	var/list/blobs = list()

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/spell/kill
 	name = "Shocking Grasp"
 	desc = "Kills the victim with electrical power. Takes a few seconds to cast."

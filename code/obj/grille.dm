@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/grille
 	desc = "A sturdy metal mesh. Blocks large objects, but lets small items, gas, or energy beams through."
 	name = "grille"

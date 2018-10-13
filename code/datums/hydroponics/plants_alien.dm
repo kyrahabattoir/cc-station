@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/plant/artifact
 	name = "Unknown"
 	special_dmi = 'icons/obj/hydroponics/hydro_alien.dmi'

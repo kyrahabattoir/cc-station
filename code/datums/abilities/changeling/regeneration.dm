@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/changeling/stasis
 	name = "Enter Regenerative Stasis"
 	desc = "Enter a stasis, appearing to be completely dead for 45 seconds, while healing all injuries."

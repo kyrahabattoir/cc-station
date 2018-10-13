@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /client/proc/sharkban(mob/sharktarget as mob in world)
 	set category = null
 	set name = "Shark Ban"

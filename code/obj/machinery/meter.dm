@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/meter
 	name = "meter"
 	icon = 'icons/obj/meter.dmi'

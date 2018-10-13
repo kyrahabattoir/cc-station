@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/spell/magicmissile
 	name = "Magic Missile"
 	desc = "Attacks nearby foes with stunning projectiles."

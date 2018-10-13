@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /turf/simulated/wall/false_wall
 	name = "wall"
 	icon = 'icons/obj/doors/Doorf.dmi'

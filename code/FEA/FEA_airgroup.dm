@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/air_group
 	//Processing all tiles as one large tile if 1
 	var/tmp/group_processing = 1

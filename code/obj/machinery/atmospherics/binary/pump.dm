@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /*
 Every cycle, the pump uses the air in air_in to try and make air_out the perfect pressure.
 

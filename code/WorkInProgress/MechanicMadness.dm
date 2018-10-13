@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //TODO:
 // - Stun and ghost checks for the verbs
 // - Buttons can be picked up with the hands full. Woops.

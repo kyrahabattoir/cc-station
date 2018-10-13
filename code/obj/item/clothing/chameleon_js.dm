@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/clothing/under/chameleon
 	name = "black jumpsuit"
 	desc = "A generic jumpsuit with no rank markings."

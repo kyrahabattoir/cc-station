@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/predator/predator_gearspawn
 	name = "Order hunting gear"
 	desc = "Teleports hunting gear to your location."

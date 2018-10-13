@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/spell/blink
 	name = "Blink"
 	desc = "Teleport randomly to a nearby tile."

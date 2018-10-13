@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/artifact/forcewall_wand
 	name = "artifact forcewall wand"
 	icon = 'icons/obj/artifacts/artifactsitem.dmi'

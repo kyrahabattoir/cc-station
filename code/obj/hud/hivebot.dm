@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 
 /obj/hud/proc/hivebot_hud()
 	var/mob/living/silicon/hivebot/myhive = mymob

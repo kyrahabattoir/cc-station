@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /mob/living/critter/bear
 	name = "space bear"
 	real_name = "space bear"

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/list/ai_names = dd_file2list("config/names/ai.txt")
 var/list/monkey_names = dd_file2list("config/names/monkeynames.txt")
 var/list/commando_names = dd_file2list("config/names/death_commando.txt")

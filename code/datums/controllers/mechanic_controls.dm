@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/datum/mechanic_controller/mechanic_controls
 
 /datum/mechanic_controller

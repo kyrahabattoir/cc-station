@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/hologram_proj
 	name = "Hologram Projector"
 	icon = 'icons/obj/stationobjs.dmi'

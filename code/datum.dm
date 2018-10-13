@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 ////////////
 // drsinghs grand experiment vol 6
 // this pattern might seem redundant but it ensures objects aren't disposed twice.

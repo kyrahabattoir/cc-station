@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/healthHolder/flesh_burn
 	name = "burn"
 	associated_damage_type = "burn"

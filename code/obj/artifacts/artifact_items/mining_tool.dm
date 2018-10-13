@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/artifact/mining_tool
 	name = "artifact mining tool"
 	artifact = 1

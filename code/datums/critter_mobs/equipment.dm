@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/equipmentHolder
 	var/name = "head"							// designation of the
 	var/offset_x = 0							// pixel offset on the x axis for mob overlays

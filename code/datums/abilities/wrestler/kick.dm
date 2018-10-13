@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/wrestler/kick
 	name = "Kick"
 	desc = "A powerful kick, sends people flying away from you. Also useful for escaping from bad situations."

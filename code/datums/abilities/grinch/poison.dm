@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/grinch/poison
 	name = "Poison food"
 	desc = "Ruin a food item or drink by adding horrible poison to it."

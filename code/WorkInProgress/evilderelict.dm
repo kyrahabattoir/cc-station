@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/maniac_active = 0
 var/maniac_previous_victim = "Unknown"
 //maniac

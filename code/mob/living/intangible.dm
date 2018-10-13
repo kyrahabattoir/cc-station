@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /mob/living/intangible
 	icon = 'icons/mob/mob.dmi'
 	icon_state = "ghost"

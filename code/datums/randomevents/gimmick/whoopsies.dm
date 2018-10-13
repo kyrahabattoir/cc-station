@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/random_event/special/whoopsies
 	name = "Whoops, someone put detergent in the air system again!"
 	customization_available = 1

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/spell/clairvoyance
 	name = "Clairvoyance"
 	desc = "Finds the location of a target."

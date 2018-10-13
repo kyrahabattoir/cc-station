@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/screen/release
 	name = "Release object"
 	icon = 'icons/mob/screen1.dmi'

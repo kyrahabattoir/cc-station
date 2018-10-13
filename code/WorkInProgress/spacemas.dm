@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //Xmas presents/ETC
 //CONTAINS:
 // * Setup and helper procs

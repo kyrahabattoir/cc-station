@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/cdc_contact_analysis
 	var/uid = 0
 	var/time_factor = 0

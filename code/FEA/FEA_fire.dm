@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 atom
 	proc
 		temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)

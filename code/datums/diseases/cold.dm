@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/ailment/disease/cold
 	name = "The Cold"
 	max_stages = 3

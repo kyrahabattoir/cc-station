@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/datum/telescope_manager/tele_man
 var/list/special_places = list() //associative List of name=/datum/computer/file/coords that can not be reached normally. For use with the telescope
 //Problem: JS fails to load content into the middle frame sometimes. clicking the computer again while window is open will show map for a second before it disappears again - together with the content. is it because we clear the html before setting new? clear it manually.

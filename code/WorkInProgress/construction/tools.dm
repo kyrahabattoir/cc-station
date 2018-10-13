@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // hack of the century
 /obj/smes_spawner
 	name = "power storage unit"

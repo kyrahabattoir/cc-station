@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/meteorshield
 	name = "meteor shield generator"
 	desc = "Generates a force field that stops meteors."

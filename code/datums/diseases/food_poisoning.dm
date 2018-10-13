@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/ailment/disease/food_poisoning
 	name = "Food Poisoning"
 	max_stages = 3

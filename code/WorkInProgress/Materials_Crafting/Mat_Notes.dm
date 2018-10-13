@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //The stuff below is very rough and will be refined once im done writing the actual systems.
 
 /*

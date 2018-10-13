@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/device/radio/intercom/ship
 	name = "Communication Panel"
 	anchored = 1.0

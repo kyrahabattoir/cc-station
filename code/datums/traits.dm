@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //Unlockable traits? tied to achievements?
 #define TRAIT_STARTING_POINTS 1 //How many "free" points you get
 #define TRAIT_MAX 6			    //How many traits people can select at most.

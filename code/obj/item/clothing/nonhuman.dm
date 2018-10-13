@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /*
 /obj/item/clothing/suit/space/monkey
 	name = "Monkey EVA suit"

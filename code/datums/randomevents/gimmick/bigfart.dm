@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/random_event/special/bigfart
 	name = "Flatulent Anomaly"
 	customization_available = 1

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/artifact/borgifier
 	name = "artifact human2cyborg converter"
 	associated_datum = /datum/artifact/borgifier

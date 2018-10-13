@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Powersink - used to drain station power
 
 /obj/item/device/powersink

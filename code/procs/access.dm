@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Note: Don't forget to check and modify /obj/machinery/computer/card (the ID computer) as needed
 //       when you re-enable old credentials or add new ones.
 //       Also check proc/get_access_desc() (ID computer lookup) at the bottom of this file.

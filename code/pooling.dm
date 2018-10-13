@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define POOL_HIT_COUNT 1
 #define POOL_MISS_COUNT 2
 #define POOLINGS 3

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/submachine/syndicate_teleporter
 	name = "Syndicate Teleporter"
 	icon = 'icons/obj/stationobjs.dmi'

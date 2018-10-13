@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 
 /obj/item/storage/box/mousetraps
 	name = "\improper Pest-B-Gon Mousetraps box"

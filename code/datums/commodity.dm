@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Commodities
 /datum/commodity/
 	var/comname = "commodity" // Name of the item on the market

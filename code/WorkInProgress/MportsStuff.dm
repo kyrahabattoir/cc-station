@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/infared_icon//Mostly copy/paste from paper
 	name = "Infared Writing"
 	icon = 'icons/obj/infared_writing.dmi'

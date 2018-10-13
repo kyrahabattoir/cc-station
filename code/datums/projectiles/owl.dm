@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/projectile/owl
 	name = "space-time disruption"
 	icon = 'icons/misc/critter.dmi'

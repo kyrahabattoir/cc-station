@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /client/proc/ticklag(number as null|num)
 	set category = "Debug"
 	set name = "Ticklag"

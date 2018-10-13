@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/adventure_submode/decal
 	name = "Decoration"
 	var/objtype = null

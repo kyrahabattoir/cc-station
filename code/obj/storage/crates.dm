@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/storage/crate
 	name = "crate"
 	desc = "A small, cuboid object with a hinged top and empty interior."

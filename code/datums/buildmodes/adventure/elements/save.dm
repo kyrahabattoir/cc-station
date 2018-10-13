@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define ADV_SAVE_VERSION_LATEST 2
 
 // Log for versions:

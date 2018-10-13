@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/imp/chair
 	name = "Implant Chair"
 	desc = "Implants the user with a loyalty implant"

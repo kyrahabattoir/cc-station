@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /mob/living/critter/drone/cr
 	drone_designation = "CR"
 	desc = "A Syndicate scrap cutter drone, designed for automated salvage operations."

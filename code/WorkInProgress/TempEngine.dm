@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //node1, air1, network1 correspond to input
 //node2, air2, network2 correspond to output
 //

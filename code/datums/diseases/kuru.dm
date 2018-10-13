@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/ailment/disease/kuru
 	name = "Space Kuru"
 	max_stages = 4

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/datum/hydroponics_controller/hydro_controls
 
 /datum/hydroponics_controller/

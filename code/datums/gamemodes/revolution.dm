@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // To add a rev to the list of revolutionaries, make sure it's rev (with if(istype(ticker.mode, /datum/game_mode/revolution))),
 // then call ticker.mode:add_revolutionary(_THE_PLAYERS_MIND_)
 // nothing else needs to be done, as that proc will check if they are a valid target.

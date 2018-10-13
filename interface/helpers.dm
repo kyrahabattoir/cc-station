@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 proc
 	// convert a string to an integer of the specified base (2-36)
 	int(txt, base = 10)

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 
 /mob/living/carbon/human/bullet_act(var/obj/projectile/P)
 	log_shot(P,src)

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/deep_fryer
 	name = "Deep Fryer"
 	desc = "An industrial deep fryer.  A big hit at state fairs!"

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //NOTE:
 //This file contains the worst code ive ever written.
 //I dont fucking care. It looks pretty awesome.

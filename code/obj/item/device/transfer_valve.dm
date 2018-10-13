@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/device/transfer_valve
 	icon = 'icons/obj/assemblies.dmi'
 	name = "tank transfer valve" // because that's what it is exadv1 and don't you dare change it

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/device/igniter
 	name = "igniter"
 	desc = "A small electronic device able to ignite combustable substances."

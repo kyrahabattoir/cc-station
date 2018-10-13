@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/datum/mining_controller/mining_controls
 
 var/list/asteroid_blocked_turfs = list()

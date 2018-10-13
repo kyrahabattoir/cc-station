@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/construction_frame
 	icon = 'icons/obj/construction_frame.dmi'
 	anchored = 0

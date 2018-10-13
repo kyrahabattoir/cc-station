@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/projectile/disruptor
 	name = "disruptor"
 	icon = 'icons/obj/projectiles.dmi'

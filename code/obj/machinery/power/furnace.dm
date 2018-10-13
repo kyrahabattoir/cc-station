@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/power/furnace
 	name = "Furnace"
 	desc = "An inefficient method of powering the station. Generates 5000 units of power while active."

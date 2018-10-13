@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // handles timed player actions
 datum/controller/process/explosions
 	var/datum/explosion_controller/explosion_controller

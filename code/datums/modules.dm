@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // module datum.
 // this is per-object instance, and shows the condition of the modules in the object
 // actual modules needed is referenced through modulestypes and the object type

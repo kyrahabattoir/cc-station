@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Note: Hard hat and engineering space helmet can be found in helments.dm, the cake hat in hats.dm.
 
 /obj/item/device/flashlight

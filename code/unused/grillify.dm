@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Made during the internet outage caused by hurricane ike
 // fuck you ike
 // love persh

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Currently only used to control /obj/machinery/inlet/filter
 // todo: expand to vent control as well?
 

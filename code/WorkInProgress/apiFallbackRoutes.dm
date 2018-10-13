@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /*
 	These are fallback procs for all API functions that require it
 	This means that if the central server dies, this can pick up and do it's thang

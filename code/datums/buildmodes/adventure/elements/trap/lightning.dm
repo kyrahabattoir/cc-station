@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/puzzlewizard/trap/lightningtrap
 	name = "AB CREATE: Lightning trap"
 	var/turf/target = null

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/changeling/mimic_voice
 	name = "Mimic Voice"
 	desc = "Sound like someone else!"

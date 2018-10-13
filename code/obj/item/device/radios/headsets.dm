@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 
 /obj/item/device/radio/headset
 	name = "\improper Radio Headset"

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /proc/vegetablegibs(turf/T, viral_list, list/ejectables, bdna, btype)
 	var/list/vegetables = list(/obj/item/reagent_containers/food/snacks/plant/soylent, \
 		                       /obj/item/reagent_containers/food/snacks/plant/lettuce, \

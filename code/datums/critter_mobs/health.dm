@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/healthHolder
 	var/name = "generic health"
 	var/associated_damage_type = "none"

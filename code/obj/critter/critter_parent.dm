@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // p much straight up copied from secbot code =I
 
 /obj/critter/

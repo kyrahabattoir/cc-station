@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //Defines don't work correctly here because FUCK BYOND ARGH
 //#define effectTypeMutantRace 1
 //#define effectTypeDisability 2

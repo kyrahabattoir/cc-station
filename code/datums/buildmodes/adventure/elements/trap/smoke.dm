@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/puzzlewizard/trap/smoketrap
 	name = "AB CREATE: Smoke trap"
 	var/reagent

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Navigation beacon for AI robots
 // Functions as a transponder: looks for incoming signal matching
 

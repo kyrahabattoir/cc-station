@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //Warning! Do not animate to low alpha values unless you animate to a high non 255 value first. This breaks things for some bizzare reason.
 
 // particle system states

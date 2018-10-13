@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/game_mode/waldo
 	name = "waldo"
 	config_tag = "waldo"

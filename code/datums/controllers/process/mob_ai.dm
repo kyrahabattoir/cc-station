@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // handles critters
 datum/controller/process/mob_ai
 	setup()

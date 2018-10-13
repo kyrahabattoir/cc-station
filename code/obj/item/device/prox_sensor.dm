@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/device/prox_sensor
 	name = "Proximity Sensor"
 	icon_state = "motion0"

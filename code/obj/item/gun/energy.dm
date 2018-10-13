@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/gun/energy
 	name = "energy weapon"
 	icon = 'icons/obj/gun.dmi'

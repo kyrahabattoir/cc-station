@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /area/gauntlet
 	name = "The Gauntlet"
 	icon_state = "dk_yellow"

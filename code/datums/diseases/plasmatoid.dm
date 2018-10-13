@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/ailment/disease/plasmatoid
 	name = "Plasmatoid"
 	max_stages = 4

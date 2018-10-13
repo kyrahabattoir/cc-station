@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 obj/machinery/atmospherics/binary/passive_gate
 	//Tries to achieve target pressure at output (like a normal pump) except
 	//	Uses no power but can not transfer gases from a low pressure area to a high pressure area

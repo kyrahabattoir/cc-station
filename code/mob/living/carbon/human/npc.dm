@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /mob/living/carbon/human/npc
 	name = "human"
 	is_npc = 1

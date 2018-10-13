@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/puzzlewizard/trap/foamtrap
 	name = "AB CREATE: Foam trap"
 	var/reagent

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/material_piece
 	name = "bar"
 	desc = "Some sort of processed material bar."

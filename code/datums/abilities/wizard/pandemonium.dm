@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/spell/pandemonium
 	name = "Pandemonium"
 	desc = "Calls upon spirits of chaos to summon unpredictable effects."

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/progress
 	var/name = "Milestone"
 	var/list/required = list()

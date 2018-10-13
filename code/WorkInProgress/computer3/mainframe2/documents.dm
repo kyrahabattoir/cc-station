@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //CONTENTS:
 //DWAINE system help file
 //Guardbot readme

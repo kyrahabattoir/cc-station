@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/power
 	name = null
 	icon = 'icons/obj/power.dmi'

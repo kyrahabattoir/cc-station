@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/camera
 	name = "security camera"
 	desc = "A small, high quality camera with thermal, light-amplification, and diffused laser imaging to see through walls. It is tied into a computer system, allowing those with access to watch what occurs around it."

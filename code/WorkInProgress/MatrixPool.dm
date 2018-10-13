@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/list/matrixPool = list()
 var/matrixPoolHitCount = 0
 var/matrixPoolMissCount = 0

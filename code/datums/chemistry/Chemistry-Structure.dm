@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define chem_building_precaution if(!total_chem_reactions || !total_chem_reactions.len) build_chem_structure()
 //initialize the thing when the world starts
 /proc/build_chem_structure()

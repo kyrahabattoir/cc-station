@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /proc/getbrokeninhands()
 	//var/icon/IL = new('items_lefthand.dmi')
 	//var/list/Lstates = IL.IconStates()

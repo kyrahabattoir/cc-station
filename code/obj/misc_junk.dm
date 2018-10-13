@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // The misc crap that used to clutter up item.dm and didn't fit elsewhere.
 
 /obj/item/aplate

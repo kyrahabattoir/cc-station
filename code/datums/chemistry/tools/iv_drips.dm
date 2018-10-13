@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define IV_INJECT 1
 #define IV_DRAW 0
 

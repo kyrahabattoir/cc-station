@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/cookingrecipe
 	var/item1 = null
 	var/item2 = null

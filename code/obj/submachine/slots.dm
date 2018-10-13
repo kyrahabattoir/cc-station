@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/submachine/slot_machine
 	name = "Slot Machine"
 	desc = "Gambling for the antisocial."

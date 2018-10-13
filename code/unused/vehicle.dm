@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/vehicle/process()
 	if (src.speed)
 		if (src.speed <= 10)

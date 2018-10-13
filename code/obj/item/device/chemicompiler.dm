@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /**
  * Chemicompiler
  * v1.0 By volundr 9/24/14

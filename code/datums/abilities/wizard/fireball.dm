@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/spell/fireball
 	name = "Fireball"
 	desc = "Launches an explosive fireball at the target."

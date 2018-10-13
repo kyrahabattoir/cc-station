@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/werewolf/werewolf_transform
 	name = "Transform"
 	desc = "Switch between human and wolf form, Takes a couple seconds to complete."

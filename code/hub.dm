@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Rick hub
 //world
 //	hub = "Slurm.SpaceStation13"

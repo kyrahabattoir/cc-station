@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /*
 [23:20] <@Showtime> 6:15 PM - Something angry!: I have already stated all of my decent ideas for the hour so I guess it's time for clown disease
 [23:20] <@Showtime> 6:17 PM - Something angry!: Stage 1: The patient honks when hit and begins to exhibit signs of clumsiness

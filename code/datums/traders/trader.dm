@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/trader
 	var/name = "trader"   // The name of the trader (duh)
 	var/picture = "generic.png" // What they look like on comms

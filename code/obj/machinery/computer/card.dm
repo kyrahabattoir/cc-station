@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/computer/card
 	name = "Identification Computer"
 	icon_state = "id"

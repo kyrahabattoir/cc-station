@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define RANDOM_Z_LEVEL_TARGET 7 //Z level that should recieve randomized station
 #define RANDOM_Z_LEVEL_SOURCE 6 //Z level that contains source rooms with room_props objects.
 #define RANDOM_Z_LEVEL_MAXROOMS 35 //How many rooms max should we use.

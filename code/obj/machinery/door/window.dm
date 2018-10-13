@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Contains:
 // - Sliding door parent
 // - Brig door

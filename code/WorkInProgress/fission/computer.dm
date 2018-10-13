@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/computer/fission
 	name = "Fission Console"
 	icon_state = "comm"

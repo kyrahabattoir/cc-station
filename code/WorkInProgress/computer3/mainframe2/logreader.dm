@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define ACCESSLOG_RECORDS_LIMIT 256
 #define DEFAULT_LOG_PATH "/var/log/door-access"
 #define MAINFRAME_ACCESSLOG_DRIVER_HACK

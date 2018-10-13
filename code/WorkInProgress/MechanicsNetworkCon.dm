@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //This is a big messy copy & paste job of several things and thus has been banished to its own file.
 //Shouldve probably done it like ibm and have based it on a networked thing instead of duplicating it all here.
 //im coder

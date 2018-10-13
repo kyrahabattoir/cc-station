@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // The lighting system
 //
 // consists of light fixtures (/obj/machinery/light) and light tube/bulb items (/obj/item/light)

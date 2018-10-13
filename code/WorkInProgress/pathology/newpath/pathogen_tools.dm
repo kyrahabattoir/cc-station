@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // A blood slide, used by the centrifuge.
 /obj/item/bloodslide
 	name = "Blood Slide"

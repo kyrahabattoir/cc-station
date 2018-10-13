@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //Assorted small programs not worthy of their own file
 //CONTENTS:
 //~*~Banking Software~*~

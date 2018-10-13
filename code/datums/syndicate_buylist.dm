@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 proc/build_syndi_buylist_cache()
 	var/list/stuff = typesof(/datum/syndicate_buylist)
 	syndi_buylist_cache.Cut()

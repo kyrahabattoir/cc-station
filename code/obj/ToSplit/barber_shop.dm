@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/clothing/head/wig
 	name = "toupée"
 	desc = "You can't tell the difference, Honest!"

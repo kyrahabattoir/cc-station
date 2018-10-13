@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/door/poddoor
 	name = "podlock"
 	icon = 'icons/obj/doors/rapid_pdoor.dmi'

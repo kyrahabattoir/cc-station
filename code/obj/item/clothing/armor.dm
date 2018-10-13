@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // ARMOR
 
 /obj/item/clothing/suit/armor

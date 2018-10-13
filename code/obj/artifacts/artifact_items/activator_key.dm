@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/artifact/activator_key
 	// can activate any artifact simply by smacking it. very very rare
 	name = "artifact activator key"

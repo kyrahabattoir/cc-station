@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //Collection of animations we can reuse for stuff.
 //Try to isolate animations you create an put them in here.
 

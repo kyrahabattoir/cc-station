@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /////////////////////////
 // BASE BAN PROCS
 // Most of these have two steps (instead of double the procs)

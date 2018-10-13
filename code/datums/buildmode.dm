@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/buildmode
 	var/list/extra_buttons = list()
 	New(var/datum/buildmode_holder/H)

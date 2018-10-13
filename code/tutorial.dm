@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/tutorial
 	var/name = "Tutorial"
 	var/mob/owner = null

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // This file is arguably where all the "content" of Hydroponics lies, the framework being taken
 // care of mostly in plantpot.dm - though some of it is also based here. This file contains
 // all plant species and mutations that aren't ones created specifically for setpieces.

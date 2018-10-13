@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/parse_result
 	var/string = ""
 	var/chars_used = 0

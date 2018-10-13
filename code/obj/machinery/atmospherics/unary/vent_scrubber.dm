@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/atmospherics/unary/vent_scrubber
 	icon = 'icons/obj/atmospherics/vent_scrubber.dmi'
 	icon_state = "on"

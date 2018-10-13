@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/adventurepuzzle/triggerable/light
 	icon_state = "light_emitter"
 	name = "Light emitter"

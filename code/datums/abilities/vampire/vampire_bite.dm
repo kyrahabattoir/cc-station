@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/vampire/vampire_bite
 	name = "Bite victim"
 	desc = "Bite the victim's neck to drain them of blood."

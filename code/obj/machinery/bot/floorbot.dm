@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //Floorbot assemblies
 /obj/item/toolbox_tiles
 	desc = "It's a toolbox with tiles sticking out the top"

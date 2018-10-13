@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 
 chui/window/chem
 	var/global/list/CHEMS = list( "Aluminium", "Bromine", "Copper", "Sugar", "Water" )

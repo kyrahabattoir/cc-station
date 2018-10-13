@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //
 // This file contains stuff that was originally made by me and then expanded on or butchered by other people.
 // - Keelin

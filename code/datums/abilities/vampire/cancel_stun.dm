@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/vampire/cancel_stuns
 	name = "Cancel stuns"
 	desc = "Recover from being stunned."

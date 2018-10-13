@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // returns 0 to 1
 /proc/attenuate_for_location(var/atom/loc)
 	var/attenuate = 1

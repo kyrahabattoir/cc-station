@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/vampire/blood_tracking
 	name = "Toggle blood tracking"
 	desc = "Toggles blood gain/loss messages."

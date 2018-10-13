@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/atmospherics/unary/outlet_injector
 	icon = 'icons/obj/atmospherics/outlet_injector.dmi'
 	icon_state = "off"

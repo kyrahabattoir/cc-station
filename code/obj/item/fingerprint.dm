@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // FINGERPRINT HOLDER
 
 // All of this was phased out with the forensic scanner overhaul. Was useless anyway (Convair880).

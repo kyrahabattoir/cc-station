@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // connect reactors to central fission engine
 
 // Load for a typical station is about 50,000

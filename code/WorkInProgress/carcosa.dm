@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/decal/fakeobjects/carcosa/statue
 	name = "statue"
 	desc = "A statue of some ominous looking, robed, figure. There's barely a scratch on it."

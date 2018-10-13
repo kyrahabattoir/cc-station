@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /client/proc/gearspawn_traitor()
 	set category = "Commands"
 	set name = "Call Syndicate"

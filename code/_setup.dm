@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /* Protip: Prepending an underscore to this file puts it at the top of the compile order,
 // so that it already has the defines for the later files that use them.
 */

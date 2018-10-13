@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/coin
 	name = "coin"
 	desc = "A small gold coin with an alien head on one side and a monkey buttocks on the other."

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /mob/living/critter/drone/x
 	drone_designation = "X"
 	desc = "An experimental and extremely dangerous Syndicate railgun drone."

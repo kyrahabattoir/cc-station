@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/random_event/major/spatial_tear
 	name = "Spatial Tear"
 	centcom_headline = "Spatial Anomaly"

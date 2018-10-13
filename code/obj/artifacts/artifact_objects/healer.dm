@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/artifact/healer_bio
 	name = "artifact carbon healer"
 	associated_datum = /datum/artifact/healer_bio

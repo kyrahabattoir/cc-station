@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/device/drone_control
 	name = "drone control handset"
 	desc = "Allows the user to remotely operate a drone."

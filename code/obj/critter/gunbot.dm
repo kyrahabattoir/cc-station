@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/critter/gunbot
 	name = "Robot"
 	desc = "A Security Robot, something seems a bit off."

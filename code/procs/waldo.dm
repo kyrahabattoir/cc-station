@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /client/proc/waldo_decoys()
 	set category = "Spells"
 	set name = "Summon Decoys"

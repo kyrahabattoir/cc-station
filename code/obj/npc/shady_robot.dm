@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/npc/station_trader //separate obj because he has a lot of different behaviours eg. no buying, no set area, no defence systems to activate
 	name="Shady Robot"
 	icon = 'icons/misc/evilreaverstation.dmi' //temporary

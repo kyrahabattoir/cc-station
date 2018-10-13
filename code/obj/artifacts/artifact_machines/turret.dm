@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/artifact/turret
 	name = "artifact turret"
 	associated_datum = /datum/artifact/turret

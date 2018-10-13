@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 ///Warp Beacons and Wormholes
 ///Used by spaceships to travel to other Z-planes
 /obj/warp_beacon

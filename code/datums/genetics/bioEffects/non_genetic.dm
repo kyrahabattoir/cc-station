@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/bioEffect/hidden
 	name = "Miner Training"
 	desc = "Subject is trained in geological and metallurgical matters."

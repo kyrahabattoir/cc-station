@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/list/recently_dead = new/list()
 var/datum/vote_manager/vote_manager = new/datum/vote_manager()
 var/list/vote_log = new/list()

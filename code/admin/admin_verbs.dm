@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #include "macros.dm"
 
 var/list/admin_verbs = list(

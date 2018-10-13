@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //Singularity engine control program
 #ifdef SINGULARITY_TIME
 /datum/computer/file/terminal_program/engine_control

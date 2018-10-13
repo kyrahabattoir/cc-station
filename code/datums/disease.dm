@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/ailment
 	// all the vars that don't change/are defaults go in here - these will be in a central list for referencing
 	var/name = "ailment"

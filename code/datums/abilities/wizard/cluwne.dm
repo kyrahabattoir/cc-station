@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/spell/cluwne
 	name = "Clown's Revenge"
 	desc = "Turns the target into a fat cursed clown."

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /*///////RECIPE DATUMS
 /datum/manufacturer_blueprint/sunglasses
 	name = "Sunglasses"

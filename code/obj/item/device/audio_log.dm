@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/audio_tape
 	name = "compact tape"
 	desc = "A small audio tape.  You could make some rad mix-tapes with this!"

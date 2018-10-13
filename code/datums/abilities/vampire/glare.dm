@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/vampire/glare
 	name = "Glare"
 	desc = "Stuns one target for a short time. Blocked by eye protection."

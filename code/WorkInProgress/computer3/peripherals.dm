@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //CONTENTS
 //format_net_id proc
 //Base peripheral card

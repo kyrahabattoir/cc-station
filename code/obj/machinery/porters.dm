@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Contains:
 // - Portable machinery remote parent
 // - Broken decal remote

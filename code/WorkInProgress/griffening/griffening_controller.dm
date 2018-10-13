@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define HOLDER_ROLE_UNUSED 0
 #define HOLDER_ROLE_CREATURE 1
 #define HOLDER_ROLE_EFFECT 2

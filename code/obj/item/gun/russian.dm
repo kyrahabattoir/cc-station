@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/gun/russianrevolver
 	desc = "Fun for the whole family!"
 	name = "\improper Russian revolver"

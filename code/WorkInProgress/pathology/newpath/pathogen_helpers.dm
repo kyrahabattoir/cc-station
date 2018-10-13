@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /proc/shakespearify(var/string)
 	string = replacetext(string, "your ", "[pick("thy", "thine")] ")
 	string = replacetext(string, " your", " [pick("thy", "thine")]")

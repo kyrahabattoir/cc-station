@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/random_event/major/black_hole
 	name = "Black Hole"
 	centcom_headline = "Gravitational Anomaly"

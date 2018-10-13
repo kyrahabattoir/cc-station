@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // A laser pointer. Emits a (tunable) low-power laser beam
 // Used for alignment and testing of the optics system
 

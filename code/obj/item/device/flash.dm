@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/device/flash
 	name = "flash"
 	desc = "A device that emits an extremely bright light when used. Useful for briefly stunning people or starting a dance party."

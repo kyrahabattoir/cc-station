@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/abcuMarker
 	name = "ABCU Marker"
 	desc = "Denotes a valid tile."

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // The scrap item
 //  a single object type represents all combinations of size and composition of scrap
 //

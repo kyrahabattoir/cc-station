@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 datum/controller/process/chemistry
 	var/tmp/datum/updateQueue/chemistryUpdateQueue
 

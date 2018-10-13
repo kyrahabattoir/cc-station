@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/vampire/vampire_scream
 	name = "Chiropteran screech"
 	desc = "Deafens nearby foes, smashes windows and lights. Blocked by ear protection."

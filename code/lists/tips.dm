@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/list/tips = dd_file2list("strings/roundstart_hints.txt")
 /*
 list(

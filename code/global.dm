@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #ifdef DELETE_QUEUE_DEBUG
 var/global/list/detailed_delete_count = list()
 var/global/list/detailed_delete_gc_count = list()

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/trader/buford
 	// Stoner frog.
 	// Buys and sells drugs, gardening stuff, etc. Is sometimes REALLY fucking high.

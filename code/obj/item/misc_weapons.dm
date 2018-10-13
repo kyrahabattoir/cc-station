@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Contains:
 //
 // - obj/item/weapon parent (now unused and commented out)

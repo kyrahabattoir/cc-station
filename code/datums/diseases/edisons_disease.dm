@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/ailment/disease/edisons_disease
 	name = "Edison's Disease"
 	max_stages = 8

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/chem_pill_bottle
 	name = "Pill bottle"
 	icon_state = "pill_canister"

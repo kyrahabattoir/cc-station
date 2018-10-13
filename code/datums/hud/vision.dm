@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/hud/vision // generic overlays for modifying the mobs vision
 	var/obj/screen/hud
 		scan

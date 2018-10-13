@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /area/blob_tutorial_zone_1
 	name = "Blob Tutorial Zone 1"
 	icon_state = "yellow"

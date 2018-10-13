@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/artifact/lamp
 	name = "artifact lamp"
 	associated_datum = /datum/artifact/lamp

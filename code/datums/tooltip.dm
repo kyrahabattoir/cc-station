@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /*
 Tooltips v1.1 - 22/10/15
 Developed by Wire (#goonstation on irc.synirc.net)

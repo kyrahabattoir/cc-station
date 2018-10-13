@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // this toggle doesn't save across rounds
 /mob/verb/musictoggle()
 	set name = "Music Toggle"

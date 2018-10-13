@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/grinch/instakill
 	name = "Murder"
 	desc = "Induces instant cardiac arrest in a target."

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/artifact/attack_wand
 	name = "artifact attack wand"
 	associated_datum = /datum/artifact/attack_wand

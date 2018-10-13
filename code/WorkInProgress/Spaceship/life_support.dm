@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /////Handles oxygen and heating
 /obj/item/shipcomponent/life_support
 	name = "Nanotrasen Life-Support System"

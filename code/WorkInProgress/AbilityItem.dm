@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define ITEM_ABILITIES_WRAP_AT 15
 
 //There is no stunned etc. check when clicking the buttons.

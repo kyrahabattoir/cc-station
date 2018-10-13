@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 
 var/list/hospital_fx_sounds = list('sound/ambience/hospital_fx1.ogg', 'sound/ambience/hospital_fx2.ogg', 'sound/ambience/hospital_fx3.ogg',
 	'sound/ambience/hospital_fx4.ogg', 'sound/ambience/hospital_fx5.ogg', 'sound/ambience/hospital_fx6.ogg', 'sound/ambience/hospital_amb2.ogg', 'sound/ambience/hospital_amb3.ogg')

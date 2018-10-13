@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/plantmutation/
 	var/name = null // If this is set, plants will use this instead of regular plant name
 	var/crop = null // What crop does it give?

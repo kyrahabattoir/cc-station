@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/objective
 	var/datum/mind/owner
 	var/explanation_text

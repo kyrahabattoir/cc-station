@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /* Contains:
 - Single tank bomb logs
 - Single tank bomb (proximity)

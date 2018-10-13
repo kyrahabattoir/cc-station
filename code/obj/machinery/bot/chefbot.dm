@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/bot/chefbot
 	name = "Dramatic Chef"
 	desc = "(icon, name, concept, and any kind of consistency or sense is currently pending)"

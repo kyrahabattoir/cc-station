@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // I should just kill this bit with fire.
 #define GRIFFENING_TYPE_SWIFT 1
 #define GRIFFENING_TYPE_ARMOR 2

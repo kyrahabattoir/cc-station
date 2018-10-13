@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/religion_name = null
 /proc/religion_name()
 	if (religion_name)

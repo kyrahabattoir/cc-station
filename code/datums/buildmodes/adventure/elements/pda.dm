@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/puzzlewizard/pda
 	var/html_content = null
 	var/list/actions = list()

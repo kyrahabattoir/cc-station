@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/atmospherics/unary/heat_reservoir
 //currently the same code as cold_sink but anticipating process() changes
 

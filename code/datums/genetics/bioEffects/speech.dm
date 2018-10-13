@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/bioEffect/speech
 	name = "Frontal Gyrus Alteration Type-N"
 	desc = "Hinders nerve transmission to and from the speech center of the brain, resulting in faltering speech."

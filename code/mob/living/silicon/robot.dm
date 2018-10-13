@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/robot_cosmetic
 	var/head_mod = null
 	var/ches_mod = null

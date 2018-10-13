@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Addiction with comically-exaggerated withdrawal effects!
 
 /datum/ailment/addiction

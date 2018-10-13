@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/abilityHolder/wraith
 	topBarRendered = 1
 	pointName = "Wraith Points"

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/artifact/injector
 	name = "artifact injector"
 	associated_datum = /datum/artifact/injector

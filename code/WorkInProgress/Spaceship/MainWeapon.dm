@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/shipcomponent/mainweapon
 	name = "Class-A Light Phaser"
 	desc = "A simple phaser designed for scout vehicles."

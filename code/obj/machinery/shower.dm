@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //It's like a chem grenade that never ends
 //And also makes people cleaner.
 

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/vampire/phaseshift_vampire
 	name = "Mist form"
 	desc = "Phase through walls. Only works when you can't be seen."

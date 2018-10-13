@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/fitness/speedbag
 	name = "punching bag"
 	desc = "A punching bag. Can you get to speed level 4???"

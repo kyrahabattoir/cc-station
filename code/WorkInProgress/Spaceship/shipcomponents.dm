@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 ///ship components have their work proc called in the vehicle's process
 /obj/item/shipcomponent
 	name = "Ship Component"

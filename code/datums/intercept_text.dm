@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/intercept_text
 	var/text
 	var/prob_correct_person_lower = 20

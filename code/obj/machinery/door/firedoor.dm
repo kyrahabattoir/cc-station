@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /var/const/OPEN = 1
 /var/const/CLOSED = 2
 

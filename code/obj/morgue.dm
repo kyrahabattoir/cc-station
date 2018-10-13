@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/morgue
 	name = "morgue"
 	icon = 'icons/obj/stationobjs.dmi'

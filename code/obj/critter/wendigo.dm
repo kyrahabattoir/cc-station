@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /////////// cogwerks - hideous wendigo beast
 
 /obj/critter/wendigo

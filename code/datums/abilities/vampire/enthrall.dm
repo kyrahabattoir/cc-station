@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/vampire/enthrall
 	name = "Enthrall"
 	desc = "Makes the target a loyal mindslave. Takes a long time to cast."

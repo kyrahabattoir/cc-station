@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/material_recipe
 	var/name = ""
 	var/result_id = "" //Id of the result material. used as fallback or when you do not want to use a result item.

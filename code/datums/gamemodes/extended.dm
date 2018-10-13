@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/game_mode/extended
 	name = "extended"
 	config_tag = "extended"

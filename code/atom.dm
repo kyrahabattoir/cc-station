@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define DESERIALIZE_ERROR 0
 #define DESERIALIZE_OK 1
 #define DESERIALIZE_NEED_POSTPROCESS 2

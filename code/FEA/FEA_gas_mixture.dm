@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /*
 What are the archived variables for?
 	Calculations are done using the archived variables with the results merged into the regular variables.

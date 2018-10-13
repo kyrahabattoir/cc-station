@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /mob/var/suiciding = 0
 var/suicide_list = new/list()
 

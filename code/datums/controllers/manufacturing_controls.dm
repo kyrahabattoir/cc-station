@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/datum/manufacturing_controller/manuf_controls
 
 /datum/manufacturing_controller

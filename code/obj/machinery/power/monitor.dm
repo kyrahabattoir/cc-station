@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // the power monitoring computer
 // for the moment, just report the status of all APCs in the same powernet
 

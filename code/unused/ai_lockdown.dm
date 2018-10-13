@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /*
 
 This shit isn't good for anything and lags like fuck. Commented it out for now.

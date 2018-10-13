@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /area/sim/racing_entry
 	name = "Clowncar Race track - Entry"
 	icon_state = "green"

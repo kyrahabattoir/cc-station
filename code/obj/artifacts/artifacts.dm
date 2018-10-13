@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/artifact
 	// a totally inert piece of shit that does nothing (alien art)
 	// might as well use it as the category header for non-machinery artifacts just to be efficient

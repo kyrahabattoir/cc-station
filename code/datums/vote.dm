@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/vote
 	var/voting = 0			// true if currently voting
 	var/nextvotetime = 0 	// time at which next vote can be started

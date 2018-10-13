@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/ailment/disease/vamplague
 	name = "Grave Fever"
 	max_stages = 3

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //essential part of the ship,provides power to other components
 //enables travel to other Z-Spaces.
 /obj/item/shipcomponent/engine

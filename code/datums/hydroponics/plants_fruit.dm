@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/plant/tomato
 	name = "Tomato" // You want to capitalise this, it shows up in the seed vendor and plant pot
 	category = "Fruit" // This is either Fruit, Vegetable, Herb or Miscellaneous

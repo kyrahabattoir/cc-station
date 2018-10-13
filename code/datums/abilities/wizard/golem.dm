@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/spell/golem
 	name = "Summon Golem"
 	desc = "Summons a Golem made of the reagent you currently hold."

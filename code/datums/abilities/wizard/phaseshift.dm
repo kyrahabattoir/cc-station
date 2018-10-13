@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/spell/phaseshift
 	name = "Phase Shift"
 	desc = "Become incorporeal and move through walls."

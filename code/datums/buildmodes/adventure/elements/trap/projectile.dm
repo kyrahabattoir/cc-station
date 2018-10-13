@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/puzzlewizard/trap/projectiletrap
 	name = "AB CREATE: Projectile trap"
 	var/turf/target = null

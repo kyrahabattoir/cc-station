@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/puzzlewizard/trigger
 	name = "AB CREATE: Invisible trigger"
 	var/trigger_count = 1

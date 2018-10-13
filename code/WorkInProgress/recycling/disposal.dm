@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // virtual disposal object
 // travels through pipes in lieu of actual items
 // contents will be items flushed by the disposal

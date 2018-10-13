@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/artifact/forcefield_generator
 	name = "artifact forcefield generator"
 	associated_datum = /datum/artifact/forcefield_gen

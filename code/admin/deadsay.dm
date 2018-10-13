@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #include "macros.dm"
 /client/proc/dsay(msg as text)
 	set category = "Special Verbs"

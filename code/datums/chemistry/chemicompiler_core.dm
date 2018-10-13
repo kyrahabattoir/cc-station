@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define CC_ERROR_INVALID_SX				1
 #define CC_ERROR_INVALID_TX				2
 #define CC_ERROR_INVALID_CONTAINER_SX	3

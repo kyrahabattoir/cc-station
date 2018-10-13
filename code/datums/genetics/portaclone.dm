@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/computer/cloner/portable
 	name = "Port-A-Clone"
 	desc = "A mobile cloning vat with a miniature enzymatic reclaimer attached. Requires corpses to be chopped up before they can be reclaimed."

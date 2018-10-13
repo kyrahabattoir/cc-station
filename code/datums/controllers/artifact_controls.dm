@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/datum/artifact_controller/artifact_controls
 
 /datum/artifact_controller

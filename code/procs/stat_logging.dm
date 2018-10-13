@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /////////FOR LOGGING TO STATS FILE/////////
 
 //Called in tickets New() in datacore.dm

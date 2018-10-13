@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/artifact/noisy_thing
 	name = "artifact noisy thing"
 	associated_datum = /datum/artifact/noisy_thing

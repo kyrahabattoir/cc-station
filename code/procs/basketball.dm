@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 proc/bball_nova()
 	set category = "Spells"
 	set name = "B-Ball Nova"

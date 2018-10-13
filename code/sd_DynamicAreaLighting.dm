@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 
 var/sd_light_layer = TILE_EFFECT_OVERLAY_LAYER_LIGHTING		// graphics layer for light effect
 var/sd_defer_updates = 1

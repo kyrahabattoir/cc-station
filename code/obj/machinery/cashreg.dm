@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/cashreg
 	name = "credit transfer device"
 	desc = "Sends funds directly to a host ID."

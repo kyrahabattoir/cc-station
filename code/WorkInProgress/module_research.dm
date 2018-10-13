@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/module_tech
 	var/name = "Item name"
 	var/desc = "Item description"

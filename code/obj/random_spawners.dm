@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 
 /obj/random_item_spawner
 	name = "random item spawner"

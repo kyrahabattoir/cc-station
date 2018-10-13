@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/global/shut_up_about_the_fucking_numbers_station = 1
 
 /client/proc/toggle_numbers_station_messages()

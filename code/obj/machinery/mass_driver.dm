@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/mass_driver
 	name = "mass driver"
 	icon = 'icons/obj/stationobjs.dmi'

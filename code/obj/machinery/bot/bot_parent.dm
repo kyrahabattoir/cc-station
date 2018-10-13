@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // AI (i.e. game AI, not the AI player) controlled bots
 
 /obj/machinery/bot

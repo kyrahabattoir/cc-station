@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Contains:
 // - Portable machinery remote partent
 // - Port-a-Brig remote

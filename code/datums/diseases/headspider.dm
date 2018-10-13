@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/ailment/parasite/headspider
 	name = "Unidentified Foreign Body"
 	max_stages = 4 // takes too goddamn long

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/buildmode/spawn_single
 	name = "Object Spawn"
 	desc = {"***********************************************************<br>

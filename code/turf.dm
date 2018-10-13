@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/global/turf/ff_debug_turf = null
 var/global/client/ff_debugger = null
 

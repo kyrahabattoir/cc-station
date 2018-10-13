@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 
 //[00:45]	AngriestIBM	Let me generate a round backstory in 5 seconds: This is how the syndicate determines who gets higher ranking positions -- by handing the candidates quad-injectors of mindslaves and having them fight to the death
 

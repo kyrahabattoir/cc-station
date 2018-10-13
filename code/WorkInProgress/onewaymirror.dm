@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/const/BLOCK_LAYER = 10 // TODO layer what the fuck is this shit
 
 proc/get_dir2(var/atom/toObj, var/atom/fromObj)

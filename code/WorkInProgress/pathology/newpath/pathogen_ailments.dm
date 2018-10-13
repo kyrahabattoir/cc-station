@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /proc/generate_cold_pathogen()
 	var/datum/pathogen/P = unpool(/datum/pathogen)
 	P.forced_microbody = /datum/microbody/virus

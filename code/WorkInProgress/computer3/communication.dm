@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/computer/file/terminal_program/communications
 	name = "COMMaster"
 	size = 16

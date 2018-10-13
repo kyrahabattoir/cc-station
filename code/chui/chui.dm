@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define CDBG1(msg)
 #define CDBG2(msg)
 #define CDBG3(msg)

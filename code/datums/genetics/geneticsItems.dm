@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/genetics_injector
 	name = "genetics injector"
 	desc = "A special injector designed to interact with one's genetic structure."

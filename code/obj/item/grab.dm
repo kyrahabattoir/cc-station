@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/grab
 	flags = SUPPRESSATTACK
 	var/mob/living/assailant

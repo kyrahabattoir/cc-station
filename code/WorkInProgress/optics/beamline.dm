@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/beam/custom
 	var/obj/item/lens/lens = null
 

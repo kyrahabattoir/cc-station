@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //CONTENTS
 //Mainframe 2 memory core
 //Mainframe 2 master tape -- TODO

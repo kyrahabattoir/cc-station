@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 ////////////////// MISC BULLSHIT //////////////////
 
 /mob/proc/fake_damage(var/amount,var/seconds)

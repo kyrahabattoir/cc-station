@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/portable_atmospherics
 	name = "atmoalter"
 	var/datum/gas_mixture/air_contents = null

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /* see _setup.dm for the actual defines
 #define SAVEFILE_VERSION_MIN	3
 #define SAVEFILE_VERSION_MAX	7

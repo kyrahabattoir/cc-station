@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/demand_control
 	var/list/commodities = list()
 	var/price_multiplier = 1

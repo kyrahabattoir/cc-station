@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // wall formed by metal foams
 // dense and opaque, but easy to break
 

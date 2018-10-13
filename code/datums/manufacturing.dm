@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/manufacture
 	var/name = null                // Name of the schematic
 	var/list/item_paths = list()   // Materials required

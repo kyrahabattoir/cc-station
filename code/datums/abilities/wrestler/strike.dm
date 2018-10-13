@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/wrestler/strike
 	name = "Strike"
 	desc = "Hit a neaby opponent with a quick attack."

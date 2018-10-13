@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/artifact/bio_damage_field_generator
 	name = "artifact bio damage field generator"
 	associated_datum = /datum/artifact/bio_damage_field_generator

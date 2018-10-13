@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/paper/book
 	name = "book"
 	desc = "A book.  I wonder how many of these there are here, it's not like there would be a library on a space station or something."

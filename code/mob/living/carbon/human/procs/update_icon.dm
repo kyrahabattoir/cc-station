@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define wear_sanity_check(X) if (!X.wear_image) X.wear_image = image(X.wear_image_icon)
 #define inhand_sanity_check(X) if (!X.inhand_image) X.inhand_image = image(X.inhand_image_icon)
 

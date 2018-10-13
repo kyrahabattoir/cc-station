@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /turf/simulated/floor/engine/attack_hand(var/mob/user as mob)
 	if ((!( user.canmove ) || user.restrained() || !( user.pulling )))
 		return

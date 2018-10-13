@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // NOTE WELL!
 // Only include this file when debugging locally
 // Do not include in release versions

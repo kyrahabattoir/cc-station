@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/robot_module
 	name = "Cyborg Module"
 	desc = "A blank cyborg module. It has no function in its current state."

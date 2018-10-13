@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define PTLEFFICIENCY 0.05
 #define PTLMAXINPUT 1e13
 #define PTLMAXOUTPUT 999e12

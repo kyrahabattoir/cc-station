@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/data/vending_product
 	var/product_name = "generic"
 	var/atom/product_path = null

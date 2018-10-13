@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/alien
 	name = "alien thing"
 	desc = "theres something alien about this"

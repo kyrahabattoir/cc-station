@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //The advanced pea-green monochrome lcd of tomorrow.
 
 /obj/item/disk/data/cartridge

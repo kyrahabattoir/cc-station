@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /mob/living/critter/drone/hk
 	drone_designation = "HK"
 	desc = "A heavily-armed Syndicate hunter-killer drone."

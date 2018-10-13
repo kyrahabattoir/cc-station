@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //Super secret message here.
 
 /obj/machinery/dna_scannernew/allow_drop()

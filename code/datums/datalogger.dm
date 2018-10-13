@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/global/datum/datalogger/game_stats
 //
 /datum/datalogger

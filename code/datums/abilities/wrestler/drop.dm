@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/wrestler/drop
 	name = "Drop (prone)"
 	desc = "Smash down onto on an opponent."

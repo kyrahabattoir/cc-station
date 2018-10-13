@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/artifact/teleport_recaller
 	name = "artifact recaller"
 	associated_datum = /datum/artifact/recaller

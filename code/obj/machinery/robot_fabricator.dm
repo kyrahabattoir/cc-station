@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/robotic_fabricator
 	name = "Robotic Fabricator"
 	desc = "A machine that produces various objects for robotics from raw material."

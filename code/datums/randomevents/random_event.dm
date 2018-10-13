@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/random_event
 	var/name = null                      // What is this event called?
 	var/centcom_headline = null          // The title of the displayed message.

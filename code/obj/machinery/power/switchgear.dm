@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // a switchgear for cogwerks
 // blatant ripoff of the power monitor computer's code, allows you to turn on and off supply to APCs on the powernet.
 

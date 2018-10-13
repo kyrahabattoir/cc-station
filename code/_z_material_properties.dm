@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //The weird name of this file is due to its very specific place in compiling.
 
 //These exist solely to make sure people don't mis-spell some property somewhere and then have trouble finding the bug.

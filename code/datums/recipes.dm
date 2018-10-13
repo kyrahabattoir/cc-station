@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/recipe
 	var/egg_amount = 0
 	var/flour_amount = 0

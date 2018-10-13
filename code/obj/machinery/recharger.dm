@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 obj/machinery/recharger
 	anchored = 1.0
 	icon = 'icons/obj/stationobjs.dmi'

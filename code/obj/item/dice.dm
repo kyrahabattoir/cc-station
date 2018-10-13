@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define MAX_DICE_GROUP 6
 #define ROLL_WAIT_TIME 30
 

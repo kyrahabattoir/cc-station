@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Artifact Infrastructure Procs
 
 /obj/landmark/artifact

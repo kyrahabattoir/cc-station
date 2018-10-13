@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /////////////////////////////////////////////
 //SPARK SYSTEM (like steam system)
 // The attach(atom/atom) proc is optional, and can be called to attach the effect

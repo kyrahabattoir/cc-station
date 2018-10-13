@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /mob/living/critter/repairbot
 	name = "odd thingmabob"
 	real_name = "odd thingmabob"

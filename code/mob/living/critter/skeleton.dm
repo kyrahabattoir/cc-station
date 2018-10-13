@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /proc/bonegibs(turf/T, viral_list, list/ejectables, bdna, btype)
 	var/list/dirlist = list(list(NORTH, NORTHEAST, NORTHWEST), \
 		                    list(SOUTH, SOUTHEAST, SOUTHWEST), \

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/vampire/radio_jammer
 	name = "Radio interference"
 	desc = "Temporarily disrupts all radio communication in the immediate vicinity."

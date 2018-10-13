@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/mopbucket
 	desc = "Fill it with water, but don't forget a mop!"
 	name = "mop bucket"

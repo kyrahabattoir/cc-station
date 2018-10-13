@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/glass_recycler
 	name = "Kitchenware Recycler"
 	desc = "A machine that recycles glass shards into kitchenware."

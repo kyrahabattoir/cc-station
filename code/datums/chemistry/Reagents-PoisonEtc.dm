@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //Contains reagents that are poisons or otherwise intended to be harmful
 datum
 	reagent

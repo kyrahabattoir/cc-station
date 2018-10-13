@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/cruiser/test
 	name = "Experimental BX-1 Cruiser"
 	desc = "An experimental type of syndicate cruiser based on drone technology."

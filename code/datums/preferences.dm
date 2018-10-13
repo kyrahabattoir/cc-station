@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 datum/preferences
 	var/profile_name
 	var/real_name

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/plank
 	name = "wooden plank"
 	desc = "My best friend plank!"

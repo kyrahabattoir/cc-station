@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /proc/command_alert(var/text, var/title = "")
 	boutput(world, "<h1 class='alert'>[command_name()] Update</h1>")
 

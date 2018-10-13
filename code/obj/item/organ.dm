@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define L_ORGAN 1
 #define R_ORGAN 2
 

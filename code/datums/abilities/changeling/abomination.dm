@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/changeling/abomination
 	name = "Horror Form"
 	desc = "Become something much more powerful."

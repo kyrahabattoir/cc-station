@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //
 /client/proc/debug_variables(datum/D in world)
 	set category = "Debug"

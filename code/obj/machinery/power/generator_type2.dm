@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/power/generator_type2
 	name = "generator"
 	desc = "A high efficiency thermoelectric generator."

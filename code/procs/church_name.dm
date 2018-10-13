@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/church_name = null
 /proc/church_name()
 	if (church_name)

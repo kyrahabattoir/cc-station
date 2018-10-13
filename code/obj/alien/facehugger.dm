@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define cycle_pause 5 //min 1
 #define viewrange 7 //min 2
 

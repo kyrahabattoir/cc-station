@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/spell/doppelganger
 	name = "Doppelganger"
 	desc = "Creates a clone of you while temporarily making you undetectable. The clone keeps moving in whatever direction you were facing when you cast the spell."

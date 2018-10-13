@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /proc/tomatogibs(turf/T, viral_list, list/ejectables, bdna, btype)
 	var/PT = /obj/item/reagent_containers/food/snacks/plant/tomato
 

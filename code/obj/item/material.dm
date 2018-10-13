@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/raw_material/
 	name = "construction materials"
 	desc = "placeholder item!"

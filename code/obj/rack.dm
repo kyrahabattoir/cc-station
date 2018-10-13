@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/rack
 	name = "rack"
 	icon = 'icons/obj/objects.dmi'

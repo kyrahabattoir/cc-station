@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/submachine/seed_manipulator/
 	name = "PlantMaster Mk3"
 	desc = "An advanced machine used for manipulating the genes of plant seeds. It also features an inbuilt seed extractor."

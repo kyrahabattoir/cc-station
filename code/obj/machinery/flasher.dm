@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // It is a gizmo that flashes a small area
 
 /obj/machinery/flasher

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /*********************************
 EHJAX - Like ajax but for ~byond~
 A framework for browser popups to interact with the byond server, async (client-side)

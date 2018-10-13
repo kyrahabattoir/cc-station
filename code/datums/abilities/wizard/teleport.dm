@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/spell/teleport
 	name = "Teleport"
 	desc = "Teleports you to an area of your choice after a short delay."

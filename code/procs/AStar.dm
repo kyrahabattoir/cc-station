@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /proc/AStar(start, end, adjacent, heuristic, maxtraverse = 30, adjacent_param = null, exclude = null)
 	var/list/open = list(start), list/nodeG = list(), list/nodeParent = list(), P = 0
 	while (P++ < open.len)

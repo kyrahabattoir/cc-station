@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/move/airtunnel/process()
 	if (!( src.deployed ))
 		return null

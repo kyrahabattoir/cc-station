@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/door_timer
 	name = "Door Timer"
 	icon = 'icons/obj/stationobjs.dmi'

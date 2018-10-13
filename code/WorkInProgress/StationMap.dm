@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/list/areaColorList = new/list()
 // meh
 var/list/stationMap_bannedAreas = list("Space", "Wizard's Den", "Abandoned ship")

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/storage/crate/loot
 	name = "crate"
 	desc = "A crate of unknown contents, probably accidentally lost from some bygone freighter shipment or the like."

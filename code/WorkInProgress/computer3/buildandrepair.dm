@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //Motherboard is just used in assembly/disassembly, doesn't exist in the actual computer object.
 /obj/item/motherboard
 	name = "Computer mainboard"

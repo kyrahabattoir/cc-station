@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Cleaned up the ancient code that used to be here (Convair880).
 /obj/item/mine
 	name = "land mine (parent)"

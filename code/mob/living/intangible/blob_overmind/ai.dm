@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define STATE_DEAD 0
 #define STATE_DEPLOYING 1
 #define STATE_EXPANDING 2

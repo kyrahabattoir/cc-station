@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/spell/forcewall
 	name = "Forcewall"
 	desc = "Create a forcewall which extends out to your sides."

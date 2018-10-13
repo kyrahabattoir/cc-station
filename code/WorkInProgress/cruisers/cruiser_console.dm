@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //This might just be the file that finally breaks angriestibm.
 //I just nilly willy directly use the cruiser object instead of sending packets.
 

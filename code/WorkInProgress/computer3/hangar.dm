@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define HANGAR_AREATYPE "/area/hangar"
 /datum/computer/file/terminal_program/hangar_control
 	name = "HangarControl"

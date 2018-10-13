@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/artifact/prison
 	name = "artifact imprisoner"
 	associated_datum = /datum/artifact/prison

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /proc/findPath_H(var/turf/A, var/turf/target)
 	var/dx = target.x - A.x
 	var/dy = target.y - A.y

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/nuclearbomb
 	name = "nuclear bomb"
 	desc = "An extremely powerful bomb capable of levelling the whole station."

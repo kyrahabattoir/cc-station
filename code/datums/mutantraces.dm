@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // mutant races: cheap way to add new "types" of mobs
 // without copy/pasting the human code a million times.
 // Now a robust object-oriented version!!!!

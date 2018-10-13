@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define EULERS_NUMBER 2.71828
 
 proc/gaussian(var/amplitude, var/spread, var/dx, var/dy)

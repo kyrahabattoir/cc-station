@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //CONTENTS:
 //Mainframe program parent type
 //Mainframe user account datum

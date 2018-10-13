@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 proc/consonant()
 	var/list/vowels = list(65, 69, 73, 79, 85)
 	var/R = rand(65, 90)

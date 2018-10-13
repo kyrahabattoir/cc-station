@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/weapon/pipe
 	name = "Pipe"
 	desc = "a pipe for holding gas"

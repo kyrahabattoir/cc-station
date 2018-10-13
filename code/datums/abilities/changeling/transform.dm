@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/changeling/monkey
 	name = "Lesser Form"
 	desc = "Become something much less powerful."

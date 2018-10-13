@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/trader/vurdalak
 	// Dude in a cloak in the dark.
 	// A creepy guy who buys and sells really suspicious shit.

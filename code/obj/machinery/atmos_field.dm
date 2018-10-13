@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/atmos_field
 	name = "atmospheric force field"
 	desc = "Keeps gases in but lets metallic objects pass through. Contact with organic materials is discouraged."

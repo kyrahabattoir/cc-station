@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/spell/shockwave
 	name = "Shockwave"
 	desc = "Violently throws nearby targets away from the caster."

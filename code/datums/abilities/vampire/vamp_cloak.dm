@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/vampire/vamp_cloak
 	name = "Toggle cloak"
 	desc = "Toggles your cloak of darkness, which is only effective in dark areas."

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //Parent admin proc, if they have this then they have admin status
 //client.holder will be modified to contain this
 

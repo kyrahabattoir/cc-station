@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /mob/living/silicon/shell
 	icon = 'icons/mob/hivebot.dmi'
 	icon_state = "eyebot-logout"

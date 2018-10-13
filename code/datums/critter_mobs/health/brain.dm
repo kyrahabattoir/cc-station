@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/healthHolder/brain
 	name = "brain"
 	associated_damage_type = "brain"

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/atmospherics/unary/cold_sink/freezer
 	name = "freezer"
 	icon = 'icons/obj/Cryogenic2.dmi'

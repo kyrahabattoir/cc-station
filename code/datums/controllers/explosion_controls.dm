@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/datum/explosion_controller/explosions
 
 /datum/explosion_controller

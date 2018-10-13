@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/healthHolder/suffocation
 	name = "suffocation"
 	associated_damage_type = "oxy"

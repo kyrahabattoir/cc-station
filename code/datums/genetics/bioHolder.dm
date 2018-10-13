@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 
 var/list/bioUids = new/list() //Global list of all uids and their respective mobs
 

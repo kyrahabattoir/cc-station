@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/hud/drone
 	var/obj/screen/charge
 	var/obj/screen/health

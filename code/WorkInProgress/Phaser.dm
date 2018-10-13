@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /*var/const/PHASER_EMP = 1
 var/const/PHASER_FLASH = 2
 var/const/PHASER_TOXINS = 4

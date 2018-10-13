@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 
 /obj/item/paint // this seems to be a completely different paint can than the standard one, uhh. w/e it gets to live in here too
 	name = "paint can"

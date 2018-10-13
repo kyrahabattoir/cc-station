@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/ailment/disease/lycanthropy
 	name = "Lycanthropy"
 	print_name = "Unidentified virus"

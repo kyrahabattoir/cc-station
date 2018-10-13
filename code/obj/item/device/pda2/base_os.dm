@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/computer/file/pda_program/os
 	proc
 		receive_os_command(list/command_list)

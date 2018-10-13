@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /var/global/list/railway_vehicles = list()
 
 /proc/find_adaption_points(var/obj/O, var/adT)

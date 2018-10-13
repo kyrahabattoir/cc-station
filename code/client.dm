@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /client
 	preload_rsc = 1
 	var/datum/admins/holder = null

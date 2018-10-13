@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define MAX_QUEUE_LENGTH 20
 
 /obj/machinery/manufacturer

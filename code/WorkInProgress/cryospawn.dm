@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define CRYOSLEEP_DELAY 9000 // 15 minutes
 #define CRYOTRON_MESSAGE_DELAY 30 // 3 seconds
 

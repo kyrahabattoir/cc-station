@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /////// cogwerks spooky automaton thing that kinda just sits there being weird and ominous
 
 var/global/the_automaton = null

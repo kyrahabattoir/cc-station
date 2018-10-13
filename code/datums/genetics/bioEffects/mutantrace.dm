@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/bioEffect/mutantrace
 	name = "Saurian Genetics"
 	desc = "Enables vestigal non-mammal traits in the subject's body."

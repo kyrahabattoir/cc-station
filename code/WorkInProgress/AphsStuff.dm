@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
 
 //Somewhere out in the vast nothingness of space, a chef (and an admin) is crying.
 
@@ -171,7 +172,7 @@
 						startup = 0
 						wanderer = 1
 					src.visible_message("<span style=\"color:red\">The <b>[src]</b> charges at [C:name]!</span>")
-					src.speak(pick("DooN'T Wor##y I'M hERE!!!","LawwSS UpdAA&$.A.!!.!","CANIHELPYO&£%SIR","REsREACH!!!!!","NATAS&$%LIAHLLA ERROR CODE #736"))
+					src.speak(pick("DooN'T Wor##y I'M hERE!!!","LawwSS UpdAA&$.A.!!.!","CANIHELPYO&Â£%SIR","REsREACH!!!!!","NATAS&$%LIAHLLA ERROR CODE #736"))
 					playsound(src.loc, 'sound/machines/glitch3.ogg', 50, 1)
 					icon_state = "mars_bot"
 					src.task = "chasing"

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/spell/rathens
 	name = "Rathen's Secret"
 	desc = "Summons a powerful shockwave around you that tears the arses and limbs off of enemies."

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //Ye olde filter of yore (Pre-dev adjustable filter)
 
 //TODO: Hacking.

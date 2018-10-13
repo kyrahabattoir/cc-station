@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/puzzlewizard/spawnloc
 	name = "AB CREATE: Critter Spawn Location"
 	var/critter_amount = 0

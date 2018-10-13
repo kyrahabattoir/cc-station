@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/aiHolder
 	var/mob/living/critter/owner = null
 	var/datum/aiTask/current_task = null  // what the critter is currently doing

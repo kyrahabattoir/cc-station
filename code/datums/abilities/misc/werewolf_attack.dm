@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/werewolf/werewolf_feast
 	name = "Maul victim"
 	desc = "Feast on the target to quell your hunger."

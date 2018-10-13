@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /proc/pixel_everyone()
 	boutput(world, "<span style=\"color:red\">Changing all human mobs - please wait a moment.</span>")
 	sleep(10)

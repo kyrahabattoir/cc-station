@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 ///// FOR EXPORTING DATA TO A SERVER /////
 var/global/stat_server = "http://goonhub.com/parser.php?"
 var/global/server_token = "butt bicycles"

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/puzzlewizard/portal
 	name = "AB TOOL: Portals"
 	var/turf/target = null

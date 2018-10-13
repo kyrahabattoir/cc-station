@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/particle_maker
 	name = "Particle Effect Maker"
 	desc = "A thing for making nice particles with. It's an admin tool so if you see it ingame please adminhelp about it!"

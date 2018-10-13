@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/cruiser/cancel_camera
 	name = "Cancel camera view"
 	desc = "Cancels your current camera view."

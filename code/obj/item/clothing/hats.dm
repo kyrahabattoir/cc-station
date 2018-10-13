@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // HATS. OH MY WHAT A FINE CHAPEAU, GOOD SIR.
 
 /obj/item/clothing/head

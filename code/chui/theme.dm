@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define CHUI_THEME_CHROMELESS 1
 #define CHUI_THEME_SCROLLBARS 2
 

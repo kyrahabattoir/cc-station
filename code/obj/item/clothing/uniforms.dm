@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // UNDERS AND BY THAT, NATURALLY I MEAN UNIFORMS/JUMPSUITS
 
 /obj/item/clothing/under

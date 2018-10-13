@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Problem: Pumps seem to reset the temperature or something??
 // Had a pipe on one end of a pump with 240 C, the other end was 20 C.
 

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/computer/shuttle
 	name = "Shuttle"
 	icon_state = "shuttle"

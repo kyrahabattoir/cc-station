@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #include "macros.dm"
 
 /client/proc/cmd_modify_object_variables(obj/O as obj|mob|turf|area in world)

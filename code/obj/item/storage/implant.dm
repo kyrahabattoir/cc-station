@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Most of these aren't in use anymore, but there's enough of them that they may as well get their own file.
 
 /obj/item/storage/box/trackimp_kit

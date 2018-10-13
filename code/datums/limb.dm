@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /**
  * Limb datums for arms. Describes all activity performed by the limb.
  * Currently, this is basically attack_hand().

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/bioEffect/activator
 	name = "Booster Gene X"
 	desc = "This function of this gene is not well-researched."

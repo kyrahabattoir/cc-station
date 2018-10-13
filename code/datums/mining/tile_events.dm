@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/ore/event
 	var/analysis_string = "Caution! Anomaly detected!"
 	var/excavation_string = null

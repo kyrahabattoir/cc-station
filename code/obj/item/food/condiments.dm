@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Condiments
 
 /obj/item/reagent_containers/food/snacks/condiment

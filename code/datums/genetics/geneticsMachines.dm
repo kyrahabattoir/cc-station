@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/list/genetics_computers = list()
 
 /obj/machinery/computer/genetics

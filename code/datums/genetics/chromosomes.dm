@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/dna_chromosome
 	var/name = "Stabilizer"
 	var/desc = {"Prevents a gene from causing any genetic instability when given to an organism.

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/decal/residual_energy
 	name = "residual energy"
 	desc = "faintly glowing residual energy."

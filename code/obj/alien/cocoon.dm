@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /*
 
 Better way to do this might be to make it a verb on a person and to cocoon the person in some kind of resin

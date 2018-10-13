@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define SHARED_TYPES_WEIGHT 0
 //How important it is to us to stay in the same general area
 #define CAMERA_PROXIMITY_PREFERENCE 0.5

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
  //CONTENTS
 //GPTIO interface for artifact research.
 //Blathering on about that GPTIO thing.

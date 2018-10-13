@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Highly modular HUD for critters.
 /datum/hud/critter
 	var/list/hands = list()

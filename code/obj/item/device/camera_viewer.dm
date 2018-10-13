@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/device/camera_viewer
 	name = "Camera monitor"
 	desc = "A portable video monitor connected to a security camera network."

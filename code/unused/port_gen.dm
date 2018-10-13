@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /* new portable generator - work in progress
 
 /obj/machinery/power/port_gen

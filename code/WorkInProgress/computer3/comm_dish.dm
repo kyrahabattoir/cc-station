@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/communications_dish
 	name = "Communications dish"
 	icon = 'icons/mob/hivebot.dmi'

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/spell/magshield
 	name = "Spell Shield"
 	desc = "Temporarily shield yourself from melee attacks and projectiles. It also absorbs some of the blast of explosions."

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // RANDOM SHIT I MAKE GOES HERE, STOLE KEELIN'S IDEA HEH
 
 // Can specify an icon and name instead of a random human mob

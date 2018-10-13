@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/predator/predator_trophycount
 	name = "Check trophy value"
 	desc = "Displays the combined value of all trophies in your possession."

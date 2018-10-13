@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/changeling/spit
 	name = "Toxic Spit"
 	desc = "Spit homing acid at a target, melting their headgear (if any) or burning their face."

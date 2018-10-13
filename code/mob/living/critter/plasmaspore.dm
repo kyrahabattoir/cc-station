@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /mob/living/critter/plasmaspore
 	name = "plasma spore"
 	real_name = "plasma spore"

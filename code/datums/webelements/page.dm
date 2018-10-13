@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/tag/page
 	var/tmp/datum/tag/doctype/dt = new
 	var/tmp/datum/tag/head = new /datum/tag("head")

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/beakerSpec
 	var/list/chems = list()
 	var/list/amounts = list()

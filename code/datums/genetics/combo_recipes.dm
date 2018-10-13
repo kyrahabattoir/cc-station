@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/geneticsrecipe
 	var/list/required_effects = list()
 	var/result = null

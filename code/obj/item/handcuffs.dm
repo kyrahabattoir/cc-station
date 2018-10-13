@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/handcuffs
 	name = "handcuffs"
 	icon = 'icons/obj/items.dmi'

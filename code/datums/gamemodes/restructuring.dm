@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/game_mode/restructuring
 	name = "Corporate Restructuring"
 	config_tag = "restructuring"

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // handles only materials research right now.
 datum/controller/process/research
 	var/datum/materialResearchHolder/researchMaster

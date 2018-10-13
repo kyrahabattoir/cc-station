@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // crates/closets/etc.  this shoulda been combined a while ago, but here we are.
 
 // NOTE:

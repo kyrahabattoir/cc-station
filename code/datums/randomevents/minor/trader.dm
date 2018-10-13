@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/random_event/minor/trader
 	name = "Travelling Trader"
 	centcom_headline = "Commerce and Customs Alert"

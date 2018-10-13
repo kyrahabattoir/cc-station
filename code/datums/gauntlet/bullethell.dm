@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /proc/proj_tracer_tick(var/obj/projectile/O)
 	var/update = 0
 	if (!("lastloc" in O.special_data))

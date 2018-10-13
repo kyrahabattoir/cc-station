@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/predator/predator_taketrophy
 	name = "Take trophy"
 	desc = "Retrieves a trophy skull from the victim or severed head, mutilating them in the process."

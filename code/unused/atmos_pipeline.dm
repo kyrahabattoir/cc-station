@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 datum/atmos/pipeline
 	var/datum/gas_mixture/Gasses = null
 	var/list/obj/machinery/atmos/pipe/pipelist = new/list()

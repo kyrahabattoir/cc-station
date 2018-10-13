@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/list/genescanner_addresses = list()
 
 /obj/machinery/genetics_scanner

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/artifact/plant_helper
 	name = "artifact plant_helper"
 	associated_datum = /datum/artifact/plant_helper

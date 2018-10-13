@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 datum/controller/process/delete_queue
 	var/tmp/delcount = 0
 	var/tmp/gccount = 0

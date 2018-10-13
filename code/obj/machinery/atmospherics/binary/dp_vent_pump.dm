@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/atmospherics/binary/dp_vent_pump
 	icon = 'icons/obj/atmospherics/dp_vent_pump.dmi'
 	icon_state = "off"

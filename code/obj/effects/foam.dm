@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Foam
 // Similar to smoke, but spreads out more
 // metal foams leave behind a foamed metal wall

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /* Hello these are the new logs wow gosh look at this isn't it exciting
 Some placeholders exist for replacement within text:
 	%target% - Replaced by a link + traitor info for the name

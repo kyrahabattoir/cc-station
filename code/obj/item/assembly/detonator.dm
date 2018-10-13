@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/assembly/detonator
 	desc = "A failsafe timer, wired in an incomprehensible way to a detonator assembly"
 	name = "Detonator Assembly"

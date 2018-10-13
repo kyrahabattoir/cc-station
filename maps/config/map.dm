@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #if defined(MAP_OVERRIDE_CONSTRUCTION)
 #include "construction.dm"
 #elif defined(MAP_OVERRIDE_DESTINY)

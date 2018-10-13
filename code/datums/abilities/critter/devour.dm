@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // -----------------------------------
 // Devour using an action as the timer
 // -----------------------------------

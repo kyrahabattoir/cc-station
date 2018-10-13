@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //Contains exotic or special reagents.
 datum/reagent/nitroglycerin // Yes, this is a bad idea.
 	name = "nitroglycerin"

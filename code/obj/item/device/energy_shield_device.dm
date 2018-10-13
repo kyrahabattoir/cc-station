@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/device/energy_shield
 	//TO-DO : Bullets. Direct attacks.
 	name = "Centcom prototype energy-shield"

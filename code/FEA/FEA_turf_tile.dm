@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 atom/movable/var/pressure_resistance = 20
 atom/movable/var/last_forced_movement = 0
 

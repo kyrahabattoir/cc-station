@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/global/list/soundCache = list(
 	"sound/ambience/ambiatm1.ogg" = 'sound/ambience/ambiatm1.ogg',\
  	"sound/ambience/ambicha1.ogg" = 'sound/ambience/ambicha1.ogg',\

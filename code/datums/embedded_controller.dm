@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 datum/computer/file/embedded_program
 	var/list/memory = list()
 	var/state

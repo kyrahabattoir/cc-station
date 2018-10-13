@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /turf/simulated/proc/find_group()
 	//Basically, join any nearby valid groups
 	//	If more than one, pick one with most members at my borders

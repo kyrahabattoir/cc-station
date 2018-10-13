@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/global/datum/controller/gameticker/ticker
 /* -- moved to _setup.dm
 #define GAME_STATE_PREGAME		1

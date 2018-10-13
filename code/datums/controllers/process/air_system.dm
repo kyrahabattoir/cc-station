@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // handles air processing.
 datum/controller/process/air_system
 	setup()

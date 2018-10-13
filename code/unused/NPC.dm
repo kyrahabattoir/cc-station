@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /*
 /obj/npcmonkeyspawner/New()
 	var/mob/living/carbon/monkey/M = new /mob/living/carbon/monkey ( loc )

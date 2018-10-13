@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/effects/system/ion_trail_follow
 	var/atom/holder
 	var/turf/oldposition

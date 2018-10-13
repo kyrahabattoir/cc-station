@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/projectile/rad_bolt
 	name = "bolt"
 	icon = 'icons/obj/projectiles.dmi'

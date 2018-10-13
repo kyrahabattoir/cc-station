@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/ailment/disease/space_aids
 	name = "Space AIDS"
 	max_stages = 3

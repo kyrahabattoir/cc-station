@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/clipboardTurf
 	var/rel_x = 0
 	var/rel_y = 0

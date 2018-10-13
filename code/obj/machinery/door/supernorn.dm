@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/door/supernorn
 	icon = 'icons/Testing/newicons/obj/NEWdoors/door_generic.dmi'
 	icon_state = "closed"

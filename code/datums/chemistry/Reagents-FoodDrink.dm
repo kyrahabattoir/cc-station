@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //Contains reagents related to eating or drinking.
 datum
 	reagent

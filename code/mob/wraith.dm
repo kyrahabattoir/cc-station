@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Wraith
 // Technically neither living nor dead benefits us in such a way that we should be subclassing them.
 

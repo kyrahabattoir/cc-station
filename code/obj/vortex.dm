@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //The vortex appears, sends out some manner of vile thing, and fades away.
 //Or sometimes it just blows up.
 

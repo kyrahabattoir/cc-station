@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // marching squares: easy
 // this special case of marching squares: hell on earth
 // I went to sleep, woke up and cant remember what most of these lookup tables do

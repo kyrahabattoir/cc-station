@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //This file contains stuff that is still *mostly* my code.
 /*
 /atom/verb/textureTest()

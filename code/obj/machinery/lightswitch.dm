@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // the light switch
 // can have multiple per area
 // can also operate on non-loc area through "otherarea" var

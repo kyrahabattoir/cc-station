@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/effects/expl_particles
 	name = "fire"
 	icon = 'icons/effects/effects.dmi'

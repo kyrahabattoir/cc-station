@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 
 /atom/proc/electrocute(mob/user, prb, netnum, var/ignore_gloves)
 

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/computer/genetics/portable
 	name = "Port-A-Gene"
 	desc = "A mobile scanner and computer in one unit for genetics work."

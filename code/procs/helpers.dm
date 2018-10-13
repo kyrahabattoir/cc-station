@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /proc/s_es(var/number as num, var/es = 0)
 	if (isnull(number))
 		return

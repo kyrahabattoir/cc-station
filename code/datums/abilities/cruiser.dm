@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/screen/ability/topBar/cruiser
 	clicked(params)
 		var/datum/targetable/cruiser/spell = owner

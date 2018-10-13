@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/artifact/heater
 	name = "artifact heater"
 	associated_datum = /datum/artifact/heater

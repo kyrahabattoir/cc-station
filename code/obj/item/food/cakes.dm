@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 
 /obj/item/reagent_containers/food/snacks/yellow_cake_uranium_cake
 	name = "yellow cake"

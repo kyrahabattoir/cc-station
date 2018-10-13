@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Added support for single tank bombs and fingerprints (Convair880).
 
 /datum/bomb_monitor

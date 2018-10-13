@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/list/forensic_IDs = new/list() //Global list of all guns, based on bioholder uID stuff
 
 /obj/item/gun

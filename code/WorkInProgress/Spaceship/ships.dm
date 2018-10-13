@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 //////////Escape pod
 /obj/machinery/vehicle/pod
 	name = "Escape Pod A7-"

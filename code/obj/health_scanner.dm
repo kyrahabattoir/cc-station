@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 
 /obj/health_scanner
 	icon = 'icons/obj/device.dmi'

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/random_event/major/ion_storm
 	name = "Ion Storm"
 	centcom_headline = "Equipment Malfunction"

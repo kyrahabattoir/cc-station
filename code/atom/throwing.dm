@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /atom/var/throw_count = 0	  //Counts up for tiles traveled in throw mode. Only resets for mobs.
 /atom/var/throw_unlimited = 0 //Setting this to 1 before throwing will make the object behave as if in space.
 /atom/var/throw_return = 0    //When 1 item will return like a boomerang.

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/cell_charger
 	name = "cell charger"
 	desc = "A charging unit for power cells."

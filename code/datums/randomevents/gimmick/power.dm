@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/random_event/special/power_down
 	name = "Power Outage"
 	centcom_headline = "Critical Power Failure"

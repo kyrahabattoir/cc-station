@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // the cable coil object, used for laying cable
 
 #define MAXCOIL 30

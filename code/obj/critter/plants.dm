@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/critter/maneater
 	name = "man-eating plant"
 	desc = "It looks hungry..."

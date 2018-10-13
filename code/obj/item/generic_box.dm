@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 
 /obj/item/item_box // for when you want something that "contains" a certain amount of an item
 	name = "box"

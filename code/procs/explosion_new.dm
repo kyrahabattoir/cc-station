@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 proc/explosion(atom/source, turf/epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range)
 	var/power = max(devastation_range+heavy_impact_range+0.25, 1)
 	//boutput(world, "<span style=\"color:blue\">[devastation_range] [heavy_impact_range] [power]</span>")

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // handles various global init and the position of the sun.
 datum/controller/process/world
 	var/shuttle

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/puzzlewizard/pressurepad
 	name = "AB CREATE: Pressure pad"
 	var/color_rgb = ""

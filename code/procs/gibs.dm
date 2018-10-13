@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /proc/gibs(atom/location, var/list/diseases, var/list/ejectables, var/blood_DNA, var/blood_type)
     // Added blood type and DNA for forensics (Convair880).
 	var/obj/decal/cleanable/blood/gibs/gib = null

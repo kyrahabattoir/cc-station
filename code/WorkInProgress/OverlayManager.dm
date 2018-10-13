@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /var/list/screenOverlayLibrary = list()
 
 /mob/var/list/screenoverlays = list()

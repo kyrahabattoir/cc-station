@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Controls the emergency shuttle
 #define SHUTTLE_TRANSIT 1
 

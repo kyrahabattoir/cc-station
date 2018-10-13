@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/decal/aliencomputer
 	name ="Strange Computer"
 	desc ="This appears to be some sort of martian computer. The display is in an incomprehensible language."

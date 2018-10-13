@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define MUTATION_MALICIOUS 1
 #define MUTATION_BENEVOLENT -1
 

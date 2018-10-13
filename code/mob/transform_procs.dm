@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // Added an option to send them to the arrival shuttle. Also runtime checks (Convair880).
 /mob/proc/humanize(var/tele_to_arrival_shuttle = 0, var/equip_rank = 1)
 	if (src.transforming)

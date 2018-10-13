@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/screen/ability/chaplain
 	clicked(params)
 		var/datum/targetable/chaplain/spell = owner

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/projectile/bfg
 	name = "BFG shot"
 	icon_state = "bfg"

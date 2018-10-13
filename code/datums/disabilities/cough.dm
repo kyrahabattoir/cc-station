@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/ailment/disability/cough
 	name = "Chronic Cough"
 	max_stages = 1

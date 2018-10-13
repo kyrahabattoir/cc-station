@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/atmos/node
 	name = "Pipe Node"
 	desc = "attaches to a pipe and interacts with the air"

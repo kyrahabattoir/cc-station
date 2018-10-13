@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/random_event/major/antagonist
 	name = "Alien Invasion"
 	required_elapsed_round_time = 16000 // 30m

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/tag
 	var/tmp/list/attributes = list()
 	var/tmp/list/styles = list()

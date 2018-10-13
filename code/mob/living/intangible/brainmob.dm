@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /mob/living/intangible/brainmob
 	//Sort of like a holder mob for brain-triggered assemblies
 	name = "brain thing"

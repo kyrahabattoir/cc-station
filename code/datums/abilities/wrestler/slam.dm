@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/wrestler/slam
 	name = "Slam (grab)"
 	desc = "Slam a grappled opponent into the floor."

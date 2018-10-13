@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 // The day has come when this warps into existence.
 // Dear god, imagine the horrors that will soon lurk in here.
 

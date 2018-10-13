@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/datum/action_controller/actions
 
 //See _setup.dm for interrupt and state definitions

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/computer/file/terminal_program/os/main_os/no_login
 	setup_needs_authentication = 0
 

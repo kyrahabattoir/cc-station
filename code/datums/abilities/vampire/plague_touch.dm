@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/targetable/vampire/plague_touch
 	name = "Diseased touch"
 	desc = "Infects the target with a deadly, non-contagious disease."

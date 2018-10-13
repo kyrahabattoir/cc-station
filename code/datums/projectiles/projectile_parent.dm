@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /proc/roundTZ(var/i)
 	if (i < 0)
 		return -round(-i)

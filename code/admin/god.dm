@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/list/god_list = list()
 var/god_name = ""
 var/can_pray = 0

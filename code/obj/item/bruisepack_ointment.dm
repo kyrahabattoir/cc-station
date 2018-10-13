@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/medical
 	name = "medical pack"
 	icon = 'icons/obj/items.dmi'

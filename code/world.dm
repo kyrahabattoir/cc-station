@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 world
 	mob = /mob/new_player
 	turf = /turf/space

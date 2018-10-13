@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/artifact/darkness_field
 	name = "artifact darkness field"
 	associated_datum = /datum/artifact/darkness_field

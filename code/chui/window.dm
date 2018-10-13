@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 var/testes = 0
 #define CHUI_FLAG_SIZABLE 1
 #define CHUI_FLAG_MOVABLE 2

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/recharge_station
 	name = "Cyborg Docking Station"
 	icon = 'icons/obj/robot_parts.dmi'

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/puzzlewizard/delay
 	name = "AB CREATE: Delay"
 	var/time_delay = 10

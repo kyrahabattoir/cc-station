@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/machinery/fission/neutron_injector
 
 	icon = 'icons/obj/machines/nuclear.dmi'

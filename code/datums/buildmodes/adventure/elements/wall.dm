@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/puzzlewizard/wall
 	name = "AB CREATE: Sliding wall"
 	var/wall_name = ""

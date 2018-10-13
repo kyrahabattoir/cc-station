@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/trader/pianzi_hundan
 	// Lizardman dude in chinese finery.
 	// A total asshole who'll rip you off most of the time.

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /obj/item/storage/photo_album
 	name = "Photo album"
 	icon = 'icons/obj/items.dmi'

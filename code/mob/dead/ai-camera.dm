@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 #define camera_range 4       //Range outside a single camera before static starts
 #define camera_extra_range 3 //How much static-y extra range outside the normal range. After this its 100% static
 

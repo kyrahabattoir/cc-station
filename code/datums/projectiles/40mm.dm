@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /datum/projectile/fourtymm
 	name = "40mm projectile"
 	icon = 'icons/obj/projectiles.dmi'

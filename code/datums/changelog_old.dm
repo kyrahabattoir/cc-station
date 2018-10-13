@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-SA-3.0
+
 /* Just chuck older entries from the changelog in here. Might as well archive them for now. -ISN
 
 (t)thu nov 28 13
