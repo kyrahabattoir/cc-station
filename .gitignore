@@ -1,0 +1,7 @@
+#Ignore compiled files
+*.dmb
+*.rsc
+*.int
+
+#server data files
+data/*
