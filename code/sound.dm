@@ -97,14 +97,14 @@
 	if(istext(soundin))
 		S = unpool(/sound)
 		S.file = csound(soundin)
-		//DEBUG("Created sound [S.file] from csound - soundin is text([soundin])")
+		//DEBUG_MESSAGE("Created sound [S.file] from csound - soundin is text([soundin])")
 	else if (isfile(soundin))
 		S = unpool(/sound)
 		S.file = soundin// = sound(soundin)
-		//DEBUG("Created sound [S.file] from file - soundin is file")
+		//DEBUG_MESSAGE("Created sound [S.file] from file - soundin is file")
 	else if (istype(soundin, /sound))
 		S = soundin
-		//DEBUG("Used input sound: [S.file]")
+		//DEBUG_MESSAGE("Used input sound: [S.file]")
 
 	S.wait = 0 //No queue
 	S.channel = 0 //Any channel
@@ -149,14 +149,14 @@
 	if(istext(soundin))
 		S = unpool(/sound)
 		S.file = csound(soundin)
-		//DEBUG("Created sound [S.file] from csound - soundin is text([soundin])")
+		//DEBUG_MESSAGE("Created sound [S.file] from csound - soundin is text([soundin])")
 	else if (isfile(soundin))
 		S = unpool(/sound)
 		S.file = soundin// = sound(soundin)
-		//DEBUG("Created sound [S.file] from file - soundin is file")
+		//DEBUG_MESSAGE("Created sound [S.file] from file - soundin is file")
 	else if (istype(soundin, /sound))
 		S = soundin
-		//DEBUG("Used input sound: [S.file]")
+		//DEBUG_MESSAGE("Used input sound: [S.file]")
 
 	/*
 	var/sound/S

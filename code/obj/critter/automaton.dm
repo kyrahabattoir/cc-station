@@ -319,19 +319,19 @@ var/global/the_automaton = null
 				if (the_sun)
 					if (!src.spin_lock)
 						src.spin_lock = pick("L", "R")
-						DEBUG("<B>HAINE DEBUG:</b> spin set to [src.spin_lock]")
+						DEBUG_MESSAGE("<B>HAINE DEBUG:</b> spin set to [src.spin_lock]")
 					var/final_spin = 1000 - min(src.sun_spin, 999)
-					DEBUG("<B>HAINE DEBUG:</b> final spin set to [final_spin]")
+					DEBUG_MESSAGE("<B>HAINE DEBUG:</b> final spin set to [final_spin]")
 					animate_spin(the_sun, src.spin_lock, final_spin, -1)
 					if (src.sun_spin >= 990)
 						src.sun_spin += 1
-						DEBUG("<B>HAINE DEBUG:</b> spin now [src.sun_spin]")
+						DEBUG_MESSAGE("<B>HAINE DEBUG:</b> spin now [src.sun_spin]")
 					else if (src.sun_spin >= 900)
 						src.sun_spin += 10
-						DEBUG("<B>HAINE DEBUG:</b> spin now [src.sun_spin]")
+						DEBUG_MESSAGE("<B>HAINE DEBUG:</b> spin now [src.sun_spin]")
 					else
 						src.sun_spin += 100
-						DEBUG("<B>HAINE DEBUG:</b> spin now [src.sun_spin]")
+						DEBUG_MESSAGE("<B>HAINE DEBUG:</b> spin now [src.sun_spin]")
 			else
 				user.visible_message("<span style=\"color:red\">[src] studies [ST] for a moment. It hands it back.</span>")
 

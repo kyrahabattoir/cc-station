@@ -244,7 +244,7 @@ datum
 						else if (holder.my_atom.loc.fingerprintslast) // Backpacks etc.
 							our_fingerprints = holder.my_atom.loc.fingerprintslast
 
-					//DEBUG("Heat-triggered smoke powder reaction: our user is [our_user ? "[our_user]" : "*null*"].[our_fingerprints ? " Fingerprints: [our_fingerprints]" : ""]")
+					//DEBUG_MESSAGE("Heat-triggered smoke powder reaction: our user is [our_user ? "[our_user]" : "*null*"].[our_fingerprints ? " Fingerprints: [our_fingerprints]" : ""]")
 					if (our_user && ismob(our_user))
 						logTheThing("combat", our_user, null, "Heat-triggered [src.name] chemical reaction [log_reagents(holder.my_atom)] at [T ? "[log_loc(T)]" : "null"].")
 					else

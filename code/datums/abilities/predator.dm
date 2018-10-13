@@ -189,16 +189,16 @@
 						new_skull.set_loc(H)
 						H.organHolder.skull = new_skull
 						qdel(S)
-						//DEBUG("[H]'s skull: [new_skull.type] (V: [new_skull.value], D: [new_skull.preddesc])")
+						//DEBUG_MESSAGE("[H]'s skull: [new_skull.type] (V: [new_skull.value], D: [new_skull.preddesc])")
 					else
 						qdel(new_skull)
 						S.value = skull_value
 						S.preddesc = skull_desc
-						//DEBUG("[H]'s skull: [S.type] (V: [S.value], D: [S.preddesc])")
+						//DEBUG_MESSAGE("[H]'s skull: [S.type] (V: [S.value], D: [S.preddesc])")
 				else
 					S.value = skull_value
 					S.preddesc = skull_desc
-					//DEBUG("[H]'s skull: [S.type] (V: [S.value], D: [S.preddesc])")
+					//DEBUG_MESSAGE("[H]'s skull: [S.type] (V: [S.value], D: [S.preddesc])")
 
 	return
 #undef default_skull_value

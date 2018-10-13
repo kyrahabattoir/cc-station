@@ -29,12 +29,12 @@
 		sticker.icon_state = src.icon_state
 		var/pox = src.pixel_x
 		var/poy = src.pixel_y
-		DEBUG("pox [pox] poy [poy]")
+		DEBUG_MESSAGE("pox [pox] poy [poy]")
 		if (params)
 			if (islist(params) && params["icon-y"] && params["icon-x"])
 				pox = text2num(params["icon-x"]) - 16 //round(A.bound_width/2)
 				poy = text2num(params["icon-y"]) - 16 //round(A.bound_height/2)
-				DEBUG("pox [pox] poy [poy]")
+				DEBUG_MESSAGE("pox [pox] poy [poy]")
 		//pox = minmax(-round(A.bound_width/2), pox, round(A.bound_width/2))
 		//poy = minmax(-round(A.bound_height/2), pox, round(A.bound_height/2))
 		sticker.pixel_x = pox

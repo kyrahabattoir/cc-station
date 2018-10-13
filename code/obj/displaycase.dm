@@ -322,5 +322,5 @@
 			src.our_projectile = /datum/projectile/laser/old
 			src.our_projectile2 = /datum/projectile/laser/old_burst
 
-		//DEBUG("[src.name]'s quality_counter: [quality_counter]")
+		//DEBUG_MESSAGE("[src.name]'s quality_counter: [quality_counter]")
 		return

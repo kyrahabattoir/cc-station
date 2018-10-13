@@ -594,7 +594,7 @@
 						R1.talk_into(src, messages, null, A.name, lang_id)
 						italics = 1
 						skip_open_mics_in_range = 1 // First AI intercom broadcasts everything by default.
-						//DEBUG("AI radio #1 triggered. Message: [message]")
+						//DEBUG_MESSAGE("AI radio #1 triggered. Message: [message]")
 					else
 						src.show_text("Mainframe radio inoperable or unavailable.", "red")
 				if ("internal 2")
@@ -602,7 +602,7 @@
 						R2.talk_into(src, messages, null, A.name, lang_id)
 						italics = 1
 						skip_open_mics_in_range = 1
-						//DEBUG("AI radio #2 triggered. Message: [message]")
+						//DEBUG_MESSAGE("AI radio #2 triggered. Message: [message]")
 					else
 						src.show_text("Mainframe radio inoperable or unavailable.", "red")
 				if ("internal 3")
@@ -610,7 +610,7 @@
 						R3.talk_into(src, messages, null, A.name, lang_id)
 						italics = 1
 						skip_open_mics_in_range = 1
-						//DEBUG("AI radio #3 triggered. Message: [message]")
+						//DEBUG_MESSAGE("AI radio #3 triggered. Message: [message]")
 					else
 						src.show_text("Mainframe radio inoperable or unavailable.", "red")
 
@@ -1067,5 +1067,5 @@
 		src.static_image.override = 1
 		src.static_image.loc = src
 		mob_static_icons.Add(src.static_image)
-		DEBUG(bicon(src.static_image))
+		DEBUG_MESSAGE(bicon(src.static_image))
 		return src.static_image

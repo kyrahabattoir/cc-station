@@ -225,7 +225,7 @@
 
 		// We're still idling.
 		if (src.idle && world.time < src.idle + src.idle_delay)
-			//DEBUG("Sleeping. [log_loc(src)]")
+			//DEBUG_MESSAGE("Sleeping. [log_loc(src)]")
 			return
 
 		// Invalid targets may not be unreachable anymore. Clear list periodically.
@@ -233,10 +233,10 @@
 			src.targets_invalid = list()
 			src.lubed_turfs = list()
 			src.clear_invalid_targets = world.time
-			//DEBUG("[src.emagged ? "(E) " : ""]Cleared target_invalid. [log_loc(src)]")
+			//DEBUG_MESSAGE("[src.emagged ? "(E) " : ""]Cleared target_invalid. [log_loc(src)]")
 
 		if (src.frustration >= 8)
-			//DEBUG("[src.emagged ? "(E) " : ""]Selecting new target (frustration). [log_loc(src)]")
+			//DEBUG_MESSAGE("[src.emagged ? "(E) " : ""]Selecting new target (frustration). [log_loc(src)]")
 			if (src.target && !(src.target in src.targets_invalid))
 				src.targets_invalid += src.target
 			src.frustration = 0
@@ -255,40 +255,40 @@
 			if (src.emagged)
 				for (var/turf/simulated/floor/F in view(7, src))
 					if (F in targets_invalid)
-						//DEBUG("[src.emagged ? "(E) " : ""]Acquiring target failed (target_invalid). [F] [log_loc(F)]")
+						//DEBUG_MESSAGE("[src.emagged ? "(E) " : ""]Acquiring target failed (target_invalid). [F] [log_loc(F)]")
 						continue
 					if (F in cleanbottargets)
-						//DEBUG("[src.emagged ? "(E) " : ""]Acquiring target failed (other bot target). [F] [log_loc(F)]")
+						//DEBUG_MESSAGE("[src.emagged ? "(E) " : ""]Acquiring target failed (other bot target). [F] [log_loc(F)]")
 						continue
 					if (F in src.lubed_turfs)
-						//DEBUG("[src.emagged ? "(E) " : ""]Acquiring target failed (lubed). [F] [log_loc(F)]")
+						//DEBUG_MESSAGE("[src.emagged ? "(E) " : ""]Acquiring target failed (lubed). [F] [log_loc(F)]")
 						continue
 					for (var/atom/A in F.contents)
 						if (A.density && !(A.flags & ON_BORDER) && !istype(A, /obj/machinery/door) && !ismob(A))
 							if (!(F in src.targets_invalid))
-								//DEBUG("[src.emagged ? "(E) " : ""]Acquiring target failed (density). [F] [log_loc(F)]")
+								//DEBUG_MESSAGE("[src.emagged ? "(E) " : ""]Acquiring target failed (density). [F] [log_loc(F)]")
 								src.targets_invalid += F
 							continue
 
 					src.target = F
-					//DEBUG("[src.emagged ? "(E) " : ""]Target acquired. [F] [log_loc(F)]")
+					//DEBUG_MESSAGE("[src.emagged ? "(E) " : ""]Target acquired. [F] [log_loc(F)]")
 					break
 			else
 				for (var/obj/decal/cleanable/D in view(7, src))
 					if (D in targets_invalid)
-						//DEBUG("[src.emagged ? "(E) " : ""]Acquiring target failed (target_invalid). [D] [log_loc(D)]")
+						//DEBUG_MESSAGE("[src.emagged ? "(E) " : ""]Acquiring target failed (target_invalid). [D] [log_loc(D)]")
 						continue
 					if (D in cleanbottargets)
-						//DEBUG("[src.emagged ? "(E) " : ""]Acquiring target failed (other bot target). [D] [log_loc(D)]")
+						//DEBUG_MESSAGE("[src.emagged ? "(E) " : ""]Acquiring target failed (other bot target). [D] [log_loc(D)]")
 						continue
 
 					src.target = D
-					//DEBUG("[src.emagged ? "(E) " : ""]Target acquired. [D] [log_loc(D)]")
+					//DEBUG_MESSAGE("[src.emagged ? "(E) " : ""]Target acquired. [D] [log_loc(D)]")
 					break
 
 		// Still couldn't find one? Abort and retry later.
 		if (!src.target || src.target == null)
-			//DEBUG("[src.emagged ? "(E) " : ""]Acquiring target failed (no valid targets). [log_loc(src)]")
+			//DEBUG_MESSAGE("[src.emagged ? "(E) " : ""]Acquiring target failed (no valid targets). [log_loc(src)]")
 			src.idle = world.time
 			return
 
@@ -302,14 +302,14 @@
 				if (!isturf(src.loc) || !T || !isturf(T) || T.density)
 					if (!(src.target in src.targets_invalid))
 						src.targets_invalid += src.target
-						//DEBUG("[src.emagged ? "(E) " : ""]Acquiring target failed (target density). [T] [log_loc(T)]")
+						//DEBUG_MESSAGE("[src.emagged ? "(E) " : ""]Acquiring target failed (target density). [T] [log_loc(T)]")
 					src.target = null
 					return
 
 				if (istype(T, /turf/space))
 					if (!(src.target in src.targets_invalid))
 						src.targets_invalid += src.target
-						//DEBUG("[src.emagged ? "(E) " : ""]Acquiring target failed (space tile). [T] [log_loc(T)]")
+						//DEBUG_MESSAGE("[src.emagged ? "(E) " : ""]Acquiring target failed (space tile). [T] [log_loc(T)]")
 					src.target = null
 					return
 
@@ -317,7 +317,7 @@
 					if (A.density && !(A.flags & ON_BORDER) && !istype(A, /obj/machinery/door) && !ismob(A))
 						if (!(src.target in src.targets_invalid))
 							src.targets_invalid += src.target
-							//DEBUG("[src.emagged ? "(E) " : ""]Acquiring target failed (obstruction). [T] [log_loc(T)]")
+							//DEBUG_MESSAGE("[src.emagged ? "(E) " : ""]Acquiring target failed (obstruction). [T] [log_loc(T)]")
 						src.target = null
 						return
 
@@ -326,7 +326,7 @@
 				if (!src.path) // Woops, couldn't find a path.
 					if (!(src.target in src.targets_invalid))
 						src.targets_invalid += src.target
-						//DEBUG("[src.emagged ? "(E) " : ""]Pathfinding failed. [T] [log_loc(T)]")
+						//DEBUG_MESSAGE("[src.emagged ? "(E) " : ""]Pathfinding failed. [T] [log_loc(T)]")
 					src.target = null
 					return
 
@@ -350,7 +350,7 @@
 						src.path -= src.path[1]
 					else
 						src.frustration++
-			//DEBUG("[src.emagged ? "(E) " : ""]Moving towards target. [src.target] [log_loc(src.target)]")
+			//DEBUG_MESSAGE("[src.emagged ? "(E) " : ""]Moving towards target. [src.target] [log_loc(src.target)]")
 
 		if (src.target)
 			if (src.loc == get_turf(src.target))
@@ -372,7 +372,7 @@
 		src.icon_state = "cleanbot-c"
 		src.visible_message("<span style=\"color:red\">[src] begins to clean the [target.name].</span>")
 		src.cleaning = 1
-		//DEBUG("[src.emagged ? "(E) " : ""]Cleaning target. [src.target] [log_loc(src.target)]")
+		//DEBUG_MESSAGE("[src.emagged ? "(E) " : ""]Cleaning target. [src.target] [log_loc(src.target)]")
 
 		spawn(50)
 			if (src)

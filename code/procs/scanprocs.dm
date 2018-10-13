@@ -423,7 +423,7 @@
 	pressure = check_me.return_pressure()
 	total_moles = check_me.total_moles()
 
-	//DEBUG("[A] contains: [pressure] kPa, [total_moles] moles.")
+	//DEBUG_MESSAGE("[A] contains: [pressure] kPa, [total_moles] moles.")
 
 	var/data = ""
 

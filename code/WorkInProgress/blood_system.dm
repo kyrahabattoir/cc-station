@@ -523,57 +523,57 @@ this is already used where it needs to be used, you can probably ignore it.
 
 //proc/animate_blood_damage(var/mob/some_idiot as mob, var/mob/some_jerk as mob)
 /*
-	DEBUG("made it into proc")
+	DEBUG_MESSAGE("made it into proc")
 	if (!some_idiot || !ishuman(some_idiot)) // what're we gunna do here?
 		return 0
 
 	var/blood_color = DEFAULT_BLOOD_COLOR // default is #990000 atm, a dark-ish red.
 
 	if (ishuman(some_idiot)) // only humans have the blood_color var
-		DEBUG("some_idiot [some_idiot] is human")
+		DEBUG_MESSAGE("some_idiot [some_idiot] is human")
 		blood_color = some_idiot:blood_color // they might have ~extra-fab blood~ so we wanna use whatever color they have
 
 	var/anim_offset_y = 0 // vertical offset
 	var/anim_offset_x = 0 // horizontal offset
 
 	if (some_idiot.lying) // are we laying around on the floor like some kinda bum?
-		DEBUG("some_idiot [some_idiot] is lying down")
+		DEBUG_MESSAGE("some_idiot [some_idiot] is lying down")
 		if (some_jerk) // our attacker, if we've got one
 			switch (some_jerk.zone_sel.selecting) // where're they aiming?
 				if ("head")
-					DEBUG("some_jerk [some_jerk] is aiming at the head")
+					DEBUG_MESSAGE("some_jerk [some_jerk] is aiming at the head")
 					anim_offset_y = rand(-2,-10)
 					anim_offset_x = rand(6,12)
 				if ("chest" || "l_arm" || "r_arm")
-					DEBUG("some_jerk [some_jerk] is aiming at the chest/arms")
+					DEBUG_MESSAGE("some_jerk [some_jerk] is aiming at the chest/arms")
 					anim_offset_y = rand(-2,-12)
 					anim_offset_x = rand(8,15)
 				if ("l_leg" || "r_leg")
-					DEBUG("some_jerk [some_jerk] is aiming at the legs")
+					DEBUG_MESSAGE("some_jerk [some_jerk] is aiming at the legs")
 					anim_offset_y = rand(0,-12)
 					anim_offset_x = rand(-7,-15)
 		else // otherwise...
-			DEBUG("some_jerk not passed")
+			DEBUG_MESSAGE("some_jerk not passed")
 			anim_offset_y = rand(7,-12)
 			anim_offset_x = rand(8,-15)
 	else // if we aren't on the ground
-		DEBUG("some_idiot [some_idiot] is standing")
+		DEBUG_MESSAGE("some_idiot [some_idiot] is standing")
 		if (some_jerk)
 			switch (some_jerk.zone_sel.selecting)
 				if ("head")
-					DEBUG("some_jerk [some_jerk] is aiming at the head")
+					DEBUG_MESSAGE("some_jerk [some_jerk] is aiming at the head")
 					anim_offset_y = rand(8,14)
 					anim_offset_x = rand(-5,3)
 				if ("chest" || "l_arm" || "r_arm")
-					DEBUG("some_jerk [some_jerk] is aiming at the chest/arms")
+					DEBUG_MESSAGE("some_jerk [some_jerk] is aiming at the chest/arms")
 					anim_offset_y = rand(-5,6)
 					anim_offset_x = rand(-9,7)
 				if ("l_leg" || "r_leg")
-					DEBUG("some_jerk [some_jerk] is aiming at the legs")
+					DEBUG_MESSAGE("some_jerk [some_jerk] is aiming at the legs")
 					anim_offset_y = rand(-5,-15)
 					anim_offset_x = rand(-7,-5)
 		else
-			DEBUG("some_jerk not passed")
+			DEBUG_MESSAGE("some_jerk not passed")
 			anim_offset_y = rand(-15,14)
 			anim_offset_x = rand(-9,-7)
 
@@ -583,12 +583,12 @@ this is already used where it needs to be used, you can probably ignore it.
 	some_idiot:damage_animation:pixel_x = anim_offset_x
 	some_idiot:damage_animation:color = blood_color
 	some_idiot:damage_animation:transform = turn(some_idiot:damage_animation:transform, rand(0, 359))
-	DEBUG("anim y [some_idiot:damage_animation:pixel_y], anim x [some_idiot:damage_animation:pixel_x], blood color [some_idiot:damage_animation:color]")
+	DEBUG_MESSAGE("anim y [some_idiot:damage_animation:pixel_y], anim x [some_idiot:damage_animation:pixel_x], blood color [some_idiot:damage_animation:color]")
 
-	DEBUG("adding overlay")
+	DEBUG_MESSAGE("adding overlay")
 	some_idiot.overlays += some_idiot:damage_animation
 	spawn(15)
-		DEBUG("removing overlay")
+		DEBUG_MESSAGE("removing overlay")
 		some_idiot:damage_animation:icon_state = "blank"
 		some_idiot.overlays -= some_idiot:damage_animation
 */

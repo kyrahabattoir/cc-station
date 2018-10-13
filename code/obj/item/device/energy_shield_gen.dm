@@ -17,14 +17,14 @@
 
 	// For whatever reason, disposing() is never called for this item. Ditto for the cloak generator (Convair880).
 	Del()
-		//DEBUG("Del() was called for [src].")
+		//DEBUG_MESSAGE("Del() was called for [src].")
 		if (src.active)
 			src.turn_off()
 		..()
 		return
 
 	disposing()
-		//DEBUG("Disposing() was called for [src] at [log_loc(src)].")
+		//DEBUG_MESSAGE("Disposing() was called for [src] at [log_loc(src)].")
 		if (src.active)
 			src.turn_off()
 		..()

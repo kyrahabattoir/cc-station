@@ -23,7 +23,7 @@
 			for (var/new_item in src.guaranteed)
 				if (!ispath(new_item))
 					logTheThing("debug", src, null, "has a non-path item in its guaranteed list, [new_item]")
-					DEBUG("[src] has a non-path item in its guaranteed list, [new_item]")
+					DEBUG_MESSAGE("[src] has a non-path item in its guaranteed list, [new_item]")
 					continue
 				var/amt = 1
 				if (isnum(guaranteed[new_item]))
@@ -40,7 +40,7 @@
 			var/new_item = pick(src.items2spawn)
 			if (!ispath(new_item))
 				logTheThing("debug", src, null, "has a non-path item in its spawn list, [new_item]")
-				DEBUG("[src] has a non-path item in its spawn list, [new_item]")
+				DEBUG_MESSAGE("[src] has a non-path item in its spawn list, [new_item]")
 				continue
 			new new_item(src.loc)
 

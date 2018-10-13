@@ -696,7 +696,7 @@
 		if (second_message && M == second_target && M != first_target)
 			msg = second_message
 		M.show_message(msg, 1, blind_message, 2)
-		//DEBUG("<b>[M] recieves message: &quot;[msg]&quot;</b>")
+		//DEBUG_MESSAGE("<b>[M] recieves message: &quot;[msg]&quot;</b>")
 
 // it was about time we had this instead of just visible_message()
 /atom/proc/audible_message(var/message)
@@ -2608,7 +2608,7 @@
 	if (eyeblind != 0)
 		src.eye_blind = max(0, src.eye_blind + eyeblind)
 
-	//DEBUG("Eye damage applied: [amount]. Tempblind: [tempblind == 0 ? "N" : "Y"]")
+	//DEBUG_MESSAGE("Eye damage applied: [amount]. Tempblind: [tempblind == 0 ? "N" : "Y"]")
 	return 1
 
 /mob/proc/get_eye_blurry()
@@ -2628,7 +2628,7 @@
 			upper_cap = cap
 
 	src.eye_blurry = max(0, min(src.eye_blurry + amount, upper_cap))
-	//DEBUG("Amount is [amount], new eye blurry is [src.eye_blurry], cap is [upper_cap]")
+	//DEBUG_MESSAGE("Amount is [amount], new eye blurry is [src.eye_blurry], cap is [upper_cap]")
 	return 1
 
 /mob/proc/get_ear_damage(var/tempdeaf = 0)
@@ -2689,7 +2689,7 @@
 		else if (eardeaf > 0 && deaf_bypass == 0 && suppress_message == 0)
 			boutput(src, "<span style=\"color:red\">The ringing overpowers your ability to hear momentarily.</span>")
 
-	//DEBUG("Ear damage applied: [amount]. Tempdeaf: [tempdeaf == 0 ? "N" : "Y"]")
+	//DEBUG_MESSAGE("Ear damage applied: [amount]. Tempdeaf: [tempdeaf == 0 ? "N" : "Y"]")
 	return 1
 
 // No natural healing can occur if ear damage is above this threshold. Didn't want to make it yet another mob parent var.

@@ -150,7 +150,7 @@ var/list/status_display_text_images = list()
 						repeat_update = 1
 				*/
 				if(text_ticker.len)
-					DEBUG("Updating text display index: [ticker_index], len: [text_ticker.len]")
+					DEBUG_MESSAGE("Updating text display index: [ticker_index], len: [text_ticker.len]")
 					update_display_lines(,,text_ticker[ticker_index])
 					ticker_index = ((ticker_index + 1) % text_ticker.len)
 			else
@@ -214,7 +214,7 @@ var/list/status_display_text_images = list()
 				temp.overlays += texticon(line1, 23, -9)
 				temp.overlays += texticon(line2, 23, -17)
 
-			DEBUG("Line 1: [line1], Line 2: [line2]")
+			DEBUG_MESSAGE("Line 1: [line1], Line 2: [line2]")
 
 			text_ticker += temp
 
@@ -252,7 +252,7 @@ var/list/status_display_text_images = list()
 	proc/update_display_lines(var/line1, var/line2, var/image/override = null)
 
 		if(override) //Ok, we're gonna use our own image entirely, sidestepping the image building process
-			DEBUG("[UpdateOverlays(override, "text") ? "Success" : "Failure"]")
+			DEBUG_MESSAGE("[UpdateOverlays(override, "text") ? "Success" : "Failure"]")
 			return
 
 		if(line1 == lastdisplayline1 && line2 == lastdisplayline2)

@@ -241,7 +241,7 @@
 			R = src.cooldown * 2.5 // Chems with severe stamina penalty exist, so this should be capped.
 		CD = max((src.cooldown / 2.5), R) // About the same minimum as the old wrestling belt procs.
 
-		//DEBUG("Default CD: [src.cooldown]. Modifier: [R]. Actual CD: [CD].")
+		//DEBUG_MESSAGE("Default CD: [src.cooldown]. Modifier: [R]. Actual CD: [CD].")
 		return CD
 
 	doCooldown()

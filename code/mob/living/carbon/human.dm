@@ -418,7 +418,7 @@
 
 	for (var/obj/item/implant/health/H in src.implant)
 		if (istype(H) && !H.reported_death)
-			DEBUG("[src] calling to report death")
+			DEBUG_MESSAGE("[src] calling to report death")
 			H.death_alert()
 
 #ifdef DATALOGGER
@@ -4529,7 +4529,7 @@
 				if (probably_my_record)
 					probably_my_record.fields["h_imp"] = "[H.sensehealth()]"
 				if (src.health <= 0 && !H.reported_health)
-					DEBUG("[src] calling to report crit")
+					DEBUG_MESSAGE("[src] calling to report crit")
 					H.health_alert()
 
 				if (src.health > 0 && H.reported_health) // we're out of crit, let our implant alert people again
@@ -5580,7 +5580,7 @@
 			if (istype(I, /obj/item/clothing/mask))
 				var/obj/item/clothing/M = I
 				if ((src.mutantrace && !src.mutantrace.uses_human_clothes && !M.compatible_species.Find(src.mutantrace.name)) || (!ismonkey(src) && M.monkey_clothes))
-					//DEBUG("[src] can't wear [I].")
+					//DEBUG_MESSAGE("[src] can't wear [I].")
 					return 0
 				else
 					return 1
@@ -5597,7 +5597,7 @@
 			if (istype(I, /obj/item/clothing/head))
 				var/obj/item/clothing/H = I
 				if ((src.mutantrace && !src.mutantrace.uses_human_clothes && !H.compatible_species.Find(src.mutantrace.name)) || (!ismonkey(src) && H.monkey_clothes))
-					//DEBUG("[src] can't wear [I].")
+					//DEBUG_MESSAGE("[src] can't wear [I].")
 					return 0
 				else
 					return 1
@@ -5605,7 +5605,7 @@
 			if (istype(I, /obj/item/clothing/shoes))
 				var/obj/item/clothing/SH = I
 				if ((src.mutantrace && !src.mutantrace.uses_human_clothes && !SH.compatible_species.Find(src.mutantrace.name)) || (!ismonkey(src) && SH.monkey_clothes))
-					//DEBUG("[src] can't wear [I].")
+					//DEBUG_MESSAGE("[src] can't wear [I].")
 					return 0
 				else
 					return 1
@@ -5613,7 +5613,7 @@
 			if (istype(I, /obj/item/clothing/suit))
 				var/obj/item/clothing/SU = I
 				if ((src.mutantrace && !src.mutantrace.uses_human_clothes && !SU.compatible_species.Find(src.mutantrace.name)) || (!ismonkey(src) && SU.monkey_clothes))
-					//DEBUG("[src] can't wear [I].")
+					//DEBUG_MESSAGE("[src] can't wear [I].")
 					return 0
 				else
 					return 1
@@ -5621,7 +5621,7 @@
 			if (istype(I, /obj/item/clothing/under))
 				var/obj/item/clothing/U = I
 				if ((src.mutantrace && !src.mutantrace.uses_human_clothes && !U.compatible_species.Find(src.mutantrace.name)) || (!ismonkey(src) && U.monkey_clothes))
-					//DEBUG("[src] can't wear [I].")
+					//DEBUG_MESSAGE("[src] can't wear [I].")
 					return 0
 				else
 					return 1

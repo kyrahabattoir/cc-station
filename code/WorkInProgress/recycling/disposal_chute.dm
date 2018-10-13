@@ -249,46 +249,46 @@
 		..()
 		src.add_fingerprint(usr)
 		if(stat & BROKEN)
-			DEBUG("[src] is broken")
+			DEBUG_MESSAGE("[src] is broken")
 			return
 		if(usr.stat || usr.restrained() || src.flushing)
-			DEBUG("[src] is flushing/usr.stat returned with someting/usr is restrained")
+			DEBUG_MESSAGE("[src] is flushing/usr.stat returned with someting/usr is restrained")
 			return
 
 		if (in_range(src, usr) && isturf(src.loc))
-			DEBUG("in range of [src] and it is on a turf")
+			DEBUG_MESSAGE("in range of [src] and it is on a turf")
 			usr.machine = src
 
 			if(href_list["close"])
-				DEBUG("closed [src]")
+				DEBUG_MESSAGE("closed [src]")
 				usr.machine = null
 				usr << browse(null, "window=disposal")
 				return
 
 			if(href_list["pump"])
 				if(text2num(href_list["pump"]))
-					DEBUG("[src] pump engaged")
+					DEBUG_MESSAGE("[src] pump engaged")
 					power_usage = 600
 					mode = 1
 				else
-					DEBUG("[src] pump disengaged")
+					DEBUG_MESSAGE("[src] pump disengaged")
 					power_usage = 100
 					mode = 0
 				update()
 
 			if(href_list["handle"])
-				DEBUG("[src] handle")
+				DEBUG_MESSAGE("[src] handle")
 				flush = text2num(href_list["handle"])
 				update()
 
 			if(href_list["eject"])
-				DEBUG("[src] eject")
+				DEBUG_MESSAGE("[src] eject")
 				eject()
 		else
 			if (!isturf(src.loc))
-				DEBUG("[src]'s loc is not a turf: [src.loc]")
+				DEBUG_MESSAGE("[src]'s loc is not a turf: [src.loc]")
 			if (!in_range(src, usr))
-				DEBUG("[src] and [usr] are too far apart: [src] [log_loc(src)], [usr] [log_loc(usr)]")
+				DEBUG_MESSAGE("[src] and [usr] are too far apart: [src] [log_loc(src)], [usr] [log_loc(usr)]")
 
 			usr << browse(null, "window=disposal")
 			usr.machine = null

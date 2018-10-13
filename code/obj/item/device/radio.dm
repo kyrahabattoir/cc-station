@@ -272,7 +272,7 @@ Frequency:
 			else
 				heard_garbled += R
 
-		//DEBUG("Message transmitted. Frequency: [display_freq]. Source: [src] at [log_loc(src)]. Receiver: [R] at [log_loc(R)].")
+		//DEBUG_MESSAGE("Message transmitted. Frequency: [display_freq]. Source: [src] at [log_loc(src)]. Receiver: [R] at [log_loc(R)].")
 
 	var/rendered
 
@@ -354,7 +354,7 @@ Frequency:
 	if (message)
 		// Simple frequency match. The only check that used to be here.
 		if (src.frequency == R.frequency)
-			//DEBUG("Match found for transmission from [R] at [log_loc(R)] (simple frequency match)")
+			//DEBUG_MESSAGE("Match found for transmission from [R] at [log_loc(R)] (simple frequency match)")
 			return 1
 
 		// Secure channel lookup when R.frequency != src.frequency. According to DEBUG calls set up for testing,
@@ -368,7 +368,7 @@ Frequency:
 
 			// Secure channel match. Easy.
 			if (RF.Find(freq) && freq.devices.Find(src))
-				//DEBUG("Match found for transmission from [R] at [log_loc(R)] (list/devices match)")
+				//DEBUG_MESSAGE("Match found for transmission from [R] at [log_loc(R)] (list/devices match)")
 				return 1
 
 			// Sender didn't use a secure channel prefix, giving us the 145.9 radio frequency datum.
@@ -377,7 +377,7 @@ Frequency:
 			if (src.secure_frequencies && istype(src.secure_frequencies) && src.secure_frequencies.len)
 				for (var/freq2 in src.secure_frequencies)
 					if (isnum(src.secure_frequencies["[freq2]"]) && src.secure_frequencies["[freq2]"] == R.frequency)
-						//DEBUG("Match found for transmission from [R] at [log_loc(R)] (frequency compare)")
+						//DEBUG_MESSAGE("Match found for transmission from [R] at [log_loc(R)] (frequency compare)")
 						return 1
 
 	return 0

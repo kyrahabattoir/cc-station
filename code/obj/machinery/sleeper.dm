@@ -405,7 +405,7 @@
 					if (world.timeofday > A.last_reagent_dose + 1500)
 						probability = 10
 					if (prob(probability))
-						//DEBUG("Healed [M]'s [A.associated_reagent] addiction.")
+						//DEBUG_MESSAGE("Healed [M]'s [A.associated_reagent] addiction.")
 						M.show_text("You no longer feel reliant on [A.associated_reagent]!", "blue")
 						M.ailments -= A
 						qdel(A)
@@ -414,7 +414,7 @@
 		if (src.emagged)
 			var/our_poison = pick(src.med_emag)
 			if (M.reagents.get_reagent_amount(our_poison) == 0)
-				//DEBUG("Injected occupant with [our_poison] at [log_loc(src)].")
+				//DEBUG_MESSAGE("Injected occupant with [our_poison] at [log_loc(src)].")
 				M.reagents.add_reagent(our_poison, 2)
 		else
 			if (M.health < -25 && M.reagents.get_reagent_amount(src.med_crit) == 0)
@@ -463,7 +463,7 @@
 					if ((poison + 2.5) > 5)
 						inject_p = max(0, (2.5 - poison))
 					src.occupant.reagents.add_reagent(our_poison, inject_p)
-					//DEBUG("Injected occupant with [inject_p] units of [our_poison] at [log_loc(src)].")
+					//DEBUG_MESSAGE("Injected occupant with [inject_p] units of [our_poison] at [log_loc(src)].")
 					if (manual_injection == 1)
 						logTheThing("station", user_feedback, src.occupant, "manually injects %target% with [our_poison] ([inject_p]) from an emagged sleeper at [log_loc(src)].")
 			else

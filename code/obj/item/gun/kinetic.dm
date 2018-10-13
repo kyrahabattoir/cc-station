@@ -133,7 +133,7 @@
 			ammoHand.add_fingerprint(user)
 
 			user.visible_message("<span style=\"color:red\">[user] unloads [src].</span>", "<span style=\"color:red\">You unload [src].</span>")
-			//DEBUG("Unloaded [src]'s ammo manually.")
+			//DEBUG_MESSAGE("Unloaded [src]'s ammo manually.")
 			return
 
 		return ..()
@@ -146,7 +146,7 @@
 				if(T)
 					if (src.current_projectile.casing && (src.sanitycheck(1, 0) == 1))
 						var/number_of_casings = max(1, src.current_projectile.shot_number)
-						//DEBUG("Ejected [number_of_casings] casings from [src].")
+						//DEBUG_MESSAGE("Ejected [number_of_casings] casings from [src].")
 						for (var/i = 1, i <= number_of_casings, i++)
 							var/obj/item/casing/C = new src.current_projectile.casing(T)
 							C.forensic_ID = src.forensic_ID
@@ -164,7 +164,7 @@
 				if(T)
 					if (src.current_projectile.casing && (src.sanitycheck(1, 0) == 1))
 						var/number_of_casings = max(1, src.current_projectile.shot_number)
-						//DEBUG("Ejected [number_of_casings] casings from [src].")
+						//DEBUG_MESSAGE("Ejected [number_of_casings] casings from [src].")
 						for (var/i = 1, i <= number_of_casings, i++)
 							var/obj/item/casing/C = new src.current_projectile.casing(T)
 							C.forensic_ID = src.forensic_ID
@@ -179,7 +179,7 @@
 		if ((src.casings_to_eject > 0) && src.current_projectile.casing && (src.sanitycheck(1, 0) == 1))
 			var/turf/T = get_turf(src)
 			if(T)
-				//DEBUG("Ejected [src.casings_to_eject] [src.current_projectile.casing] from [src].")
+				//DEBUG_MESSAGE("Ejected [src.casings_to_eject] [src.current_projectile.casing] from [src].")
 				var/obj/item/casing/C = null
 				while (src.casings_to_eject > 0)
 					C = new src.current_projectile.casing(T)

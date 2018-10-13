@@ -110,7 +110,7 @@
 		return
 	if(!loc)
 		return
-	//DEBUG("[AM] entered conveyor at [showCoords(src.x, src.y, src.z)] and is being moved.")
+	//DEBUG_MESSAGE("[AM] entered conveyor at [showCoords(src.x, src.y, src.z)] and is being moved.")
 	move_thing(AM)
 
 /obj/machinery/conveyor/HasExited(var/atom/movable/AM, var/atom/newloc)
@@ -124,7 +124,7 @@
 
 	if(next_conveyor && next_conveyor.loc == newloc)
 		//Ok, they will soon walk() according to the new conveyor
-		//DEBUG("[AM] exited conveyor at [showCoords(src.x, src.y, src.z)] onto another conveyor! Wow!.")
+		//DEBUG_MESSAGE("[AM] exited conveyor at [showCoords(src.x, src.y, src.z)] onto another conveyor! Wow!.")
 		var/mob/M = AM
 		if(istype(M) && M.buckled == src) //Transfer the buckle
 			M.buckled = next_conveyor
@@ -134,7 +134,7 @@
 
 	else
 		//Stop walking, we left the belt
-		//DEBUG("[AM] exited conveyor at [showCoords(src.x, src.y, src.z)] onto the cold, hard floor.")
+		//DEBUG_MESSAGE("[AM] exited conveyor at [showCoords(src.x, src.y, src.z)] onto the cold, hard floor.")
 		var/mob/M = AM
 		if(istype(M) && M.buckled == src) //Unbuckle
 			M.buckled = null

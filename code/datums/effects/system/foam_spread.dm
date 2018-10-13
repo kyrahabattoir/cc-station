@@ -33,7 +33,7 @@
 	spawn(0)
 		var/obj/effects/foam/F = locate() in location
 		if(F)
-			DEBUG("Located [F] in [location]")
+			DEBUG_MESSAGE("Located [F] in [location]")
 			F.amount += amount
 			F.amount = min(F.amount, 27)
 			return

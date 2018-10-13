@@ -75,9 +75,9 @@
 
  */
 #ifdef REGEX_DEBUGGING
-#define REGEX_DEBUG(x) world.log << "(Line [__LINE__]): [x]"
+#define REGEX_DEBUG_MESSAGE(x) world.log << "(Line [__LINE__]): [x]"
 #else
-#define REGEX_DEBUG(x) ;
+#define REGEX_DEBUG_MESSAGE(x) ;
 #endif
 
 var/list
@@ -178,7 +178,7 @@ regex
 				end=last.end
 				last.end=start
 
-		//REGEX_DEBUG("Compiling at [copytext(pattern,start,end)], endchar=[endchar]")
+		//REGEX_DEBUG_MESSAGE("Compiling at [copytext(pattern,start,end)], endchar=[endchar]")
 
 		var/i,ch,ch2
 
@@ -211,7 +211,7 @@ regex
 					else bogusflag=end+1
 				#ifdef REGEX_DEBUGGING
 				if(!bogusflag)
-					REGEX_DEBUG("Flag: [ascii2text(ch|32)]")
+					REGEX_DEBUG_MESSAGE("Flag: [ascii2text(ch|32)]")
 				#endif
 			if(end<start)
 				--start
@@ -222,7 +222,7 @@ regex
 		index=start
 		while(index<end && !first.error)
 			ch=text2ascii(pattern,index++)
-			//REGEX_DEBUG("ch=[ch]")
+			//REGEX_DEBUG_MESSAGE("ch=[ch]")
 
 			// end of pattern; replacement pattern if any may start here
 			if(ch==first.patternchar)
@@ -235,7 +235,7 @@ regex
 
 			// end of group; return to parent pattern and keep parsing it for modifiers
 			if(ch==endchar)
-				//REGEX_DEBUG("Encountered endchar")
+				//REGEX_DEBUG_MESSAGE("Encountered endchar")
 				if(index<=start+1)
 					if(!last) return MarkError(first,index,"Unexpected char:",ch)
 					if(last.start==start-1 && text2ascii(pattern,last.start)==124)
@@ -522,7 +522,7 @@ regex
 		if(!isnull(ch))
 			if(!ch) first.error+=" [copytext(pattern,length(pattern))]"
 			else first.error+=" [ascii2text(ch)]"
-		REGEX_DEBUG("Error [first.error]")
+		REGEX_DEBUG_MESSAGE("Error [first.error]")
 		return src		// this proc is used to escape New() with a return
 
 	proc/BlockType(rep)
@@ -717,7 +717,7 @@ regex
 					del(q)
 
 	proc/TrueBlock()
-		//REGEX_DEBUG("TrueBlock type [ptype] length [length(pattern)]")
+		//REGEX_DEBUG_MESSAGE("TrueBlock type [ptype] length [length(pattern)]")
 		if(!ptype) return pattern
 		switch(ptype)
 			// eventually re-escape text
@@ -766,7 +766,7 @@ regex
 			for(i in groups) groups[i]=null
 		ee=length(txt)+1
 		e=(start>=ee || (first.flags&2) || anyline)?(ee):(findtextEx(txt,"\n",start)||ee)
-		REGEX_DEBUG("Find([TrueBlock()]) ([start],[e]/[ee]) ([ptype])")
+		REGEX_DEBUG_MESSAGE("Find([TrueBlock()]) ([start],[e]/[ee]) ([ptype])")
 		sleep()
 		i=FirstPossible(txt,start,first,stop,anyline)
 		while(i && i<=e)
@@ -789,7 +789,7 @@ regex
 			for(i in groups) groups[i]=null
 		ee=length(txt)+1
 		e=(start>=ee || (first.flags&2) || anyline)?(ee):(findtextEx(txt,"\n",start)||ee)
-		REGEX_DEBUG("FindLast([TrueBlock()]) ([start],[e]/[ee]) ([ptype])")
+		REGEX_DEBUG_MESSAGE("FindLast([TrueBlock()]) ([start],[e]/[ee]) ([ptype])")
 		sleep()
 		var/list/stack=new
 		i=FirstPossible(txt,start,first,stop,anyline)
@@ -816,7 +816,7 @@ regex
 		var/regex/after
 		terrible_serverdeath_inhibitor = 512
 		while(src)
-			REGEX_DEBUG("FindHere([TrueBlock()]) ([start],[e]/[ee]) ([ptype])")
+			REGEX_DEBUG_MESSAGE("FindHere([TrueBlock()]) ([start],[e]/[ee]) ([ptype])")
 			sleep()
 			times=0
 			after=(next||nextup)
@@ -946,7 +946,7 @@ regex
 					continue
 				return 0
 			end=i
-			REGEX_DEBUG("FoundHere: [.||src.start],[i]")
+			REGEX_DEBUG_MESSAGE("FoundHere: [.||src.start],[i]")
 			if(!.) .=src.start
 			if(!next) return .
 			src=next;start=i
@@ -976,7 +976,7 @@ regex
 		.=0
 		for(var/regex/p=src,p,p=p.option)
 			i=start
-			REGEX_DEBUG("FirstPossible([TrueBlock()]) ([start],[e]/[ee]) ([ptype])")
+			REGEX_DEBUG_MESSAGE("FirstPossible([TrueBlock()]) ([start],[e]/[ee]) ([ptype])")
 			sleep()
 			switch(p.ptype)
 				if(1,13,14)

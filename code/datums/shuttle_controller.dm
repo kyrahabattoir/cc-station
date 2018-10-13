@@ -208,7 +208,7 @@ datum/shuttle_controller
 								if (ishuman(M))
 									var/mob/living/carbon/human/H = M
 									bonus_stun = (H && H.buckled && H.on_chair)
-									DEBUG("[M] is human and bonus_stun is [bonus_stun]")
+									DEBUG_MESSAGE("[M] is human and bonus_stun is [bonus_stun]")
 								if (!M.buckled || bonus_stun)
 									M.stunned += 2
 									M.weakened += 4
@@ -241,9 +241,9 @@ datum/shuttle_controller
 								particleMaster.SpawnSystem(new /datum/particleSystem/warp_star(S, particle_location.star_dir))
 
 						spawn(0)
-							DEBUG("Now moving shuttle!")
+							DEBUG_MESSAGE("Now moving shuttle!")
 							start_location.move_contents_to(end_location)
-							DEBUG("Done moving shuttle!")
+							DEBUG_MESSAGE("Done moving shuttle!")
 							settimeleft(SHUTTLETRANSITTIME)
 							boutput(world, "<B>The Emergency Shuttle has left for CentCom! It will arrive in [timeleft()/60] minute[s_es(timeleft()/60)]!</B>")
 							//online = 0

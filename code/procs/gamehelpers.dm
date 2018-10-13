@@ -473,14 +473,14 @@ var/obj/item/dummy/click_dummy = new
 		if(T.x < src_min_x || !src_min_x) src_min_x	= T.x
 		if(T.y < src_min_y || !src_min_y) src_min_y	= T.y
 
-	DEBUG("src_min_x = [src_min_x], src_min_y = [src_min_y]")
+	DEBUG_MESSAGE("src_min_x = [src_min_x], src_min_y = [src_min_y]")
 	var/trg_min_x = 0
 	var/trg_min_y = 0
 	for (var/turf/T in turfs_trg)
 		if(T.x < trg_min_x || !trg_min_x) trg_min_x	= T.x
 		if(T.y < trg_min_y || !trg_min_y) trg_min_y	= T.y
 
-	DEBUG("trg_min_x = [src_min_x], trg_min_y = [src_min_y]")
+	DEBUG_MESSAGE("trg_min_x = [src_min_x], trg_min_y = [src_min_y]")
 
 	var/list/refined_src = new/list()
 	for(var/turf/T in turfs_src)
@@ -521,7 +521,7 @@ var/obj/item/dummy/click_dummy = new
 						if (!istype(O, /obj) || istype(O, /obj/forcefield)) continue
 						O.set_loc(X)
 					for(var/mob/M in T)
-						DEBUG("Moving mob [M] from [T] to [X].")
+						DEBUG_MESSAGE("Moving mob [M] from [T] to [X].")
 						if(!istype(M,/mob)) continue
 						M.set_loc(X)
 

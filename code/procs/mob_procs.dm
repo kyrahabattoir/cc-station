@@ -325,7 +325,7 @@
 	if (animation_duration <= 0)
 		return
 
-	//DEBUG("Apply_flash() called for [src] at [log_loc(src)]. Safe: [safety == 1 ? "Y" : "N"], AD: [animation_duration], W: [weak], S: [stun], MS: [misstep], EB [eyes_blurry], ED: [eyes_damage], EB: [eye_tempblind], B: [burn], UP: [uncloak_prob]")
+	//DEBUG_MESSAGE("Apply_flash() called for [src] at [log_loc(src)]. Safe: [safety == 1 ? "Y" : "N"], AD: [animation_duration], W: [weak], S: [stun], MS: [misstep], EB [eyes_blurry], ED: [eyes_damage], EB: [eye_tempblind], B: [burn], UP: [uncloak_prob]")
 
 	// Stun target mob.
 	if (safety == 0)
@@ -451,7 +451,7 @@
 	if (DO_NOTHING)
 		return
 
-	//DEBUG("Apply_sonic_stun() called for [src] at [log_loc(src)]. W: [weak], S: [stun], MS: [misstep], SL: [slow], DI: [drop_item], ED: [ears_damage], EF: [ear_tempdeaf]")
+	//DEBUG_MESSAGE("Apply_sonic_stun() called for [src] at [log_loc(src)]. W: [weak], S: [stun], MS: [misstep], SL: [slow], DI: [drop_item], ED: [ears_damage], EF: [ear_tempdeaf]")
 
 	// Stun target mob.
 	boutput(src, "<span style=\"color:red\"><b>You hear an extremely loud noise!</b></span>")
@@ -861,7 +861,7 @@
 	for (var/image/I in src.client.images)
 		if (!I) continue
 		if (I.icon == 'icons/mob/antag_overlays.dmi')
-			//DEBUG("Deleted overlay ([I.icon_state]) from [src].")
+			//DEBUG_MESSAGE("Deleted overlay ([I.icon_state]) from [src].")
 			qdel(I)
 
 	if (remove)
@@ -1040,8 +1040,8 @@
 
 	if (can_see.len > 0)
 		//logTheThing("debug", src, null, "<b>Convair880 antag overlay:</b> [can_see.len] added with parameters all ([see_everything]), T ([see_traitors]), S ([see_nukeops]), W ([see_wizards]), R ([see_revs]), SP ([see_special])")
-		//DEBUG("Overlay parameters for [src]: all ([see_everything]), T ([see_traitors]), S ([see_nukeops]), W ([see_wizards]), R ([see_revs]), SP ([see_special])")
-		//DEBUG("Added [can_see.len] overlays to [src].")
+		//DEBUG_MESSAGE("Overlay parameters for [src]: all ([see_everything]), T ([see_traitors]), S ([see_nukeops]), W ([see_wizards]), R ([see_revs]), SP ([see_special])")
+		//DEBUG_MESSAGE("Added [can_see.len] overlays to [src].")
 		src.client.images.Add(can_see)
 
 	src.last_overlay_refresh = world.time

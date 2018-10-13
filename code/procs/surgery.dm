@@ -115,7 +115,7 @@
 	else
 		screw_up_prob = max(5, min(100, screw_up_prob)) // otherwise there'll always be a slight chance
 
-	DEBUG("<b>[patient]'s surgery (performed by [surgeon]) has screw_up_prob set to [screw_up_prob]</b>")
+	DEBUG_MESSAGE("<b>[patient]'s surgery (performed by [surgeon]) has screw_up_prob set to [screw_up_prob]</b>")
 
 	return screw_up_prob
 
@@ -167,7 +167,7 @@
 
 /mob/living/carbon/human/get_surgery_status(var/zone)
 	if (!src.organHolder)
-		DEBUG("get_surgery_status failed due to [src] having no organHolder")
+		DEBUG_MESSAGE("get_surgery_status failed due to [src] having no organHolder")
 		return 0
 
 	var/datum/organHolder/oH = src.organHolder
@@ -202,7 +202,7 @@
 		else if (!surgery_limb)
 			return_thing ++
 
-	//DEBUG("get_surgery_status for [src] returning [return_thing]")
+	//DEBUG_MESSAGE("get_surgery_status for [src] returning [return_thing]")
 	return return_thing
 
 /obj/item/proc/defibrillate(var/mob/living/carbon/human/patient as mob, var/mob/living/user as mob, var/emagged = 0, var/faulty = 0, var/obj/item/cell/cell = null)
@@ -255,7 +255,7 @@
 				patient.stunned += min(0.002 * adjust, 10)
 				patient.weakened += min(0.002 * adjust, 10)
 				patient.stuttering += min(0.005 * adjust, 25)
-				DEBUG("[src]'s defibrillate(): adjust = [adjust], paralysis + [min(0.001 * adjust, 5)], stunned + [min(0.002 * adjust, 10)], weakened + [min(0.002 * adjust, 10)], stuttering + [min(0.005 * adjust, 25)]")
+				DEBUG_MESSAGE("[src]'s defibrillate(): adjust = [adjust], paralysis + [min(0.001 * adjust, 5)], stunned + [min(0.002 * adjust, 10)], weakened + [min(0.002 * adjust, 10)], stuttering + [min(0.005 * adjust, 25)]")
 
 			else if (faulty)
 				patient.paralysis += 1
@@ -323,7 +323,7 @@
 	var/damage_low = calc_surgery_damage(surgeon, screw_up_prob, rand(5,15)/*, src.adj1, src.adj2*/)
 	var/damage_high = calc_surgery_damage(surgeon, screw_up_prob, rand(15,25)/*, src.adj1, src.adj2*/)
 
-	DEBUG("<b>[patient]'s surgery (performed by [surgeon]) damage_low is [damage_low], damage_high is [damage_high]</b>")
+	DEBUG_MESSAGE("<b>[patient]'s surgery (performed by [surgeon]) damage_low is [damage_low], damage_high is [damage_high]</b>")
 
 /* ---------- SCALPEL - HEAD ---------- */
 
@@ -705,7 +705,7 @@
 	var/damage_low = calc_surgery_damage(surgeon, screw_up_prob, rand(10,20)/*, src.adj1, src.adj2*/)
 	var/damage_high = calc_surgery_damage(surgeon, screw_up_prob, rand(20,30)/*, src.adj1, src.adj2*/)
 
-	DEBUG("<b>[patient]'s surgery (performed by [surgeon]) damage_low is [damage_low], damage_high is [damage_high]</b>")
+	DEBUG_MESSAGE("<b>[patient]'s surgery (performed by [surgeon]) damage_low is [damage_low], damage_high is [damage_high]</b>")
 
 /* ---------- SAW - HEAD ---------- */
 
@@ -1299,7 +1299,7 @@
 	var/damage_low = calc_surgery_damage(surgeon, screw_up_prob, rand(5,15)/*, src.adj1, src.adj2*/)
 	var/damage_high = calc_surgery_damage(surgeon, screw_up_prob, rand(15,25)/*, src.adj1, src.adj2*/)
 
-	DEBUG("<b>[patient]'s surgery (performed by [surgeon]) damage_low is [damage_low], damage_high is [damage_high]</b>")
+	DEBUG_MESSAGE("<b>[patient]'s surgery (performed by [surgeon]) damage_low is [damage_low], damage_high is [damage_high]</b>")
 
 /* ---------- SPOON - EYES ---------- */
 

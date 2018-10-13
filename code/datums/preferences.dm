@@ -1081,15 +1081,15 @@ datum/preferences
 	var/adj = 0
 	if (copytext(hcolor, 1, 2) == "#")
 		adj = 1
-	DEBUG("HAIR initial: [hcolor]")
+	DEBUG_MESSAGE("HAIR initial: [hcolor]")
 	var/hR_adj = num2hex(hex2num(copytext(hcolor, 1 + adj, 3 + adj)) + rand(-25,25))
-	DEBUG("HAIR R: [hR_adj]")
+	DEBUG_MESSAGE("HAIR R: [hR_adj]")
 	var/hG_adj = num2hex(hex2num(copytext(hcolor, 3 + adj, 5 + adj)) + rand(-5,5))
-	DEBUG("HAIR G: [hG_adj]")
+	DEBUG_MESSAGE("HAIR G: [hG_adj]")
 	var/hB_adj = num2hex(hex2num(copytext(hcolor, 5 + adj, 7 + adj)) + rand(-10,10))
-	DEBUG("HAIR B: [hB_adj]")
+	DEBUG_MESSAGE("HAIR B: [hB_adj]")
 	var/return_color = "#" + hR_adj + hG_adj + hB_adj
-	DEBUG("HAIR final: [return_color]")
+	DEBUG_MESSAGE("HAIR final: [return_color]")
 	return return_color
 
 /proc/randomize_eye_color(var/ecolor)
@@ -1098,15 +1098,15 @@ datum/preferences
 	var/adj = 0
 	if (copytext(ecolor, 1, 2) == "#")
 		adj = 1
-	DEBUG("EYE initial: [ecolor]")
+	DEBUG_MESSAGE("EYE initial: [ecolor]")
 	var/eR_adj = num2hex(hex2num(copytext(ecolor, 1 + adj, 3 + adj)) + rand(-10,10))
-	DEBUG("EYE R: [eR_adj]")
+	DEBUG_MESSAGE("EYE R: [eR_adj]")
 	var/eG_adj = num2hex(hex2num(copytext(ecolor, 3 + adj, 5 + adj)) + rand(-10,10))
-	DEBUG("EYE G: [eG_adj]")
+	DEBUG_MESSAGE("EYE G: [eG_adj]")
 	var/eB_adj = num2hex(hex2num(copytext(ecolor, 5 + adj, 7 + adj)) + rand(-10,10))
-	DEBUG("EYE B: [eB_adj]")
+	DEBUG_MESSAGE("EYE B: [eB_adj]")
 	var/return_color = "#" + eR_adj + eG_adj + eB_adj
-	DEBUG("EYE final: [return_color]")
+	DEBUG_MESSAGE("EYE final: [return_color]")
 	return return_color
 
 var/global/list/feminine_hstyles = list("Mohawk" = "mohawk",\

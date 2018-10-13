@@ -1033,7 +1033,7 @@
 				if (!net || (net && (power < 2000000)))
 					H.shock(src, 2000000, "chest", 0.3, 1) // Nope or not enough juice, use fixed values instead (around 80 BURN per shock).
 				else
-					//DEBUG("Shocked [H] with [power]")
+					//DEBUG_MESSAGE("Shocked [H] with [power]")
 					src.electrocute(H, 100, net, 1) // We are, great. Let that global proc calculate the damage.
 			else
 				H.shock(src, 2500, "chest", 1, 1)

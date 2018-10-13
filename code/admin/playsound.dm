@@ -30,7 +30,7 @@ var/global/admin_sound_channel = 660
 		for (var/client/C in clients)
 			C.verbs += /client/verb/stop_the_music
 			C << sound(uploaded_sound,volume=vol,wait=0,channel=admin_sound_channel)
-			DEBUG("Playing sound for [C] on channel [admin_sound_channel]")
+			DEBUG_MESSAGE("Playing sound for [C] on channel [admin_sound_channel]")
 		if (src.djmode)
 			if (src.stealth) boutput(world, "<span class=\"medal\"><b>Now Playing:</b></span> <span style=\"color:blue\">[S]</span>")
 			else boutput(world, "<span class=\"medal\"><b>[src.alt_key ? "[src.fakekey]" : "[src.key]"] played:</b></span> <span style=\"color:blue\">[S]</span>")
@@ -43,7 +43,7 @@ var/global/admin_sound_channel = 660
 			sleep(-1)
 			for (var/client/C in clients)
 				C << sound(uploaded_sound,volume=vol,wait=0,channel=admin_sound_channel)
-				DEBUG("Playing sound for [C] on channel [admin_sound_channel]")
+				DEBUG_MESSAGE("Playing sound for [C] on channel [admin_sound_channel]")
 			if (src.djmode)
 				/*if (src.stealth) boutput(world, "<span class=\"medal\"><b>Now Playing:</b></span> <span style=\"color:blue\">[S]</span>")
 				else */
@@ -59,7 +59,7 @@ var/global/admin_sound_channel = 660
 	for (var/client/C in clients)
 		C.verbs += /client/verb/stop_the_music
 		C << sound(uploaded_sound,volume=vol,wait=0,channel=admin_sound_channel)
-		DEBUG("Playing sound for [C] on channel [admin_sound_channel]")
+		DEBUG_MESSAGE("Playing sound for [C] on channel [admin_sound_channel]")
 	move_admin_sound_channel()
 	if (src.djmode)
 		if (src.stealth) boutput(world, "<span class=\"medal\"><b>Now Playing (your volume: [vol]):</b></span> <span style=\"color:blue\">[S]</span>")
@@ -113,7 +113,7 @@ var/global/admin_sound_channel = 660
 					boutput(C, "<span class=\"medal\"><b>[src.key] played (your volume: 0):</b></span> <span style=\"color:blue\">[S]</span>")
 				continue
 			C << sound(uploaded_sound,wait=0,channel=admin_sound_channel,volume=vol)
-			DEBUG("Playing sound for [C] on channel [admin_sound_channel]")
+			DEBUG_MESSAGE("Playing sound for [C] on channel [admin_sound_channel]")
 			if (src.djmode || src.non_admin_dj)
 				boutput(C, "<span class=\"medal\"><b>[src.key] played (your volume: [vol]):</b></span> <span style=\"color:blue\">[S]</span>")
 			sleep(1)
@@ -193,7 +193,7 @@ var/global/admin_sound_channel = 660
 	src.verbs -= /client/verb/stop_the_music
 	var/mute_channel = 660
 	for (var/i=0, i<11, i++)
-		DEBUG("Muting sound channel [mute_channel] for [src]")
+		DEBUG_MESSAGE("Muting sound channel [mute_channel] for [src]")
 		src << sound(null,channel=mute_channel)
 		mute_channel ++
 	spawn(50)
@@ -201,10 +201,10 @@ var/global/admin_sound_channel = 660
 
 /proc/move_admin_sound_channel()
 	if (admin_sound_channel <= 669)
-		DEBUG("Increasing admin_sound_channel from [admin_sound_channel] to [(admin_sound_channel+1)]")
+		DEBUG_MESSAGE("Increasing admin_sound_channel from [admin_sound_channel] to [(admin_sound_channel+1)]")
 		admin_sound_channel ++
-		DEBUG("admin_sound_channel now [admin_sound_channel]")
+		DEBUG_MESSAGE("admin_sound_channel now [admin_sound_channel]")
 	else
-		DEBUG("Resetting admin_sound_channel from [admin_sound_channel]")
+		DEBUG_MESSAGE("Resetting admin_sound_channel from [admin_sound_channel]")
 		admin_sound_channel = 660
-		DEBUG("admin_sound_channel now [admin_sound_channel]")
+		DEBUG_MESSAGE("admin_sound_channel now [admin_sound_channel]")

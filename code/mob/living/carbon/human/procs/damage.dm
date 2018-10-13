@@ -694,7 +694,7 @@
 	if (eyeblind != 0)
 		src.eye_blind = max(0, src.eye_blind + eyeblind)
 
-	//DEBUG("Eye damage applied: [amount]. Tempblind: [tempblind == 0 ? "N" : "Y"]")
+	//DEBUG_MESSAGE("Eye damage applied: [amount]. Tempblind: [tempblind == 0 ? "N" : "Y"]")
 	return 1
 
 /mob/living/carbon/human/get_brute_damage()

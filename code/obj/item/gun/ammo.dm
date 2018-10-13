@@ -89,7 +89,7 @@
 			check = 1
 		if (!check)
 			return 0
-			//DEBUG("Couldn't swap [K]'s ammo ([K.ammo.type]) with [A.type].")
+			//DEBUG_MESSAGE("Couldn't swap [K]'s ammo ([K.ammo.type]) with [A.type].")
 
 		// The gun may have been fired; eject casings if so.
 		K.ejectcasings()
@@ -108,7 +108,7 @@
 			usr.put_in_hand_or_drop(ammoDrop)
 			K.ammo.amount_left = 0 // Make room for the new ammo.
 			K.ammo.loadammo(A, K) // Let the other proc do the work for us.
-			//DEBUG("Swapped [K]'s ammo with [A.type]. There are [A.amount_left] round left over.")
+			//DEBUG_MESSAGE("Swapped [K]'s ammo with [A.type]. There are [A.amount_left] round left over.")
 			return 2
 
 		else
@@ -132,7 +132,7 @@
 			ammoGun.icon = A.icon
 			ammoGun.icon_state = A.icon_state
 			ammoGun.ammo_type = A.ammo_type
-			//DEBUG("Swapped [K]'s ammo with [A.type].")
+			//DEBUG_MESSAGE("Swapped [K]'s ammo with [A.type].")
 			qdel(K.ammo) // Make room for the new ammo.
 			qdel(A) // We don't need you anymore.
 			ammoGun.set_loc(K)
@@ -185,7 +185,7 @@
 				qdel(K.ammo)
 				ammoGun.set_loc(K)
 				K.ammo = ammoGun
-				//DEBUG("Equalized [K]'s ammo type to [A.type]")
+				//DEBUG_MESSAGE("Equalized [K]'s ammo type to [A.type]")
 
 			while ((A.amount_left > 0) && (K.ammo.amount_left < K.max_ammo_capacity))
 				A.amount_left--
@@ -197,7 +197,7 @@
 				K.update_icon()
 				K.ammo.update_icon()
 				if (A.delete_on_reload)
-					//DEBUG("[K]: [A.type] (now empty) was deleted on partial reload.")
+					//DEBUG_MESSAGE("[K]: [A.type] (now empty) was deleted on partial reload.")
 					qdel(A) // No duplicating empty magazines, please (Convair880).
 				return 4 // Couldn't fully reload the gun.
 			if ((A.amount_left >= 0) && (K.ammo.amount_left == K.max_ammo_capacity))
@@ -206,7 +206,7 @@
 				K.ammo.update_icon()
 				if (A.amount_left == 0)
 					if (A.delete_on_reload)
-						//DEBUG("[K]: [A.type] (now empty) was deleted on full reload.")
+						//DEBUG_MESSAGE("[K]: [A.type] (now empty) was deleted on full reload.")
 						qdel(A) // No duplicating empty magazines, please (Convair880).
 				return 5 // Full reload or ammo left over.
 

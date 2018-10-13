@@ -1357,7 +1357,7 @@ var/list/ai_emotions = list("Happy" = "ai_happy",\
 
 
 /mob/living/silicon/ai/proc/set_color(var/color)
-	DEBUG("Setting colour on [src] to [color]")
+	DEBUG_MESSAGE("Setting colour on [src] to [color]")
 	if (length(color) == 7)
 		faceColor = color
 		var/colors = GetColors(src.faceColor)

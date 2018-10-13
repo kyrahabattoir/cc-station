@@ -28,7 +28,7 @@
 			return "bone_shattered"
 	return "error"
 
-#define BONE_DEBUG(x) if (bone_system) message_coders(x)
+#define BONE_DEBUG_MESSAGE(x) if (bone_system) message_coders(x)
 
 /datum/bone
 	var/name = "bone" // what we are
@@ -42,10 +42,10 @@
 			return 0
 
 		if (!donor || !src.parent_organ) // I can't see a reason we'd still need to damage this thing if it's just kinda floating in the void somewhere
-			BONE_DEBUG("a bone datum lacks a donor or parent_organ so take_damage() was canceled, oops")
+			BONE_DEBUG_MESSAGE("a bone datum lacks a donor or parent_organ so take_damage() was canceled, oops")
 			return 0 // ghostbones
 
-		BONE_DEBUG("[donor]'s [parent_organ]'s bones.take_damage() entered")
+		BONE_DEBUG_MESSAGE("[donor]'s [parent_organ]'s bones.take_damage() entered")
 
 		var/damtype_modifier = 1
 		if (damage_type == DAMAGE_BURN)
@@ -60,32 +60,32 @@
 		if (!((amt * damtype_modifier) > 0))
 			return 0
 
-		BONE_DEBUG("[donor]'s [parent_organ]'s bones.take_damage() amt: [amt], damage_type: [dam_num2name(damage_type)], damtype_modifier: [damtype_modifier], initial bone damage: [src.damage], damage changing to [src.damage + (amt * damtype_modifier)], initial damage_status: [bone_num2name(src.damage_status)]")
+		BONE_DEBUG_MESSAGE("[donor]'s [parent_organ]'s bones.take_damage() amt: [amt], damage_type: [dam_num2name(damage_type)], damtype_modifier: [damtype_modifier], initial bone damage: [src.damage], damage changing to [src.damage + (amt * damtype_modifier)], initial damage_status: [bone_num2name(src.damage_status)]")
 		src.damage += (amt * damtype_modifier)
 
 		if (prob((10 + src.damage) * damtype_modifier))
 			src.damage_status = max(1, src.damage_status * 2) // a chance to bump up the current damage_status level
-			BONE_DEBUG("[donor]'s [parent_organ]'s bones rolled increase in damage level at prob (20 + [src.damage]) * [damtype_modifier] = [(20 + src.damage) * damtype_modifier]")
+			BONE_DEBUG_MESSAGE("[donor]'s [parent_organ]'s bones rolled increase in damage level at prob (20 + [src.damage]) * [damtype_modifier] = [(20 + src.damage) * damtype_modifier]")
 
 		switch (src.damage_status)
 			if (BONE_HEALTHY)
-				BONE_DEBUG("[donor]'s [parent_organ]'s bones bruised")
+				BONE_DEBUG_MESSAGE("[donor]'s [parent_organ]'s bones bruised")
 				src.damage_status = BONE_BRUISED
 				src.donor.show_text("Your [src.parent_organ] hurts!", "red")
 
 			if (BONE_BRUISED)
-				BONE_DEBUG("[donor]'s [parent_organ]'s bones cracked")
+				BONE_DEBUG_MESSAGE("[donor]'s [parent_organ]'s bones cracked")
 				src.damage_status = BONE_CRACKED
 				src.donor.show_text("Your [src.parent_organ] hurts like hell!", "red")
 
 			if (BONE_CRACKED)
-				BONE_DEBUG("[donor]'s [parent_organ]'s bones fractured")
+				BONE_DEBUG_MESSAGE("[donor]'s [parent_organ]'s bones fractured")
 				src.damage_status = BONE_FRACTURED
 				src.donor.visible_message("<span style='color:red'>[src.donor]'s [src.parent_organ] emits a [pick("", "disturbing ", "unsettling ", "worrying ")][pick("crack", "crunch", "snap")]!</span>",\
 				"<span style='color:red'><b>You feel something in your [src.parent_organ] break!</b></span>")
 
 			if (BONE_FRACTURED)
-				BONE_DEBUG("[donor]'s [parent_organ]'s bones shattered")
+				BONE_DEBUG_MESSAGE("[donor]'s [parent_organ]'s bones shattered")
 				src.damage_status = BONE_SHATTERED
 				src.donor.visible_message("<span style='color:red'>[src.donor]'s [src.parent_organ] emits a [pick("", "disturbing ", "unsettling ", "worrying ")][pick("crack", "crunch", "snap")]!</span>",\
 				"<span style='color:red'><b>You feel something in your [src.parent_organ] shatter!</b></span>")

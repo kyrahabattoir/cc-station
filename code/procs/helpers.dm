@@ -1750,7 +1750,7 @@ var/list/english_num = list("0" = "zero", "1" = "one", "2" = "two", "3" = "three
 	if (!num || !english_num.len)
 		return
 
-	DEBUG("<b>get_english_num recieves num \"[num]\"</b>")
+	DEBUG_MESSAGE("<b>get_english_num recieves num \"[num]\"</b>")
 
 	if (istext(num))
 		num = text2num(num)
@@ -1802,7 +1802,7 @@ var/list/english_num = list("0" = "zero", "1" = "one", "2" = "two", "3" = "three
 			num_return = "[get_english_num(thousands)] thousand, [get_english_num(hundreds)]"
 
 	if (num_return)
-		DEBUG("<b>get_english_num returns num \"[num_return]\"</b>")
+		DEBUG_MESSAGE("<b>get_english_num returns num \"[num_return]\"</b>")
 		return num_return
 
 /proc/mutual_attach(var/atom/A as turf|obj|mob, var/atom/B as turf|obj|mob)
@@ -1836,7 +1836,7 @@ var/list/english_num = list("0" = "zero", "1" = "one", "2" = "two", "3" = "three
 	var/hR = hex2num(copytext(hex, 1 + adj, 3 + adj))
 	var/hG = hex2num(copytext(hex, 3 + adj, 5 + adj))
 	var/hB = hex2num(copytext(hex, 5 + adj, 7 + adj))
-	//DEBUG("hex2rgb translates [hex] to r[hR] g[hG] b[hB]")
+	//DEBUG_MESSAGE("hex2rgb translates [hex] to r[hR] g[hG] b[hB]")
 	return rgb(hR,hG,hB,255)
 
 // This function counts a passed job.
@@ -2047,7 +2047,7 @@ proc/countJob(rank)
 					is_immune = 1
 
 	//if (is_immune == 1)
-	//	DEBUG("[L] is immune to damage, aborting.")
+	//	DEBUG_MESSAGE("[L] is immune to damage, aborting.")
 	return is_immune
 
 // Their antag status is revoked on death/implant removal/expiration, but we still want them to show up in the game over stats (Convair880).
@@ -2166,7 +2166,7 @@ proc/countJob(rank)
 	var/mob/our_mob
 	for (var/mob/M in mobs)
 		if ((!isnull(M.ckey) && !isnull(target)) && findtext(M.ckey, target))
-			//DEBUG("Whois: match found for [target], it's [M].")
+			//DEBUG_MESSAGE("Whois: match found for [target], it's [M].")
 			our_mob = M
 			break
 	if (our_mob) return our_mob

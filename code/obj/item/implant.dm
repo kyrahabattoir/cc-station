@@ -144,7 +144,7 @@ IMPLANT GUN
 			return
 		var/myarea = get_area(src)
 		src.message = "HEALTH ALERT: [src.owner] in [myarea]: [src.sensehealth()]"
-		//DEBUG("implant reporting crit")
+		//DEBUG_MESSAGE("implant reporting crit")
 		src.send_message()
 		src.reported_health = 1
 
@@ -155,12 +155,12 @@ IMPLANT GUN
 			return
 		var/myarea = get_area(src)
 		src.message = "DEATH ALERT: [src.owner] in [myarea]"
-		//DEBUG("implant reporting death")
+		//DEBUG_MESSAGE("implant reporting death")
 		src.send_message()
 		src.reported_death = 1
 
 	proc/send_message()
-		DEBUG("sending message: [src.message]")
+		DEBUG_MESSAGE("sending message: [src.message]")
 		if (message && mailgroup && radio_connection)
 			var/datum/signal/newsignal = get_free_signal()
 			newsignal.source = src
@@ -174,7 +174,7 @@ IMPLANT GUN
 			newsignal.data["sender"] = src.net_id
 
 			radio_connection.post_signal(src, newsignal)
-			//DEBUG("message sent to [src.mailgroup]")
+			//DEBUG_MESSAGE("message sent to [src.mailgroup]")
 
 		if (message && mailgroup2 && radio_connection)
 			var/datum/signal/newsignal = get_free_signal()
@@ -189,7 +189,7 @@ IMPLANT GUN
 			newsignal.data["sender"] = src.net_id
 
 			radio_connection.post_signal(src, newsignal)
-			//DEBUG("message sent to [src.mailgroup2]")
+			//DEBUG_MESSAGE("message sent to [src.mailgroup2]")
 
 /obj/item/implant/freedom
 	name = "freedom implant"

@@ -271,7 +271,7 @@
 
 	if (slightly_random)
 		var/rand_var = (rand(10, 14) / 10)
-		DEBUG("rand_var [rand_var]")
+		DEBUG_MESSAGE("rand_var [rand_var]")
 		speed = speed * rand_var
 	animate(A, pixel_x = X1, time = speed, loop = loopnum, easing = LINEAR_EASING)
 	animate(pixel_x = X2, time = speed, loop = loopnum, easing = LINEAR_EASING)
@@ -311,7 +311,7 @@
 					 pixel_x = (radius * sin(deg*J)), \
 					 pixel_y = (radius * cos(deg*J)), \
 					 time = (T + (time_diff*J/(laps*res))) / res )
-		DEBUG("Animating D: [deg], res: [res], px: [A.pixel_x], py: [A.pixel_y], T: [T], ActualTime:[(T + (time_diff*J/(laps*res)))], J/laps:[J/(laps*res)] TD:[(time_diff*J/(laps*res))]")
+		DEBUG_MESSAGE("Animating D: [deg], res: [res], px: [A.pixel_x], py: [A.pixel_y], T: [T], ActualTime:[(T + (time_diff*J/(laps*res)))], J/laps:[J/(laps*res)] TD:[(time_diff*J/(laps*res))]")
 	//T += time_diff	//Modify the time with the calculated difference.
 	animate(pixel_x = 0, pixel_y = 0, time = 2)
 

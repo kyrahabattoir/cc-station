@@ -629,7 +629,7 @@ proc/create_fluff(var/datum/mind/target)
 
 	set_up()
 		trophycount = min(10, (ticker.minds.len - 1))
-		//DEBUG("Found [ticker.minds.len] minds.")
+		//DEBUG_MESSAGE("Found [ticker.minds.len] minds.")
 		explanation_text = "Take at least [trophycount] trophies. The skulls of worthy opponents are more valuable with regard to this objective."
 
 	check_completion()
@@ -637,7 +637,7 @@ proc/create_fluff(var/datum/mind/target)
 
 		if (owner.current)
 			trophyvalue = owner.current.get_skull_value()
-			//DEBUG("Objective: [trophycount]. Total trophy value: [trophyvalue].")
+			//DEBUG_MESSAGE("Objective: [trophycount]. Total trophy value: [trophyvalue].")
 
 		if (trophyvalue >= trophycount)
 			return 1

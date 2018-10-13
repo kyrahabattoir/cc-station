@@ -155,7 +155,7 @@ GAUNTLET CARDS
 		all_accesses -= new_access
 		if (istype(src, /obj/item/card/id/syndicate)) // Nuke ops unable to exit their station (Convair880).
 			src.access += access_syndicate_shuttle
-		DEBUG("[get_access_desc(new_access)] added to [src]")
+		DEBUG_MESSAGE("[get_access_desc(new_access)] added to [src]")
 	src.emagged = 1
 
 /obj/item/card/id/verb/read()

@@ -443,7 +443,7 @@ proc/Create_Tommyname()
 
 	Topic(href, href_list)
 		..()
-		DEBUG("Received: [href]")
+		DEBUG_MESSAGE("Received: [href]")
 		if (href_list["ackref"] )
 			var/D = connecting[usr]
 			if(D)
@@ -471,7 +471,7 @@ proc/Create_Tommyname()
 			. = (sub in range(1, master))
 
 	proc/sendToSubscribers(var/data, var/handler)
-		DEBUG("Sending: [data] to [handler ? handler : "-nothing-"]")
+		DEBUG_MESSAGE("Sending: [data] to [handler ? handler : "-nothing-"]")
 		for(var/mob/M in subscribed_mobs)
 			if(validateSubscriber(M))
 				sendData(M, data, handler)
@@ -533,12 +533,12 @@ proc/Create_Tommyname()
 	var/paneldir2 = turn(extension_dir, -90)
 	var/list/turf/panelturfs = list()
 	var/turf/walker = get_turf(src)
-	DEBUG("Extending panel at [showCoords(src.x, src.y, src.z)]. extension_dir: [extension_dir] ([dir2text(extension_dir)]), paneldir1: [paneldir1] ([dir2text(paneldir1)]), paneldir2: [paneldir2] ([dir2text(paneldir2)])")
+	DEBUG_MESSAGE("Extending panel at [showCoords(src.x, src.y, src.z)]. extension_dir: [extension_dir] ([dir2text(extension_dir)]), paneldir1: [paneldir1] ([dir2text(paneldir1)]), paneldir2: [paneldir2] ([dir2text(paneldir2)])")
 	var/total_len = station_padding + controller_padding + (panel_space * (num_panels -1)) + num_panels * panel_width
-	DEBUG("Determined total length of panel to be [total_len] tiles.")
+	DEBUG_MESSAGE("Determined total length of panel to be [total_len] tiles.")
 
 	//Create the initial padding
-	DEBUG("Creating stationside padding.")
+	DEBUG_MESSAGE("Creating stationside padding.")
 	var/list/catwalk = list(/turf/simulated/floor/plating/airless/catwalk, /obj/grille/catwalk)
 	for(var/i = 0; i < station_padding;i++)
 		move_create_obj(catwalk, walker, extension_dir, extension_dir) //Then we walk outwards, creating stuff as we go along
@@ -550,7 +550,7 @@ proc/Create_Tommyname()
 			move_create_obj(list(new /obj/lattice{icon_state="lattice-dir-b"}), walker, paneldir2, paneldir1 | turn(extension_dir, 180))
 		*/
 
-	DEBUG("Creating panel segments.")
+	DEBUG_MESSAGE("Creating panel segments.")
 	//Create the panels themselves
 	for(var/i = 0; i < num_panels; i++)
 		for(var/j = 0; j < (panel_space + panel_width);j++)
@@ -558,13 +558,13 @@ proc/Create_Tommyname()
 			walker = get_step(walker, extension_dir)
 			if(j >= panel_space) panelturfs += walker
 
-	DEBUG("Creating controller padding")
+	DEBUG_MESSAGE("Creating controller padding")
 	for(var/i = 0; i < controller_padding; i++)
 		move_create_obj(catwalk, walker, extension_dir, extension_dir) //Then we walk outwards, creating stuff as we go along
 		walker = get_step(walker,extension_dir)
 
 
-	DEBUG("Creating solar panels")
+	DEBUG_MESSAGE("Creating solar panels")
 	var/list/solar_list = list(/turf/simulated/floor/airless/solar, /obj/machinery/power/solar)
 	for(var/turf/T in panelturfs)
 		spawn(0)
@@ -577,7 +577,7 @@ proc/Create_Tommyname()
 				move_create_obj(solar_list, w2, paneldir2, paneldir2)
 				w2 = get_step(w2, paneldir2)
 
-	DEBUG("Creating solar controller")
+	DEBUG_MESSAGE("Creating solar controller")
 	move_create_obj(list(/turf/simulated/floor/plating/airless, /obj/machinery/power/tracker), walker, extension_dir)
 	walker = get_step(walker,extension_dir)
 	spawn(0) move_create_obj(list(new /obj/lattice{icon_state="lattice-dir-b"}), walker, paneldir1, paneldir2)
@@ -677,7 +677,7 @@ proc/Create_Tommyname()
 			ipy = 32
 
 
-	DEBUG("Initial offsets calculated based on movedir: [movedir] ([dir2text(movedir)]) as ipx: [ipx], ipy: [ipy]")
+	DEBUG_MESSAGE("Initial offsets calculated based on movedir: [movedir] ([dir2text(movedir)]) as ipx: [ipx], ipy: [ipy]")
 	var/is_turf = 0
 	var/turf/T = get_step(startturf, movedir)
 	var/turf_type = null
@@ -714,7 +714,7 @@ proc/Create_Tommyname()
 	playsound(T, "sound/effects/airbridge_dpl.ogg", 50, 1)
 	sleep(animtime)
 	if(turf_type)
-		DEBUG("Creating [turf_type] at [showCoords(T.x, T.y, T.z)]")
+		DEBUG_MESSAGE("Creating [turf_type] at [showCoords(T.x, T.y, T.z)]")
 		var/turf/NT = new turf_type(T)
 		if(setdir) NT.dir = setdir
 		created_atoms += NT
@@ -734,7 +734,7 @@ proc/Create_Tommyname()
 	else if ( extension_dir & (EAST|WEST) )
 		.= abs(A.y - src.y)
 
-	DEBUG("get_dist from [showCoords(A.x, A.y, A.z)] returned: [.]")
+	DEBUG_MESSAGE("get_dist from [showCoords(A.x, A.y, A.z)] returned: [.]")
 
 
 //The dummy object that imitates a turf

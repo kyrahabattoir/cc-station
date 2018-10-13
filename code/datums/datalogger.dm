@@ -33,7 +33,7 @@ var/global/datum/datalogger/game_stats
 			if(!(p in stats))
 				return null
 			stats[p]++
-			//DEBUG("[p] = [stats[p]]")
+			//DEBUG_MESSAGE("[p] = [stats[p]]")
 			return 1
 		Decrement(var/p)
 			if(!(p in stats))
