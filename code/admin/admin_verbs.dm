@@ -6,364 +6,365 @@ var/list/admin_verbs = list(
 
 
 1 = list(\
-// LEVEL_BABBY, goat fart, ayn rand's armpit
-/client/proc/cmd_admin_say,\
-/client/proc/cmd_admin_gib_self,\
+	// LEVEL_BABBY, goat fart, ayn rand's armpit
+	/client/proc/cmd_admin_say,\
+	/client/proc/cmd_admin_gib_self,\
 ),
 
 
 2 = list(\
-// LEVEL_MOD, moderator
-/client/proc/admin_changes,\
-/client/proc/admin_play,\
-/client/proc/admin_observe,\
-/client/proc/voting,\
-/client/proc/game_panel,\
-/client/proc/player_panel,\
-/client/proc/cmd_admin_view_playernotes,\
-/client/proc/toggle_pray,\
-/client/proc/cmd_whois,\
+	// LEVEL_MOD, moderator
+	/client/proc/admin_changes,\
+	/client/proc/admin_play,\
+	/client/proc/admin_observe,\
+	/client/proc/voting,\
+	/client/proc/game_panel,\
+	/client/proc/player_panel,\
+	/client/proc/cmd_admin_view_playernotes,\
+	/client/proc/toggle_pray,\
+	/client/proc/cmd_whois,\
 
-/client/proc/cmd_admin_pm,\
-/client/proc/dsay,\
-/client/proc/blobsay,\
-/client/proc/toggle_hearing_all_looc,\
-/client/proc/cmd_admin_prison_unprison,\
-/client/proc/cmd_admin_playermode,\
+	/client/proc/cmd_admin_pm,\
+	/client/proc/dsay,\
+	/client/proc/blobsay,\
+	/client/proc/toggle_hearing_all_looc,\
+	/client/proc/cmd_admin_prison_unprison,\
+	/client/proc/cmd_admin_playermode,\
 
-/datum/admins/proc/vmode,\
-/datum/admins/proc/votekill,\
-/datum/admins/proc/voteres,\
-/datum/admins/proc/announce,\
-/datum/admins/proc/toggleooc,\
-/datum/admins/proc/togglelooc,\
-/datum/admins/proc/toggleoocdead,\
-/datum/admins/proc/startnow,\
-/datum/admins/proc/toggleAI,\
-/datum/admins/proc/delay_start,\
-/datum/admins/proc/delay_end,\
+	/datum/admins/proc/vmode,\
+	/datum/admins/proc/votekill,\
+	/datum/admins/proc/voteres,\
+	/datum/admins/proc/announce,\
+	/datum/admins/proc/toggleooc,\
+	/datum/admins/proc/togglelooc,\
+	/datum/admins/proc/toggleoocdead,\
+	/datum/admins/proc/startnow,\
+	/datum/admins/proc/toggleAI,\
+	/datum/admins/proc/delay_start,\
+	/datum/admins/proc/delay_end,\
 
-/client/proc/cmd_admin_subtle_message,\
-/client/proc/cmd_admin_alert,\
-/client/proc/toggle_banlogin_announcements,\
-/client/proc/toggle_jobban_announcements,\
-/client/proc/toggle_popup_verbs,\
-/client/proc/toggle_server_toggles_tab,\
-/client/proc/toggle_attack_messages,\
-/client/proc/toggle_hear_prayers,\
-/client/proc/cmd_admin_plain_message,\
-/client/proc/cmd_admin_check_vehicle,\
-/client/proc/change_admin_prefs,\
-/client/proc/cmd_boot,\
+	/client/proc/cmd_admin_subtle_message,\
+	/client/proc/cmd_admin_alert,\
+	/client/proc/toggle_banlogin_announcements,\
+	/client/proc/toggle_jobban_announcements,\
+	/client/proc/toggle_popup_verbs,\
+	/client/proc/toggle_server_toggles_tab,\
+	/client/proc/toggle_attack_messages,\
+	/client/proc/toggle_hear_prayers,\
+	/client/proc/cmd_admin_plain_message,\
+	/client/proc/cmd_admin_check_vehicle,\
+	/client/proc/change_admin_prefs,\
+	/client/proc/cmd_boot,\
 
-/client/proc/enableDrunkMode,\
-/client/proc/forceDrunkMode,\
+	/client/proc/enableDrunkMode,\
+	/client/proc/forceDrunkMode,\
 
-/client/proc/cmd_shame_cube,\
+	/client/proc/cmd_shame_cube,\
 ),\
 
 
 3 = list(\
-// LEVEL_SA, secondary administrator
-/client/proc/stealth,\
-/datum/admins/proc/pixelexplosion,\
-/client/proc/alt_key,\
-/client/proc/secrets,\
-/verb/create_portal,\
-/datum/admins/proc/togglefarting,\
-/client/proc/cmd_admin_show_ai_laws,\
-/client/proc/cmd_admin_reset_ai,\
-/verb/restart_the_fucking_server_i_mean_it,\
-/client/proc/cmd_admin_forceallsay,\
-/client/proc/cmd_admin_murraysay,\
-/datum/admins/proc/restart,\
-/datum/admins/proc/toggleenter,\
-/client/proc/respawn_target,\
-/client/proc/respawn_self,\
-/client/proc/cmd_admin_check_reagents,\
-/client/proc/cmd_admin_check_health,\
-/client/proc/revive_all_bees,\
-/client/proc/revive_all_cats,\
-/client/proc/revive_all_parrots,\
-/client/proc/revive_critter,\
-/client/proc/kill_critter,\
-/datum/admins/proc/toggle_blood_system,\
-/client/proc/narrator_mode,\
-/client/proc/admin_pick_random_player,\
+	// LEVEL_SA, secondary administrator
+	/client/proc/stealth,\
+	/datum/admins/proc/pixelexplosion,\
+	/client/proc/alt_key,\
+	/client/proc/secrets,\
+	/verb/create_portal,\
+	/datum/admins/proc/togglefarting,\
+	/client/proc/cmd_admin_show_ai_laws,\
+	/client/proc/cmd_admin_reset_ai,\
+	/verb/restart_the_fucking_server_i_mean_it,\
+	/client/proc/cmd_admin_forceallsay,\
+	/client/proc/cmd_admin_murraysay,\
+	/datum/admins/proc/restart,\
+	/datum/admins/proc/toggleenter,\
+	/client/proc/respawn_target,\
+	/client/proc/respawn_self,\
+	/client/proc/cmd_admin_check_reagents,\
+	/client/proc/cmd_admin_check_health,\
+	/client/proc/revive_all_bees,\
+	/client/proc/revive_all_cats,\
+	/client/proc/revive_all_parrots,\
+	/client/proc/revive_critter,\
+	/client/proc/kill_critter,\
+	/datum/admins/proc/toggle_blood_system,\
+	/client/proc/narrator_mode,\
+	/client/proc/admin_pick_random_player,\
 
-/datum/admins/proc/delay_start,\
-/datum/admins/proc/delay_end,\
-/client/proc/cmd_admin_create_centcom_report,\
-/client/proc/cmd_admin_create_advanced_centcom_report,\
-/client/proc/cmd_admin_advanced_centcom_report_help,\
-/client/proc/warn,\
-/client/proc/cmd_admin_playeropt,\
-/client/proc/popt_key,\
-/client/proc/show_rules_to_player,\
-/client/proc/view_fingerprints,\
-/client/proc/cmd_admin_intercom_announce,\
-/client/proc/cmd_admin_intercom_help,\
-/client/proc/cmd_dectalk,\
-/client/proc/cmd_admin_remove_plasma,\
-/client/proc/toggle_death_confetti,\
+	/datum/admins/proc/delay_start,\
+	/datum/admins/proc/delay_end,\
+	/client/proc/cmd_admin_create_centcom_report,\
+	/client/proc/cmd_admin_create_advanced_centcom_report,\
+	/client/proc/cmd_admin_advanced_centcom_report_help,\
+	/client/proc/warn,\
+	/client/proc/cmd_admin_playeropt,\
+	/client/proc/popt_key,\
+	/client/proc/show_rules_to_player,\
+	/client/proc/view_fingerprints,\
+	/client/proc/cmd_admin_intercom_announce,\
+	/client/proc/cmd_admin_intercom_help,\
+	/client/proc/cmd_dectalk,\
+	/client/proc/cmd_admin_remove_plasma,\
+	/client/proc/toggle_death_confetti,\
 
-/client/proc/Jump,\
-/client/proc/jumptomob,\
-/client/proc/jtm,\
-/client/proc/jumptokey,\
-/client/proc/jtk,\
-/client/proc/jumptoturf,\
-/client/proc/jtt,\
-/client/proc/jumptocoord,\
-/client/proc/jtc,\
-/client/proc/admin_follow_mobject,\
-/client/proc/main_loop_context,\
-/client/proc/main_loop_tick_detail,\
-/client/proc/display_bomb_monitor, \
-//Ban verbs
-/client/proc/openBanPanel,\
-/client/proc/cmd_admin_addban,\
-/client/proc/banooc,\
-/client/proc/view_cid_list,\
-/client/proc/modify_parts,\
+	/client/proc/Jump,\
+	/client/proc/jumptomob,\
+	/client/proc/jtm,\
+	/client/proc/jumptokey,\
+	/client/proc/jtk,\
+	/client/proc/jumptoturf,\
+	/client/proc/jtt,\
+	/client/proc/jumptocoord,\
+	/client/proc/jtc,\
+	/client/proc/admin_follow_mobject,\
+	/client/proc/main_loop_context,\
+	/client/proc/main_loop_tick_detail,\
+	/client/proc/display_bomb_monitor, \
+	//Ban verbs
+	/client/proc/openBanPanel,\
+	/client/proc/cmd_admin_addban,\
+	/client/proc/banooc,\
+	/client/proc/view_cid_list,\
+	/client/proc/modify_parts,\
 
-// moved down from admin
-/client/proc/cmd_admin_add_freeform_ai_law,\
-/client/proc/cmd_admin_mute,\
-/client/proc/cmd_admin_mute_temp,\
-/client/proc/respawn_as_self,\
-/datum/admins/proc/toggletraitorscaling,\
+	// moved down from admin
+	/client/proc/cmd_admin_add_freeform_ai_law,\
+	/client/proc/cmd_admin_mute,\
+	/client/proc/cmd_admin_mute_temp,\
+	/client/proc/respawn_as_self,\
+	/datum/admins/proc/toggletraitorscaling,\
 ),\
 
 4 = list(\
-/*// LEVEL_ADMIN, admin
-/client/proc/noclip,\
-/client/proc/cmd_admin_mute,\
-/client/proc/cmd_admin_mute_temp,\
-/client/proc/cmd_admin_delete,\
-/client/proc/cmd_admin_add_freeform_ai_law,\
-/client/proc/cmd_admin_show_ai_laws,\
-/client/proc/cmd_admin_reset_ai,\
-/client/proc/addpathogens,\
-/client/proc/addreagents,\
-/client/proc/respawn_as_self,\
-/datum/admins/proc/toggletraitorscaling,\
-/datum/admins/proc/togglerandomaiblobs\
-*/),\
+	/*
+	// LEVEL_ADMIN, admin
+	/client/proc/noclip,\
+	/client/proc/cmd_admin_mute,\
+	/client/proc/cmd_admin_mute_temp,\
+	/client/proc/cmd_admin_delete,\
+	/client/proc/cmd_admin_add_freeform_ai_law,\
+	/client/proc/cmd_admin_show_ai_laws,\
+	/client/proc/cmd_admin_reset_ai,\
+	/client/proc/addpathogens,\
+	/client/proc/addreagents,\
+	/client/proc/respawn_as_self,\
+	/datum/admins/proc/toggletraitorscaling,\
+	/datum/admins/proc/togglerandomaiblobs\
+	*/
+),\
 
 
 5 = list(\
-// LEVEL_PA, primary administrator
-/datum/admins/proc/togglesuicide,\
-/datum/admins/proc/pixelexplosion,\
-/client/proc/play_sound,\
-/client/proc/play_music,\
-/client/proc/cmd_admin_djmode,\
-/client/proc/give_dj,\
-/client/proc/play_ambient_sound,\
-/client/proc/cmd_admin_clownify,\
-/client/proc/toggle_theater,\
-/client/proc/toggle_toggles,\
-/client/proc/cmd_admin_plain_message_all,\
-/client/proc/cmd_admin_fake_medal,\
-/datum/admins/proc/togglemonkeyspeakhuman,\
-/datum/admins/proc/toggleautoending,\
-/datum/admins/proc/togglelatetraitors,\
-/client/proc/togglebuildmode,\
-/client/proc/cmd_admin_rejuvenate_all,\
-/client/proc/fix_powernets,\
-/client/proc/toggle_force_mixed_blob,\
-/client/proc/toggle_force_mixed_wraith,\
-/proc/possess,\
-/proc/possessmob,\
-/proc/releasemob,\
-/client/proc/critter_creator_debug,\
-/client/proc/cmd_cat_county,\
-/client/proc/find_thing,\
-/client/proc/find_one_of,\
-/client/proc/cmd_admin_advview,\
-/client/proc/cmd_swap_minds,\
-/client/proc/edit_module,\
-/*/client/proc/modify_organs,\*/
-/client/proc/toggle_atom_verbs,\
-/client/proc/toggle_camera_network_reciprocity,\
-/client/proc/generate_poster,\
-/client/proc/count_all_of,\
-/client/proc/admin_set_ai_vox,\
-/client/proc/cmd_makeshittyweapon,\
+	// LEVEL_PA, primary administrator
+	/datum/admins/proc/togglesuicide,\
+	/datum/admins/proc/pixelexplosion,\
+	/client/proc/play_sound,\
+	/client/proc/play_music,\
+	/client/proc/cmd_admin_djmode,\
+	/client/proc/give_dj,\
+	/client/proc/play_ambient_sound,\
+	/client/proc/cmd_admin_clownify,\
+	/client/proc/toggle_theater,\
+	/client/proc/toggle_toggles,\
+	/client/proc/cmd_admin_plain_message_all,\
+	/client/proc/cmd_admin_fake_medal,\
+	/datum/admins/proc/togglemonkeyspeakhuman,\
+	/datum/admins/proc/toggleautoending,\
+	/datum/admins/proc/togglelatetraitors,\
+	/client/proc/togglebuildmode,\
+	/client/proc/cmd_admin_rejuvenate_all,\
+	/client/proc/fix_powernets,\
+	/client/proc/toggle_force_mixed_blob,\
+	/client/proc/toggle_force_mixed_wraith,\
+	/proc/possess,\
+	/proc/possessmob,\
+	/proc/releasemob,\
+	/client/proc/critter_creator_debug,\
+	/client/proc/cmd_cat_county,\
+	/client/proc/find_thing,\
+	/client/proc/find_one_of,\
+	/client/proc/cmd_admin_advview,\
+	/client/proc/cmd_swap_minds,\
+	/client/proc/edit_module,\
+	/*/client/proc/modify_organs,\*/
+	/client/proc/toggle_atom_verbs,\
+	/client/proc/toggle_camera_network_reciprocity,\
+	/client/proc/generate_poster,\
+	/client/proc/count_all_of,\
+	/client/proc/admin_set_ai_vox,\
+	/client/proc/cmd_makeshittyweapon,\
 
-// moved up from admin
-/client/proc/cmd_admin_delete,\
-/client/proc/noclip,\
-/client/proc/addpathogens,\
-/client/proc/addreagents,\
-/client/proc/respawn_as_self,\
-/client/proc/cmd_give_pet,\
-/client/proc/cmd_give_pets\
+	// moved up from admin
+	/client/proc/cmd_admin_delete,\
+	/client/proc/noclip,\
+	/client/proc/addpathogens,\
+	/client/proc/addreagents,\
+	/client/proc/respawn_as_self,\
+	/client/proc/cmd_give_pet,\
+	/client/proc/cmd_give_pets\
 ),\
 
 
 6 = list(\
-// LEVEL_SHITGUY, shit person
-/datum/admins/proc/togglesoundwaiting,\
-/datum/admins/proc/pixelexplosion,\
-/client/proc/rspawn_panel,\
-/proc/mod_color,\
-/client/proc/debug_variables,\
-/verb/adminCreateBlueprint,\
-/client/proc/cmd_mass_modify_object_variables,\
-/client/proc/cmd_debug_mutantrace,\
-/client/proc/cmd_admin_gib,\
-/client/proc/cmd_admin_partygib,\
-/client/proc/cmd_admin_owlgib,\
-/client/proc/cmd_admin_firegib,\
-/client/proc/cmd_admin_elecgib,\
-/client/proc/sharkgib,\
-/client/proc/cmd_admin_icegib,\
-/client/proc/cmd_admin_goldgib,\
-/client/proc/cmd_admin_spidergib,\
-/client/proc/cmd_admin_cluwnegib,\
-/client/proc/cmd_admin_polymorph,\
-/client/proc/cmd_admin_rejuvenate,\
-/client/proc/cmd_admin_drop_everything,\
-/client/proc/cmd_admin_humanize,\
-/client/proc/cmd_admin_mobileAIize,\
-/client/proc/cmd_admin_makeai,\
-/client/proc/cmd_debug_del_all,\
-/client/proc/cmd_admin_godmode,\
-/client/proc/cmd_admin_godmode_self,\
-/client/proc/cmd_admin_get_mobject,\
-/client/proc/Getmob,\
-/client/proc/sendmob,\
-/client/proc/gethmobs,\
-/client/proc/sendhmobs,\
-/client/proc/getmobs,\
-/client/proc/sendmobs,\
-/client/proc/gettraitors,\
-/client/proc/getnontraitors,\
-/client/proc/Debug2,\
-/client/proc/debug_deletions,\
+	// LEVEL_SHITGUY, shit person
+	/datum/admins/proc/togglesoundwaiting,\
+	/datum/admins/proc/pixelexplosion,\
+	/client/proc/rspawn_panel,\
+	/proc/mod_color,\
+	/client/proc/debug_variables,\
+	/verb/adminCreateBlueprint,\
+	/client/proc/cmd_mass_modify_object_variables,\
+	/client/proc/cmd_debug_mutantrace,\
+	/client/proc/cmd_admin_gib,\
+	/client/proc/cmd_admin_partygib,\
+	/client/proc/cmd_admin_owlgib,\
+	/client/proc/cmd_admin_firegib,\
+	/client/proc/cmd_admin_elecgib,\
+	/client/proc/sharkgib,\
+	/client/proc/cmd_admin_icegib,\
+	/client/proc/cmd_admin_goldgib,\
+	/client/proc/cmd_admin_spidergib,\
+	/client/proc/cmd_admin_cluwnegib,\
+	/client/proc/cmd_admin_polymorph,\
+	/client/proc/cmd_admin_rejuvenate,\
+	/client/proc/cmd_admin_drop_everything,\
+	/client/proc/cmd_admin_humanize,\
+	/client/proc/cmd_admin_mobileAIize,\
+	/client/proc/cmd_admin_makeai,\
+	/client/proc/cmd_debug_del_all,\
+	/client/proc/cmd_admin_godmode,\
+	/client/proc/cmd_admin_godmode_self,\
+	/client/proc/cmd_admin_get_mobject,\
+	/client/proc/Getmob,\
+	/client/proc/sendmob,\
+	/client/proc/gethmobs,\
+	/client/proc/sendhmobs,\
+	/client/proc/getmobs,\
+	/client/proc/sendmobs,\
+	/client/proc/gettraitors,\
+	/client/proc/getnontraitors,\
+	/client/proc/Debug2,\
+	/client/proc/debug_deletions,\
 #ifdef IMAGE_DEL_DEBUG
-/client/proc/debug_image_deletions,\
-/client/proc/debug_image_deletions_clear,\
+	/client/proc/debug_image_deletions,\
+	/client/proc/debug_image_deletions_clear,\
 #endif
-/client/proc/jobbans,\
-/client/proc/rebuild_jobbans_panel,\
-/datum/admins/proc/adrev,\
-/datum/admins/proc/adspawn,\
-/datum/admins/proc/adjump,\
-/client/proc/find_all_of,\
-/client/proc/cmd_add_to_screen,\
-/client/proc/respawn_as,\
+	/client/proc/jobbans,\
+	/client/proc/rebuild_jobbans_panel,\
+	/datum/admins/proc/adrev,\
+	/datum/admins/proc/adspawn,\
+	/datum/admins/proc/adjump,\
+	/client/proc/find_all_of,\
+	/client/proc/cmd_add_to_screen,\
+	/client/proc/respawn_as,\
 
-/client/proc/general_report,\
-/client/proc/map_debug_panel,\
-/client/proc/air_report,\
-/client/proc/air_status,\
-/client/proc/fix_next_move,\
-/client/proc/debugreward,\
+	/client/proc/general_report,\
+	/client/proc/map_debug_panel,\
+	/client/proc/air_report,\
+	/client/proc/air_status,\
+	/client/proc/fix_next_move,\
+	/client/proc/debugreward,\
 
-/client/proc/flip_view,\
-/client/proc/show_image_to_all,\
-/client/proc/sharkban,\
-/client/proc/cmd_explosion,\
-/client/proc/toggle_literal_disarm,\
-/client/proc/admin_smoke,\
-/client/proc/admin_foam,\
+	/client/proc/flip_view,\
+	/client/proc/show_image_to_all,\
+	/client/proc/sharkban,\
+	/client/proc/cmd_explosion,\
+	/client/proc/toggle_literal_disarm,\
+	/client/proc/admin_smoke,\
+	/client/proc/admin_foam,\
 
-/datum/admins/proc/toggleaprilfools,\
-/client/proc/cmd_admin_pop_off_all_the_limbs_oh_god,\
-/datum/admins/proc/togglethetoggles,\
-/datum/admins/proc/togglesimsmode,\
-/client/proc/admin_toggle_nightmode,\
-/client/proc/toggle_ip_alerts,\
-/client/proc/upload_custom_hud,\
-/client/proc/replace_with_explosive\
-
+	/datum/admins/proc/toggleaprilfools,\
+	/client/proc/cmd_admin_pop_off_all_the_limbs_oh_god,\
+	/datum/admins/proc/togglethetoggles,\
+	/datum/admins/proc/togglesimsmode,\
+	/client/proc/admin_toggle_nightmode,\
+	/client/proc/toggle_ip_alerts,\
+	/client/proc/upload_custom_hud,\
+	/client/proc/replace_with_explosive\
 ),\
 
 7 = list(\
-// LEVEL_CODER, coder
-/client/proc/cmd_job_controls,\
-/datum/admins/proc/pixelexplosion,\
-/client/proc/cmd_modify_market_variables,\
-/client/proc/BK_finance_debug,\
-/client/proc/BK_alter_funds,\
-/client/proc/debug_pools,\
-/client/proc/cmd_claim_rs_verbs,\
-/client/proc/debug_variables,\
-/client/proc/get_admin_state,\
-/client/proc/call_proc,\
-/client/proc/call_proc_all,\
-/datum/admins/proc/adsound,\
-/datum/admins/proc/pcap,\
-/client/proc/toggle_extra_verbs,\
-/client/proc/cmd_randomize_look,\
-/client/proc/toggle_numbers_station_messages,\
-/*
-/client/proc/export_banlist,\
-/client/proc/import_banlist,\
-*/
+	// LEVEL_CODER, coder
+	/client/proc/cmd_job_controls,\
+	/datum/admins/proc/pixelexplosion,\
+	/client/proc/cmd_modify_market_variables,\
+	/client/proc/BK_finance_debug,\
+	/client/proc/BK_alter_funds,\
+	/client/proc/debug_pools,\
+	/client/proc/cmd_claim_rs_verbs,\
+	/client/proc/debug_variables,\
+	/client/proc/get_admin_state,\
+	/client/proc/call_proc,\
+	/client/proc/call_proc_all,\
+	/datum/admins/proc/adsound,\
+	/datum/admins/proc/pcap,\
+	/client/proc/toggle_extra_verbs,\
+	/client/proc/cmd_randomize_look,\
+	/client/proc/toggle_numbers_station_messages,\
+	/*
+	/client/proc/export_banlist,\
+	/client/proc/import_banlist,\
+	*/
 
-/client/proc/ticklag,\
-/client/proc/cmd_debug_vox,\
-/datum/admins/proc/spawn_atom,\
-/client/proc/view_save_data,\
-/client/proc/check_gang_scores,\
-/client/proc/mapWorld,\
-/client/proc/call_proc_atom,\
-/client/proc/haine_blood_debug,\
-/client/proc/debug_messages,\
-/client/proc/toggle_next_click,\
-/client/proc/debug_reaction_list,\
-/client/proc/debug_reagents_cache,\
-/client/proc/debug_check_possible_reactions,\
-/client/proc/set_admin_level,\
-/client/proc/show_camera_paths, \
-/*/client/proc/remove_camera_paths_verb, \*/
-/client/proc/show_runtime_window,\
-/client/proc/cmd_chat_debug,\
-/client/proc/toggleIrcbotDebug,\
-/datum/admins/proc/toggle_bone_system,\
+	/client/proc/ticklag,\
+	/client/proc/cmd_debug_vox,\
+	/datum/admins/proc/spawn_atom,\
+	/client/proc/view_save_data,\
+	/client/proc/check_gang_scores,\
+	/client/proc/mapWorld,\
+	/client/proc/call_proc_atom,\
+	/client/proc/haine_blood_debug,\
+	/client/proc/debug_messages,\
+	/client/proc/toggle_next_click,\
+	/client/proc/debug_reaction_list,\
+	/client/proc/debug_reagents_cache,\
+	/client/proc/debug_check_possible_reactions,\
+	/client/proc/set_admin_level,\
+	/client/proc/show_camera_paths, \
+	/*/client/proc/remove_camera_paths_verb, \*/
+	/client/proc/show_runtime_window,\
+	/client/proc/cmd_chat_debug,\
+	/client/proc/toggleIrcbotDebug,\
+	/datum/admins/proc/toggle_bone_system,\
 #ifdef MACHINE_PROCESSING_DEBUG
-/client/proc/cmd_display_detailed_machine_stats,\
+	/client/proc/cmd_display_detailed_machine_stats,\
 #endif
 #ifdef QUEUE_STAT_DEBUG
-/client/proc/cmd_display_queue_stats,\
+	/client/proc/cmd_display_queue_stats,\
 #endif
-/client/proc/cmd_randomize_handwriting,\
-/client/proc/wireTest,\
-/client/proc/toggleResourceCache,\
-/client/proc/debugResourceCache\
+	/client/proc/cmd_randomize_handwriting,\
+	/client/proc/wireTest,\
+	/client/proc/toggleResourceCache,\
+	/client/proc/debugResourceCache\
 ),\
 
 
 8 = list(\
-// LEVEL_HOST, host
-/client/proc/cmd_claim_rs_verbs\
+	// LEVEL_HOST, host
+	/client/proc/cmd_claim_rs_verbs\
 )\
 )
 
 // verbs that SAs and As get while observing. PA+ get these all the time
 var/list/special_admin_observing_verbs = list(\
-/client/proc/cmd_admin_check_contents,\
-/datum/admins/proc/toggle_respawns,\
-/datum/admins/proc/toggledeadchat,\
-/client/proc/togglepersonaldeadchat\
+	/client/proc/cmd_admin_check_contents,\
+	/datum/admins/proc/toggle_respawns,\
+	/datum/admins/proc/toggledeadchat,\
+	/client/proc/togglepersonaldeadchat\
 )
 
 // verbs that PAs get while observing. Coder+ get these all the time
 var/list/special_pa_observing_verbs = list(\
-/client/proc/cmd_admin_drop_everything,\
-/client/proc/debug_variables,\
-/client/proc/cmd_modify_object_variables,\
-/client/proc/cmd_modify_ticker_variables,\
-/client/proc/cmd_modify_controller_variables,\
-/client/proc/Getmob,\
-/client/proc/sendmob,\
-/client/proc/cmd_admin_rejuvenate,\
-/client/proc/toggle_view_range,\
-/client/proc/cmd_admin_aview\
+	/client/proc/cmd_admin_drop_everything,\
+	/client/proc/debug_variables,\
+	/client/proc/cmd_modify_object_variables,\
+	/client/proc/cmd_modify_ticker_variables,\
+	/client/proc/cmd_modify_controller_variables,\
+	/client/proc/Getmob,\
+	/client/proc/sendmob,\
+	/client/proc/cmd_admin_rejuvenate,\
+	/client/proc/toggle_view_range,\
+	/client/proc/cmd_admin_aview\
 )
 
 /client/proc/cmd_add_to_screen(var/atom/A as obj|mob|turf in world)

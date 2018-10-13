@@ -11,106 +11,76 @@
 	var/list/obj/item/assembly/time_bomb/ST_time = list()
 	var/list/obj/item/assembly/radio_bomb/ST_radio = list()
 	var/filter_active_only = 1
-	pooled()
-		..()
-		if(current_user.client && current_user.client.holder)
-			current_user.client.holder.active_monitor_datums -= src
-		current_user = null
-		lists_built = 0
-		TVs.Cut()
-		dets.Cut()
-		ST_prox.Cut()
-		ST_time.Cut()
-		ST_radio.Cut()
-		filter_active_only = 1
 
-	unpooled()
-		..()
-		build_lists()
 
-	proc/set_up(var/mob/M)
-		if(!M || !M.client || !M.client.holder)
-			return 0
-		current_user = M
-		M.client.holder.active_monitor_datums += src
-		return 1
-	proc/build_lists()
-		if(lists_built) return
-		TVs.Cut()
-		dets.Cut()
-		ST_prox.Cut()
-		ST_time.Cut()
-		ST_radio.Cut()
-		for(var/obj/item/I in world)
-			if(istype(I, /obj/item/device/transfer_valve))
-				TVs += I
-			else if (istype(I, /obj/item/assembly/detonator))
-				dets += I
-			else if (istype(I, /obj/item/assembly/proximity_bomb/))
-				ST_prox += I
-			else if (istype(I, /obj/item/assembly/time_bomb/))
-				ST_time += I
-			else if (istype(I, /obj/item/assembly/radio_bomb/))
-				ST_radio += I
+/datum/bomb_monitor/pooled()
+	..()
+	if(current_user.client && current_user.client.holder)
+		current_user.client.holder.active_monitor_datums -= src
+	current_user = null
+	lists_built = 0
+	TVs.Cut()
+	dets.Cut()
+	ST_prox.Cut()
+	ST_time.Cut()
+	ST_radio.Cut()
+	filter_active_only = 1
 
-		lists_built = 1
 
-	proc/display_ui()
-		if(!current_user || !current_user.client || !current_user.client.holder) return
-		build_lists()
-		var/temp = ""
-		for(var/obj/item/device/transfer_valve/TV in TVs)
-			if(!filter_active_only || (TV.tank_one || TV.tank_two))
-				var/turf/T = get_turf(TV)
-				if (!T || !isturf(T)) continue
-				var/ref_a = "<a href='?src=\ref[src];airmon=\ref[TV.tank_one]'>[TV.tank_one]</a>"
-				var/ref_b = "<a href='?src=\ref[src];airmon=\ref[TV.tank_two]'>[TV.tank_two]</a>"
-				temp += {"<tr>
-							<td>
-								[TV.name]
-							</td>
-							<td>
-								[get_area(T)]
-							</td>
-							<td>
-								[showCoords(T.x, T.y, T.z, 0, current_user.client.holder)]
-							</td>
-							<td>
-								[TV.tank_one ? ref_a : "Nothing"]
-							</td>
-							<td>
-								[TV.tank_two ? ref_b : "Nothing"]
-							</td>
-							<td>
-								[TV.attached_device ? TV.attached_device : "Nothing"]
-							</td>
-							<td>
-								[TV.fingerprintslast ? TV.fingerprintslast : "N/A"]
-							</td>
-							<td>
-								<a href='?src=\ref[src];toggle_dud=\ref[TV]'>[TV.force_dud ? "<span class='alert'>YES</span>" : "No"]</a>
-							</td>
-							<td>
-								<a href='?src=\ref[src];trigger=\ref[TV]'><B>[TV.tank_one && TV.tank_two ? "Trigger" : ""]</B></a>
-							</td>
-						</tr>"}
+/datum/bomb_monitor/unpooled()
+	..()
+	build_lists()
 
-		var/TTVtable = {"<h2>Tank Transfer Valves</h2><hr>
-						<table>
-							<tr>
-								<th>Name</th><th>Area name</th><th>Coords</th><th>Tank 1</th><th>Tank 2</th><th>Detonator</th><th>Fingerprints</th><th>Force Dud</th>
-								[temp]
-							</tr>
-						</table>"}
 
-		temp = ""
-		for (var/obj/item/assembly/proximity_bomb/PB in ST_prox)
-			var/turf/T = get_turf(PB)
-			if (!T || !isturf(T)) continue
-			var/ref_PB = "<a href='?src=\ref[src];airmon=\ref[PB.part3]'>[PB.part3]</a>"
+/datum/bomb_monitor/proc/set_up(var/mob/M)
+	if(!M || !M.client || !M.client.holder)
+		return 0
+
+	current_user = M
+	M.client.holder.active_monitor_datums += src
+	return 1
+
+
+/datum/bomb_monitor/proc/build_lists()
+	if(lists_built)
+		return
+
+	TVs.Cut()
+	dets.Cut()
+	ST_prox.Cut()
+	ST_time.Cut()
+	ST_radio.Cut()
+	for(var/obj/item/I in world)
+		if(istype(I, /obj/item/device/transfer_valve))
+			TVs += I
+		else if (istype(I, /obj/item/assembly/detonator))
+			dets += I
+		else if (istype(I, /obj/item/assembly/proximity_bomb/))
+			ST_prox += I
+		else if (istype(I, /obj/item/assembly/time_bomb/))
+			ST_time += I
+		else if (istype(I, /obj/item/assembly/radio_bomb/))
+			ST_radio += I
+
+	lists_built = 1
+
+
+/datum/bomb_monitor/proc/display_ui()
+	if(!current_user || !current_user.client || !current_user.client.holder)
+		return
+
+	build_lists()
+	var/temp = ""
+	for(var/obj/item/device/transfer_valve/TV in TVs)
+		if(!filter_active_only || (TV.tank_one || TV.tank_two))
+			var/turf/T = get_turf(TV)
+			if (!T || !isturf(T))
+				continue
+			var/ref_a = "<a href='?src=\ref[src];airmon=\ref[TV.tank_one]'>[TV.tank_one]</a>"
+			var/ref_b = "<a href='?src=\ref[src];airmon=\ref[TV.tank_two]'>[TV.tank_two]</a>"
 			temp += {"<tr>
 						<td>
-							[PB.name]
+							[TV.name]
 						</td>
 						<td>
 							[get_area(T)]
@@ -119,29 +89,148 @@
 							[showCoords(T.x, T.y, T.z, 0, current_user.client.holder)]
 						</td>
 						<td>
-							[PB.part3 ? ref_PB : "Nothing"]
+							[TV.tank_one ? ref_a : "Nothing"]
 						</td>
 						<td>
-							[PB.part1 ? PB.part1 : "Nothing"]
+							[TV.tank_two ? ref_b : "Nothing"]
 						</td>
 						<td>
-							[PB.fingerprintslast ? PB.fingerprintslast : "N/A"]
+							[TV.attached_device ? TV.attached_device : "Nothing"]
 						</td>
 						<td>
-							<a href='?src=\ref[src];toggle_dud=\ref[PB]'>[PB.force_dud ? "<span class='alert'>YES</span>" : "No"]</a>
+							[TV.fingerprintslast ? TV.fingerprintslast : "N/A"]
 						</td>
 						<td>
-							<a href='?src=\ref[src];trigger=\ref[PB]'><B>[PB.part3 ? "Trigger" : ""]</B></a>
+							<a href='?src=\ref[src];toggle_dud=\ref[TV]'>[TV.force_dud ? "<span class='alert'>YES</span>" : "No"]</a>
+						</td>
+						<td>
+							<a href='?src=\ref[src];trigger=\ref[TV]'><B>[TV.tank_one && TV.tank_two ? "Trigger" : ""]</B></a>
 						</td>
 					</tr>"}
 
-		for (var/obj/item/assembly/time_bomb/TB in ST_time)
-			var/turf/T = get_turf(TB)
-			if (!T || !isturf(T)) continue
-			var/ref_TB = "<a href='?src=\ref[src];airmon=\ref[TB.part3]'>[TB.part3]</a>"
+	var/TTVtable = {"<h2>Tank Transfer Valves</h2><hr>
+					<table>
+						<tr>
+							<th>Name</th><th>Area name</th><th>Coords</th><th>Tank 1</th><th>Tank 2</th><th>Detonator</th><th>Fingerprints</th><th>Force Dud</th>
+							[temp]
+						</tr>
+					</table>"}
+
+	temp = ""
+	for (var/obj/item/assembly/proximity_bomb/PB in ST_prox)
+		var/turf/T = get_turf(PB)
+		if (!T || !isturf(T))
+			continue
+		var/ref_PB = "<a href='?src=\ref[src];airmon=\ref[PB.part3]'>[PB.part3]</a>"
+		temp += {"<tr>
+					<td>
+						[PB.name]
+					</td>
+					<td>
+						[get_area(T)]
+					</td>
+					<td>
+						[showCoords(T.x, T.y, T.z, 0, current_user.client.holder)]
+					</td>
+					<td>
+						[PB.part3 ? ref_PB : "Nothing"]
+					</td>
+					<td>
+						[PB.part1 ? PB.part1 : "Nothing"]
+					</td>
+					<td>
+						[PB.fingerprintslast ? PB.fingerprintslast : "N/A"]
+					</td>
+					<td>
+						<a href='?src=\ref[src];toggle_dud=\ref[PB]'>[PB.force_dud ? "<span class='alert'>YES</span>" : "No"]</a>
+					</td>
+					<td>
+						<a href='?src=\ref[src];trigger=\ref[PB]'><B>[PB.part3 ? "Trigger" : ""]</B></a>
+					</td>
+				</tr>"}
+
+	for (var/obj/item/assembly/time_bomb/TB in ST_time)
+		var/turf/T = get_turf(TB)
+		if (!T || !isturf(T))
+			continue
+		var/ref_TB = "<a href='?src=\ref[src];airmon=\ref[TB.part3]'>[TB.part3]</a>"
+		temp += {"<tr>
+					<td>
+						[TB.name]
+					</td>
+					<td>
+						[get_area(T)]
+					</td>
+					<td>
+						[showCoords(T.x, T.y, T.z, 0, current_user.client.holder)]
+					</td>
+					<td>
+						[TB.part3 ? ref_TB : "Nothing"]
+					</td>
+					<td>
+						[TB.part1 ? TB.part1 : "Nothing"]
+					</td>
+					<td>
+						[TB.fingerprintslast ? TB.fingerprintslast : "N/A"]
+					</td>
+					<td>
+						<a href='?src=\ref[src];toggle_dud=\ref[TB]'>[TB.force_dud ? "<span class='alert'>YES</span>" : "No"]</a>
+					</td>
+					<td>
+						<a href='?src=\ref[src];trigger=\ref[TB]'><B>[TB.part3 ? "Trigger" : ""]</B></a>
+					</td>
+				</tr>"}
+
+	for (var/obj/item/assembly/radio_bomb/RB in ST_radio)
+		var/turf/T = get_turf(RB)
+		if (!T || !isturf(T))
+			continue
+		var/ref_RB = "<a href='?src=\ref[src];airmon=\ref[RB.part3]'>[RB.part3]</a>"
+		temp += {"<tr>
+					<td>
+						[RB.name]
+					</td>
+					<td>
+						[get_area(T)]
+					</td>
+					<td>
+						[showCoords(T.x, T.y, T.z, 0, current_user.client.holder)]
+					</td>
+					<td>
+						[RB.part3 ? ref_RB : "Nothing"]
+					</td>
+					<td>
+						[RB.part1 ? RB.part1 : "Nothing"]
+					</td>
+					<td>
+						[RB.fingerprintslast ? RB.fingerprintslast : "N/A"]
+					</td>
+					<td>
+						<a href='?src=\ref[src];toggle_dud=\ref[RB]'>[RB.force_dud ? "<span class='alert'>YES</span>" : "No"]</a>
+					</td>
+					<td>
+						<a href='?src=\ref[src];trigger=\ref[RB]'><B>[RB.part3 ? "Trigger" : ""]</B></a>
+					</td>
+				</tr>"}
+
+	var/STtable = {"<h2>Single Tank Bombs</h2><hr>
+					<table>
+						<tr>
+							<th>Name</th><th>Area name</th><th>Coords</th><th>Tank</th><th>Detonator</th><th>Fingerprints</th><th>Force Dud</th>
+							[temp]
+						</tr>
+					</table>"}
+
+	temp = ""
+	for(var/obj/item/assembly/detonator/det in dets)
+		if(!filter_active_only || det.attachedTo)
+			var/turf/T = get_turf(det)
+			if (!T || !isturf(T))
+				continue
+			var/ref = "<a href='?src=\ref[src];airmon=\ref[det.attachedTo]'>[det.attachedTo]</a>"
 			temp += {"<tr>
 						<td>
-							[TB.name]
+							[det.name]
 						</td>
 						<td>
 							[get_area(T)]
@@ -150,219 +239,148 @@
 							[showCoords(T.x, T.y, T.z, 0, current_user.client.holder)]
 						</td>
 						<td>
-							[TB.part3 ? ref_TB : "Nothing"]
+							[det.attachedTo ? ref : "Nothing"]
 						</td>
 						<td>
-							[TB.part1 ? TB.part1 : "Nothing"]
+							[det.fingerprintslast ? det.fingerprintslast : "N/A"]
 						</td>
 						<td>
-							[TB.fingerprintslast ? TB.fingerprintslast : "N/A"]
+							[det.attachedTo && det.attachedTo.fingerprintslast ? det.attachedTo.fingerprintslast : "N/A"]
 						</td>
 						<td>
-							<a href='?src=\ref[src];toggle_dud=\ref[TB]'>[TB.force_dud ? "<span class='alert'>YES</span>" : "No"]</a>
+							<a href='?src=\ref[src];toggle_dud=\ref[det]'>[det.force_dud ? "<span class='alert'>YES</span>" : "No"]</a>
 						</td>
 						<td>
-							<a href='?src=\ref[src];trigger=\ref[TB]'><B>[TB.part3 ? "Trigger" : ""]</B></a>
+							<a href='?src=\ref[src];trigger=\ref[det]'><B>[det.attachedTo ? "Trigger" : ""]</B></a>
 						</td>
 					</tr>"}
 
-		for (var/obj/item/assembly/radio_bomb/RB in ST_radio)
-			var/turf/T = get_turf(RB)
-			if (!T || !isturf(T)) continue
-			var/ref_RB = "<a href='?src=\ref[src];airmon=\ref[RB.part3]'>[RB.part3]</a>"
-			temp += {"<tr>
-						<td>
-							[RB.name]
-						</td>
-						<td>
-							[get_area(T)]
-						</td>
-						<td>
-							[showCoords(T.x, T.y, T.z, 0, current_user.client.holder)]
-						</td>
-						<td>
-							[RB.part3 ? ref_RB : "Nothing"]
-						</td>
-						<td>
-							[RB.part1 ? RB.part1 : "Nothing"]
-						</td>
-						<td>
-							[RB.fingerprintslast ? RB.fingerprintslast : "N/A"]
-						</td>
-						<td>
-							<a href='?src=\ref[src];toggle_dud=\ref[RB]'>[RB.force_dud ? "<span class='alert'>YES</span>" : "No"]</a>
-						</td>
-						<td>
-							<a href='?src=\ref[src];trigger=\ref[RB]'><B>[RB.part3 ? "Trigger" : ""]</B></a>
-						</td>
-					</tr>"}
+	var/cantable = {"<h2>Canister Bombs</h2><hr>
+					<table>
+						<tr>
+							<th>Name</th><th>Area name</th><th>Coords</th><th>Canister</th><th>Fingerprints (Detonator)</th><th>Fingerprints (Canister)</th><th>Force Dud</th>
+							[temp]
+						</tr>
+					</table>"}
 
-		var/STtable = {"<h2>Single Tank Bombs</h2><hr>
-						<table>
-							<tr>
-								<th>Name</th><th>Area name</th><th>Coords</th><th>Tank</th><th>Detonator</th><th>Fingerprints</th><th>Force Dud</th>
-								[temp]
-							</tr>
-						</table>"}
+	temp = {"<!doctype HTML>
+				<html>
+					<head>
+						<title>Bomb Monitor</title>
+						<style>
+							table {
+								border: 1px solid black;
+								border-collapse: collapse;
+							}
+							td {
+								width: 150px;
+								border-top: 1px solid black;
+								border-bottom: 1px solid black;
+								border-left: 1px dotted black;
+								border-right: 1px dotted black;
+								padding: 5px;
+							}
+							th {
+								width: 150px;
+								border-top: 1px solid black;
+								border-bottom: 1px solid black;
+								border-left: 1px dotted black;
+								border-right: 1px dotted black;
+								padding: 5px;
+							}
 
-		temp = ""
-		for(var/obj/item/assembly/detonator/det in dets)
-			if(!filter_active_only || det.attachedTo)
-				var/turf/T = get_turf(det)
-				if (!T || !isturf(T)) continue
-				var/ref = "<a href='?src=\ref[src];airmon=\ref[det.attachedTo]'>[det.attachedTo]</a>"
-				temp += {"<tr>
-							<td>
-								[det.name]
-							</td>
-							<td>
-								[get_area(T)]
-							</td>
-							<td>
-								[showCoords(T.x, T.y, T.z, 0, current_user.client.holder)]
-							</td>
-							<td>
-								[det.attachedTo ? ref : "Nothing"]
-							</td>
-							<td>
-								[det.fingerprintslast ? det.fingerprintslast : "N/A"]
-							</td>
-							<td>
-								[det.attachedTo && det.attachedTo.fingerprintslast ? det.attachedTo.fingerprintslast : "N/A"]
-							</td>
-							<td>
-								<a href='?src=\ref[src];toggle_dud=\ref[det]'>[det.force_dud ? "<span class='alert'>YES</span>" : "No"]</a>
-							</td>
-							<td>
-								<a href='?src=\ref[src];trigger=\ref[det]'><B>[det.attachedTo ? "Trigger" : ""]</B></a>
-							</td>
-						</tr>"}
-
-		var/cantable = {"<h2>Canister Bombs</h2><hr>
-						<table>
-							<tr>
-								<th>Name</th><th>Area name</th><th>Coords</th><th>Canister</th><th>Fingerprints (Detonator)</th><th>Fingerprints (Canister)</th><th>Force Dud</th>
-								[temp]
-							</tr>
-						</table>"}
-
-		temp = {"<!doctype HTML>
-					<html>
-						<head>
-							<title>Bomb Monitor</title>
-							<style>
-								table {
-									border: 1px solid black;
-									border-collapse: collapse;
+							.alert
+								{
+									font-weight: bold;
+									font-color: #FF0000;
 								}
-								td {
-									width: 150px;
-									border-top: 1px solid black;
-									border-bottom: 1px solid black;
-									border-left: 1px dotted black;
-									border-right: 1px dotted black;
-									padding: 5px;
-								}
-								th {
-									width: 150px;
-									border-top: 1px solid black;
-									border-bottom: 1px solid black;
-									border-left: 1px dotted black;
-									border-right: 1px dotted black;
-									padding: 5px;
-								}
+						</style>
+					</head>
+					<body>
+						<a href='?src=\ref[src];refresh=rebuild'>Rebuild Lists</a> <a href='?src=\ref[src];refresh=interface'>Refresh</a> <a href='?src=\ref[src];filter=1'>Filtering: [filter_active_only ? "Only Complete" : "All"]</a><br>
+						[TTVtable]
+						<BR>
+						[STtable]
+						<BR>
+						[cantable]
+					</body>
+				</html>"}
 
-								.alert
-									{
-										font-weight: bold;
-										font-color: #FF0000;
-									}
-							</style>
-						</head>
-						<body>
-							<a href='?src=\ref[src];refresh=rebuild'>Rebuild Lists</a> <a href='?src=\ref[src];refresh=interface'>Refresh</a> <a href='?src=\ref[src];filter=1'>Filtering: [filter_active_only ? "Only Complete" : "All"]</a><br>
-							[TTVtable]
-							<BR>
-							[STtable]
-							<BR>
-							[cantable]
-						</body>
-					</html>"}
+	current_user << browse(temp, "window=bomb_monitor;size=750x500")
+	onclose(current_user, "bomb_monitor", src)
 
-		current_user << browse(temp, "window=bomb_monitor;size=750x500")
-		onclose(current_user, "bomb_monitor", src)
+/datum/bomb_monitor/Topic(href, href_list[])
+	if(!current_user || !current_user.client || !current_user.client.holder)
+		return
+	if(current_user != usr)
+		message_admins("[key_name(usr)] tried to use the bomb control panel as [key_name(current_user)]!")
+		return
 
-	Topic(href, href_list[])
-		if(!current_user || !current_user.client || !current_user.client.holder) return
-		if(current_user != usr)
-			message_admins("[key_name(usr)] tried to use the bomb control panel as [key_name(current_user)]!")
+	if(href_list["refresh"])
+		if(href_list["refresh"] == "rebuild")
+			lists_built = 0
+			build_lists()
+		display_ui()
+	else if(href_list["airmon"])
+		var/obj/O = locate(href_list["airmon"])
+		if(O)
+			boutput(current_user, scan_atmospheric(O)) // We've got a global proc for that now (Convair880).
+		else
+			boutput(current_user, "<span style=\"color:red\">Unable to locate the object (it's been deleted, somehow. Explosion, probably).</span>")
+
+	else if(href_list["toggle_dud"])
+		var/obj/item/I = locate(href_list["toggle_dud"])
+
+		if (!I)
+			boutput(current_user, "<span style=\"color:red\">Unable to locate the object (it's been deleted, somehow. Explosion, probably).</span>")
 			return
 
-		if(href_list["refresh"])
-			if(href_list["refresh"] == "rebuild")
-				lists_built = 0
-				build_lists()
+		if (istype(I, /obj/item/assembly/detonator) || istype(I, /obj/item/device/transfer_valve) || istype(I, /obj/item/assembly/proximity_bomb) || istype(I, /obj/item/assembly/time_bomb/) || istype(I, /obj/item/assembly/radio_bomb/))
+			I:force_dud = !I:force_dud
 			display_ui()
-		else if(href_list["airmon"])
-			var/obj/O = locate(href_list["airmon"])
-			if(O)
-				boutput(current_user, scan_atmospheric(O)) // We've got a global proc for that now (Convair880).
-			else
-				boutput(current_user, "<span style=\"color:red\">Unable to locate the object (it's been deleted, somehow. Explosion, probably).</span>")
+			message_admins("[key_name(current_user)] made \the [I] [I:force_dud ? "into a dud" : "able to explode again"] at [log_loc(I)].")
+			logTheThing("admin", current_user, null, "made \the [I] [I:force_dud ? "into a dud" : "able to explode again"] at [log_loc(I)].")
+			logTheThing("diary", current_user, null, "made \the [I] [I:force_dud ? "into a dud" : "able to explode again"] at [log_loc(I)].", "admin")
 
-		else if(href_list["toggle_dud"])
-			var/obj/item/I = locate(href_list["toggle_dud"])
+	else  if(href_list["filter"])
+		filter_active_only = !filter_active_only
+		lists_built=0
+		display_ui()
 
-			if (!I)
-				boutput(current_user, "<span style=\"color:red\">Unable to locate the object (it's been deleted, somehow. Explosion, probably).</span>")
-				return
+	else if(href_list["trigger"])
+		var/obj/item/I = locate(href_list["trigger"])
+		var/turf/T = get_turf(I)
 
-			if (istype(I, /obj/item/assembly/detonator) || istype(I, /obj/item/device/transfer_valve) || istype(I, /obj/item/assembly/proximity_bomb) || istype(I, /obj/item/assembly/time_bomb/) || istype(I, /obj/item/assembly/radio_bomb/))
-				I:force_dud = !I:force_dud
-				display_ui()
-				message_admins("[key_name(current_user)] made \the [I] [I:force_dud ? "into a dud" : "able to explode again"] at [log_loc(I)].")
-				logTheThing("admin", current_user, null, "made \the [I] [I:force_dud ? "into a dud" : "able to explode again"] at [log_loc(I)].")
-				logTheThing("diary", current_user, null, "made \the [I] [I:force_dud ? "into a dud" : "able to explode again"] at [log_loc(I)].", "admin")
+		if (!I || !T || !isturf(T)) // Cannot read null.x
+			boutput(current_user, "<span style=\"color:red\">Unable to locate the object (it's been deleted, somehow. Explosion, probably).</span>")
+			return
 
-		else  if(href_list["filter"])
-			filter_active_only = !filter_active_only
-			lists_built=0
-			display_ui()
+		if (alert("Are you sure you want to detonate \the [I] at [T.x], [T.y], [T.z] ([get_area(I)])?", "Blow shit up.", "Yes", "No") != "Yes") return
 
-		else if(href_list["trigger"])
-			var/obj/item/I = locate(href_list["trigger"])
-			var/turf/T = get_turf(I)
+		if (!I) // Alerts wait for user input. Bomb might not exist anymore.
+			boutput(current_user, "<span style=\"color:red\">Unable to locate the object (it's been deleted, somehow. Explosion, probably).</span>")
+			return
 
-			if (!I || !T || !isturf(T)) // Cannot read null.x
-				boutput(current_user, "<span style=\"color:red\">Unable to locate the object (it's been deleted, somehow. Explosion, probably).</span>")
-				return
+		message_admins("[key_name(current_user)] made \the [I] at [log_loc(I)] detonate!")
+		logTheThing("admin", current_user, null, "made \the [I] at [log_loc(I)] detonate!")
+		logTheThing("diary", current_user, null, "made \the [I] at [log_loc(I)]  detonate!", "admin")
 
-			if (alert("Are you sure you want to detonate \the [I] at [T.x], [T.y], [T.z] ([get_area(I)])?", "Blow shit up.", "Yes", "No") != "Yes") return
+		if (istype(I, /obj/item/assembly/detonator))
+			var/obj/item/assembly/detonator/D = I
+			D.detonate()
+		else if (istype(I, /obj/item/device/transfer_valve))
+			var/obj/item/device/transfer_valve/TV = I
+			TV.toggle_valve()
+		else if (istype(I, /obj/item/assembly/proximity_bomb/))
+			var/obj/item/assembly/proximity_bomb/PB = I
+			PB.part3.ignite()
+		else if (istype(I, /obj/item/assembly/time_bomb/))
+			var/obj/item/assembly/time_bomb/TB = I
+			TB.part3.ignite()
+		else if (istype(I, /obj/item/assembly/radio_bomb/))
+			var/obj/item/assembly/radio_bomb/RB = I
+			RB.part3.ignite()
 
-			if (!I) // Alerts wait for user input. Bomb might not exist anymore.
-				boutput(current_user, "<span style=\"color:red\">Unable to locate the object (it's been deleted, somehow. Explosion, probably).</span>")
-				return
-
-			message_admins("[key_name(current_user)] made \the [I] at [log_loc(I)] detonate!")
-			logTheThing("admin", current_user, null, "made \the [I] at [log_loc(I)] detonate!")
-			logTheThing("diary", current_user, null, "made \the [I] at [log_loc(I)]  detonate!", "admin")
-
-			if (istype(I, /obj/item/assembly/detonator))
-				var/obj/item/assembly/detonator/D = I
-				D.detonate()
-			else if (istype(I, /obj/item/device/transfer_valve))
-				var/obj/item/device/transfer_valve/TV = I
-				TV.toggle_valve()
-			else if (istype(I, /obj/item/assembly/proximity_bomb/))
-				var/obj/item/assembly/proximity_bomb/PB = I
-				PB.part3.ignite()
-			else if (istype(I, /obj/item/assembly/time_bomb/))
-				var/obj/item/assembly/time_bomb/TB = I
-				TB.part3.ignite()
-			else if (istype(I, /obj/item/assembly/radio_bomb/))
-				var/obj/item/assembly/radio_bomb/RB = I
-				RB.part3.ignite()
-
-		if(href_list["close"])
-			current_user << browse(null, "window=bomb_monitor")
-			pool(src)
+	if(href_list["close"])
+		current_user << browse(null, "window=bomb_monitor")
+		pool(src)
