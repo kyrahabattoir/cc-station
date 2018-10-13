@@ -3,5 +3,8 @@
 *.rsc
 *.int
 
+#Visual studio code
+.vscode/*
+
 #server data files
 data/*
