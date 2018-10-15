@@ -17,8 +17,7 @@ var/datum/preMapLoad/preMapLoad = new
 
 // BEGIN_INCLUDE
 #include "code\_build_config.dm"
-#include "code\_layer.dm"
-#include "code\_macros.dm"
+#include "code\_defines.dm"
 #include "code\_setup.dm"
 #include "code\_vox.dm"
 #include "code\_z_material_properties.dm"
@@ -57,7 +56,6 @@ var/datum/preMapLoad/preMapLoad = new
 #include "code\admin\drunkmode.dm"
 #include "code\admin\gibverbs.dm"
 #include "code\admin\jobban.dm"
-#include "code\admin\macros.dm"
 #include "code\admin\massmodifyvariables.dm"
 #include "code\admin\modifyvariables.dm"
 #include "code\admin\oocban.dm"

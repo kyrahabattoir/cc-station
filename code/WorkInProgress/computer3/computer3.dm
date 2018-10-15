@@ -1015,7 +1015,7 @@ function lineEnter ()
 
 		return 1
 
-	use_power(var/amount, var/chan=EQUIP)
+	use_power(var/amount, var/chan=POWER_CH_EQUIP)
 		if(!src.cell || !src.deployed)
 			return
 

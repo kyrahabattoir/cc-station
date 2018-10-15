@@ -2522,22 +2522,16 @@
 	if (corrupted) icon_state = "corrupt"
 
 
-// pantsfix
-#define EQUIP 1
-#define LIGHT 2
-#define ENVIRON 3
-#define TOTAL 4
-
 /area/proc/powered(var/chan)		// return true if the area has power to given channel
 
 	if(!requires_power)
 		return 1
 	switch(chan)
-		if(EQUIP)
+		if(POWER_CH_EQUIP)
 			return power_equip
-		if(LIGHT)
+		if(POWER_CH_LIGHT)
 			return power_light
-		if(ENVIRON)
+		if(POWER_CH_ENV)
 			return power_environ
 	return 0
 
@@ -2552,13 +2546,13 @@
 /area/proc/usage(var/chan)
 
 	switch(chan)
-		if(LIGHT)
+		if(POWER_CH_LIGHT)
 			. = used_light
-		if(EQUIP)
+		if(POWER_CH_EQUIP)
 			. = used_equip
-		if(ENVIRON)
+		if(POWER_CH_ENV)
 			. = used_environ
-		if(TOTAL)
+		if(POWER_CH_TOTAL)
 			. = used_light + used_equip + used_environ
 
 /area/proc/clear_usage()
@@ -2570,11 +2564,11 @@
 /area/proc/use_power(var/amount, var/chan)
 
 	switch(chan)
-		if(EQUIP)
+		if(POWER_CH_EQUIP)
 			used_equip += amount
-		if(LIGHT)
+		if(POWER_CH_LIGHT)
 			used_light += amount
-		if(ENVIRON)
+		if(POWER_CH_ENV)
 			used_environ += amount
 
 /area/station/turret_protected

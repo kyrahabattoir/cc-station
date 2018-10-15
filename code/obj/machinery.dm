@@ -16,7 +16,7 @@
 	var/stat = 0
 	var/mob/current_user = null
 	var/power_usage = 0
-	var/power_channel = EQUIP
+	var/power_channel = POWER_CH_EQUIP
 	var/power_credit = 0
 	var/wire_powered = 0
 	var/allow_stunned_dragndrop = 0
@@ -171,7 +171,7 @@
 		return C.get_powernet()
 	return null
 
-/obj/machinery/proc/powered(var/chan = EQUIP)
+/obj/machinery/proc/powered(var/chan = POWER_CH_EQUIP)
 	// returns true if the area has power on given channel (or doesn't require power).
 	// defaults to equipment channel
 	if (machines_may_use_wired_power && power_usage)
@@ -191,7 +191,7 @@
 		return 0
 	return A.powered(chan)	// return power status of the area
 
-/obj/machinery/proc/use_power(var/amount, var/chan=EQUIP) // defaults to Equipment channel
+/obj/machinery/proc/use_power(var/amount, var/chan=POWER_CH_EQUIP) // defaults to Equipment channel
 	// increment the power usage stats for an area
 	if (!src.loc)
 		return

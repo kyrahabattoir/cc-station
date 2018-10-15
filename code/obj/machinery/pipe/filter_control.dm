@@ -41,7 +41,7 @@
 
 /obj/machinery/filter_control/process()
 	if(!(stat & NOPOWER))
-		use_power(5,ENVIRON)
+		use_power(5,POWER_CH_ENV)
 		AutoUpdateAI(src)
 		src.updateUsrDialog()
 	src.updateicon()
@@ -152,7 +152,7 @@
 	return
 
 /obj/machinery/filter_control/power_change()
-	if(powered(ENVIRON))
+	if(powered(POWER_CH_ENV))
 		stat &= ~NOPOWER
 	else
 		stat |= NOPOWER

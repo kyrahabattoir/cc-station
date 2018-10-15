@@ -1,7 +1,5 @@
 // SPDX-License-Identifier: CC-BY-NC-SA-3.0
 
-#include "macros.dm"
-
 /client/proc/Debug2()
 	set category = "Debug"
 	set name = "Debug-Game"

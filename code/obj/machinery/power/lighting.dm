@@ -69,7 +69,7 @@
 	var/rigged = 0				// true if rigged to explode
 	var/mob/rigger = null // mob responsible for the explosion
 	power_usage = 0
-	power_channel = LIGHT
+	power_channel = POWER_CH_LIGHT
 	var/removable_bulb = 1
 	var/datum/light/point/light
 
@@ -404,7 +404,7 @@
 // returns whether this light has power
 // true if area has power and lightswitch is on
 /obj/machinery/light/proc/has_power()
-	var/pow_stat = powered(LIGHT)
+	var/pow_stat = powered(POWER_CH_LIGHT)
 	if (pow_stat && wire_powered)
 		return 1
 	var/area/A = get_area(src)
@@ -525,7 +525,7 @@
 	if(on)
 		..()
 		var/thepower = src.brightness * LIGHTING_POWER_FACTOR
-		use_power(thepower, LIGHT)
+		use_power(thepower, POWER_CH_LIGHT)
 		if(rigged)
 			if(prob(1))
 				if (rigger)
@@ -589,7 +589,7 @@
 	else
 		switchon = !switchon
 		boutput(user, "You switch [switchon ? "on" : "off"] the [name].")
-		seton(switchon && powered(LIGHT))
+		seton(switchon && powered(POWER_CH_LIGHT))
 
 // called when area power state changes
 // override since lamp does not use area lightswitch

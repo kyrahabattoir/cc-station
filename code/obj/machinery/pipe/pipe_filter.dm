@@ -64,7 +64,7 @@
 
 	// transfer gas from ngas->f_ngas according to extraction rate, but only if we have power
 	if(! (stat & NOPOWER) )
-		use_power(min(src.f_per, 100),ENVIRON)
+		use_power(min(src.f_per, 100),POWER_CH_ENV)
 		var/datum/gas_mixture/ndelta = src.get_extract()
 		ngas.sub_delta(ndelta)
 		f_ngas.add_delta(ndelta)
@@ -224,7 +224,7 @@
 		return
 
 /obj/machinery/pipefilter/power_change()
-	if(powered(ENVIRON))
+	if(powered(POWER_CH_ENV))
 		stat &= ~NOPOWER
 	else
 		stat |= NOPOWER

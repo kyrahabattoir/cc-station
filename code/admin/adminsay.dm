@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: CC-BY-NC-SA-3.0
 
-#include "macros.dm"
 /client/proc/cmd_admin_say(msg as text)
 	set category = "Special Verbs"
 	set name = "asay"

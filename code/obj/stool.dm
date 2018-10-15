@@ -931,7 +931,7 @@
 			var/dat = ""
 
 			var/area/A = get_area(src)
-			if (!isarea(A) || !A.powered(EQUIP))
+			if (!isarea(A) || !A.powered(POWER_CH_EQUIP))
 				dat += "\n<font color='red'>ERROR:</font> No power source detected!</b>"
 			else
 				dat += {"<A href='?src=\ref[src];on=1'>[on ? "Switch Off" : "Switch On"]</A><BR>
@@ -1014,9 +1014,9 @@
 		var/area/A = get_area(src)
 		if (!isarea(A))
 			return
-		if (!A.powered(EQUIP))
+		if (!A.powered(POWER_CH_EQUIP))
 			return
-		A.use_power(EQUIP, 5000)
+		A.use_power(POWER_CH_EQUIP, 5000)
 		A.updateicon()
 
 		for (var/mob/M in AIviewers(src, null))

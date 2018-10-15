@@ -272,7 +272,7 @@ var/list/glove_IDs = new/list() //Global list of all gloves. Identical to Cogwer
 		var/area/A = T.loc
 		if(!A || !isarea(A))
 			return
-		A.use_power(amount, ENVIRON)
+		A.use_power(amount, POWER_CH_ENV)
 
 	equipment_click(var/atom/target, var/atom/user)
 		if(target == user || spam_flag || user:a_intent == INTENT_HELP || user:a_intent == INTENT_GRAB) return

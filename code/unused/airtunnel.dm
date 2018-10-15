@@ -140,7 +140,7 @@
 	if(stat & (NOPOWER|BROKEN))
 		src.update_icon()
 		return
-	use_power(5, ENVIRON)
+	use_power(5, POWER_CH_ENV)
 	src.update_icon()
 	return
 

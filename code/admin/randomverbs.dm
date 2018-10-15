@@ -1,7 +1,5 @@
 // SPDX-License-Identifier: CC-BY-NC-SA-3.0
 
-#include "macros.dm"
-
 /verb/restart_the_fucking_server_i_mean_it()
 	set name = "Emergency Restart"
 	set category = null

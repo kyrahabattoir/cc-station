@@ -50,7 +50,7 @@
 		icon_state = "alarmp"
 		return
 
-	use_power(5, ENVIRON)
+	use_power(5, POWER_CH_ENV)
 
 	if (!( istype(location, /turf) ))
 		return 0
@@ -316,7 +316,7 @@
 	src.add_fingerprint(usr)
 
 /obj/machinery/alarm/power_change()
-	if(powered(ENVIRON))
+	if(powered(POWER_CH_ENV))
 		stat &= ~NOPOWER
 	else
 		stat |= NOPOWER

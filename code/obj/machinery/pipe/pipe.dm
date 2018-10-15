@@ -1701,7 +1701,7 @@ var/linenums = 0
 	/*
 	if(! (stat & NOPOWER) )  // pump if power
 		gas1.transfer_from(gas2, rate)
-		use_power(25, ENVIRON)
+		use_power(25, POWER_CH_ENV)
 		ngas1.copy_from(gas1)
 		ngas2.copy_from(gas2)
 
@@ -1726,7 +1726,7 @@ var/linenums = 0
 	icon_state = "pipepump-[(stat & NOPOWER) ? "stop" : "run"]"
 
 /obj/machinery/oneway/pipepump/power_change()
-	if(powered(ENVIRON))
+	if(powered(POWER_CH_ENV))
 		stat &= ~NOPOWER
 	else
 
@@ -1796,7 +1796,7 @@ var/linenums = 0
 		if(!(src.f_mask & GAS_PL))	flowing.plasma	= 0
 		if(!(src.f_mask & GAS_CO2))	flowing.co2		= 0
 		if(!(src.f_mask & GAS_N2O))	flowing.sl_gas	= 0
-		use_power(5,ENVIRON)
+		use_power(5,POWER_CH_ENV)
 		exterior.sub_delta(flowing)
 		interior.add_delta(flowing)*/ //TODO: FIX
 	else
@@ -1811,7 +1811,7 @@ var/linenums = 0
 		flow_to_turf(gas, ngas, T)
 
 /obj/machinery/inlet/filter/power_change()
-	if(powered(ENVIRON))
+	if(powered(POWER_CH_ENV))
 		stat &= ~NOPOWER
 	else
 		stat |= NOPOWER
@@ -1841,7 +1841,7 @@ var/linenums = 0
 // doesn't do anything yet
 
 /obj/machinery/vent/filter/power_change()
-	if(powered(ENVIRON))
+	if(powered(POWER_CH_ENV))
 		stat &= ~NOPOWER
 	else
 		stat |= NOPOWER

@@ -2629,7 +2629,7 @@
 		return
 
 	power_change()
-		if(powered(ENVIRON))
+		if(powered(POWER_CH_ENV))
 			stat &= ~NOPOWER
 		else
 			stat |= NOPOWER

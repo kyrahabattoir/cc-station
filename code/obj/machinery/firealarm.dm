@@ -77,7 +77,7 @@
 	if(stat & (NOPOWER|BROKEN))
 		return
 
-	use_power(10, ENVIRON)
+	use_power(10, POWER_CH_ENV)
 
 	if (src.timing)
 		if (src.time > 0)
@@ -90,7 +90,7 @@
 	return
 
 /obj/machinery/firealarm/power_change()
-	if(powered(ENVIRON))
+	if(powered(POWER_CH_ENV))
 		stat &= ~NOPOWER
 		icon_state = "fire0"
 	else

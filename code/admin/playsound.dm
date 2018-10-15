@@ -1,7 +1,5 @@
 // SPDX-License-Identifier: CC-BY-NC-SA-3.0
 
-#include "macros.dm"
-
 var/global/admin_sound_channel = 660
 
 /client/proc/play_sound(S as sound, var/vol as num)

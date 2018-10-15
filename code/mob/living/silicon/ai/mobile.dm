@@ -168,7 +168,7 @@
 		check_power()
 			if(src.cell)
 				var/area/A = get_area(src)
-				if (A && A.powered(EQUIP) && !istype(src.loc, /turf/space))
+				if (A && A.powered(POWER_CH_EQUIP) && !istype(src.loc, /turf/space))
 					src.cell.give(5)
 					src.stat = 0
 					return

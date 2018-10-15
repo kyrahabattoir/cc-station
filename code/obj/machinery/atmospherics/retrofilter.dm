@@ -390,7 +390,7 @@ obj/machinery/atmospherics/retrofilter
 // Housekeeping and pipe network stuff below
 	power_change()
 
-		if( powered(ENVIRON) )
+		if( powered(POWER_CH_ENV) )
 			stat &= ~NOPOWER
 		else
 			spawn(rand(0, 15))

@@ -161,7 +161,7 @@
 			T = null
 		switch(src.t_status)
 			if(1.0)
-				if( !portable() ) use_power(50, ENVIRON)
+				if( !portable() ) use_power(50, POWER_CH_ENV)
 				if (src.holding)
 					var/t1 = src.gas.total_moles()
 					var/t2 = t1
@@ -178,7 +178,7 @@
 							t = t2
 						src.gas.turf_add(T, t)
 			if(2.0)
-				if( !portable() ) use_power(50, ENVIRON)
+				if( !portable() ) use_power(50, POWER_CH_ENV)
 				if (src.holding)
 					var/t1 = src.gas.total_moles()
 					var/t2 = src.maximum - t1
@@ -195,14 +195,14 @@
 							t = t2
 						src.gas.turf_take(T, t)
 			if(4.0)
-				if( !portable() ) use_power(50, ENVIRON)
+				if( !portable() ) use_power(50, POWER_CH_ENV)
 				if (T)
 					if (T.firelevel > 900000.0)
 						src.f_time = world.time + 400
 					else
 						if (world.time > src.f_time)
 							src.gas.extract_toxs(T)
-							if( !portable() ) use_power(150, ENVIRON)
+							if( !portable() ) use_power(150, POWER_CH_ENV)
 							var/contain = src.gas.total_moles()
 							if (contain > 1.3E8)
 								src.gas.turf_add(T, 1.3E8 - contain)
@@ -290,7 +290,7 @@
 	if( portable() )
 		return
 
-	if(!powered(ENVIRON))
+	if(!powered(POWER_CH_ENV))
 		spawn(rand(0,15))
 			stat |= NOPOWER
 			setstate()
@@ -314,7 +314,7 @@
 			T = null
 		switch(src.t_status)
 			if(1.0)
-				if( !portable() ) use_power(50, ENVIRON)
+				if( !portable() ) use_power(50, POWER_CH_ENV)
 				if (src.holding)
 					var/t1 = src.gas.total_moles()
 					var/t2 = t1
@@ -331,7 +331,7 @@
 							t = t2
 						src.gas.turf_add(T, t)
 			if(2.0)
-				if( !portable() ) use_power(50, ENVIRON)
+				if( !portable() ) use_power(50, POWER_CH_ENV)
 				if (src.holding)
 					var/t1 = src.gas.total_moles()
 					var/t2 = src.maximum - t1
@@ -358,7 +358,7 @@
 						//if(dbg) Air()
 			if(4.0)
 				if( !portable() )
-					use_power(50, ENVIRON)
+					use_power(50, POWER_CH_ENV)
 
 				if (T)
 					if (T.firelevel > 900000.0)

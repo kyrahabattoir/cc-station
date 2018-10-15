@@ -1098,17 +1098,17 @@ var/zapLimiter = 0
 
 	/*
 	if (equipment > 1) // off=0, off auto=1, on=2, on auto=3
-		use_power(src.equip_consumption, EQUIP)
+		use_power(src.equip_consumption, POWER_CH_EQUIP)
 	if (lighting > 1) // off=0, off auto=1, on=2, on auto=3
-		use_power(src.light_consumption, LIGHT)
+		use_power(src.light_consumption, POWER_CH_LIGHT)
 	if (environ > 1) // off=0, off auto=1, on=2, on auto=3
-		use_power(src.environ_consumption, ENVIRON)
+		use_power(src.environ_consumption, POWER_CH_ENV)
 
 	area.calc_lighting() */
 
-	lastused_light = area.usage(LIGHT)
-	lastused_equip = area.usage(EQUIP)
-	lastused_environ = area.usage(ENVIRON)
+	lastused_light = area.usage(POWER_CH_LIGHT)
+	lastused_equip = area.usage(POWER_CH_EQUIP)
+	lastused_environ = area.usage(POWER_CH_ENV)
 	area.clear_usage()
 
 	lastused_total = lastused_light + lastused_equip + lastused_environ

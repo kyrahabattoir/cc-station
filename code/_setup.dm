@@ -186,13 +186,6 @@
 #define ONESIZEFITSALL 16		// can be worn by fatties (or children? ugh)
 #define NOSLIP 32				// for galoshes/magic sandals/etc that prevent slipping on things
 
-// channel numbers for power
-
-#define EQUIP 1
-#define LIGHT 2
-#define ENVIRON 3
-#define TOTAL 4	//for total power used only
-
 // bitflags for machine stat variable
 #define BROKEN 1		// machine non-functional
 #define NOPOWER 2		// no available power
