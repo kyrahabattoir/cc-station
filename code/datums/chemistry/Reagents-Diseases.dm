@@ -8,12 +8,12 @@ datum
 			name = "disease reagent"
 			id = "ohfuck!"
 			description = "if you're seeing this ingame something has fucked up!"
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			var/disease = null
 			var/minimum_to_infect = 4.5
 
 			/* this wont work properly and has been driving me fucking insane so disabling it for now
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
 				src = null
 				if(!M)
 					M = holder.my_atom
@@ -37,7 +37,6 @@ datum
 			name = "rainbow fluid"
 			id = "rainbow fluid"
 			description = "It is every colour of the rainbow."
-			reagent_state = LIQUID
 			fluid_r = 255
 			fluid_g = 255
 			fluid_b = 255
@@ -48,7 +47,6 @@ datum
 			name = "vampire serum"
 			id = "vampire_serum"
 			description = "A sinister blood-like fluid. It smells evil, somehow."
-			reagent_state = LIQUID
 			fluid_r = 150
 			fluid_g = 0
 			fluid_b = 0
@@ -59,7 +57,6 @@ datum
 			name = "painbow fluid"
 			id = "painbow fluid"
 			description = "It is every colour of the pain spectrum. It even hurts to look at it."
-			reagent_state = LIQUID
 			fluid_r = 255
 			fluid_g = 255
 			fluid_b = 255
@@ -70,7 +67,6 @@ datum
 			name = "werewolf serum"
 			id = "werewolf_serum"
 			description = "A mutagenic substance associated with a mythical beast."
-			reagent_state = LIQUID
 			minimum_to_infect = 0
 			fluid_r = 173
 			fluid_g = 65
@@ -82,7 +78,6 @@ datum
 			name = "mucus"
 			id = "mucus"
 			description = "The stuff that comes from your throat."
-			reagent_state = LIQUID
 			minimum_to_infect = 0
 			fluid_r = 245
 			fluid_g = 255
@@ -94,7 +89,6 @@ datum
 			name = "stringy gibbis"
 			id = "stringy gibbis"
 			description = "Liquid gibbis that is very stringy."
-			reagent_state = LIQUID
 			fluid_r = 255
 			fluid_g = 0
 			fluid_b = 0
@@ -105,7 +99,6 @@ datum
 			name = "green Mucus"
 			id = "green mucus"
 			description = "Mucus. Thats green."
-			reagent_state = LIQUID
 			minimum_to_infect = 0
 			fluid_r = 215
 			fluid_g = 255
@@ -117,7 +110,6 @@ datum
 			name = "gibbis"
 			id = "gibbis"
 			description = "Liquid gibbis."
-			reagent_state = LIQUID
 			minimum_to_infect = 2.5
 			fluid_r = 255
 			fluid_g = 0
@@ -129,7 +121,6 @@ datum
 			name = "banana peel"
 			id = "banana peel"
 			description = "Banana peel crushed up to a liquid."
-			reagent_state = LIQUID
 			fluid_r = 255
 			fluid_g = 255
 			fluid_b = 0
@@ -140,7 +131,6 @@ datum
 			name = "liquid plasma"
 			id = "liquid plasma"
 			description = "Liquid plasma."
-			reagent_state = LIQUID
 			fluid_r = 200
 			fluid_g = 0
 			fluid_b = 200
@@ -152,7 +142,6 @@ datum
 			name = "nanomachines"
 			id = "nanites"
 			description = "Microscopic construction robots."
-			reagent_state = LIQUID
 			minimum_to_infect = 1.5
 			fluid_r = 101
 			fluid_g = 101
@@ -165,7 +154,6 @@ datum
 			name = "liquid spacetime"
 			id = "liquid spacetime"
 			description = "A drop of liquid spacetime."
-			reagent_state = LIQUID
 			fluid_r = 0
 			fluid_g = 0
 			fluid_b = 0
@@ -176,7 +164,6 @@ datum
 			name = "pubbie tears"
 			id = "pubbie tears"
 			description = "The most bitter of all liquids."
-			reagent_state = LIQUID
 			fluid_r = 0
 			fluid_g = 0
 			fluid_b = 255
@@ -187,7 +174,7 @@ datum
 			name = "jagged crystals"
 			id = "salts1"
 			description = "Rapid chemical decomposition has warped these crystals into twisted spikes."
-			reagent_state = SOLID
+			reagent_state = REAGENT_SOLID
 			minimum_to_infect = 0
 			fluid_r = 250
 			fluid_g = 0
@@ -199,7 +186,6 @@ datum
 			name = "salmonella bacteria"
 			id = "salmonella"
 			description = "A nasty bacteria found in spoiled food."
-			reagent_state = LIQUID
 			minimum_to_infect = 0
 			fluid_r = 30
 			fluid_g = 70
@@ -211,7 +197,6 @@ datum
 			name = "e.coli bacteria"
 			id = "e.coli"
 			description = "A nasty bacteria found in contaminated food and biological waste products."
-			reagent_state = LIQUID
 			minimum_to_infect = 0
 			fluid_r = 30
 			fluid_g = 70
@@ -223,7 +208,6 @@ datum
 			name = "MRSA"
 			id = "MRSA"
 			description = "A virulent bacteria that often strikes dirty hospitals."
-			reagent_state = LIQUID
 			fluid_r = 30
 			fluid_g = 70
 			fluid_b = 0
@@ -234,7 +218,6 @@ datum
 			name = "necrovirus"
 			id = "necrovirus"
 			description = "An extremely dangerous virus."
-			reagent_state = LIQUID
 			fluid_r = 200
 			fluid_g = 220
 			fluid_b = 200
@@ -245,7 +228,6 @@ datum
 			name = "viral curative"
 			id = "viral curative"
 			description = "A virus that feeds on other virii and bacteria."
-			reagent_state = LIQUID
 			minimum_to_infect = 0
 			fluid_r = 255
 			fluid_g = 255
@@ -257,7 +239,6 @@ datum
 			name = "rotting"
 			id = "rotting"
 			description = "A virus that causes tissue to rot."
-			reagent_state = LIQUID
 			fluid_r = 192
 			fluid_g = 0
 			fluid_b = 0
@@ -269,7 +250,6 @@ datum
 			name = "HIV"
 			id = "HIV"
 			description = "Human Immunodeficiency Virus. Extremely deadly."
-			reagent_state = LIQUID
 			fluid_r = 255
 			fluid_g = 40
 			fluid_b = 40
@@ -280,7 +260,6 @@ datum
 			name = "loose screws"
 			id = "loose screws"
 			description = "Liquefied screws that were screwy."
-			reagent_state = LIQUID
 			fluid_r = 70
 			fluid_g = 70
 			fluid_b = 70
@@ -291,7 +270,6 @@ datum
 			name = "grave dust"
 			id = "grave dust"
 			description = "Moldy old dust taken from a grave site."
-			reagent_state = LIQUID
 			fluid_r = 70
 			fluid_g = 80
 			fluid_b = 70
@@ -302,7 +280,6 @@ datum
 			name = "prions"
 			id = "prions"
 			description = "A disease-causing agent that is neither bacterial nor fungal nor viral and contains no genetic material."
-			reagent_state = LIQUID
 			fluid_r = 255
 			fluid_g = 255
 			fluid_b = 255
@@ -313,7 +290,7 @@ datum
 			name = "spider eggs"
 			id = "spidereggs"
 			description = "A fine dust containing ice spider eggs. Oh god."
-			reagent_state = SOLID
+			reagent_state = REAGENT_SOLID
 			minimum_to_infect = 2.5
 			fluid_r = 255
 			fluid_g = 255
@@ -325,7 +302,6 @@ datum
 			name = "bee"
 			id = "bee"
 			description = "The yolk from a space bee egg."
-			reagent_state = LIQUID
 			fluid_r = 255
 			fluid_g = 255
 			fluid_b = 100
@@ -337,7 +313,6 @@ datum
 			name = "concentrated initropidril"
 			id = "concentrated_initro"
 			description = "A guaranteed heart-stopper!"
-			reagent_state = LIQUID
 			fluid_r = 192
 			fluid_g = 32
 			fluid_b = 232
@@ -348,7 +323,6 @@ datum
 			name = "pure bacon grease"
 			id = "bacon_grease"
 			description = "Hook me up to an IV of that sweet, sweet stuff!"
-			reagent_state = LIQUID
 			fluid_r = 247
 			fluid_g = 230
 			fluid_b = 177
@@ -359,7 +333,7 @@ datum
 			name = "space heartworms"
 			id = "heartworms"
 			description = "Aww, gross! These things can't be good for your heart. They're gunna eat it!"
-			reagent_state = SOLID
+			reagent_state = REAGENT_SOLID
 			fluid_r = 146
 			fluid_g = 93
 			fluid_b = 108
@@ -381,7 +355,6 @@ datum
 			name = "pathogen"
 			id = "pathogen"
 			description = "A liquid sample of one (or multiple) pathogens."
-			reagent_state = LIQUID
 			fluid_r = 200
 			fluid_b = 0
 			fluid_g = 0
@@ -390,7 +363,7 @@ datum
 			reaction_turf(var/turf/T, var/volume)
 				return
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume_passed)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume_passed)
 				return // for now
 
 			on_plant_life(var/obj/machinery/plantpot/P)

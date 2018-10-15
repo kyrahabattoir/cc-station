@@ -1,9 +1,5 @@
 // SPDX-License-Identifier: CC-BY-NC-SA-3.0
 
-#define SOLID 1
-#define LIQUID 2
-#define GAS 3
-
 /obj/submachine/chef_sink/chem_sink/
 	name = "sink"
 	density = 0

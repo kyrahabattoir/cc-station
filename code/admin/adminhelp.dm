@@ -1,7 +1,5 @@
 // SPDX-License-Identifier: CC-BY-NC-SA-3.0
 
-#define ADMINHELP_DELAY 30 // 3 seconds
-////////////////////////////////
 /mob/verb/adminhelp()
 	set category = "Commands"
 	set name = "adminhelp"

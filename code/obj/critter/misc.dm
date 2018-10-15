@@ -637,7 +637,7 @@
 		if(M.reagents)
 			if(src.reagents && src.reagents.total_volume)
 
-				src.reagents.reaction(M, TOUCH)
+				src.reagents.reaction(M)
 				reagents.trans_to(M, 5)
 		spawn(10)
 			src.attacking = 0

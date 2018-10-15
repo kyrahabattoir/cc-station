@@ -24,7 +24,7 @@ datum
 				name = "nitrogen dioxide"
 				id = "nitrogen_dioxide"
 				description = "A common, mildly toxic pollutant."
-				reagent_state = GAS
+				reagent_state = REAGENT_GAS
 				fluid_r = 128
 				fluid_g = 32
 				fluid_b = 32
@@ -49,7 +49,7 @@ datum
 				name = "allyl chloride"
 				id = "allyl_chloride"
 				description = "A toxic intermediary substance."
-				reagent_state = LIQUID
+				reagent_state = REAGENT_LIQUID
 				fluid_r = 220
 				fluid_g = 220
 				fluid_b = 255
@@ -60,7 +60,7 @@ datum
 			name = "sulphuric acid"
 			id = "acid"
 			description = "A strong mineral acid with the molecular formula H2SO4."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 0
 			fluid_g = 255
 			fluid_b = 50
@@ -76,8 +76,8 @@ datum
 				..(M)
 				return
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
-				if (method == TOUCH)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
+				if (method == REAC_TOUCH)
 					if (volume > 25)
 						if (istype(M, /mob/living/carbon/human))
 							var/mob/living/carbon/human/H = M
@@ -147,11 +147,11 @@ datum
 			fluid_g = 128
 			fluid_b = 255
 			transparency = 64
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			blob_damage = 0.2
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
-				if (method == TOUCH)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
+				if (method == REAC_TOUCH)
 					if (volume >= 50 && prob(75))
 						M.TakeDamage("head", 5, 15, 0, DAMAGE_BURN)
 						M.emote("scream")
@@ -178,7 +178,7 @@ datum
 			name = "amanitin"
 			id = "amanitin"
 			description = "A toxin produced by certain mushrooms. Very deadly."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 255
 			fluid_g = 255
 			fluid_b = 255
@@ -203,7 +203,7 @@ datum
 			name = "coniine" // big brother to cyanide, very strong
 			id = "coniine"
 			description = "A neurotoxin that rapidly causes respiratory failure."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 125
 			fluid_g = 195
 			fluid_b = 160
@@ -226,7 +226,7 @@ datum
 			fluid_g = 25
 			transparency = 10
 			description = "A highly toxic chemical with some uses as a building block for other things."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			transparency = 0
 			depletion_rate = 0.1
 			penetrates_skin = 1
@@ -258,7 +258,7 @@ datum
 			fluid_r = 25
 			fluid_g = 25
 			fluid_b = 25
-			reagent_state = SOLID
+			reagent_state = REAGENT_SOLID
 			transparency = 255
 			depletion_rate = 0.1
 			var/counter = 1
@@ -301,7 +301,7 @@ datum
 			name = "embalming fluid"
 			id = "formaldehyde"
 			description = "Formaldehyde is a common industrial chemical and is used to preserve corpses and medical samples. It is highly toxic and irritating. Casualdehyde is the less invasive form of this chemical."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 180
 			fluid_b = 0
 			fluid_g = 75
@@ -325,7 +325,7 @@ datum
 			name = "acetaldehyde"
 			id = "acetaldehyde"
 			description = "Acetaldehyde is a common industrial chemical. It is a severe irritant."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 180
 			fluid_b = 0
 			fluid_g = 75
@@ -384,7 +384,7 @@ datum
 			name = "initropidril"
 			id = "initropidril"
 			description = "A highly potent cardiac poison - can kill within minutes."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 127
 			fluid_g = 16
 			fluid_b = 192
@@ -432,7 +432,7 @@ datum
 			name = "old initrobeedril"
 			id = "initrobeedril_old"
 			description = "A highly experimental poison originally created by a mad scientist by the name of \"SpyGuy\" on earth in 2014."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 127
 			fluid_g = 190
 			fluid_b = 5
@@ -495,7 +495,7 @@ datum
 			name = "initrobeedril"
 			id = "initrobeedril"
 			description = "A highly experimental poison originally created by a mad scientist by the name of \"SpyGuy\" on earth in 2014."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 127
 			fluid_g = 190
 			fluid_b = 5
@@ -578,7 +578,7 @@ datum
 			name = "royal initrobeedril"
 			id = "royal_initrobeedril"
 			description = "A highly experimental poison originally created by a mad scientist by the name of \"SpyGuy\" on earth in 2014."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 102
 			fluid_g = 0
 			fluid_b = 255
@@ -661,7 +661,7 @@ datum
 			name = "cholesterol"
 			id = "cholesterol"
 			description = "Pure cholesterol. Probably not very good for you."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 255
 			fluid_g = 250
 			fluid_b = 200
@@ -715,7 +715,7 @@ datum
 			name = "itching powder"
 			id = "itching"
 			description = "An abrasive powder beloved by cruel pranksters."
-			reagent_state = SOLID
+			reagent_state = REAGENT_SOLID
 			fluid_r = 200
 			fluid_g = 200
 			fluid_b = 200
@@ -753,7 +753,7 @@ datum
 			name = "fluorosulfuric acid"
 			id = "pacid"
 			description = "Fluorosulfuric acid is a an extremely corrosive super-acid."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 80
 			fluid_g = 80
 			fluid_b = 255
@@ -769,8 +769,8 @@ datum
 				..(M)
 				return
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
-				if (method == TOUCH)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
+				if (method == REAC_TOUCH)
 					if (volume > 9)
 						if (ishuman(M))
 							var/mob/living/carbon/human/H = M
@@ -825,7 +825,7 @@ datum
 			name = "pancuronium"
 			id = "pancuronium"
 			description = "Pancuronium bromide is a powerful skeletal muscle relaxant."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 45
 			fluid_g = 80
 			fluid_b = 150
@@ -881,7 +881,7 @@ datum
 			name = "polonium"
 			id = "polonium"
 			description = "Polonium is a rare and highly radioactive silvery metal."
-			reagent_state = SOLID
+			reagent_state = REAGENT_SOLID
 			fluid_r = 120
 			fluid_g = 120
 			fluid_b = 120
@@ -904,7 +904,7 @@ datum
 			name = "sodium thiopental"
 			id = "sodium_thiopental"
 			description = "An rapidly-acting barbituate tranquilizer."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 100
 			fluid_g = 150
 			fluid_b = 250
@@ -958,7 +958,7 @@ datum
 			name = "ketamine"
 			id = "sonambutril"
 			description = "A potent veterinary tranquilizer."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 100
 			fluid_g = 150
 			fluid_b = 250
@@ -1006,7 +1006,7 @@ datum
 			name = "sulfonal"
 			id = "sulfonal"
 			description = "An old sedative with toxic side-effects."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 125
 			fluid_g = 195
 			fluid_b = 160
@@ -1058,7 +1058,7 @@ datum
 			name = "toxin"
 			id = "toxin"
 			description = "A Toxic chemical."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 25
 			fluid_b = 0
 			fluid_g = 25
@@ -1079,7 +1079,7 @@ datum
 			name = "venom"
 			id = "venom"
 			description = "An incredibly potent poison. Origin unknown."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 240
 			fluid_g = 255
 			fluid_b = 240
@@ -1120,7 +1120,7 @@ datum
 			name = "neurotoxin"
 			id = "neurotoxin"
 			description = "A dangerous toxin that attacks the nervous system"
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 100
 			fluid_g = 145
 			fluid_b = 110
@@ -1167,7 +1167,7 @@ datum
 			name = "unstable mutagen"
 			id = "mutagen"
 			description = "Might cause unpredictable mutations. Keep away from children."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 0
 			fluid_g = 255
 			fluid_b = 0
@@ -1176,9 +1176,9 @@ datum
 			blob_damage = 1
 			value = 3 // 1 1 1
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
 				src = null
-				if ( (method==TOUCH && prob(33)) || method==INGEST)
+				if ( (method == REAC_TOUCH && prob(33)) || method == REAC_INGEST)
 					M.bioHolder.RandomEffect("bad")
 				return
 
@@ -1206,15 +1206,15 @@ datum
 			name = "glowing slurry"
 			id = "omega_mutagen"
 			description = "This is probably not good for you."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 0
 			fluid_g = 255
 			fluid_b = 0
 			transparency = 255
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
 				src = null
-				if ( (method==TOUCH && prob(50)) || method==INGEST)
+				if ( (method == REAC_TOUCH && prob(50)) || method == REAC_INGEST)
 					M.bioHolder.RandomEffect("bad")
 				return
 
@@ -1239,7 +1239,7 @@ datum
 			name = "Werewolf Serum Precursor Alpha"
 			id = "werewolf_part1"
 			description = "A strange and poisonous lupine compound."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 149
 			fluid_g = 172
 			fluid_b = 147
@@ -1249,7 +1249,7 @@ datum
 			name = "Werewolf Serum Precursor Beta"
 			id = "werewolf_part2"
 			description = "A potent and very unstable mutagenic substance."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 50
 			fluid_g = 172
 			fluid_b = 100
@@ -1259,7 +1259,7 @@ datum
 			name = "initropidril"
 			id = "fake_initropidril"
 			description = "A highly potent toxin - can kill within minutes."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 127
 			fluid_g = 16
 			fluid_b = 192
@@ -1269,7 +1269,7 @@ datum
 			name = "Aconitum"
 			id = "wolfsbane"
 			description = "Also known as monkshood or wolfsbane, aconitum is a very potent neurotoxin."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 129
 			fluid_b = 116
 			fluid_g = 198
@@ -1296,7 +1296,7 @@ datum
 			name = "toxic slurry"
 			id = "toxic_slurry"
 			description = "A filthy, carcinogenic sludge produced by the Slurrypod plant."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 0
 			fluid_g = 200
 			fluid_b = 30
@@ -1322,7 +1322,7 @@ datum
 			name = "histamine" // cogwerks notes. allergic reaction tests (see. MSG) can metabolize this in the body for allergy simulation, if extracted and mass-produced, it's fairly lethal
 			id = "histamine"
 			description = "Immune-system neurotransmitter. If detected in blood, the subject is likely undergoing an allergic reaction."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 250
 			fluid_g = 100
 			fluid_b = 100
@@ -1347,8 +1347,8 @@ datum
 				..(M)
 				return
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
-				if (method == TOUCH)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
+				if (method == REAC_TOUCH)
 					M.reagents.add_reagent("histamine", 10)
 					M.make_jittery(10)
 				else
@@ -1405,7 +1405,7 @@ datum
 			name = "sarin"
 			id = "sarin"
 			description = "A lethal organophosphate nerve agent. Can be neutralized with atropine."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 255
 			fluid_g = 255
 			fluid_b = 255
@@ -1476,7 +1476,7 @@ datum
 			name = "stable mutagen"
 			id = "dna_mutagen"
 			description = "Just the regular, boring sort of mutagenic compound.  Works in a completely predictable manner."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 125
 			fluid_g = 255
 			fluid_b = 0
@@ -1535,7 +1535,7 @@ datum
 			name = "Rajaijah"
 			id = "madness_toxin"
 			description = "A synthetic version of a potent neurotoxin derived from plants capable of driving a person to madness. First discovered in India by a Belgian reporter in 1931."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 157
 			fluid_g = 206
 			fluid_b = 69
@@ -1675,7 +1675,7 @@ datum
 			name = "strychnine"
 			id = "strychnine"
 			description = "A highly potent neurotoxin in crystalline form. Causes severe convulsions and eventually death by asphyxiation. Has been known to be used as a performance enhancer by certain athletes."
-			reagent_state = SOLID
+			reagent_state = REAGENT_SOLID
 			fluid_r = 244
 			fluid_g = 244
 			fluid_b = 244

@@ -5,12 +5,12 @@ datum
 	reagent
 		medical/
 			name = "medical thing"
+			reagent_state = REAGENT_LIQUID
 
 		medical/lexorin // COGWERKS CHEM REVISION PROJECT. this is a totally pointless reagent
 			name = "lexorin"
 			id = "lexorin"
 			description = "Lexorin temporarily stops respiration. Causes tissue damage."
-			reagent_state = LIQUID
 			fluid_r = 125
 			fluid_g = 195
 			fluid_b = 160
@@ -29,7 +29,6 @@ datum
 			name = "spaceacillin"
 			id = "spaceacillin"
 			description = "An all-purpose antibiotic agent extracted from space fungus."
-			reagent_state = LIQUID
 			fluid_r = 10
 			fluid_g = 180
 			fluid_b = 120
@@ -49,7 +48,6 @@ datum
 			name = "morphine"
 			id = "morphine"
 			description = "A strong but highly addictive opiate painkiller with sedative side effects."
-			reagent_state = LIQUID
 			fluid_r = 169
 			fluid_g = 251
 			fluid_b = 251
@@ -97,7 +95,6 @@ datum
 			name = "ether"
 			id = "ether"
 			description = "A strong but highly addictive anesthetic and sedative."
-			reagent_state = LIQUID
 			fluid_r = 169
 			fluid_g = 251
 			fluid_b = 251
@@ -145,7 +142,6 @@ datum
 			name = "teporone"
 			id = "teporone"
 			description = "This experimental plasma-based compound seems to regulate body temperature."
-			reagent_state = LIQUID
 			fluid_r = 210
 			fluid_g = 100
 			fluid_b = 225
@@ -168,7 +164,6 @@ datum
 			name = "salicylic acid"
 			id = "salicylic_acid"
 			description = "This is a is a standard salicylate pain reliever and fever reducer."
-			reagent_state = LIQUID
 			fluid_r = 210
 			fluid_g = 210
 			fluid_b = 210
@@ -191,7 +186,6 @@ datum
 			name = "calomel"
 			id = "calomel"
 			description = "This potent purgative rids the body of impurities. It is highly toxic however and close supervision is required."
-			reagent_state = LIQUID
 			fluid_r = 25
 			fluid_g = 200
 			fluid_b = 50
@@ -245,7 +239,6 @@ datum
 			name = "yobihodazine"
 			id = "yobihodazine"
 			description = "A powerful outlawed compound capable of preventing vaccuum damage. Prolonged use leads to neurological damage."
-			reagent_state = LIQUID
 			fluid_r = 0
 			fluid_g = 0
 			fluid_b = 0
@@ -270,20 +263,20 @@ datum
 			name = "synthetic flesh"
 			id = "synthflesh"
 			description = "A resorbable microfibrillar collagen and protein mixture that can rapidly heal injuries when applied topically."
-			reagent_state = SOLID
+			reagent_state = REAGENT_SOLID
 			fluid_r = 255
 			fluid_b = 235
 			fluid_g = 235
 			transparency = 255
 			value = 9 // 6c + 2c + 1c
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume_passed)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume_passed)
 				src = null
 				if(!volume_passed)
 					return
 				if(!ishuman(M))
 					return
-				if(method == TOUCH)
+				if(method == REAC_TOUCH)
 					for(var/A in M.organs)
 						var/obj/item/affecting = null
 						if(!M.organs[A])    continue
@@ -320,7 +313,6 @@ datum
 			name = "synaptizine"
 			id = "synaptizine"
 			description = "Synaptizine is used to treat neuroleptic shock. Can be used to help remove disabling symptoms such as paralysis."
-			reagent_state = LIQUID
 			fluid_r = 255
 			fluid_g = 0
 			fluid_b = 255
@@ -377,7 +369,6 @@ datum
 			name = "omnizine"
 			id = "omnizine"
 			description = "Omnizine is a highly potent healing medication that can be used to treat a wide range of injuries."
-			reagent_state = LIQUID
 			fluid_r = 220
 			fluid_g = 220
 			fluid_b = 220
@@ -444,7 +435,6 @@ datum
 			name = "saline-glucose solution"
 			id = "saline"
 			description = "This saline and glucose solution can help stabilize critically injured patients and cleanse wounds."
-			reagent_state = LIQUID
 			fluid_r = 220
 			fluid_g = 220
 			fluid_b = 220
@@ -471,7 +461,6 @@ datum
 			name = "potassium iodide"
 			id = "anti_rad"
 			description = "Potassium Iodide is a medicinal drug used to counter the effects of radiation poisoning."
-			reagent_state = LIQUID
 			fluid_r = 20
 			fluid_g = 255
 			fluid_b = 60
@@ -489,7 +478,6 @@ datum
 			name = "ammonium bicarbonate"
 			id = "smelling_salt"
 			description = "Ammonium bicarbonate ."
-			reagent_state = LIQUID
 			fluid_r = 20
 			fluid_g = 255
 			fluid_b = 60
@@ -506,7 +494,6 @@ datum
 			name = "oculine"
 			id = "oculine"
 			description = "Oculine is a combined eye and ear medication with antibiotic effects."
-			reagent_state = LIQUID
 			fluid_r = 255
 			fluid_g = 255
 			fluid_b = 255
@@ -549,7 +536,6 @@ datum
 			name = "haloperidol"
 			id = "haloperidol"
 			description = "Haloperidol is a powerful antipsychotic and sedative. Will help control psychiatric problems, but may cause brain damage."
-			reagent_state = LIQUID
 			fluid_r = 255
 			fluid_g = 220
 			fluid_b = 255
@@ -610,7 +596,6 @@ datum
 			name = "epinephrine"
 			id = "epinephrine"
 			description = "Epinephrine is a potent neurotransmitter, used in medical emergencies to halt anaphylactic shock and prevent cardiac arrest."
-			reagent_state = LIQUID
 			fluid_r = 210
 			fluid_g = 255
 			fluid_b = 250
@@ -679,7 +664,6 @@ datum
 			name = "insulin"
 			id = "insulin"
 			description = "A hormone generated by the pancreas responsible for metabolizing carbohydrates and fat in the bloodstream."
-			reagent_state = LIQUID
 			fluid_r = 255
 			fluid_g = 255
 			fluid_b = 240
@@ -699,7 +683,6 @@ datum
 			name = "silver sulfadiazine"
 			id = "silver_sulfadiazine"
 			description = "This antibacterial compound is used to treat burn victims."
-			reagent_state = LIQUID
 			fluid_r = 240
 			fluid_g = 220
 			fluid_b = 0
@@ -717,13 +700,13 @@ datum
 				..(M)
 				return
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume_passed)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume_passed)
 				src = null
 				if (!volume_passed)
 					return
 				if (!ishuman(M))
 					return
-				if (method == TOUCH)
+				if (method == REAC_TOUCH)
 					for(var/A in M.organs)
 						var/obj/item/affecting = null
 						if(!M.organs[A])    continue
@@ -734,7 +717,7 @@ datum
 					boutput(M, "<span style=\"color:blue\">The silver sulfadiazine soothes your burns.</span>")
 					M.UpdateDamageIcon()
 					M.updatehealth()
-				else if (method == INGEST)
+				else if (method == REAC_INGEST)
 					boutput(M, "<span style=\"color:red\">You feel sick...</span>")
 					if (volume_passed > 0)
 						M.take_toxin_damage(volume_passed/2)
@@ -745,7 +728,7 @@ datum
 			name = "mutadone"
 			id = "mutadone"
 			description = "Mutadone is an experimental bromide that can cure genetic abnomalities."
-			reagent_state = SOLID
+			reagent_state = REAGENT_SOLID
 			fluid_r = 80
 			fluid_g = 150
 			fluid_b = 200
@@ -782,7 +765,6 @@ datum
 			name = "ephedrine"
 			id = "ephedrine"
 			description = "Ephedrine is a plant-derived stimulant."
-			reagent_state = LIQUID
 			fluid_r = 210
 			fluid_g = 255
 			fluid_b = 250
@@ -854,7 +836,6 @@ datum
 			name = "pentetic acid"
 			id = "penteticacid"
 			description = "Pentetic Acid is an aggressive chelation agent. May cause tissue damage. Use with caution."
-			reagent_state = LIQUID
 			fluid_r = 230
 			fluid_g = 255
 			fluid_b = 240
@@ -880,7 +861,6 @@ datum
 			name = "diphenhydramine"
 			id = "antihistamine"
 			description = "Anti-allergy medication. May cause drowsiness, do not operate heavy machinery while using this."
-			reagent_state = LIQUID
 			fluid_r = 100
 			fluid_b = 255
 			fluid_g = 230
@@ -923,7 +903,7 @@ datum
 			name = "styptic powder"
 			id = "stypic_powder"
 			description = "Styptic (aluminium sulfate) powder helps control bleeding and heal physical wounds."
-			reagent_state = SOLID
+			reagent_state = REAGENT_SOLID
 			fluid_r = 255
 			fluid_g = 150
 			fluid_b = 150
@@ -941,13 +921,13 @@ datum
 				..(M)
 				return
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume_passed)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume_passed)
 				src = null
 				if(!volume_passed)
 					return
 				if(!ishuman(M)) // fucking human shitfucks
 					return
-				if(method == TOUCH)
+				if(method == REAC_TOUCH)
 					M.HealDamage("All", volume_passed, 0)
 					// M.HealBleeding(volume_passed) // At least implement your stuff properly first, thanks. Styptic also shouldn't be as good as synthflesh for healing bleeding.
 
@@ -967,7 +947,7 @@ datum
 					M.emote("scream")
 					M.UpdateDamageIcon()
 					M.updatehealth()
-				else if(method == INGEST)
+				else if(method == REAC_INGEST)
 					boutput(M, "<span style=\"color:red\">You feel gross!</span>")
 					if (volume_passed > 0)
 						M.take_toxin_damage(volume_passed/2)
@@ -977,7 +957,6 @@ datum
 			name = "cryoxadone"
 			id = "cryoxadone"
 			description = "A plasma mixture with almost magical healing powers. Its main limitation is that the targets body temperature must be under 265K for it to metabolise correctly."
-			reagent_state = LIQUID
 			fluid_r = 0
 			fluid_g = 0
 			fluid_b = 200
@@ -1010,7 +989,6 @@ datum
 			name = "atropine"
 			id = "atropine"
 			description = "Atropine is a potent cardiac resuscitant but it can causes confusion, dizzyness and hyperthermia."
-			reagent_state = LIQUID
 			fluid_r = 0
 			fluid_g = 0
 			fluid_b = 0
@@ -1062,7 +1040,6 @@ datum
 			name = "salbutamol"
 			id = "salbutamol"
 			description = "Salbutamol is a common bronchodilation medication for asthmatics. It may help with other breathing problems as well."
-			reagent_state = LIQUID
 			fluid_r = 0
 			fluid_g = 255
 			fluid_b = 255
@@ -1083,7 +1060,6 @@ datum
 			name = "perfluorodecalin"
 			id = "perfluorodecalin"
 			description = "This experimental perfluoronated solvent has applications in liquid breathing and tissue oxygenation. Use with caution."
-			reagent_state = LIQUID
 			fluid_r = 255
 			fluid_g = 100
 			fluid_b = 100
@@ -1107,7 +1083,6 @@ datum
 			name = "mannitol"
 			id = "mannitol"
 			description = "Mannitol is a sugar alcohol that can help alleviate cranial swelling."
-			reagent_state = LIQUID
 			fluid_r = 220
 			fluid_g = 220
 			fluid_b = 255
@@ -1124,7 +1099,7 @@ datum
 			name = "charcoal"
 			id = "charcoal"
 			description = "Activated charcoal helps to absorb toxins."
-			reagent_state = SOLID
+			reagent_state = REAGENT_SOLID
 			fluid_r = 0
 			fluid_b = 0
 			fluid_g = 0
@@ -1163,7 +1138,6 @@ datum
 			name = "antihol"
 			id = "antihol"
 			description = "A medicine which quickly eliminates alcohol in the body."
-			reagent_state = LIQUID
 			fluid_r = 0
 			fluid_b = 180
 			fluid_g = 200

@@ -108,7 +108,7 @@
 			repair_bleeding_damage(M, 66, 1)
 
 			if (reagents && reagents.total_volume)
-				reagents.reaction(M, TOUCH)
+				reagents.reaction(M)
 				spawn(5)
 					if (borg == 0)
 						reagents.trans_to(M, reagents.total_volume/2) // Patches should primarily be for topically drugs (Convair880).

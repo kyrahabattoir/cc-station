@@ -97,7 +97,7 @@
 		"<span style=\"color:blue\">You take a bite of [src]!</span>")
 
 		if (src.reagents && src.reagents.total_volume)
-			src.reagents.reaction(M, INGEST)
+			src.reagents.reaction(M, REAC_INGEST)
 			spawn (5) // Necessary.
 				src.reagents.trans_to(M, src.reagents.total_volume/src.amount)
 
@@ -128,7 +128,7 @@
 		logTheThing("combat", user, M, "feeds %target% [src] [log_reagents(src)]")
 
 		if (src.reagents && src.reagents.total_volume)
-			src.reagents.reaction(M, INGEST)
+			src.reagents.reaction(M, REAC_INGEST)
 			spawn (5) // Necessary.
 				src.reagents.trans_to(M, src.reagents.total_volume)
 

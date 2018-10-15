@@ -65,7 +65,7 @@
 
 			logTheThing("combat", user, M, "[user == M ? "swallows" : "makes %target% swallow"] a pill [log_reagents(src)] at [log_loc(user)].")
 			if (reagents.total_volume)
-				reagents.reaction(M, INGEST)
+				reagents.reaction(M, REAC_INGEST)
 				sleep(1)
 				reagents.trans_to(M, reagents.total_volume)
 			user.u_equip(src)

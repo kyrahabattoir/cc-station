@@ -5,6 +5,7 @@ datum
 	reagent
 		fooddrink/
 			name = "food drink stuff"
+			reagent_state = REAGENT_SOLID
 
 		fooddrink/bilk
 			name = "bilk"
@@ -16,7 +17,7 @@ datum
 			taste = "vile"
 			depletion_rate = 0.075
 			description = "This appears to be beer mixed with milk."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			value = 2
 			thirst_value = 0.5
 
@@ -38,7 +39,7 @@ datum
 			name = "milk"
 			id = "milk"
 			description = "An opaque white liquid produced by the mammary glands of mammals."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 255
 			fluid_b = 255
 			fluid_g = 255
@@ -73,7 +74,6 @@ datum
 			transparency = 255
 			taste = "chocolatey"
 			description = "Chocolate-flavored milk, tastes like being a kid again."
-			reagent_state = LIQUID
 			thirst_value = 0.75
 			value = 3 // 1 2
 
@@ -86,7 +86,6 @@ datum
 			transparency = 255
 			taste = "like strawberries"
 			description = "Strawberry-flavored milk, tastes like being a kid again."
-			reagent_state = LIQUID
 			thirst_value = 0.75
 			value = 3 // 1 2
 
@@ -94,7 +93,7 @@ datum
 			name = "alcoholic reagent parent"
 			id = "alcoholic_parent"
 			description = "You shouldn't be seeing this ingame. If you do, report it to a coder."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			taste = "confusing"
 
 			fluid_r = 133
@@ -121,7 +120,6 @@ datum
 			name = "beer"
 			id = "beer"
 			description = "An alcoholic beverage made from malted grains, hops, yeast, and water."
-			reagent_state = LIQUID
 			taste = "hoppy"
 			bladder_value = 2
 
@@ -144,12 +142,12 @@ datum
 					description = initial(description)
 					taste = initial(taste)
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume_passed)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume_passed)
 				var/mytemp = holder.total_temperature
 				src = null
 				if(!volume_passed) return
 				if(!ishuman(M)) return
-				if(method == INGEST)
+				if(method == REAC_INGEST)
 					if(mytemp <= T0C+7) //Nice & cold.
 						if(M.get_toxin_damage())
 							M.take_toxin_damage(-5)
@@ -167,7 +165,6 @@ datum
 			fluid_b = 7
 			alch_strength = 2
 			description = "An alcoholic beverage derived from apples."
-			reagent_state = LIQUID
 			thirst_value = -0.5
 
 		fooddrink/alcoholic/mead
@@ -178,7 +175,6 @@ datum
 			fluid_b = 7
 			alch_strength = 3
 			description = "An alcoholic beverage derived from honey."
-			reagent_state = LIQUID
 			thirst_value = -0.5
 
 		fooddrink/alcoholic/wine
@@ -189,7 +185,6 @@ datum
 			fluid_b = 231
 			alch_strength = 3
 			description = "An alcoholic beverage derived from grapes."
-			reagent_state = LIQUID
 			taste = "sweet"
 
 		fooddrink/alcoholic/wine/white
@@ -207,7 +202,6 @@ datum
 			fluid_b = 108
 			alch_strength = 1
 			description = "A fizzy alcoholic beverage derived from grapes, made in Champagne, France."
-			reagent_state = LIQUID
 			taste = "sweet"
 			thirst_value = -0.5
 
@@ -219,7 +213,6 @@ datum
 			fluid_b = 231
 			alch_strength = 4
 			description = "An alcoholic beverage derived from sugar."
-			reagent_state = LIQUID
 
 		fooddrink/alcoholic/vodka
 			name = "vodka"
@@ -230,7 +223,6 @@ datum
 			transparency = 20
 			alch_strength = 4
 			description = "A strong alcoholic beverage derived from potatoes."
-			reagent_state = LIQUID
 			taste = "smooth"
 
 		fooddrink/alcoholic/bourbon
@@ -241,7 +233,6 @@ datum
 			fluid_b = 231
 			alch_strength = 4
 			description = "An alcoholic beverage derived from maize."
-			reagent_state = LIQUID
 
 		fooddrink/alcoholic/tequila
 			name = "tequila"
@@ -251,7 +242,6 @@ datum
 			fluid_b = 144
 			alch_strength = 5
 			description = "A somewhat notorious liquor made from agave. One tequila, two tequila, three tequila, floor."
-			reagent_state = LIQUID
 
 		fooddrink/alcoholic/boorbon
 			name = "BOOrbon"
@@ -267,7 +257,6 @@ datum
 			name = "Beepskybräu Security Schwarzbier"
 			id = "beepskybeer"
 			description = "A dark German beer, typically served with dark bread, cream cheese, and an intense appreciation for the law."
-			reagent_state = LIQUID
 			taste = "lawful"
 			bladder_value = 2
 
@@ -318,7 +307,6 @@ datum
 			name = "moonshine"
 			id = "moonshine"
 			description = "An illegaly brewed and highly potent alcoholic beverage."
-			reagent_state = LIQUID
 			value = 5
 			taste = "painfully strong"
 
@@ -328,11 +316,11 @@ datum
 			transparency = 190
 			alch_strength = 10
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume_passed)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume_passed)
 				src = null
 				if(!volume_passed) return
 				if(!ishuman(M)) return
-				if(method == INGEST)
+				if(method == REAC_INGEST)
 					if(M.mind)
 						if(M.mind.special_role == "traitor" && M.client)
 							M.reagents.add_reagent("omnizine",10)
@@ -343,7 +331,6 @@ datum
 			name = "Bo Jack Daniel's"
 			id = "bojack"
 			description = "A strong beverage. Drinking this will put hair on your chest. Maybe."
-			reagent_state = LIQUID
 			alch_strength = 5
 			value = 2
 			taste = "manly"
@@ -384,10 +371,10 @@ datum
 				..(M)
 				return
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume_passed)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume_passed)
 				src = null
 				if(!volume_passed) return
-				if(method == INGEST)
+				if(method == REAC_INGEST)
 					var/alch = volume_passed * 1.25
 					M.reagents.add_reagent("ethanol", alch)
 					if(ishuman(M))
@@ -408,7 +395,6 @@ datum
 			name = "Screwdriver"
 			id = "screwdriver"
 			description = "A tangy mixture of vodka and orange juice."
-			reagent_state = LIQUID
 			taste = "sweet"
 			thirst_value = -0.25
 
@@ -422,7 +408,6 @@ datum
 			name = "Bloody Mary"
 			id = "bloody_mary"
 			description = "Mixed tomato juice and vodka."
-			reagent_state = LIQUID
 			taste = "spicy"
 			thirst_value = -0.25
 
@@ -436,7 +421,6 @@ datum
 			name = "Bloody Scary"
 			id = "bloody_scary"
 			description = "A mix of vodka and the blood of a terrible Other Thing."
-			reagent_state = LIQUID
 			taste = "scary"
 			thirst_value = -1.5
 
@@ -450,7 +434,6 @@ datum
 			name = "Suicider"
 			id = "suicider"
 			description = "An unbelievably strong and potent variety of Cider."
-			reagent_state = LIQUID
 			taste = "strong"
 			thirst_value = -2
 
@@ -464,7 +447,6 @@ datum
 			name = "grog"
 			id = "grog"
 			description = "A highly caustic and nigh-undrinkable substance often associated with piracy."
-			reagent_state = LIQUID
 			taste = "seaworthy"
 			thirst_value = -4
 			bladder_value = 4
@@ -483,10 +465,10 @@ datum
 				..(M)
 				return
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
 				var/mob/living/carbon/human/H = M
 
-				if (method == TOUCH)
+				if (method == REAC_TOUCH)
 
 					if (prob(75))
 						M.TakeDamage("head", 25, 0, 0, DAMAGE_BLUNT) // this does brute for some reason, whateverrrr
@@ -556,7 +538,6 @@ datum
 			fluid_b = 231
 			alch_strength = 5
 			description = "An alcoholic beverage derived from grapes."
-			reagent_state = LIQUID
 			taste = "moving"
 
 			on_mob_life(var/mob/M)
@@ -587,7 +568,6 @@ datum
 			transparency = 50
 			alch_strength = 4
 			description = "A strong alcoholic beverage that tastes heavily of juniper."
-			reagent_state = LIQUID
 			taste = "smooth"
 
 		fooddrink/alcoholic/vermouth
@@ -598,7 +578,6 @@ datum
 			fluid_b = 231
 			alch_strength = 4
 			description = "A fortified wine with botanicals for flavor."
-			reagent_state = LIQUID
 			taste = "sweet"
 
 		fooddrink/alcoholic/bitters
@@ -609,10 +588,9 @@ datum
 			fluid_b = 48
 			alch_strength = 1
 			description = "Extremely bitter extract used to flavor cocktails. Not recommended for consumption on its own."
-			reagent_state = LIQUID
 			taste = "bitter"
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume_passed)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume_passed)
 				src = null
 				if(!volume_passed)
 					return
@@ -620,7 +598,7 @@ datum
 					return
 
 				//var/mob/living/carbon/human/H = M
-				if(method == INGEST)
+				if(method == REAC_INGEST)
 					boutput(M, "<span style=\"color:red\">Ugh! Why did you drink that?!</span>")
 					M.stunned += 2
 					M.weakened += 2
@@ -639,7 +617,6 @@ datum
 			fluid_b = 67
 			alch_strength = 2
 			description = "For the manly man who can't quite stomach straight liquor."
-			reagent_state = LIQUID
 			taste = "sour"
 
 		fooddrink/alcoholic/daiquiri
@@ -650,7 +627,6 @@ datum
 			fluid_b = 7
 			alch_strength = 2
 			description = "Rum with some lime juice and sugar."
-			reagent_state = LIQUID
 			taste = "sweet"
 			thirst_value = 0.25
 
@@ -663,7 +639,6 @@ datum
 			alch_strength = 3
 			transparency = 190
 			description = "Hastily slopped together, not stirred."
-			reagent_state = LIQUID
 			taste = "dry"
 			thirst_value = -0.5
 
@@ -676,7 +651,6 @@ datum
 			alch_strength = 3
 			transparency = 190
 			description = "From Russia with Love."
-			reagent_state = LIQUID
 			taste = "smooth and dry"
 			thirst_value = -1
 
@@ -688,7 +662,6 @@ datum
 			fluid_b = 14
 			alch_strength = 3
 			description = "For the alcoholic who doesn't quite want to drink straight from the bottle yet."
-			reagent_state = LIQUID
 			thirst_value = -1.5
 
 		fooddrink/alcoholic/libre
@@ -699,7 +672,6 @@ datum
 			fluid_b = 24
 			alch_strength = 2
 			description = "Made to celebrate the liberation of Space Cuba in 2028."
-			reagent_state = LIQUID
 			thirst_value = -1
 
 		fooddrink/alcoholic/ginfizz
@@ -710,7 +682,6 @@ datum
 			fluid_b = 206
 			alch_strength = 3
 			description = "Don't question how it's fizzing without seltzer."
-			reagent_state = LIQUID
 			taste = "fizzy"
 
 		fooddrink/alcoholic/gimlet
@@ -721,7 +692,6 @@ datum
 			fluid_b = 206
 			alch_strength = 3
 			description = "So named because you're a tool if you drink it."
-			reagent_state = LIQUID
 
 		fooddrink/alcoholic/v_gimlet
 			name = "Vodka Gimlet"
@@ -731,7 +701,6 @@ datum
 			fluid_b = 206
 			alch_strength = 3
 			description = "Trading pine cones for rubbing alcohol."
-			reagent_state = LIQUID
 
 		fooddrink/alcoholic/w_russian
 			name = "White Russian"
@@ -741,7 +710,6 @@ datum
 			fluid_b = 244
 			alch_strength = 3
 			description = "Nice drink, Dude."
-			reagent_state = LIQUID
 
 		fooddrink/alcoholic/b_russian
 			name = "Black Russian"
@@ -751,7 +719,6 @@ datum
 			fluid_b = 15
 			alch_strength = 4
 			description = "A vodka-infused coffee cocktail. Supposedly created in honor of a US Ambassador that no one remembers."
-			reagent_state = LIQUID
 
 		fooddrink/alcoholic/irishcoffee
 			name = "Irish Coffee"
@@ -761,7 +728,6 @@ datum
 			fluid_b = 42
 			alch_strength = 4
 			description = "The breakfast of hung-over champions."
-			reagent_state = LIQUID
 			taste = ""
 			thirst_value = -2
 
@@ -773,7 +739,6 @@ datum
 			fluid_b = 253
 			alch_strength = 2
 			description = "Well, at least it's not giving awful dating advice."
-			reagent_state = LIQUID
 
 		fooddrink/alcoholic/beach
 			name = "Sex on the Beach"
@@ -783,7 +748,6 @@ datum
 			fluid_b = 98
 			alch_strength = 1
 			description = "Fun fact: the name of this cocktail was deemed a war crime in 2025."
-			reagent_state = LIQUID
 			taste = "sexy"
 
 		fooddrink/alcoholic/gtonic
@@ -795,7 +759,6 @@ datum
 			transparency = 50
 			alch_strength = 3
 			description = "Once made to make bitter medication taste better, now drunk for its flavor."
-			reagent_state = LIQUID
 			thirst_value = -1.5
 
 		fooddrink/alcoholic/vtonic
@@ -807,7 +770,6 @@ datum
 			transparency = 50
 			alch_strength = 3
 			description = "All the bitterness of a gin and tonic, now without any other flavor but alcohol burn!"
-			reagent_state = LIQUID
 
 		fooddrink/alcoholic/sonic
 			name = "Gin and Sonic"
@@ -817,7 +779,6 @@ datum
 			fluid_b = 255
 			alch_strength = 6
 			description = "GOTTA GET CRUNK FAST BUT LIQUOR TOO SLOW"
-			reagent_state = LIQUID
 			//decays into sugar/some sort of stimulant, maybe gives unique stimulant effect/messages, like bold red GOTTA GO FASTs? Makes you take damage when you run into a wall?
 			taste = "FAST"
 			thirst_value = -10
@@ -856,7 +817,6 @@ datum
 			fluid_b = 212
 			alch_strength = 3
 			description = "A gin and tonic for people who think the gin gets in the way."
-			reagent_state = LIQUID
 
 		fooddrink/alcoholic/eraser
 			name = "Mind Eraser"
@@ -866,7 +826,6 @@ datum
 			fluid_b =  61
 			alch_strength = 8
 			description = "Holy shit, you're getting a buzz just looking at this!"
-			reagent_state = LIQUID
 
 		//For laffs (http.//www.youtube.com/watch?v=ySq4O4sZj1w).
 		fooddrink/alcoholic/dbreath
@@ -877,13 +836,12 @@ datum
 			fluid_b = 0
 			alch_strength = 20
 			description = "Possessing this stuff probably breaks the Geneva convention."
-			reagent_state = LIQUID
 			//lights drinker on fire, deals burn damage, when present in very large/overdose amounts (50+? 100+?) has a high chance of incinerating the drinker like ghostlier chili extract
 			taste = "hot"
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
 				src = null
-				if(method == INGEST && prob(20))
+				if(method == REAC_INGEST && prob(20))
 					var/mob/living/L = M
 					if(istype(L) && L.burning)
 						L.update_burning(30)
@@ -926,7 +884,6 @@ datum
 			name = "squeeze"
 			id = "squeeze"
 			description = "Alcohol made from fuel. Do you really think you should drink this? I think you have a problem. Maybe you should talk to a doctor."
-			reagent_state = LIQUID
 			taste = "vile"
 
 			fluid_r = 178
@@ -938,14 +895,14 @@ datum
 			thirst_value = -3
 			bladder_value = 2
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume_passed)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume_passed)
 				src = null
 				if(!volume_passed)
 					return
 				if(!ishuman(M))
 					return
 
-				if(method == INGEST)
+				if(method == REAC_INGEST)
 					boutput(M, "<span style=\"color:red\">Drinking that was an awful idea!</span>")
 					M.stunned += 2
 					M.weakened += 2
@@ -969,7 +926,6 @@ datum
 			fluid_b =  0
 			alch_strength = 1
 			description = "An alleged cocktail invented by a notorious scientist. Useful in a pinch as an impromptu purgative, or interrogation tool."
-			reagent_state = LIQUID
 			//Acts like ghetto calomel that can be made outside medbay, chance to give food poisoning, vomit constantly and explosively while racking up moderate toxin damage that has no/very low HP cap and burning out other chemicals in the body at a rate equal to/greater than calomel - more potent, more dangerous/weaponizable, alternate sleepypen fuel for barman
 
 			on_mob_life(var/mob/M)
@@ -999,7 +955,6 @@ datum
 			fluid_b =  19
 			alch_strength = 3
 			description = "The favorite drink of unfaithful, alcoholic executives in really nice suits."
-			reagent_state = LIQUID
 
 		fooddrink/alcoholic/planter
 			name = "Planter's Punch"
@@ -1009,7 +964,6 @@ datum
 			fluid_b = 0
 			alch_strength = 3
 			description = "A Drink then you'll have that's not bad - / At least, so they say in Jamaica!"
-			reagent_state = LIQUID
 
 		fooddrink/alcoholic/maitai
 			name = "Mai Tai"
@@ -1019,7 +973,6 @@ datum
 			fluid_b = 25
 			alch_strength = 3
 			description = "Even in space, you can't escape Tiki drinks."
-			reagent_state = LIQUID
 
 		fooddrink/alcoholic/harlow
 			name = "Jean Harlow"
@@ -1029,7 +982,6 @@ datum
 			fluid_b = 83
 			alch_strength = 3
 			description = "A.K.A. that one actress who would have played Fay Wray's part in King Kong if she hadn't died."
-			reagent_state = LIQUID
 
 		fooddrink/alcoholic/gchronic
 			name = "Gin and Chronic"
@@ -1039,7 +991,6 @@ datum
 			fluid_b = 0
 			alch_strength = 4
 			description = "DUUUUUUUUUUUUUUUUUUUUDE"
-			reagent_state = LIQUID
 			//Decays into ethanol and THC
 
 			on_mob_life(var/mob/M)
@@ -1057,7 +1008,6 @@ datum
 			fluid_b = 81
 			alch_strength = 4
 			description = "Something something Jimmy Buffet something something dated references."
-			reagent_state = LIQUID
 
 		fooddrink/alcoholic/tequini
 			name = "Tequini"
@@ -1067,7 +1017,6 @@ datum
 			fluid_b = 193
 			alch_strength = 4
 			description = "You kinda want to punch whoever came up with this name."
-			reagent_state = LIQUID
 
 		fooddrink/alcoholic/pfire
 			name = "Prairie Fire"
@@ -1077,7 +1026,6 @@ datum
 			fluid_b = 44
 			alch_strength = 5
 			description = "The leading cause of flaming toilets across the galaxy."
-			reagent_state = LIQUID
 			//decays into large amounts of capsaicin and maybe histamines?
 
 			on_mob_life(var/mob/M)
@@ -1097,7 +1045,6 @@ datum
 			fluid_b = 45
 			alch_strength = 5
 			description = "Mmm, tastes like heart attacks."
-			reagent_state = LIQUID
 
 		fooddrink/alcoholic/longisland
 			name = "Long Island Iced Tea"
@@ -1107,7 +1054,6 @@ datum
 			fluid_b = 51
 			alch_strength = 8
 			description = "Preferred by housewives, raging alcoholics, and the rather large overlap between them."
-			reagent_state = LIQUID
 
 		fooddrink/alcoholic/longbeach
 			name = "Long Beach Iced Tea"
@@ -1117,7 +1063,6 @@ datum
 			fluid_b = 77
 			alch_strength = 8
 			description = "For when you want a healthier glass of knocks-you-the-fuck-out."
-			reagent_state = LIQUID
 
 		fooddrink/alcoholic/pinacolada
 			name = "Piña Colada"
@@ -1127,7 +1072,6 @@ datum
 			fluid_b = 204
 			alch_strength = 4
 			description = "I don't really like being caught in the rain all that much, to be honest."
-			reagent_state = LIQUID
 
 		fooddrink/alcoholic/mimosa
 			name = "Mimosa"
@@ -1137,7 +1081,6 @@ datum
 			fluid_b = 1
 			alch_strength = 1
 			description = "Not a flower, but a sweet cocktail typically served at formal functions."
-			reagent_state = LIQUID
 
 		fooddrink/alcoholic/french75
 			name = "French 75"
@@ -1147,7 +1090,6 @@ datum
 			fluid_b = 41
 			alch_strength = 7
 			description = "A strong champagne cocktail."
-			reagent_state = LIQUID
 
 		fooddrink/alcoholic/negroni
 			name = "Negroni"
@@ -1157,7 +1099,6 @@ datum
 			fluid_b = 0
 			alch_strength = 3
 			description = "A sweet gin cocktail."
-			reagent_state = LIQUID
 
 		fooddrink/alcoholic/necroni
 			name = "Necroni"
@@ -1167,7 +1108,6 @@ datum
 			fluid_b = 0
 			alch_strength = 6
 			description = "A hellish cocktail that stinks of rotting garbage."
-			reagent_state = LIQUID
 
 		fooddrink/ectocooler
 			name = "Ecto Cooler"
@@ -1176,7 +1116,6 @@ datum
 			fluid_g =  255
 			fluid_b = 0
 			description = "Said to taste exactly like a proton beam. Considering anyone who's tried to taste a proton beam has lost their jaws, it's hard to say where this idea came from."
-			reagent_state = LIQUID
 			thirst_value = -1.5
 
 			//decays into 1 VHFCS per unit for a real good time, and also lets you see ghosts
@@ -1193,7 +1132,7 @@ datum
 			name = "refried beans"
 			id = "refried_beans"
 			description = "A dish made of mashed beans cooked with lard."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 104
 			fluid_g = 68
 			fluid_b = 53
@@ -1211,7 +1150,6 @@ datum
 			name = "death spice"
 			id = "death_spice"
 			description = "Despite its name, this sweet-smelling black powder is completely harmless. Maybe."
-			reagent_state = SOLID
 			fluid_r = 0
 			fluid_g = 0
 			fluid_b = 0
@@ -1231,7 +1169,6 @@ datum
 			name = "bread"
 			id = "bread"
 			description = "Bread! Yep, bread."
-			reagent_state = SOLID
 			fluid_r = 156
 			fluid_g = 80
 			fluid_b = 19
@@ -1246,13 +1183,13 @@ datum
 			name = "george melonium"
 			id = "george_melonium"
 			description = "A robust and mysterious substance."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 0
 			fluid_g = 255
 			fluid_b = 0
 			transparency = 30
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume_passed)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume_passed)
 				src = null
 				if(!volume_passed)
 					return
@@ -1260,7 +1197,7 @@ datum
 					return
 
 				//var/mob/living/carbon/human/H = M
-				if(method == INGEST)
+				if(method == REAC_INGEST)
 					switch(rand(1,5))
 						if(1)
 							boutput(M, "<span style=\"color:red\">What an explosive burst of flavor!</span>")
@@ -1297,7 +1234,7 @@ datum
 			name = "capsaicin"
 			id = "capsaicin"
 			description = "A potent irritant produced by pepper plants in the Capsicum genus."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 255
 			fluid_g = 0
 			fluid_b = 0
@@ -1321,7 +1258,7 @@ datum
 					M.stunned++
 				M.updatehealth()
 				..(M)
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume_passed)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume_passed)
 				src = null
 				if(!volume_passed)
 					return
@@ -1330,7 +1267,7 @@ datum
 
 				//var/mob/living/carbon/human/H = M
 
-				if(method == INGEST)
+				if(method == REAC_INGEST)
 					if (volume_passed > 10)
 						if (volume_passed >= 80)
 							boutput(M, "<span style=\"color:red\"><b>HOLY FUCK!!!!</b></span>")
@@ -1347,7 +1284,7 @@ datum
 					else boutput(M, "<span style=\"color:red\">Spicy!</span>")
 
 
-				else if (method == TOUCH)
+				else if (method == REAC_TOUCH)
 					if(iscarbon(M))
 						if(!M.wear_mask)
 							M.reagents.add_reagent("capsaicin",round(volume_passed/5))
@@ -1364,7 +1301,7 @@ datum
 			name = "El Diablo chili"
 			id = "el_diablo"
 			description = "Rumored to be the tears of the devil himself."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 255
 			fluid_g = 0
 			fluid_b = 0
@@ -1384,7 +1321,7 @@ datum
 				if(prob(10))
 					M.emote(pick("cough"))
 				M.updatehealth()
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume_passed)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume_passed)
 				src = null
 				if(!volume_passed)
 					return
@@ -1393,7 +1330,7 @@ datum
 
 				//var/mob/living/carbon/human/H = M
 
-				if(method == INGEST)
+				if(method == REAC_INGEST)
 					boutput(M, "<span style=\"color:red\"><b>HOLY FUCK!!!!</b></span>")
 					M.emote("scream")
 					M.stuttering += 30
@@ -1408,7 +1345,7 @@ datum
 			name = "cola"
 			id = "cola"
 			description = "A refreshing beverage."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 66
 			fluid_g = 33
 			fluid_b = 33
@@ -1431,7 +1368,6 @@ datum
 			name = "cheese"
 			id = "cheese"
 			description = "Some cheese. Pour it out to make it solid."
-			reagent_state = SOLID
 			fluid_r = 255
 			fluid_b = 0
 			fluid_g = 255
@@ -1450,7 +1386,6 @@ datum
 			name = "weird cheese"
 			id = "gcheese"
 			description = "Hell, I don't even know if this IS cheese. Whatever it is, it ain't normal. If you want to, pour it out to make it solid."
-			reagent_state = SOLID
 			fluid_r = 80
 			fluid_b = 0
 			fluid_g = 255
@@ -1471,7 +1406,6 @@ datum
 			name = "meat slurry"
 			id = "meat_slurry"
 			description = "A paste comprised of highly-processed organic material. Uncomfortably similar to deviled ham spread."
-			reagent_state = SOLID
 			fluid_r = 235
 			fluid_g = 215
 			fluid_b = 215
@@ -1493,7 +1427,7 @@ datum
 			name = "coffee"
 			id = "coffee"
 			description = "Coffee is a brewed drink prepared from roasted seeds, commonly called coffee beans, of the coffee plant."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 39
 			fluid_g = 28
 			fluid_b = 16
@@ -1538,7 +1472,6 @@ datum
 			name = "energy drink"
 			id = "energydrink"
 			description = "An energy drink is a liquid plastic with a high amount of caffeine."
-			reagent_state = LIQUID
 			fluid_r = 255
 			fluid_g = 255
 			fluid_b = 64
@@ -1586,7 +1519,7 @@ datum
 			name = "tea"
 			id = "tea"
 			description = "An aromatic beverage derived from the leaves of the camellia sinensis plant."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 139
 			fluid_g = 90
 			fluid_b = 54
@@ -1616,7 +1549,7 @@ datum
 			name = "tea"
 			id = "honey_tea"
 			description = "An aromatic beverage derived from the leaves of the camellia sinensis plant. There's a little bit of honey in it."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 145
 			fluid_g = 97
 			fluid_b = 52
@@ -1640,7 +1573,7 @@ datum
 			name = "chocolate"
 			id = "chocolate"
 			description = "Chocolate is a delightful product derived from the seeds of the theobroma cacao tree."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 39
 			fluid_g = 28
 			fluid_b = 16
@@ -1660,7 +1593,7 @@ datum
 			name = "nectar"
 			id = "nectar"
 			description = "A sweet liquid produced by plants to attract pollinators."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 221
 			fluid_g = 221
 			fluid_b = 24
@@ -1670,7 +1603,7 @@ datum
 			name = "honey"
 			id = "honey"
 			description = "A sweet substance produced by bees through partial digestion.  Bee barf."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 206
 			fluid_g = 206
 			fluid_b = 19
@@ -1692,7 +1625,7 @@ datum
 			name = "royal jelly"
 			id = "royal_jelly"
 			description = "A nutritive gel used to induce extended development in the larvae of greater domestic space-bees."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 153
 			fluid_g = 0
 			fluid_b = 102
@@ -1704,7 +1637,7 @@ datum
 			name = "egg nog"
 			id = "eggnog"
 			description = "A festive dairy drink made with beaten eggs."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 240
 			fluid_g = 237
 			fluid_b = 202
@@ -1720,7 +1653,7 @@ datum
 			name = "guacamole"
 			id = "guacamole"
 			description = "A paste comprised primarily of avocado."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 0
 			fluid_g = 123
 			fluid_b = 28
@@ -1729,7 +1662,7 @@ datum
 			name = "catonium"
 			id = "catonium"
 			description = "An herbal extract noted for its peculiar effect on felines."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 
 			reaction_obj(var/obj/O, var/volume)
 				if (istype(O, /obj/critter/cat))
@@ -1740,15 +1673,15 @@ datum
 			name = "vanilla"
 			id = "vanilla"
 			description = "An expensive spice of the new world. Combination with ice not recommended."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 253
 			fluid_g = 248
 			fluid_b = 244
 			transparency = 245
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
 				src = null
-				if ( (method==TOUCH && prob(33)) || method==INGEST)
+				if ( (method==REAC_TOUCH && prob(33)) || method==REAC_INGEST)
 					if(M.bioHolder.HasAnyEffect(effectTypePower) && prob(4))
 						M.bioHolder.RemoveAllEffects(effectTypePower)
 						boutput(M, "You feel plain.")
@@ -1758,7 +1691,7 @@ datum
 			name = "chicken soup"
 			id = "chickensoup"
 			description = "An old household remedy for mild illnesses."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 180
 			fluid_g = 180
 			fluid_b = 0
@@ -1780,7 +1713,6 @@ datum
 			name = "salt"
 			id = "salt"
 			description = "Sodium chloride, common table salt."
-			reagent_state = SOLID
 			fluid_r = 255
 			fluid_g = 255
 			fluid_b = 255
@@ -1807,7 +1739,6 @@ datum
 			name = "pepper"
 			id = "pepper"
 			description = "A common condiment."
-			reagent_state = SOLID
 			fluid_r = 25
 			fluid_g = 10
 			fluid_b = 10
@@ -1818,7 +1749,6 @@ datum
 			name = "ketchup"
 			id = "ketchup"
 			description = "A condiment often used on hotdogs and sandwiches."
-			reagent_state = SOLID
 			fluid_r = 255
 			fluid_g = 0
 			fluid_b = 0
@@ -1828,7 +1758,6 @@ datum
 			name = "mustard"
 			id = "mustard"
 			description = "A condiment often used on hotdogs and sandwiches."
-			reagent_state = SOLID
 			fluid_r = 255
 			fluid_g = 255
 			fluid_b = 0
@@ -1838,7 +1767,6 @@ datum
 			name = "porktonium"
 			id = "porktonium"
 			description = "A highly-radioactive pork byproduct first discovered in hotdogs."
-			reagent_state = LIQUID
 			fluid_r = 238
 			fluid_b = 111
 			fluid_g = 111
@@ -1862,15 +1790,14 @@ datum
 			name = "mugwort"
 			id = "mugwort"
 			description = "A rather bitter herb once thought to hold magical protective properties."
-			reagent_state = SOLID
 			fluid_r = 39
 			fluid_g = 28
 			fluid_b = 16
 			transparency = 250
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume_passed)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume_passed)
 				src = null
-				if(!volume_passed || method != INGEST)
+				if(!volume_passed || method != REAC_INGEST)
 					return
 				if (!iswizard(M))
 					return
@@ -1948,7 +1875,6 @@ datum
 			name = "corn starch"
 			id = "cornstarch"
 			description = "The powdered starch of maize, derived from the kernel's endosperm. Used as a thickener for gravies and puddings."
-			reagent_state = SOLID
 			fluid_r = 240
 			fluid_g = 240
 			fluid_b = 240
@@ -1958,7 +1884,6 @@ datum
 			name = "corn syrup"
 			id = "cornsyrup"
 			description = "A sweet syrup derived from corn starch that has had its starches converted into maltose and other sugars."
-			reagent_state = LIQUID
 			fluid_r = 240
 			fluid_g = 240
 			fluid_b = 240
@@ -1973,7 +1898,7 @@ datum
 			name = "very-high-fructose corn syrup"
 			id = "VHFCS"
 			description = "An incredibly sweet syrup, created from corn syrup treated with enzymes to convert its sugars into fructose."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 240
 			fluid_g = 240
 			fluid_b = 240
@@ -1988,7 +1913,7 @@ datum
 			name = "gravy"
 			id = "gravy"
 			description = "A savory sauce made from a simple meat-dripping roux and milk."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 182
 			fluid_g = 100
 			fluid_b = 26
@@ -1998,7 +1923,6 @@ datum
 			name = "mashed potatoes"
 			id = "mashedpotatoes"
 			description = "A starchy food paste made from boiled potatoes."
-			reagent_state = SOLID
 			fluid_r = 214
 			fluid_g = 217
 			fluid_b = 193
@@ -2015,13 +1939,13 @@ datum
 			depletion_rate = 0.2
 
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume_passed)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume_passed)
 				src = null
 				if(!volume_passed)
 					return
 				if(!ishuman(M))
 					return
-				if(method == INGEST)
+				if(method == REAC_INGEST)
 					boutput(M, "<span style=\"color:blue\">That tasted amazing!</span>")
 
 			on_mob_life(var/mob/M)
@@ -2039,7 +1963,7 @@ datum
 			name = "egg"
 			id = "egg"
 			description = "A runny and viscous mixture of clear and yellow fluids."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 240
 			fluid_g = 220
 			fluid_b = 0
@@ -2061,7 +1985,6 @@ datum
 			name = "beff"
 			id = "beff"
 			description = "An advanced blend of mechanically-recovered meat and textured synthesized protein product notable for its unusual crystalline grain when sliced."
-			reagent_state = SOLID
 			fluid_r = 172
 			fluid_g = 126
 			fluid_b = 103
@@ -2082,7 +2005,6 @@ datum
 			name = "Enriched MSG"
 			id = "enriched_msg"
 			description = "This highly illegal substance was only rumored to exist, it is the most flavorful substance known. It is believed that it causes such euphoria that the body begins to heal its own wounds, however no living creature can resist having seconds."
-			reagent_state = SOLID
 			fluid_r = 255
 			fluid_g = 255
 			fluid_b = 255
@@ -2091,13 +2013,13 @@ datum
 			overdose = 25
 
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume_passed)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume_passed)
 				src = null
 				if(!volume_passed)
 					return
 				if(!ishuman(M))
 					return
-				if(method == INGEST)
+				if(method == REAC_INGEST)
 					var/datum/ailment/addiction/AD = M.addicted_to_reagent(src)
 					if(!AD)
 						boutput(M, "<B>THIS TASTES <font size=\"92\">~<font color=\"#FF0000\"> A<font color=\"#FF9900\"> M<font color=\"#FFff00\"> A<font color=\"#00FF00\"> Z<font color=\"#0000FF\"> I<font color=\"#FF00FF\"> N<font color=\"#660066\"> G<font color=\"#000000\"> ~ !</font></B>")
@@ -2152,14 +2074,13 @@ datum
 			name = "pepperoni"
 			id = "pepperoni"
 			description = "An Italian-American variety of salami usually made from beef and pork"
-			reagent_state = SOLID
 			fluid_r = 172
 			fluid_g = 126
 			fluid_b = 103
 			transparency = 255
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
-				if(method == TOUCH)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
+				if(method == REAC_TOUCH)
 					if(ishuman(M))
 						var/mob/living/carbon/human/H = M
 						if(H.wear_mask)
@@ -2184,11 +2105,11 @@ datum
 			fluid_g = 248
 			fluid_b = 66
 			description = "A citric beverage extracted from limes."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			thirst_value = 1.5
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
-				if(method == TOUCH)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
+				if(method == REAC_TOUCH)
 					if(ishuman(M))
 						var/mob/living/carbon/human/H = M
 						if(H.wear_mask) return
@@ -2205,7 +2126,7 @@ datum
 			fluid_g = 0
 			fluid_b = 0
 			description = "An extremely tart juice usually mixed into other drinks and juices."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			thirst_value = 1.5
 
 		fooddrink/juice_orange
@@ -2215,11 +2136,11 @@ datum
 			fluid_g = 163
 			fluid_b = 30
 			description = "A citric beverage extracted from oranges."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			thirst_value = 1.5
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
-				if(method == TOUCH)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
+				if(method == REAC_TOUCH)
 					if(ishuman(M))
 						var/mob/living/carbon/human/H = M
 						if(H.wear_mask) return
@@ -2236,11 +2157,11 @@ datum
 			fluid_g = 229
 			fluid_b = 30
 			description = "A citric beverage extracted from lemons."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			thirst_value = 1.5
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
-				if(method == TOUCH)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
+				if(method == REAC_TOUCH)
 					if(ishuman(M))
 						var/mob/living/carbon/human/H = M
 						if(H.wear_mask) return
@@ -2257,7 +2178,7 @@ datum
 			fluid_g = 0
 			fluid_b = 0
 			description = "Tomatoes pureed down to a liquid state."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			thirst_value = 1.5
 
 		fooddrink/juice_strawberry
@@ -2267,7 +2188,7 @@ datum
 			fluid_g = 21
 			fluid_b = 15
 			description = "Fresh juice produced by strawberries."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			thirst_value = 1.5
 
 		fooddrink/juice_cherry
@@ -2277,7 +2198,7 @@ datum
 			fluid_g = 0
 			fluid_b = 0
 			description = "The juice from a thousand screaming cherries.  Silent screams."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			thirst_value = 1.5
 
 		fooddrink/juice_pinapple
@@ -2287,7 +2208,7 @@ datum
 			fluid_g = 249
 			fluid_b = 71
 			description = "Juice from a pineapple. A surprise, considering the name!"
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			thirst_value = 1.5
 
 		fooddrink/coconut_milk
@@ -2297,7 +2218,7 @@ datum
 			fluid_g = 255
 			fluid_b = 255
 			description = "Well, it's not actually milk, considering that coconuts aren't mammals with mammary glands. It's really more like coconut juice. Or coconut water."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			thirst_value = 1
 
 		fooddrink/juice_pickle
@@ -2308,21 +2229,21 @@ datum
 			fluid_b = 10
 			transparency = 150
 			description = "A salty brine containing garlic and dill, typically used to ferment and pickle cucumbers."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			thirst_value = 1
 
 		fooddrink/cocktail_citrus
 			name = "triple citrus"
 			id = "cocktail_citrus"
 			description = "A refreshing mixed drink of orange, lemon and lime juice."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			thirst_value = 2
 
 			fluid_r = 12
 			fluid_g = 229
 			fluid_b = 72
-			reaction_mob(var/mob/M, var/method=INGEST, var/volume)
-				if(method == INGEST)
+			reaction_mob(var/mob/M, var/method=REAC_INGEST, var/volume)
+				if(method == REAC_INGEST)
 					if (M.get_toxin_damage())
 						M.take_toxin_damage(rand(1,2) * -1) //I assume this was not supposed to be poison.
 						M.updatehealth()
@@ -2335,11 +2256,11 @@ datum
 			fluid_b = 44
 			transparency = 150
 			description = "A refreshing, sweet and sour drink consisting of sugar and lemon juice."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			thirst_value = 2
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
-				if(method == TOUCH)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
+				if(method == REAC_TOUCH)
 					if(ishuman(M))
 						var/mob/living/carbon/human/H = M
 						if(H.wear_mask) return
@@ -2348,14 +2269,14 @@ datum
 						M.emote("gasp")
 						boutput(M, "<span style=\"color:red\">Your eyes sting!</span>")
 						M.change_eye_blurry(rand(2, 10))
-				else if (method == INGEST)
+				else if (method == REAC_INGEST)
 					if (prob(60) && (holder && holder.get_reagent_amount("sugar") < (volume/3)))
 						M.visible_message("<b>[M]'s</b> mouth puckers!","<span style=\"color:red\">Yow! Sour!</span>")
 
 		fooddrink/halfandhalf
 			name = "half and half"
 			id = "halfandhalf"
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 142
 			fluid_g = 115
 			fluid_b = 51
@@ -2372,7 +2293,7 @@ datum
 			fluid_b = 0
 			transparency = 20
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume_passed)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume_passed)
 				src = null
 				if(!volume_passed)
 					return
@@ -2399,7 +2320,7 @@ datum
 			fluid_b = 255
 			transparency = 60
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume_passed)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume_passed)
 				src = null
 				if(!volume_passed)
 					return
@@ -2425,7 +2346,7 @@ datum
 			fluid_g = 220
 			fluid_b = 10
 
-			reaction_mob(var/mob/living/M, var/method=TOUCH, var/volume_passed)
+			reaction_mob(var/mob/living/M, var/method=REAC_TOUCH, var/volume_passed)
 				src = null
 				if(!volume_passed)
 					return
@@ -2433,7 +2354,7 @@ datum
 					return
 
 				//var/mob/living/carbon/human/H = M
-				if(method == INGEST)
+				if(method == REAC_INGEST)
 					boutput(M, "<span style=\"color:red\">Ugh! Eating that was a terrible idea!</span>")
 					M.stunned += 2
 					M.weakened += 2
@@ -2463,7 +2384,7 @@ datum
 			name = "ghost chili juice"
 			id = "ghostchilijuice"
 			description = "Juice from the universe's hottest chilli. Do not consume."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 255
 			fluid_g = 127
 			fluid_b = 50

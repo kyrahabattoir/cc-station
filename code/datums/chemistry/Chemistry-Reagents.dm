@@ -1,9 +1,5 @@
 // SPDX-License-Identifier: CC-BY-NC-SA-3.0
 
-#define SOLID 1
-#define LIQUID 2
-#define GAS 3
-
 //The reaction procs must ALWAYS set src = null, this detaches the proc from the object (the reagent)
 //so that it can continue working when the reagent is deleted while the proc is still active.
 
@@ -16,7 +12,7 @@ datum
 		var/description = ""
 		var/datum/reagents/holder = null
 		var/list/pathogen_nutrition = null
-		var/reagent_state = SOLID
+		var/reagent_state = REAGENT_SOLID
 		var/data = null
 		var/volume = 0
 		///Fluids now have colors
@@ -71,10 +67,10 @@ datum
 				return
 			B.take_damage(blob_damage, volume, "poison")
 
-		proc/reaction_mob(var/mob/M, var/method=TOUCH, var/volume) //By default we have a chance to transfer some
+		proc/reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume) //By default we have a chance to transfer some
 			var/datum/reagent/self = src					  //of the reagent to the mob on TOUCHING it.
 			switch(method)
-				if(TOUCH)
+				if(REAC_TOUCH)
 					if (penetrates_skin)
 						var/modifier = touch_modifier
 						for(var/obj/item/clothing/C in M.get_equipped_items())
@@ -89,7 +85,7 @@ datum
 							if ((hygiene_value > 0 && !(H.wear_suit || H.w_uniform)) || hygiene_value < 0)
 								H.sims.affectMotive("hygiene", volume * hygiene_value)
 
-				if(INGEST)
+				if(REAC_INGEST)
 					var/datum/ailment_data/addiction/AD = M.addicted_to_reagent(src)
 					var/addProb = addiction_prob
 					if(istype(M, /mob/living/carbon/human))
@@ -190,13 +186,13 @@ datum
 		// reagent state helper procs
 
 		proc/is_solid()
-			return reagent_state == SOLID
+			return reagent_state == REAGENT_SOLID
 
 		proc/is_liquid()
-			return reagent_state == LIQUID
+			return reagent_state == REAGENT_LIQUID
 
 		proc/is_gas()
-			return reagent_state == GAS
+			return reagent_state == REAGENT_GAS
 
 		proc/physical_shock(var/force)
 			return

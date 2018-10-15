@@ -65,7 +65,7 @@
 
 			logTheThing("combat", user, W:affecting, "shoves %target%'s face into the [src] at [log_loc(src)].")
 			src.visible_message("<span style=\"color:red\"><b>[user] shoves [W:affecting]'s face into [src]!</b></span>")
-			src.reagents.reaction(W:affecting, TOUCH)
+			src.reagents.reaction(W:affecting)
 
 			return
 

@@ -69,7 +69,7 @@ About the Holder:
 		clear_reagents()
 			This proc removes ALL reagents from the holder.
 
-		reaction(var/atom/A, var/method=TOUCH, var/volume_modifier=0)
+		reaction(var/atom/A, var/method=REAC_TOUCH, var/volume_modifier=0)
 			This proc calls the appropriate reaction procs of the reagents.
 			I.e. if A is an object, it will call the reagents reaction_obj
 			proc. The method var is used for reaction on mobs. It simply tells

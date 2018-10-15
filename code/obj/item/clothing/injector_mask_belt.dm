@@ -130,7 +130,7 @@ There's A LOT of duplicate code here, which isn't ideal to say the least. Should
 				playsound(get_turf(src),"sound/items/injectorbelt_active.ogg", 33, 0, -5)
 				boutput(owner, "<span style=\"color:blue\">Your Injector belt activates.</span>")
 
-				container.reagents.reaction(owner, INGEST)
+				container.reagents.reaction(owner, REAC_INGEST)
 				spawn(15)
 					if(inj_amount == -1)
 						container.reagents.trans_to(owner, container.reagents.total_volume)
@@ -280,7 +280,7 @@ There's A LOT of duplicate code here, which isn't ideal to say the least. Should
 
 				boutput(owner, "<span style=\"color:blue\">Your [src] activates.</span>")
 
-				container.reagents.reaction(owner, INGEST)
+				container.reagents.reaction(owner, REAC_INGEST)
 				spawn(15)
 					if(inj_amount == -1)
 						container.reagents.trans_to(owner, container.reagents.total_volume)

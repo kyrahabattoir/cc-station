@@ -57,9 +57,9 @@
 			//S.icon = IC
 			spraybits += S
 			spawn(0)
-				S.reagents.reaction(theturf, TOUCH)
+				S.reagents.reaction(theturf)
 				for(var/atom/A in theturf)
-					S.reagents.reaction(A, TOUCH)
+					S.reagents.reaction(A)
 
 		if (the_mob) playsound(the_mob, 'sound/effects/spray.ogg', 75, 1, 0)
 		E.reagents.clear_reagents()
@@ -71,9 +71,9 @@
 			for(var/i=0, i<3, i++)
 				for(var/obj/effects/spray/SP in spraybits)
 					SP.set_loc(get_step(SP.loc, SP.original_dir))
-					SP.reagents.reaction(SP.loc, TOUCH)
+					SP.reagents.reaction(SP.loc)
 					for(var/atom/A in SP.loc)
-						SP.reagents.reaction(A, TOUCH)
+						SP.reagents.reaction(A)
 					if(is_blocked_turf(SP.loc))
 						spraybits -= SP
 						qdel(SP)

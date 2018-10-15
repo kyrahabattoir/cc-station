@@ -162,10 +162,10 @@
 							src.reagents.remove_any(1)
 						else
 							src.reagents.trans_to(M, 1)
-							src.reagents.reaction(M, INGEST)
+							src.reagents.reaction(M, REAC_INGEST)
 					else
 						src.reagents.trans_to(M, 1)
-						src.reagents.reaction(M, INGEST)
+						src.reagents.reaction(M, REAC_INGEST)
 				else src.reagents.remove_any(1)
 
 			else if (src.exploding)

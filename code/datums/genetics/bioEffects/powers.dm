@@ -1441,11 +1441,11 @@
 				continue
 			if (get_dist(owner,F) > range)
 				continue
-			owner.reagents.reaction(F,TOUCH)
+			owner.reagents.reaction(F)
 			for(var/mob/living/L in F.contents)
-				owner.reagents.reaction(L,TOUCH)
+				owner.reagents.reaction(L)
 			for(var/obj/O in F.contents)
-				owner.reagents.reaction(O,TOUCH)
+				owner.reagents.reaction(O)
 		owner.reagents.clear_reagents()
 		return 0
 

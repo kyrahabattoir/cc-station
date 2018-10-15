@@ -7,7 +7,6 @@ datum
 			name = "aluminium"
 			id = "aluminium"
 			description = "A silvery white and ductile member of the boron group of chemical elements."
-			reagent_state = SOLID
 			fluid_r = 220
 			fluid_g = 220
 			fluid_b = 220
@@ -17,7 +16,6 @@ datum
 			name = "barium"
 			id = "barium"
 			description = "A highly reactive element."
-			reagent_state = SOLID
 			fluid_r = 220
 			fluid_g = 220
 			fluid_b = 220
@@ -27,7 +25,6 @@ datum
 			name = "bromine"
 			id = "bromine"
 			description = "A red-brown liquid element."
-			reagent_state = LIQUID
 			fluid_r = 150
 			fluid_g = 50
 			fluid_b = 50
@@ -37,7 +34,6 @@ datum
 			name = "carbon"
 			id = "carbon"
 			description = "A chemical element critical to organic chemistry."
-			reagent_state = SOLID
 			fluid_r = 0
 			fluid_g = 0
 			fluid_b = 0
@@ -55,7 +51,7 @@ datum
 			name = "chlorine"
 			id = "chlorine"
 			description = "A chemical element."
-			reagent_state = GAS
+			reagent_state = REAGENT_GAS
 			fluid_r = 220
 			fluid_g = 255
 			fluid_b = 160
@@ -76,7 +72,6 @@ datum
 			name = "chromium"
 			id = "chromium"
 			description = "A catalytic chemical element."
-			reagent_state = SOLID
 			fluid_r = 220
 			fluid_g = 220
 			fluid_b = 220
@@ -87,7 +82,6 @@ datum
 			name = "copper"
 			id = "copper"
 			description = "A chemical element."
-			reagent_state = SOLID
 			fluid_r = 184
 			fluid_g = 115
 			fluid_b = 51
@@ -98,7 +92,7 @@ datum
 			name = "fluorine"
 			id = "fluorine"
 			description = "A highly-reactive chemical element."
-			reagent_state = GAS
+			reagent_state = REAGENT_GAS
 			fluid_r = 255
 			fluid_g = 215
 			fluid_b = 160
@@ -120,7 +114,7 @@ datum
 			name = "ethanol"
 			id = "ethanol"
 			description = "A well-known alcohol with a variety of applications."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 255
 			fluid_b = 255
 			fluid_g = 255
@@ -181,7 +175,7 @@ datum
 			name = "hydrogen"
 			id = "hydrogen"
 			description = "A colorless, odorless, nonmetallic, tasteless, highly combustible diatomic gas."
-			reagent_state = GAS
+			reagent_state = REAGENT_GAS
 			fluid_r = 202
 			fluid_g = 254
 			fluid_b = 252
@@ -191,7 +185,7 @@ datum
 			name = "iodine"
 			id = "iodine"
 			description = "A purple gaseous element."
-			reagent_state = GAS
+			reagent_state = REAGENT_GAS
 			fluid_r = 127
 			fluid_g = 0
 			fluid_b = 255
@@ -201,7 +195,6 @@ datum
 			name = "iron"
 			id = "iron"
 			description = "Pure iron is a metal."
-			reagent_state = SOLID
 			fluid_r = 145
 			fluid_g = 135
 			fluid_b = 135
@@ -212,7 +205,6 @@ datum
 			name = "lithium"
 			id = "lithium"
 			description = "A chemical element."
-			reagent_state = SOLID
 			fluid_r = 220
 			fluid_g = 220
 			fluid_b = 220
@@ -230,7 +222,6 @@ datum
 			name = "magnesium"
 			id = "magnesium"
 			description = "A hot-burning chemical element."
-			reagent_state = SOLID
 			fluid_r = 255
 			fluid_g = 255
 			fluid_b = 255
@@ -246,7 +237,7 @@ datum
 			name = "mercury"
 			id = "mercury"
 			description = "A chemical element."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 160
 			fluid_g = 160
 			fluid_b = 160
@@ -269,7 +260,6 @@ datum
 			name = "nickel"
 			id = "nickel"
 			description = "Not actually a coin."
-			reagent_state = SOLID
 			fluid_r = 220
 			fluid_g = 220
 			fluid_b = 220
@@ -279,7 +269,7 @@ datum
 			name = "nitrogen"
 			id = "nitrogen"
 			description = "A colorless, odorless, tasteless gas."
-			reagent_state = GAS
+			reagent_state = REAGENT_GAS
 			fluid_r = 202
 			fluid_g = 254
 			fluid_b = 252
@@ -290,7 +280,7 @@ datum
 			name = "oxygen"
 			id = "oxygen"
 			description = "A colorless, odorless gas."
-			reagent_state = GAS
+			reagent_state = REAGENT_GAS
 			fluid_r = 202
 			fluid_g = 254
 			fluid_b = 252
@@ -300,7 +290,6 @@ datum
 			name = "phosphorus"
 			id = "phosphorus"
 			description = "A chemical element."
-			reagent_state = SOLID
 			fluid_r = 150
 			fluid_g = 110
 			fluid_b = 110
@@ -314,7 +303,7 @@ datum
 			name = "plasma"
 			id = "plasma"
 			description = "The liquid phase of an unusual extraterrestrial compound."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 
 			fluid_r = 130
 			fluid_g = 40
@@ -337,9 +326,9 @@ datum
 				..(M)
 				return
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
 				src = null
-				if(method == TOUCH)
+				if(method == REAC_TOUCH)
 					var/mob/living/L = M
 					if(istype(L) && L.burning)
 						L.update_burning(30)
@@ -362,7 +351,6 @@ datum
 			name = "platinum"
 			id = "platinum"
 			description = "Shiny."
-			reagent_state = SOLID
 			fluid_r = 220
 			fluid_g = 220
 			fluid_b = 220
@@ -372,7 +360,6 @@ datum
 			name = "potassium"
 			id = "potassium"
 			description = "A soft, low-melting solid that can easily be cut with a knife. Reacts violently with water."
-			reagent_state = SOLID
 			fluid_r = 190
 			fluid_g = 190
 			fluid_b = 190
@@ -387,7 +374,6 @@ datum
 			name = "silicon"
 			id = "silicon"
 			description = "A tetravalent metalloid, silicon is less reactive than its chemical analog carbon."
-			reagent_state = SOLID
 			fluid_r = 120
 			fluid_g = 140
 			fluid_b = 150
@@ -397,7 +383,6 @@ datum
 			name = "silver"
 			id = "silver"
 			description = "A lustrous metallic element regarded as one of the precious metals."
-			reagent_state = SOLID
 			fluid_r = 200
 			fluid_g = 200
 			fluid_b = 200
@@ -407,8 +392,7 @@ datum
 		sulfur
 			name = "sulfur"
 			id = "sulfur"
-			description = "A chemical element."
-			reagent_state = SOLID
+			description = "A foul smelling chemical element."
 			fluid_r = 255
 			fluid_g = 255
 			fluid_b = 0
@@ -418,7 +402,6 @@ datum
 			name = "sugar"
 			id = "sugar"
 			description = "This white, odorless, crystalline powder has a pleasing, sweet taste."
-			reagent_state = SOLID
 			fluid_r = 255
 			fluid_g = 255
 			fluid_b = 255
@@ -503,7 +486,7 @@ datum
 			name = "sweet tea"
 			id = "sweet_tea"
 			description = "A solution of sugar and tea, popular in the American South.  Some people raise the sugar levels in it to the point of saturation and beyond."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 139
 			fluid_g = 90
 			fluid_b = 54
@@ -514,7 +497,7 @@ datum
 			name = "helium"
 			id = "helium"
 			description = "A chemical element."
-			reagent_state = GAS
+			reagent_state = REAGENT_GAS
 			fluid_r = 255
 			fluid_g = 250
 			fluid_b = 160
@@ -547,7 +530,6 @@ datum
 			name = "radium"
 			id = "radium"
 			description = "Radium is an alkaline earth metal. It is highly radioactive."
-			reagent_state = SOLID
 			fluid_r = 220
 			fluid_g = 220
 			fluid_b = 220
@@ -580,7 +562,6 @@ datum
 			name = "sodium"
 			id = "sodium"
 			description = "A soft, silvery-white, highly reactive alkali metal."
-			reagent_state = SOLID
 			fluid_r = 200
 			fluid_g = 200
 			fluid_b = 200
@@ -591,7 +572,6 @@ datum
 			name = "uranium"
 			id = "uranium"
 			description = "A radioactive heavy metal commonly used for nuclear fission reactions."
-			reagent_state = SOLID
 			fluid_r = 40
 			fluid_g = 40
 			fluid_b = 40
@@ -611,7 +591,7 @@ datum
 			name = "water"
 			id = "water"
 			description = "A ubiquitous chemical substance that is composed of hydrogen and oxygen."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 10
 			fluid_g = 254
 			fluid_b = 254
@@ -695,12 +675,12 @@ datum
 						O.burning = 0
 				return
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
 				..()
 				src = null
 				if(!volume)
 					volume = 10
-				if(method == TOUCH)
+				if(method == REAC_TOUCH)
 					var/mob/living/L = M
 					if(istype(L) && L.burning)
 						L.update_burning(-volume)
@@ -714,7 +694,7 @@ datum
 			hygiene_value = 2
 			value = 3 // 1 1 1
 
-			reaction_mob(var/mob/target, var/method=TOUCH, var/volume)
+			reaction_mob(var/mob/target, var/method=REAC_TOUCH, var/volume)
 				..()
 				var/mob/living/carbon/human/M = target
 				if(istype(M))
@@ -727,13 +707,13 @@ datum
 						M.TakeDamage("chest", 0, burndmg, 0, DAMAGE_BURN)
 						M.change_vampire_blood(-burndmg)
 						M.updatehealth()
-					else if (method == TOUCH)
+					else if (method == REAC_TOUCH)
 						boutput(M, "<span style=\"color:blue\">You feel somewhat purified... but mostly just wet.</span>")
 						M.take_brain_damage(-10)
 						for (var/datum/ailment_data/disease/V in M.ailments)
 							if(prob(1))
 								M.cure_disease(V)
-				if(method == TOUCH)
+				if(method == REAC_TOUCH)
 					var/mob/living/L = target
 					if(istype(L) && L.burning)
 						L.update_burning(-25)
@@ -742,7 +722,7 @@ datum
 			name = "tonic water"
 			id = "tonic"
 			description = "Carbonated water with quinine for a bitter flavor. Protects against Space Malaria."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			thirst_value = 1.5
 			hygiene_value = 0.75
 			taste = "bitter"
@@ -770,7 +750,6 @@ datum
 			name = "ice"
 			id = "ice"
 			description = "It's frozen water. What did you expect?!"
-			reagent_state = SOLID
 			fluid_r = 200
 			fluid_g = 200
 			fluid_b = 250
@@ -801,7 +780,6 @@ datum
 			name = "phenol"
 			id = "phenol"
 			description = "Also known as carbolic acid, this is a useful building block in organic chemistry."
-			reagent_state = SOLID
 			fluid_r = 180
 			fluid_g = 180
 			fluid_b = 180

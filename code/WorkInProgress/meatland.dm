@@ -154,7 +154,7 @@ var/list/meatland_fx_sounds = list('sound/ambience/meatzone_fx1.ogg','sound/ambi
 		R.add_reagent("vomit",5)
 
 	HasEntered(atom/A)
-		reagents.reaction(A, TOUCH, 2)
+		reagents.reaction(A, REAC_TOUCH, 2)
 		if (prob(50) && istype(A, /mob/living))
 			boutput(A, pick("<span style=\"color:red\">This stings!</span>", "<span style=\"color:red\">Oh jesus this burns!!</span>", "<span style=\"color:red\">ow ow OW OW OW OW</span>", "<span style=\"color:red\">oh cripes this isn't the fun kind of acid</span>", "<span style=\"color:red\">ow OW OUCH FUCK OW</span>"))
 			if (ishuman(A) && prob(80))

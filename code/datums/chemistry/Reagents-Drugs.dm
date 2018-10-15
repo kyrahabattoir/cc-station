@@ -10,7 +10,6 @@ datum
 			name = "bath salts"
 			id = "bathsalts"
 			description = "Sometimes packaged as a refreshing bathwater additive, these crystals are definitely not for human consumption."
-			reagent_state = SOLID
 			fluid_r = 250
 			fluid_g = 250
 			fluid_b = 250
@@ -116,8 +115,8 @@ datum
 				..(M)
 				return
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
-				if(method == INGEST)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
+				if(method == REAC_INGEST)
 					boutput(M, "<span style=\"color:red\"><font face='[pick("Curlz MT", "Comic Sans MS")]' size='[rand(4,6)]'>You feel FUCKED UP!!!!!!</font></span>")
 					M.playsound_local(M.loc, 'sound/effects/heartbeat.ogg', 50, 1)
 					M.emote("faint")
@@ -182,7 +181,7 @@ datum
 			name = "jenkem"
 			id = "jenkem"
 			description = "Jenkem is a prison drug made from fermenting feces in a solution of urine. Extremely disgusting."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 100
 			fluid_g = 70
 			fluid_b = 0
@@ -211,7 +210,6 @@ datum
 			name = "crank" // sort of a shitty version of methamphetamine that can be made by assistants
 			id = "crank"
 			description = "A cheap and dirty stimulant drug, commonly used by space biker gangs."
-			reagent_state = SOLID
 			fluid_r = 250
 			fluid_b = 0
 			fluid_g = 200
@@ -297,7 +295,7 @@ datum
 			name = "lysergic acid diethylamide"
 			id = "LSD"
 			description = "A highly potent hallucinogenic substance. Far out, maaaan."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 0
 			fluid_g = 0
 			fluid_b = 255
@@ -350,8 +348,8 @@ datum
 					boutput(M, "<b>You hear a voice in your head... <i>[pick(loggedsay)]</i></b>")
 				..(M)
 				return
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
-				if(method == INGEST)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
+				if(method == REAC_INGEST)
 					boutput(M, "<span style=\"color:red\"><font face='[pick("Arial", "Georgia", "Impact", "Mucida Console", "Symbol", "Tahoma", "Times New Roman", "Verdana")]' size='[rand(3,6)]'>Holy shit, you start tripping balls!</font></span>")
 				return
 
@@ -359,7 +357,7 @@ datum
 			name = "space drugs"
 			id = "space_drugs"
 			description = "An illegal chemical compound used as a cheap drug."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 200
 			fluid_g = 185
 			fluid_b = 230
@@ -392,7 +390,7 @@ datum
 			name = "tetrahydrocannabinol"
 			id = "THC"
 			description = "A mild psychoactive chemical extracted from the cannabis plant."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 0
 			fluid_g = 225
 			fluid_b = 0
@@ -425,7 +423,7 @@ datum
 			name = "nicotine"
 			id = "nicotine"
 			description = "A highly addictive stimulant extracted from the tobacco plant."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 0
 			fluid_g = 0
 			fluid_b = 0
@@ -520,7 +518,7 @@ datum
 			name = "psilocybin"
 			id = "psilocybin"
 			description = "A powerful hallucinogenic chemical produced by certain mushrooms."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 255
 			fluid_g = 230
 			fluid_b = 200
@@ -570,7 +568,6 @@ datum
 			name = "krokodil"
 			id = "krokodil"
 			description = "A sketchy homemade opiate, often used by disgruntled Cosmonauts."
-			reagent_state = SOLID
 			fluid_r = 0
 			fluid_g = 100
 			fluid_b = 180
@@ -647,7 +644,7 @@ datum
 			name = "cat drugs"
 			id = "catdrugs"
 			description = "Uhhh..."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 200
 			fluid_g = 200
 			fluid_b = 0
@@ -683,8 +680,8 @@ datum
 					M.playsound_local(M.loc, pick('sound/effects/cat.ogg', 'sound/effects/cat_hiss.ogg'), 50, 1)
 				..(M)
 				return
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
-				if(method == INGEST)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
+				if(method == REAC_INGEST)
 					M.playsound_local(M.loc, pick('sound/effects/cat.ogg', 'sound/effects/cat_hiss.ogg'), 50, 1)
 					boutput(M, "<span style=\"color:red\"><font face='[pick("Arial", "Georgia", "Impact", "Mucida Console", "Symbol", "Tahoma", "Times New Roman", "Verdana")]' size='[rand(3,6)]'>Holy shit, you start tripping balls!</font></span>")
 				return
@@ -693,7 +690,6 @@ datum
 			name = "triple meth"
 			id = "triplemeth"
 			description = "Hot damn ... i don't even ..."
-			reagent_state = SOLID
 			fluid_r = 250
 			fluid_g = 250
 			fluid_b = 250
@@ -780,7 +776,6 @@ datum
 			name = "methamphetamine"
 			id = "methamphetamine"
 			description = "Methamphetamine is a highly effective and dangerous stimulant drug."
-			reagent_state = SOLID
 			fluid_r = 250
 			fluid_g = 250
 			fluid_b = 250

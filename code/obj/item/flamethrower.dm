@@ -479,7 +479,7 @@ GETLINEEEEEEEEEEEEEEEEEEEEE
 		var/obj/blob/B = locate() in currentturf
 		if(B)
 			if (B.opacity)
-				part5.reagents.reaction(B, TOUCH, reagentperturf)
+				part5.reagents.reaction(B, REAC_TOUCH, reagentperturf)
 				part5.reagents.remove_any(reagentperturf)
 
 				halt = 1
@@ -530,10 +530,10 @@ GETLINEEEEEEEEEEEEEEEEEEEEE
 	if(!target.reagents)
 		target.create_reagents(50)
 	for(var/atom/A in target.contents)
-		copied.reaction(A, TOUCH)
+		copied.reaction(A)
 		if(A.reagents)
 			copied.copy_to(A.reagents, 1)
-	copied.reaction(target, TOUCH)
+	copied.reaction(target)
 	part5.reagents.trans_to(target, transferamt)
 	particleMaster.SpawnSystem(new /datum/particleSystem/chemspray(src.loc, target, part5.reagents))
 

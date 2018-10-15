@@ -16,7 +16,7 @@
 		R.add_reagent("cleaner",5)
 		R.add_reagent("water",5)
 	HasEntered(atom/A)
-		reagents.reaction(A, TOUCH, 2)
+		reagents.reaction(A, REAC_TOUCH, 2)
 		return
 
 /obj/tree1

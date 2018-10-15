@@ -5,7 +5,7 @@ datum/reagent/nitroglycerin // Yes, this is a bad idea.
 	name = "nitroglycerin"
 	id = "nitroglycerin"
 	description = "A miracle worker in treating cardiac failure. Very, very volatile and sensitive compound. Do not run while handling this. Do not throw this. Do not splash this."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 220
 	fluid_g = 220
 	fluid_b = 255
@@ -23,14 +23,14 @@ datum/reagent/nitroglycerin/proc/explode(var/turf/T, expl_reason, del_holder=1)
 
 datum/reagent/nitroglycerin/reaction_temperature(exposed_temperature, exposed_volume)
 	if (exposed_temperature <= T0C + 14)
-		reagent_state = SOLID
+		reagent_state = REAGENT_SOLID
 	else if (exposed_temperature <= T0C + 50)
-		if (reagent_state == SOLID)
+		if (reagent_state == REAGENT_SOLID)
 			var/delta = exposed_temperature - holder.last_temp
 			if (delta > 5 && prob(delta * 5))
 				explode(get_turf(holder.my_atom), "rapid thawing")
 				return
-		reagent_state = LIQUID
+		reagent_state = REAGENT_LIQUID
 	else
 		explode(get_turf(holder.my_atom), "temperature change to gaseous form")
 
@@ -44,9 +44,9 @@ datum/reagent/nitroglycerin/reaction_obj(var/obj/O, var/volume)
 	explode(get_turf(O), "splash on [key_name(O)]")
 
 datum/reagent/nitroglycerin/physical_shock(var/force)
-	if (reagent_state == SOLID && force >= 4 && prob(force - (14 - holder.total_temperature) * 0.1))
+	if (reagent_state == REAGENT_SOLID && force >= 4 && prob(force - (14 - holder.total_temperature) * 0.1))
 		explode(get_turf(holder.my_atom), "physical trauma (force [force], usr: [key_name(usr)]) in solid state")
-	else if (reagent_state == LIQUID && prob(force * 6))
+	else if (reagent_state == REAGENT_LIQUID && prob(force * 6))
 		explode(get_turf(holder.my_atom), "physical trauma (force [force], usr: [key_name(usr)]) in liquid state")
 
 datum/reagent/nitroglycerin/on_transfer(var/datum/reagents/source, var/datum/reagents/target, var/trans_volume)
@@ -63,7 +63,6 @@ datum/reagent/copper_nitrate
 	name = "copper nitrate"
 	id = "copper_nitrate"
 	description = "An intermediary which sublimates at 180 °C."
-	reagent_state = SOLID
 	fluid_r = 0
 	fluid_g = 0
 	fluid_b = 255
@@ -74,7 +73,7 @@ datum/reagent/glycerol
 	id = "glycerol"
 	description = "A sweet, non-toxic, viscous liquid. It is widely used as an additive."
 	taste = "sweet"
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 220
 	fluid_g = 220
 	fluid_b = 255
@@ -121,13 +120,13 @@ datum/reagent/anti_fart
 	name = "simethicone"
 	id = "anti_fart"
 	description = "This strange liquid seems to have no bubbles on the surface."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 
 datum/reagent/stimulants
 	name = "stimulants"
 	id = "stimulants"
 	description = "A dangerous chemical cocktail that allows for seemingly superhuman feats for a short time ..."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 120
 	fluid_g = 0
 	fluid_b = 140
@@ -266,7 +265,7 @@ datum/reagent/anima //This stuff is not done. Don't use it. Don't spoil it.
 	name = "anima"
 	id = "anima"
 	description = "Anima ... The animating force of the universe."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 120
 	fluid_g = 10
 	fluid_b = 190
@@ -302,7 +301,7 @@ datum/reagent/anima/on_remove()
 	if (ismob(A))
 		particleMaster.RemoveSystem(/datum/particleSystem/swoosh, A)
 
-datum/reagent/anima/reaction_mob(var/mob/target, var/method=TOUCH, var/volume_passed)
+datum/reagent/anima/reaction_mob(var/mob/target, var/method=REAC_TOUCH, var/volume_passed)
 	return
 
 datum/reagent/anima/reaction_obj(var/obj/O, var/volume)
@@ -336,7 +335,7 @@ datum/reagent/strange_reagent
 	name = "strange reagent"
 	id = "strange_reagent"
 	description = "A glowing green fluid highly reminiscent of nuclear waste."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 160
 	fluid_g = 232
 	fluid_b = 94
@@ -344,14 +343,14 @@ datum/reagent/strange_reagent
 	depletion_rate = 0.2
 	value = 28 // 3 3 22
 
-datum/reagent/strange_reagent/reaction_mob(var/mob/target, var/method=TOUCH, var/volume_passed)
+datum/reagent/strange_reagent/reaction_mob(var/mob/target, var/method=REAC_TOUCH, var/volume_passed)
 	src = null
 	if (!volume_passed)
 		return
 	var/mob/living/carbon/M = target
 	if (!istype(M))
 		return
-	if ((method == INGEST || (method == TOUCH && prob(25))) && (M.stat == 2))
+	if ((method == REAC_INGEST || (method == REAC_TOUCH && prob(25))) && (M.stat == 2))
 		var/came_back_wrong = 0
 		if (M.get_brute_damage() + M.get_burn_damage() >= 150)
 			came_back_wrong = 1
@@ -405,7 +404,7 @@ datum/reagent/carpet
 	name = "carpet"
 	id = "carpet"
 	description = "A covering of thick fabric used on floors. This type looks particularly gross."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 112
 	fluid_b = 69
 	fluid_g = 19
@@ -422,7 +421,7 @@ datum/reagent/fffoam
 	name = "firefighting foam"
 	id = "ff-foam"
 	description = "Carbon Tetrachloride is a foam used for fire suppression."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 195
 	fluid_g = 195
 	fluid_b = 175
@@ -462,9 +461,9 @@ datum/reagent/fffoam/reaction_obj(var/obj/item/O, var/volume)
 		if (O.burning)
 			O.burning = 0
 
-datum/reagent/fffoam/reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
+datum/reagent/fffoam/reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
 	src = null
-	if (method == TOUCH)
+	if (method == REAC_TOUCH)
 		var/mob/living/L = M
 		if (istype(L) && L.burning)
 			L.update_burning(-50)
@@ -473,7 +472,7 @@ datum/reagent/silicate
 	name = "silicate"
 	id = "silicate"
 	description = "A compound that can be used to reinforce glass."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 38
 	fluid_g = 128
 	fluid_b = 191
@@ -504,7 +503,7 @@ datum/reagent/fluorosurfactant
 	name = "fluorosurfactant"
 	id = "fluorosurfactant"
 	description = "A perfluoronated sulfonic acid that forms a foam when mixed with water."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 100
 	fluid_g = 255
 	fluid_b = 255
@@ -515,7 +514,7 @@ datum/reagent/lube
 	name = "space lube"
 	id = "lube"
 	description = "Lubricant is a substance introduced between two moving surfaces to reduce the friction and wear between them. giggity."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 0
 	fluid_b = 245
 	fluid_g = 255
@@ -552,7 +551,7 @@ datum/reagent/ammonia
 	name = "ammonia"
 	id = "ammonia"
 	description = "A caustic substance commonly used in fertilizer or household cleaners."
-	reagent_state = GAS
+	reagent_state = REAGENT_GAS
 	fluid_r = 255
 	fluid_g = 255
 	fluid_b = 180
@@ -570,7 +569,7 @@ datum/reagent/diethylamine
 	name = "diethylamine"
 	id = "diethylamine"
 	description = "A secondary amine, useful as a plant nutrient and as building block for other compounds."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 60
 	fluid_g = 50
 	fluid_b = 0
@@ -585,7 +584,7 @@ datum/reagent/acetone
 	name = "acetone"
 	id = "acetone"
 	description = "Pure 100% nail polish remover, also works as an industrial solvent."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 200
 	fluid_g = 200
 	fluid_b = 200
@@ -604,7 +603,7 @@ datum/reagent/stabiliser
 	name = "stabilising agent"
 	id = "stabiliser"
 	description = "A chemical that stabilises normally volatile compounds, preventing them from reacting immediately."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 255
 	fluid_g = 255
 	fluid_b = 0
@@ -615,7 +614,7 @@ datum/reagent/ectoplasm
 	name = "ectoplasm"
 	id = "ectoplasm"
 	description = "A bizarre gelatinous substance supposedly derived from ghosts."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 179
 	fluid_g = 225
 	fluid_b = 151
@@ -659,7 +658,6 @@ datum/reagent/space_fungus
 	name = "space fungus"
 	id = "space_fungus"
 	description = "Scrapings of some unknown fungus found growing on the station walls."
-	reagent_state = SOLID
 	fluid_r = 200
 	fluid_g = 125
 	fluid_b = 40
@@ -667,8 +665,8 @@ datum/reagent/space_fungus
 	value = 2
 	hygiene_value = -1
 
-datum/reagent/space_fungus/reaction_mob(var/mob/living/M, var/method=TOUCH, var/volume)
-	if (method == INGEST)
+datum/reagent/space_fungus/reaction_mob(var/mob/living/M, var/method=REAC_TOUCH, var/volume)
+	if (method == REAC_INGEST)
 		var/ranchance = rand(1,10)
 		if (ranchance == 1)
 			boutput(M, "<span style=\"color:red\">You feel very sick.</span>")
@@ -682,19 +680,19 @@ datum/reagent/cryostylane
 	name = "cryostylane"
 	id = "cryostylane"
 	description = "An incredibly cold substance.  Used in many high-demand cooling systems."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 0
 	fluid_g = 0
 	fluid_b = 220
 	transparency = 200
 	value = 3 // 1 1 1
 
-datum/reagent/cryostylane/reaction_mob(var/mob/M, var/method=TOUCH, var/volume_passed)
+datum/reagent/cryostylane/reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume_passed)
 	src = null
 	if (isobserver(M))
 		return
 
-	if (method == TOUCH)
+	if (method == REAC_TOUCH)
 		var/mob/living/L = M
 		if (istype(L) && L.burning)
 			L.set_burning(0)
@@ -737,7 +735,7 @@ datum/reagent/booster_enzyme
 	name = "booster enzyme"
 	id = "booster_enzyme"
 	description = "This booster enzyme helps the body to replicate beneficial chemicals."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 127
 	fluid_g = 160
 	fluid_b = 192
@@ -754,7 +752,7 @@ datum/reagent/space_cleaner // COGWERKS CHEM REVISION PROJECT. ethanol, ammonia 
 	name = "space cleaner"
 	id = "cleaner"
 	description = "A compound used to clean things. It has a sharp, unpleasant odor." // cogwerks- THIS IS NOT BLEACH ARGHHHH
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 110
 	fluid_g = 220
 	fluid_b = 220
@@ -770,14 +768,14 @@ datum/reagent/space_cleaner/reaction_obj(var/obj/O, var/volume)
 datum/reagent/space_cleaner/reaction_turf(var/turf/T, var/volume)
 	T.clean_forensic()
 
-datum/reagent/space_cleaner/reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
+datum/reagent/space_cleaner/reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
 	M.clean_forensic()
 
 datum/reagent/luminol // OOC. Weaseldood. oh that stuff from CSI, the glowy blue shit that they spray on blood
 	name = "luminol"
 	id = "luminol"
 	description = "A chemical that can detect trace amounts of blood."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 255
 	fluid_g = 255
 	fluid_b = 204
@@ -793,7 +791,7 @@ datum/reagent/oil
 	name = "oil"
 	id = "oil"
 	description = "A decent lubricant for machines. High in benzene, naptha and other hydrocarbons."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 0
 	fluid_g = 0
 	fluid_b = 0
@@ -813,9 +811,9 @@ datum/reagent/oil/reaction_temperature(exposed_temperature, exposed_volume)
 			holder.add_reagent("ash", round(src.volume/2), null)
 			holder.del_reagent(id)
 
-datum/reagent/oil/reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
+datum/reagent/oil/reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
 	if (volume)
-		if (method == TOUCH)
+		if (method == REAC_TOUCH)
 			if (istype(M, /mob/living/silicon/robot))
 				var/mob/living/silicon/robot/R = M
 				R.oil += volume * 2
@@ -847,7 +845,7 @@ datum/reagent/capulettium
 	name = "capulettium"
 	id = "capulettium"
 	description = "A rare drug that causes the user to appear dead for some time." //dead appearance handled in human.dm
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 100
 	fluid_g = 145
 	fluid_b = 110
@@ -886,7 +884,7 @@ datum/reagent/capulettium_plus
 	name = "capulettium plus"
 	id = "capulettium_plus"
 	description = "A rare and expensive drug that causes the user to appear dead for some time while they retain consciousness and vision." //dead appearance handled in human.dm
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 100
 	fluid_g = 145
 	fluid_b = 110
@@ -956,7 +954,7 @@ datum/reagent/denatured_enzyme
 	name = "denatured enzyme"
 	id = "denatured_enzyme"
 	description = "Heated beyond usefulness, this enzyme is now worthless."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 42
 	fluid_g = 36
 	fluid_b = 19
@@ -967,7 +965,7 @@ datum/reagent/eyeofnewt
 	name = "eye of newt"
 	id = "eyeofnewt"
 	description = "A potent alchemic ingredient."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 10
 	fluid_g = 10
 	fluid_b = 50
@@ -977,7 +975,7 @@ datum/reagent/toeoffrog
 	name = "toe of frog"
 	id = "toeoffrog"
 	description = "A potent alchemic ingredient."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 10
 	fluid_g = 50
 	fluid_b = 10
@@ -987,7 +985,7 @@ datum/reagent/woolofbat
 	name = "wool of bat"
 	id = "woolofbat"
 	description = "A potent alchemic ingredient."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 10
 	fluid_g = 10
 	fluid_b = 10
@@ -997,7 +995,7 @@ datum/reagent/tongueofdog
 	name = "tongue of dog"
 	id = "tongueofdog"
 	description = "A potent alchemic ingredient."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 50
 	fluid_g = 10
 	fluid_b = 10
@@ -1007,7 +1005,7 @@ datum/reagent/werewolf_serum_fake3
 	name = "Werewolf Serum Precursor Gamma"
 	id = "werewolf_part3"
 	description = "A direct precursor to a special, targeted mutagen."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 143
 	fluid_g = 35
 	fluid_b = 103
@@ -1017,7 +1015,7 @@ datum/reagent/werewolf_serum_fake4
 	name = "Imperfect Werewolf Serum"
 	id = "werewolf_part4"
 	description = "A flawed isomer of a special, targeted mutagen.  If only it were perfected..."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 240
 	fluid_g = 255
 	fluid_b = 240
@@ -1059,15 +1057,15 @@ datum/reagent/sewage
 	name = "sewage"
 	id = "sewage"
 	description = "Oh, wonderful."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 102
 	fluid_g = 102
 	fluid_b = 0
 	transparency = 255
 
-datum/reagent/sewage/reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
+datum/reagent/sewage/reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
 	src = null
-	if (method == INGEST)
+	if (method == REAC_INGEST)
 		boutput(M, "<span style=\"color:red\">Aaaagh! It tastes fucking horrendous!</span>")
 		spawn(10)
 			M.visible_message("<span style=\"color:red\">[M] pukes violently!</span>")
@@ -1094,14 +1092,13 @@ datum/reagent/ants
 	name = "ants"
 	id = "ants"
 	description = "A sample of a lost breed of Space Ants (formicidae bastardium tyrannus), they are well-known for ravaging the living shit out of pretty much anything."
-	reagent_state = SOLID
 	fluid_r = 153
 	fluid_g = 51
 	fluid_b = 51
 	transparency = 255
 	value = 2
 
-datum/reagent/ants/reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
+datum/reagent/ants/reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
 	src = null
 	if (ishuman(M))
 		boutput(M, "<span style=\"color:red\"><b>OH SHIT ANTS!!!!</b></span>")
@@ -1119,7 +1116,6 @@ datum/reagent/spiders
 	name = "spiders"
 	id = "spiders"
 	description = "A bunch of tiny little spiders, all crawling around in a big spidery blob."
-	reagent_state = SOLID
 	fluid_r = 22
 	fluid_g = 5
 	fluid_b = 5
@@ -1127,11 +1123,11 @@ datum/reagent/spiders
 	var/static/reaction_count = 0
 	value = 13 // 11 2
 
-datum/reagent/spiders/reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
+datum/reagent/spiders/reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
 	src = null
-	if (method == TOUCH)
+	if (method == REAC_TOUCH)
 		boutput(M, "<span style=\"color:red\"><b>OH [pick("SHIT", "FUCK", "GOD")] SPIDERS[pick("", " ON MY FACE", " EVERYWHERE")]![pick("", "!", "!!", "!!!", "!!!!")]</b></span>")
-	if (method == INGEST)
+	if (method == REAC_INGEST)
 		boutput(M, "<span style=\"color:red\"><b>OH [pick("SHIT", "FUCK", "GOD")] SPIDERS[pick("", " IN MY BLOOD", " IN MY VEINS")]![pick("", "!", "!!", "!!!", "!!!!")]</b></span>")
 	M.emote("scream")
 	random_brute_damage(M, 2)
@@ -1204,7 +1200,7 @@ datum/reagent/hugs
 	name = "pure hugs"
 	id = "hugs"
 	description = "Hugs, in liquid form.  Yes, the concept of a hug.  As a liquid.  This makes sense in the future."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 255
 	fluid_g = 151
 	fluid_b = 185
@@ -1215,7 +1211,7 @@ datum/reagent/love
 	name = "pure love"
 	id = "love"
 	description = "What is this emotion you humans call \"love?\"  Oh, it's this?  This is it? Huh, well okay then, thanks."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 255
 	fluid_g = 131
 	fluid_b = 165
@@ -1259,15 +1255,15 @@ datum/reagent/colors
 	name = "colorful reagent"
 	id = "colors"
 	description = "It's pure liquid colors. That's a thing now."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 255
 	fluid_g = 255
 	fluid_b = 255
 	transparency = 255
 	hygiene_value = -0.5
 
-datum/reagent/colors/reaction_mob(var/mob/M, var/method = TOUCH, var/volume)
-	if (method == INGEST)
+datum/reagent/colors/reaction_mob(var/mob/M, var/method = REAC_TOUCH, var/volume)
+	if (method == REAC_INGEST)
 		if (ishuman(M))
 			M:blood_color = "#[num2hex(rand(0, 255))][num2hex(rand(0, 255))][num2hex(rand(0, 255))]"
 	return
@@ -1284,7 +1280,7 @@ datum/reagent/shark_dna
 	name = "space shark DNA"
 	id = "shark_dna"
 	description = "How this was obtained is anyone's guess."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 160
 	fluid_g = 160
 	fluid_b = 255
@@ -1295,7 +1291,6 @@ datum/reagent/packing_peanuts
 	name = "packing peanuts"
 	id = "packing_peanuts"
 	description = "Those little white things you get when you order stuff in boxes. Not to be confused with ghost poop."
-	reagent_state = SOLID
 	fluid_r = 255
 	fluid_g = 255
 	fluid_b = 255
@@ -1306,7 +1301,6 @@ datum/reagent/wax
 	name = "wax"
 	id = "wax"
 	description = "A lipid compound used in candles and for making haunted sculptures to terrorize Scooby Doo."
-	reagent_state = SOLID
 	fluid_r = 250
 	fluid_g = 250
 	fluid_b = 250
@@ -1317,21 +1311,20 @@ datum/reagent/pollen
 	name = "pollenium"
 	id = "pollen"
 	description = "A pollen-derivative with a number of proteins and other nutrients vital to space bee health. Not palatable for humans, but at least Russian dissidents have never been killed with it."
-	reagent_state = SOLID
 	fluid_r = 191
 	fluid_g = 191
 	fluid_b = 61
 	transparency = 255
 	value = 3
 
-datum/reagent/pollen/reaction_mob(var/mob/living/M, var/method=TOUCH, var/volume_passed)
+datum/reagent/pollen/reaction_mob(var/mob/living/M, var/method=REAC_TOUCH, var/volume_passed)
 	src = null
 	if(!volume_passed)
 		return
 	if(!ishuman(M))
 		return
 
-	if(method == INGEST)
+	if(method == REAC_INGEST)
 		var/mob/living/carbon/human/H = M
 		if (H.bioHolder && H.bioHolder.HasEffect("bee"))
 			boutput(M, "<span style=\"color:blue\">That tasted amazing!</span>")
@@ -1344,7 +1337,6 @@ datum/reagent/martian_flesh
 	name = "martian flesh"
 	id = "martian_flesh"
 	description = "Uhhhh...."
-	reagent_state = SOLID
 	fluid_r = 180
 	fluid_g = 225
 	fluid_b = 175
@@ -1355,7 +1347,7 @@ datum/reagent/black_goop
 	name = "gross black goop"
 	id = "black_goop"
 	description = "You're not even sure what this is. It's pretty grody."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 0
 	fluid_g = 0
 	fluid_b = 0
@@ -1365,7 +1357,6 @@ datum/reagent/paper
 	name = "paper"
 	id = "paper"
 	description = "Little flecks of paper, all torn up."
-	reagent_state = SOLID
 	fluid_r = 255
 	fluid_g = 255
 	fluid_b = 255
@@ -1382,7 +1373,7 @@ datum/reagent/fliptonium
 	name = "fliptonium"
 	id = "fliptonium"
 	description = "Do some flips!"
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 209
 	fluid_g = 31
 	fluid_b = 117
@@ -1513,7 +1504,6 @@ datum/reagent/fliptonium/glowing_fliptonium
 	name = "glowing fliptonium"
 	id = "glowing_fliptonium"
 	description = "There's something kinda weird about this stuff. Something off. Something... spooky."
-	reagent_state = LIQUID
 	fluid_r = 158
 	fluid_g = 16
 	fluid_b = 94
@@ -1582,8 +1572,8 @@ datum/reagent/fliptonium/glowing_fliptonium/on_mob_life(var/mob/M)
 	if (M.weakened) M.weakened-=3
 	if (M.sleeping) M.sleeping = 0
 
-datum/reagent/fliptonium/glowing_fliptonium/reaction_mob(var/mob/M, var/method = TOUCH)
-	if (method != TOUCH)
+datum/reagent/fliptonium/glowing_fliptonium/reaction_mob(var/mob/M, var/method = REAC_TOUCH)
+	if (method != REAC_TOUCH)
 		return
 
 	var/dir_temp = pick("L", "R")
@@ -1615,7 +1605,7 @@ datum/reagent/diluted_fliptonium
 	name = "diluted fliptonium"
 	id = "diluted_fliptonium"
 	description = "You're a rude dude with a rude 'tude."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 245
 	fluid_g = 12
 	fluid_b = 74
@@ -1644,7 +1634,7 @@ datum/reagent/fartonium // :effort:
 	name = "fartonium"
 	id = "fartonium"
 	description = "Oh god it never ends, IT NEVER STOPS!"
-	reagent_state = GAS
+	reagent_state = REAGENT_GAS
 	fluid_r = 247
 	fluid_g = 122
 	fluid_b = 32
@@ -1679,7 +1669,7 @@ datum/reagent/flaptonium
 	transparency = 255
 	var/static/reaction_count = 0
 
-datum/reagent/flaptonium/reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
+datum/reagent/flaptonium/reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
 	var/turf/T = get_turf(M)
 	createSomeBirds(T, volume)
 
@@ -1712,7 +1702,6 @@ datum/reagent/glitter
 	name = "glitter"
 	id = "glitter"
 	description = "Fabulous!"
-	reagent_state = SOLID
 	fluid_r = 230
 	fluid_g = 230
 	fluid_b = 240
@@ -1776,7 +1765,6 @@ datum/reagent/glitter_harmless // no recipe, doesn't do any damage
 	name = "glitter"
 	id = "glitter_harmless"
 	description = "Fabulous!"
-	reagent_state = SOLID
 	fluid_r = 230
 	fluid_g = 230
 	fluid_b = 240
@@ -1828,7 +1816,7 @@ datum/reagent/green_goop // lets you see ghosts while it's in you.  exists only 
 	fluid_g =  255
 	fluid_b = 1
 	description = "A foul substance that seems to quiver oddly near certain spots."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	depletion_rate = 0.8
 	value = 3
 
@@ -1836,7 +1824,7 @@ datum/reagent/voltagen
 	name = "voltagen"
 	id = "voltagen"
 	description = "Electricity in pure liquid form. However that works."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 0
 	fluid_g = 128
 	fluid_b = 255
@@ -1859,8 +1847,8 @@ datum/reagent/voltagen/grenade_effects(var/obj/grenade, var/atom/A)
 			multiplier /= 2
 		arcFlash(grenade, A, 0)
 
-datum/reagent/voltagen/reaction_mob(var/mob/M, var/method = TOUCH)
-	if (method == TOUCH && volume >= 5)
+datum/reagent/voltagen/reaction_mob(var/mob/M, var/method = REAC_TOUCH)
+	if (method == REAC_TOUCH && volume >= 5)
 		M.shock(src.holder.my_atom, min(7500 * multiplier, volume * 100 * multiplier), "chest", 1, 1)
 
 datum/reagent/voltagen/reaction_temperature(exposed_temperature, exposed_volume)
@@ -1941,7 +1929,7 @@ datum/reagent/weedkiller
 	name = "atrazine"
 	id = "weedkiller"
 	description = "A herbicidal compound used for destroying unwanted plants."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 51
 	fluid_g = 0
 	fluid_b = 102
@@ -1966,7 +1954,6 @@ datum/reagent/ash
 	name = "ash"
 	id = "ash"
 	description = "Ashes to ashes, dust to dust."
-	reagent_state = SOLID
 	fluid_r = 0
 	fluid_g = 0
 	fluid_b = 0
@@ -1981,7 +1968,6 @@ datum/reagent/potash
 	name = "potash"
 	id = "potash"
 	description = "A white crystalline compound, useful for boosting crop yields."
-	reagent_state = SOLID
 	fluid_r = 240
 	fluid_g = 240
 	fluid_b = 240
@@ -2008,7 +1994,6 @@ datum/reagent/plant_nutrients
 	name = "saltpetre"
 	id = "saltpetre"
 	description = "Potassium nitrate, commonly used for fertilizer, cured meats and fireworks production."
-	reagent_state = SOLID
 	fluid_r = 240
 	fluid_g = 240
 	fluid_b = 240
@@ -2032,7 +2017,7 @@ datum/reagent/blood
 	name = "blood"
 	id = "blood"
 	description = "A substance found in many living creatures."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 200
 	fluid_b = 0
 	fluid_g = 0
@@ -2059,13 +2044,13 @@ datum/reagent/blood/reaction_turf(var/turf/T, var/volume)
 			playsound(T, "sound/effects/splat.ogg", 50, 1)
 			new /obj/decal/cleanable/blood(T)
 
-datum/reagent/blood/reaction_mob(var/mob/M, var/method=TOUCH, var/volume_passed)
+datum/reagent/blood/reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume_passed)
 	src = null
 	if (!volume_passed)
 		return
 	if (!ishuman(M))
 		return
-	if (method == INGEST)
+	if (method == REAC_INGEST)
 		if (M.mind)
 			if (isvampire(M))
 				var/datum/abilityHolder/vampire/V = M.get_ability_holder(/datum/abilityHolder/vampire)
@@ -2142,7 +2127,7 @@ datum/reagent/vomit
 	name = "vomit"
 	id = "vomit"
 	description = "Looks like someone lost their lunch. And then collected it. Yuck."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 255
 	fluid_b = 80
 	fluid_g = 255
@@ -2160,7 +2145,7 @@ datum/reagent/gvomit
 	name = "green vomit"
 	id = "gvomit"
 	description = "Whoa, that can't be natural. That's horrible."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 120
 	fluid_b = 120
 	fluid_g = 255
@@ -2179,7 +2164,7 @@ datum/reagent/urine
 	name = "urine"
 	id = "urine"
 	description = "Ewww."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 233
 	fluid_g = 216
 	fluid_b = 0
@@ -2208,7 +2193,7 @@ datum/reagent/triplepiss
 	name = "triplepiss"
 	id = "triplepiss"
 	description = "Ewwwwwwwww."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 133
 	fluid_g = 116
 	fluid_b = 0
@@ -2226,7 +2211,6 @@ datum/reagent/poo
 	name = "compost"
 	id = "poo"
 	description = "Raw fertilizer used for gardening."
-	reagent_state = SOLID
 	fluid_r = 100
 	fluid_g = 55
 	fluid_b = 0
@@ -2241,7 +2225,7 @@ datum/reagent/big_bang_precursor
 	name = "stable bose-einstein macro-condensate"
 	id = "big_bang_precursor"
 	description = "This is a strange viscous fluid that seems to have the properties of both a liquid and a gas."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 200
 	fluid_g = 190
 	fluid_b = 230
@@ -2251,7 +2235,7 @@ datum/reagent/big_bang
 	name = "quark-gluon plasma"
 	id = "big_bang"
 	description = "Its... beautiful!"
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 255
 	fluid_g = 240
 	fluid_b = 250
@@ -2261,7 +2245,7 @@ datum/reagent/big_bang/reaction_turf(var/turf/T, var_volume)
 	src = null
 	T.ex_act(1)
 
-datum/reagent/big_bang/reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
+datum/reagent/big_bang/reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
 	src = null
 	M.ex_act(1)
 
@@ -2279,7 +2263,7 @@ datum/reagent/cyclopentanol
 	name = "cyclopentanol"
 	id = "cyclopentanol"
 	description = "A substance not particularly worth noting."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 10
 	fluid_g = 254
 	fluid_b = 254
@@ -2289,7 +2273,7 @@ datum/reagent/glue
 	name = "glue"
 	id = "glue"
 	description = "Hopefully you weren't the kind of kid to eat this stuff."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 250
 	fluid_g = 250
 	fluid_b = 250
@@ -2299,7 +2283,6 @@ datum/reagent/magnesium_chloride
 	name = "magnesium chloride"
 	id = "magnesium_chloride"
 	description = "A white powder that's capable of binding a high amount of ammonia while on room temperature."
-	reagent_state = SOLID
 	fluid_r = 255
 	fluid_g = 255
 	fluid_b = 255
@@ -2309,7 +2292,6 @@ datum/reagent/mg_nh3_cl
 	name = "magnesium-ammonium chloride"
 	id = "mg_nh3_cl"
 	description = "A white powder binding a high amount of ammonia. The ammonia is released when the mixture is heated above 150 degrees celsius."
-	reagent_state = SOLID
 	fluid_r = 255
 	fluid_g = 255
 	fluid_b = 255
@@ -2319,14 +2301,14 @@ datum/reagent/reversium
 	name = "reversium"
 	id = "reversium"
 	description = "A chemical element."
-	reagent_state = LIQUID
+	reagent_state = REAGENT_LIQUID
 	fluid_r = 255
 	fluid_g = 250
 	fluid_b = 160
 	transparency = 155
 	data = null
 
-datum/reagent/reversium/reaction_mob(var/mob/M, var/method=TOUCH, var/volume_passed)
+datum/reagent/reversium/reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume_passed)
 	src = null
 	if(!volume_passed)
 		return

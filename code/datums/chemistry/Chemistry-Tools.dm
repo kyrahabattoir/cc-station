@@ -125,9 +125,9 @@
 				var/mob/living/MOB = target
 				logTheThing("combat", user, MOB, "splashes [src] onto %target% [log_reagents(src)] at [log_loc(MOB)].") // Added location (Convair880).
 				if (src.splash_all_contents)
-					src.reagents.reaction(target,TOUCH)
+					src.reagents.reaction(target)
 				else
-					src.reagents.reaction(target, TOUCH, src.amount_per_transfer_from_this)
+					src.reagents.reaction(target, REAC_TOUCH, src.amount_per_transfer_from_this)
 				spawn(5)
 					if (src.splash_all_contents) src.reagents.clear_reagents()
 					else src.reagents.remove_any(src.amount_per_transfer_from_this)
@@ -180,8 +180,8 @@
 
 			boutput(user, "<span style=\"color:blue\">You [src.splash_all_contents ? "splash all of" : "apply [amount_per_transfer_from_this] units of"] the solution onto [target].</span>")
 			logTheThing("combat", user, target, "splashes [src] onto %target% [log_reagents(src)] at [log_loc(user)].") // Added location (Convair880).
-			if (src.splash_all_contents) src.reagents.reaction(target,TOUCH)
-			else src.reagents.reaction(target, TOUCH, src.amount_per_transfer_from_this)
+			if (src.splash_all_contents) src.reagents.reaction(target)
+			else src.reagents.reaction(target, REAC_TOUCH, src.amount_per_transfer_from_this)
 			spawn(5)
 				if (src.splash_all_contents) src.reagents.clear_reagents()
 				else src.reagents.remove_any(src.amount_per_transfer_from_this)
@@ -273,7 +273,7 @@
 	on_spin_emote(var/mob/living/carbon/human/user as mob)
 		if (src.is_open_container() && src.reagents && src.reagents.total_volume > 0)
 			user.visible_message("<span style=\"color:red\"><b>[user] spills the contents of [src] all over [him_or_her(user)]self!</b></span>")
-			src.reagents.reaction(get_turf(user), TOUCH)
+			src.reagents.reaction(get_turf(user))
 			src.reagents.clear_reagents()
 
 	is_open_container()

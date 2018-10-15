@@ -157,7 +157,7 @@
 					src.reagents.add_reagent("[venom1]", 2) // doing this instead of directly adding reagents to M should give people the correct messages
 					src.reagents.add_reagent("[venom2]", 2)
 					if (src.reacting)
-						src.reagents.reaction(M, INGEST)
+						src.reagents.reaction(M, REAC_INGEST)
 					else
 						src.reagents.trans_to(M, 4)
 				else if(issilicon(M))
@@ -180,7 +180,7 @@
 					src.reagents.add_reagent("[venom1]", 5) // doing this instead of directly adding reagents to M should give people the correct messages
 					src.reagents.add_reagent("[venom2]", 5)
 					if (src.reacting)
-						src.reagents.reaction(M, INGEST)
+						src.reagents.reaction(M, REAC_INGEST)
 					else
 						src.reagents.trans_to(M, 10)
 					random_brute_damage(M, rand(2,5))
@@ -265,7 +265,7 @@
 						src.reagents.add_reagent("[venom1]", 2) // doing this instead of directly adding reagents to M should give people the correct messages
 						src.reagents.add_reagent("[venom2]", 2)
 						if (src.reacting)
-							src.reagents.reaction(M, INGEST)
+							src.reagents.reaction(M, REAC_INGEST)
 						else
 							src.reagents.trans_to(M, 4)
 					else if(issilicon(M))

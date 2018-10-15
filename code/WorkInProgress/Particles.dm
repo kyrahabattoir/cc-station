@@ -1254,7 +1254,7 @@ var/datum/particleMaster/particleMaster = new
 			if(!can_line(location, A, 4)) continue
 
 			if(!istype(A,/obj/particle) && !istype(A,/obj/effects/foam))
-				copied.reaction(A, TOUCH)
+				copied.reaction(A)
 
 			if(istype(A, /mob/living))
 				if(hasvar(A,"wear_mask"))

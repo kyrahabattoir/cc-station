@@ -5,12 +5,13 @@ datum
 	reagent
 		combustible/
 			name = "fire stuff"
+			reagent_state = REAGENT_SOLID
 
 		combustible/napalm //This is used for the smoke/napalm reaction.
 			name = "phlogiston"
 			id = "napalm"
 			description = "It appears to be liquid fire."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 250
 			fluid_b = 0
 			fluid_g = 175
@@ -32,7 +33,7 @@ datum
 				fireflash_sm(T, radius, rand(temp_fire - temp_deviance, temp_fire + temp_deviance), 500)
 				return
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume_passed)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume_passed)
 				if (!holder) //Wire: Fix for Cannot read null.total_temperature
 					return
 				if(holder.total_temperature <= T0C - 50) return
@@ -41,7 +42,7 @@ datum
 				var/mob/living/L = M
 				if(istype(L))
 					L.update_burning(MB)
-				if (method == INGEST)
+				if (method == REAC_INGEST)
 					M.TakeDamage("All", 0, min(max(15, volume_passed * 3), 45), 0, DAMAGE_BURN)
 					boutput(M, "<span style=\"color:red\">It burns!</span>")
 					M.emote("scream")
@@ -77,7 +78,7 @@ datum
 			name = "napalm"
 			id = "napalm_goo"
 			description = "A highly flammable jellied fuel."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 200
 			fluid_b = 50
 			fluid_g = 100
@@ -101,9 +102,9 @@ datum
 				T.reagents.add_reagent("napalm", volume, null)
 				return
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
 				src = null
-				if(method == TOUCH)
+				if(method == REAC_TOUCH)
 					var/mob/living/L = M
 					if(istype(L) && L.burning)
 						L.update_burning(70)
@@ -126,7 +127,7 @@ datum
 			name = "kerosene"
 			id = "kerosene"
 			description = "A substance widely applied as fuel for aviation vehicles and solvent for metal alloys (when heated)."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 250
 			fluid_g = 250
 			fluid_b = 250
@@ -164,7 +165,6 @@ datum
 			name = "thermite"
 			id = "thermite"
 			description = "Thermite burns at an incredibly high temperature. Can be used to melt walls."
-			reagent_state = SOLID
 			fluid_r = 85
 			fluid_g = 0
 			fluid_b = 0
@@ -189,9 +189,9 @@ datum
 
 				return
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
 				src = null
-				if(method == TOUCH)
+				if(method == REAC_TOUCH)
 					var/mob/living/L = M
 					if(istype(L) && L.burning)
 						L.set_burning(100)
@@ -213,7 +213,6 @@ datum
 			name = "smoke powder"
 			id = "smokepowder"
 			description = "Produces smoke when heated."
-			reagent_state = SOLID
 			fluid_r = 200
 			fluid_g = 200
 			fluid_b = 200
@@ -259,7 +258,6 @@ datum
 			name = "hootingium"
 			id = "sonicpowder"
 			description = "Produces a loud bang when heated."
-			reagent_state = SOLID
 			fluid_r = 200
 			fluid_g = 200
 			fluid_b = 200
@@ -330,7 +328,6 @@ datum
 			name = "flash powder"
 			id = "flashpowder"
 			description = "Produces a bright flash of light when heated."
-			reagent_state = SOLID
 			fluid_r = 200
 			fluid_g = 200
 			fluid_b = 200
@@ -412,7 +409,7 @@ datum
 			name = "chlorine triflouride"
 			id = "infernite"
 			description = "An extremely volatile substance, handle with the utmost care."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 255
 			fluid_g = 200
 			fluid_b = 200
@@ -453,13 +450,13 @@ datum
 				var/radius = min((volume - 3) * 0.15, 3)
 				fireflash_sm(T, radius, 4500 + volume * 500, 350)
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
 				src = null
-				if(method == TOUCH || method == INGEST)
+				if(method == REAC_TOUCH || method == REAC_INGEST)
 					var/mob/living/L = M
 					if(istype(L))
 						L.update_burning(50)
-				if (method == INGEST)
+				if (method == REAC_INGEST)
 					M.TakeDamage("All", 0, min(max(30, volume * 6), 90), 0, DAMAGE_BURN)
 					boutput(M, "<span style=\"color:red\">It burns!</span>")
 					M.emote("scream")
@@ -476,7 +473,7 @@ datum
 			name = "FOOF"
 			id = "foof"
 			description = "Dioxygen Diflouride, a ludicrously powerful oxidizer. Run away."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 255
 			fluid_g = 200
 			fluid_b = 200
@@ -514,13 +511,13 @@ datum
 								T.ex_act(2)
 				return
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
 				src = null
-				if(method == TOUCH || method == INGEST)
+				if(method == REAC_TOUCH || method == REAC_INGEST)
 					var/mob/living/L = M
 					if(istype(L))
 						L.update_burning(90)
-				if (method == INGEST)
+				if (method == REAC_INGEST)
 					M.TakeDamage("All", 0, min(max(30, volume * 6), 90), 0, DAMAGE_BURN)
 					boutput(M, "<span style=\"color:red\">It burns!</span>")
 					M.emote("scream")
@@ -537,7 +534,7 @@ datum
 			name = "pyrosium"
 			id = "thalmerite"
 			description = "This strange compound seems to slowly heat up all by itself. Very sticky."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 100
 			fluid_g = 200
 			fluid_b = 150
@@ -567,7 +564,7 @@ datum
 			name = "argine"
 			id = "argine"
 			description = "This strange material seems to ignite & explode on low temperatures."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 50
 			fluid_g = 200
 			fluid_b = 200
@@ -590,7 +587,7 @@ datum
 			name = "sorium"
 			id = "sorium"
 			description = "Flammable material that causes a powerful shockwave on detonation."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 90
 			fluid_g = 100
 			fluid_b = 200
@@ -621,14 +618,14 @@ datum
 				T.reagents.add_reagent(us.id, 5, null)
 				return
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
 				return
 
 		combustible/liquiddarkmatter
 			name = "liquid dark matter"
 			id = "ldmatter"
 			description = "What has science done ... It's concentrated dark matter in liquid form. And i thought you needed plutonic quarks for that."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 33
 			fluid_g = 0
 			fluid_b = 33
@@ -652,14 +649,14 @@ datum
 				T.reagents.add_reagent(us.id, 5, null)
 				return
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
 				return
 
 		combustible/something
 			name = "something"
 			id = "something"
 			description = "What is this thing?  None of the normal tests have been able to determine what exactly this is, just that it is benign."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			fluid_r = 100
 			fluid_g = 100
 			fluid_b = 100
@@ -669,7 +666,7 @@ datum
 			name = "welding fuel"
 			id = "fuel"
 			description = "A highly flammable blend of basic hydrocarbons, mostly Acetylene. Useful for both welding and organic chemistry, and can be fortified into a heavier oil."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			volatility = 1
 			fluid_r = 0
 			fluid_g = 0
@@ -718,9 +715,9 @@ datum
 				T.reagents.add_reagent("fuel", volume, null)
 				return
 
-			reaction_mob(var/mob/M, var/method=TOUCH, var/volume)
+			reaction_mob(var/mob/M, var/method=REAC_TOUCH, var/volume)
 				src = null
-				if(method == TOUCH)
+				if(method == REAC_TOUCH)
 					var/mob/living/L = M
 					if(istype(L) && L.burning)
 						L.update_burning(30)
@@ -740,7 +737,7 @@ datum
 				name = "epichlorohydrin"
 				id = "epichlorohydrin"
 				description = "A highly reactive, flammable, mildly toxic compound."
-				reagent_state = LIQUID
+				reagent_state = REAGENT_LIQUID
 				fluid_r = 220
 				fluid_g = 220
 				fluid_b = 255
@@ -758,7 +755,6 @@ datum
 			name = "black powder"
 			id = "blackpowder"
 			description = "A dangerous explosive material."
-			reagent_state = SOLID
 			fluid_r = 0
 			fluid_g = 0
 			fluid_b = 0
@@ -827,7 +823,7 @@ datum
 			name = "Nitrogen Triiodide"
 			id = "nitrotri_parent"
 			description = "A chemical that is stable when in liquid form, but becomes extremely volatile when dry."
-			reagent_state = LIQUID
+			reagent_state = REAGENT_LIQUID
 			penetrates_skin = 1
 			volatility = 1
 			fluid_r = 48
@@ -914,7 +910,6 @@ datum
 			volatility = 2.5
 			description = "A chemical that is stable when in liquid form, but becomes extremely volatile when dry. This is dry. Uh oh."
 			is_dry = 1
-			reagent_state = SOLID
 
 			New()
 				spawn(10 * rand(11,600)) //At least 11 seconds, at most 10 minutes

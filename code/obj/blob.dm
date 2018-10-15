@@ -868,7 +868,7 @@
 	on_hit(atom/hit, angle, var/obj/projectile/O)
 		..()
 		if (O.reagents)
-			O.reagents.reaction(hit, TOUCH)
+			O.reagents.reaction(hit)
 			if (ismob(hit))
 				O.reagents.trans_to(hit, 15)
 		if (ismob(hit))

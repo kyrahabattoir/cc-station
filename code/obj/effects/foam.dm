@@ -89,7 +89,7 @@
 			if(istype(A,/mob/living))
 				var/mob/living/L = A
 				logTheThing("combat", L, null, "is hit by chemical foam [log_reagents(src)] at [log_loc(src)].")
-			reagents.reaction(A, TOUCH, 5)
+			reagents.reaction(A, REAC_TOUCH, 5)
 	pool(src)
 
 /obj/effects/foam/proc/process()
@@ -161,7 +161,7 @@
 			if(amount < 25)
 				M.reagents.add_reagent(reagent_id, min(round(amount / 2),15))
 		logTheThing("combat", M, null, "is hit by chemical foam [log_reagents(src)] at [log_loc(src)].")
-		reagents.reaction(M, TOUCH, 5)
+		reagents.reaction(M, REAC_TOUCH, 5)
 
 		if(!istype(src.loc, /turf/space))
 			M.pulling = null

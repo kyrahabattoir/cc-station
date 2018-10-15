@@ -1,13 +1,5 @@
 // SPDX-License-Identifier: CC-BY-NC-SA-3.0
 
-#define TOUCH 1
-#define INGEST 2
-#define INJECT 3
-#define MAX_TEMP_REACTION_VARIANCE 8
-
-///////////////////////////////////////////////////////////////////////////////////
-
-
 //If i somehow could add something that sets the temp of all reagents to the average and calls their temp reactions
 //in the update_total_temp , without causing an endless loop - i could have the reagents cool each other down etc.
 //Right now only cryostylane does that kinda stuff because its coded that way. So yup. Right now you have to code it.
@@ -431,7 +423,7 @@ datum/reagents/proc/grenade_effects(var/obj/grenade, var/atom/A)
 		R.grenade_effects(grenade, A)
 
 
-datum/reagents/proc/reaction(var/atom/A, var/method=TOUCH, var/react_volume)
+datum/reagents/proc/reaction(var/atom/A, var/method=REAC_TOUCH, var/react_volume)
 	if (src.total_volume <= 0)
 		return
 	if (isobserver(A)) // errrr
@@ -445,7 +437,7 @@ datum/reagents/proc/reaction(var/atom/A, var/method=TOUCH, var/react_volume)
 		var/mob/M = A
 		M.on_reagent_react(src, method, react_volume)
 	switch(method)
-		if(TOUCH)
+		if(REAC_TOUCH)
 			var/mob/living/carbon/human/H = A
 			if(istype(H))
 				if(total_temperature > H.base_body_temp + (H.temp_tolerance * 4) && !H.is_heat_resistant())
@@ -466,7 +458,7 @@ datum/reagents/proc/reaction(var/atom/A, var/method=TOUCH, var/react_volume)
 				// drsingh attempted fix for Cannot read null.volume, but this one makes no sense. should have been protected already
 				if(current_reagent != null) // Don't put spawn(0) in the below three lines it breaks foam! - IM
 					if(ismob(A) && !isobserver(A))
-						current_reagent.reaction_mob(A, TOUCH, current_reagent.volume*volume_fraction)
+						current_reagent.reaction_mob(A, REAC_TOUCH, current_reagent.volume*volume_fraction)
 					if(isturf(A))
 						current_reagent.reaction_turf(A, current_reagent.volume*volume_fraction)
 					if(isobj(A))
@@ -479,7 +471,7 @@ datum/reagents/proc/reaction(var/atom/A, var/method=TOUCH, var/react_volume)
 						if (istype(A, /obj/blob))
 							current_reagent.reaction_blob(A, current_reagent.volume*volume_fraction)
 
-		if(INGEST)
+		if(REAC_INGEST)
 			if(ismob(A) && !isobserver(A))
 				if(istype(A,/mob/living/carbon/))
 					var/mob/living/carbon/C = A
@@ -502,7 +494,7 @@ datum/reagents/proc/reaction(var/atom/A, var/method=TOUCH, var/react_volume)
 					if(ismob(A) && !isobserver(A))
 						//spawn(0)
 							//if (current_reagent) //This is in a spawn. Between our first check and the execution, this may be bad.
-						current_reagent.reaction_mob(A, INGEST, current_reagent.volume*volume_fraction)
+						current_reagent.reaction_mob(A, REAC_INGEST, current_reagent.volume*volume_fraction)
 					if(isturf(A))
 						//spawn(0)
 							//if (current_reagent)

@@ -144,7 +144,7 @@
 				M.visible_message("<span style=\"color:blue\">[M] takes a bite of [src]!</span>",\
 				"<span style=\"color:blue\">You take a bite of [src]!</span>")
 				if (reagents && reagents.total_volume)
-					reagents.reaction(M, INGEST)
+					reagents.reaction(M, REAC_INGEST)
 					reagents.trans_to(M, reagents.total_volume/(src.amount ? src.amount : 1))
 				src.amount--
 				M.nutrition += src.heal_amt * 10
@@ -200,7 +200,7 @@
 				logTheThing("combat", user, M, "feeds %target% [src] [log_reagents(src)] at [log_loc(user)].")
 
 				if (reagents && reagents.total_volume)
-					reagents.reaction(M, INGEST)
+					reagents.reaction(M, REAC_INGEST)
 					reagents.trans_to(M, reagents.total_volume)
 				on_bite(M)
 				src.amount--
@@ -260,7 +260,7 @@
 	on_spin_emote(var/mob/living/carbon/human/user as mob)
 		if (src.reagents && src.reagents.total_volume > 0)
 			user.visible_message("<span style=\"color:red\"><b>[user] spills the contents of [src] all over [him_or_her(user)]self!</b></span>")
-			src.reagents.reaction(get_turf(user), TOUCH)
+			src.reagents.reaction(get_turf(user))
 			src.reagents.clear_reagents()
 
 	attack_self(mob/user as mob)
@@ -313,7 +313,7 @@
 */
 			if (src.reagents.total_volume)
 				logTheThing("combat", user, M, "[user == M ? "takes a sip from" : "makes %target% drink from"] [src] [log_reagents(src)] at [log_loc(user)].")
-				src.reagents.reaction(M, INGEST, gulp_size)
+				src.reagents.reaction(M, REAC_INGEST, gulp_size)
 				spawn (5)
 					if (src && src.reagents && M && M.reagents)
 						src.reagents.trans_to(M, min(reagents.total_volume, gulp_size))
@@ -478,7 +478,7 @@
 				bottle_image.layer = FLOAT_LAYER
 				for (var/current_id in reagents.reagent_list)
 					var/datum/reagent/current_reagent = reagents.reagent_list[current_id]
-					if (current_reagent.reagent_state !=LIQUID) continue
+					if (current_reagent.reagent_state != REAGENT_LIQUID) continue
 					bottle_image.color = rgb(current_reagent.fluid_r, current_reagent.fluid_g, current_reagent.fluid_b)
 					bottle_image.alpha = current_reagent.transparency
 					src.overlays += bottle_image
@@ -600,7 +600,7 @@
 				if (user.bioHolder.HasEffect("clumsy") && prob(50))
 					user.visible_message("[user] adds [W] to [src].<br><span style=\"color:red\">[src] is too full and spills!</span>",\
 					"You add [W] to [src].<br><span style=\"color:red\">[src] is too full and spills!</span>")
-					src.reagents.reaction(get_turf(user), TOUCH, src.reagents.total_volume / 2)
+					src.reagents.reaction(get_turf(user), REAC_TOUCH, src.reagents.total_volume / 2)
 					src.reagents.add_reagent("ice", 5, null, (T0C - 1))
 					qdel(W)
 					return

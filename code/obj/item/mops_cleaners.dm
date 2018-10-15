@@ -227,7 +227,7 @@ WET FLOOR SIGN
 				boutput(DUDE, "<span style=\"color:red\">Your headgear protects you! PHEW!!!</span>")
 				spawn(1) src.reagents.clear_reagents()
 				return
-			src.reagents.reaction(DUDE, TOUCH)
+			src.reagents.reaction(DUDE)
 			src.reagents.trans_to(DUDE, reagents.total_volume)
 			spawn(1) src.reagents.clear_reagents()
 	..()
