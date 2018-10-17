@@ -283,6 +283,7 @@ var/datum/preMapLoad/preMapLoad = new
 #include "code\datums\chemistry\Reagents-Drugs.dm"
 #include "code\datums\chemistry\Reagents-ExplosiveFire.dm"
 #include "code\datums\chemistry\Reagents-FoodDrink.dm"
+#include "code\datums\chemistry\Reagents-Fuels.dm"
 #include "code\datums\chemistry\Reagents-Medical.dm"
 #include "code\datums\chemistry\Reagents-Misc.dm"
 #include "code\datums\chemistry\Reagents-PoisonEtc.dm"
