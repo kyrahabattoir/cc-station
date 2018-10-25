@@ -586,11 +586,13 @@
 			beepCode(1)
 		if(CC_NOTIFICATION_SAVED)
 			beepCode(2)
-		else
+	return
 
 /datum/chemicompiler_executor/proc/reservoirCheck(resId)
 	if(istype(reservoirs[resId], /obj/item/reagent_containers/glass))
 		return 1
+	return
+
 /datum/chemicompiler_executor/proc/reservoirClick(resId)
 	if(istype(reservoirs[resId], /obj/item/reagent_containers/glass))
 		// Taking a res out
@@ -611,6 +613,7 @@
 			usr.drop_item()
 			I.set_loc(holder)
 			reservoirs[resId] = I
+	return
 
 /datum/chemicompiler_executor/proc/topicPermissionCheck(action)
 	return call(holder, "topicPermissionCheck")(action)
@@ -632,6 +635,7 @@
 	var/howmany = number == 1 ? "once" : "[number] times"
 	var/message = "[src.holder] beeps [how] [howmany]."
 	showMessage(message)
+	return
 
 /datum/chemicompiler_executor/proc/showMessage(message)
 	message = "<span style=\"color:red\">[message]</span>"
@@ -639,6 +643,7 @@
 		boutput(holder:loc, message)
 	else
 		holder:visible_message(message)
+	return
 
 /datum/chemicompiler_executor/proc/transferReagents(var/source, var/target, var/amount)
 	if(source < 1 || source > 10 || target < 1 || target > 13)
@@ -677,6 +682,7 @@
 		RS.trans_to(get_turf(src.holder), amount)
 		showMessage("Something drips out the side of [src.holder].")
 		sleep(10)
+	return
 
 /datum/chemicompiler_executor/proc/heatReagents(var/rid, var/temp)
 	if(rid < 1 || rid > 10)
@@ -698,7 +704,9 @@
 		sleep(10)
 
 	showMessage("[src.holder] clicks.") // Relay kicking off
+	return
 
 /datum/chemicompiler_executor/proc/statusChange(oldStatus, newStatus)
 	if (core.statusChangeCallback)
 		return call(holder, core.statusChangeCallback)(oldStatus, newStatus)
+	return

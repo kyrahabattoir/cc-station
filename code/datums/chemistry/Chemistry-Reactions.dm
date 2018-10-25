@@ -30,6 +30,7 @@
 		LAGCHECK(50)
 	if (holder)
 		holder.del_reagent(id)
+	return
 
 /proc/smoke_reaction(var/datum/reagents/holder, var/smoke_size, var/turf/location, var/vox_smoke = 0)
 	if (narrator_mode || vox_smoke)
@@ -37,3 +38,4 @@
 	else
 		playsound(location, 'sound/effects/smoke.ogg', 50, 1, -3)
 	particleMaster.SpawnSystem(new /datum/particleSystem/chemSmoke(location, holder, 100, smoke_size))
+	return
